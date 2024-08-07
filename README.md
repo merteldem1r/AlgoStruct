@@ -37,9 +37,9 @@ The address of the variable you’re working with is assigned to the pointer var
 - Creating and allocating memory on Heap and seeing difference between C style and C++ style
 - Manuallt deallocating memory from Heap
 
-Code: [reference.cpp](Essential-Concepts/Reference/reference.cpp)
+Code: [reference.cpp](Essential-Concepts/Reference/pointers.cpp)
   
-Readme: [Reference.md](Essential-Concepts/Reference/Reference.md)
+Readme: [Reference.md](Essential-Concepts/Reference/Pointers.md)
 
 ### 1.4) Reference
 
@@ -49,9 +49,9 @@ Readme: [Reference.md](Essential-Concepts/Reference/Reference.md)
   - Manipulating values of the variables with references
   - Use cases of references in for each blocks
 
-Code: [pointers.cpp](Essential-Concepts/Reference/pointers.cpp)
+Code: [pointers.cpp](Essential-Concepts/Reference/reference.cpp)
   
-Readme: [Pointers.md](Essential-Concepts/Reference/Pointers.md)
+Readme: [Pointers.md](Essential-Concepts/Reference/Reference.md)
 
 ## 2) Data Structures
 
