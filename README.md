@@ -31,6 +31,7 @@ The address of the variable you’re working with is assigned to the pointer var
 
 - Difference between Heap and Stack
 - Creating and allocating memory on Heap and seeing difference between C style and C++ style
+- Manuallt deallocating memory from Heap
 
 ### 1.4) Reference
 
