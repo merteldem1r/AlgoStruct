@@ -8,7 +8,7 @@ DSA | Data Structures and Algorithms using C & C++ Essential Concepts like Point
 
 ## 1) Essential Concepts of C++
 
-Essential concepts of C & C++ **before diving into DSA**. Arrays, Structures, OOP, Pointer and a lot more with explanation and example code.
+Essential concepts of C / C++ **before diving into DSA**. Arrays, Structures, OOP, Pointer and a lot more with explanation and example code.
 
 ### 1.1) Array Basics
 
@@ -23,7 +23,7 @@ Structures in C++ are user defined data types which are used to store group of i
 
 - Understanging the concept of Structure in C++
 - Creating struct objects in Stack and heap.
-- Manipulating with members of the structure.
+- Manipulating members of the structure.
 
 Code: [structures.cpp](Essential-Concepts/Structures/structures.cpp)
 
@@ -35,7 +35,7 @@ The address of the variable you’re working with is assigned to the pointer var
 
 - Difference between Heap and Stack
 - Creating and allocating memory on Heap and seeing difference between C style and C++ style
-- Manuallt deallocating memory from Heap
+- Manually deallocating memory from Heap
 
 Code: [pointers.cpp](Essential-Concepts/Pointers/pointers.cpp)
 </br>
