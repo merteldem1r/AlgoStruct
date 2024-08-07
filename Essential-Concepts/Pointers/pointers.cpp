@@ -97,8 +97,8 @@ int main()
     Rectangle *rPtr = &r;
 
     // using -> or . to access r with pointer
-    (*rPtr).breadth = 4;
-    rPtr->length = 2;
+    (*rPtr).breadth = 4; // C style
+    rPtr->length = 2;    // C++ style
 
     cout << "r.length: " << r.length << endl;   // 2
     cout << "r.breadth: " << r.breadth << endl; // 4
