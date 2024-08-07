@@ -69,7 +69,7 @@ int main()
     cout << "sizof double pointer: " << sizeof(p4) << endl;    // 8
     cout << "sizof Rectangle pointer: " << sizeof(p5) << endl; // 8
 
-    // whenever the type of the pointer the size same which is 8 bytes (64-bit machines)
+    // whatever the type of the pointer the size same which is 8 bytes (64-bit machines)
 
     // ******************
 
