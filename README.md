@@ -37,9 +37,9 @@ The address of the variable you’re working with is assigned to the pointer var
 - Creating and allocating memory on Heap and seeing difference between C style and C++ style
 - Manuallt deallocating memory from Heap
 
-Code: [reference.cpp](Essential-Concepts/Reference/pointers.cpp)
+Code: [reference.cpp](Essential-Concepts/Pointers/pointers.cpp)
   
-Readme: [Reference.md](Essential-Concepts/Reference/Pointers.md)
+Readme: [Reference.md](Essential-Concepts/Pointers/Pointers.md)
 
 ### 1.4) Reference
 
