@@ -38,7 +38,7 @@ The address of the variable you’re working with is assigned to the pointer var
 - Manuallt deallocating memory from Heap
 
 Code: [pointers.cpp](Essential-Concepts/Pointers/pointers.cpp)
-  
+</br>
 Readme: [Pointers.md](Essential-Concepts/Pointers/Pointers.md)
 
 ### 1.4) Reference
@@ -50,7 +50,7 @@ Readme: [Pointers.md](Essential-Concepts/Pointers/Pointers.md)
   - Use cases of references in for each blocks
 
 Code: [reference.cpp](Essential-Concepts/Reference/reference.cpp)
-  
+</br>
 Readme: [Reference.md](Essential-Concepts/Reference/Reference.md)
 
 ## 2) Data Structures
@@ -61,6 +61,7 @@ _coming soon_
 
 _coming soon_
 
+Author: [Mert Eldemir](https://github.com/merteldem1r)</br>
 Search Resourses:
 [Abdul Bari](https://www.udemy.com/course/datastructurescncpp/),
 [geeksforgeeks](https://www.geeksforgeeks.org/),
