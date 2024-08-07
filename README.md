@@ -15,7 +15,7 @@ Essential concepts of C & C++ **before diving into DSA**. Arrays, Structures, OO
 - Representation of Arrays in C & C++
 - Declaring and initializing dynamic and static arrays
 
-[arrays.cpp](Essential-Concepts/Arrays/arrays.cpp)
+[arrays.cpp](Essential Concepts/Arrays/arrays.cpp)
 
 ### 1.2) Structures
 
