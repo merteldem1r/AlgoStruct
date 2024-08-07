@@ -1,4 +1,4 @@
-# Data Structures and Algorithms using C & C++
+# Data Structures and Algorithms using C / C++
 
 ![Data Structures Algorithms](https://github.com/user-attachments/assets/9d7eda38-a40f-4673-bef2-960c03522266)
 
