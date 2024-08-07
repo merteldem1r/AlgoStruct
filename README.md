@@ -15,6 +15,8 @@ Essential concepts of C & C++ **before diving into DSA**. Arrays, Structures, OO
 - Representation of Arrays in C & C++
 - Declaring and initializing dynamic and static arrays
 
+[arrays.cpp](Essential-Concepts/Arrays/arrays.cpp)
+
 ### 1.2) Structures
 
 Structures in C++ are user defined data types which are used to store group of items of non-similar data types.
@@ -22,6 +24,8 @@ Structures in C++ are user defined data types which are used to store group of i
 - Understanging the concept of Structure in C++
 - Creating struct objects in Stack and heap.
 - Manipulating with members of the structure.
+
+structures.cpp:**
 
 ### 1.3) Pointers
 
