@@ -43,13 +43,12 @@ int main()
     double *p4;
     Rectangle *p5;
 
+    // whatever the type of the pointer the size same which is 8 bytes (64-bit machines)
     cout << "sizof int pointer: " << sizeof(p1) << endl;       // 8
     cout << "sizof char pointer: " << sizeof(p2) << endl;      // 8
     cout << "sizof float pointer: " << sizeof(p3) << endl;     // 8
     cout << "sizof double pointer: " << sizeof(p4) << endl;    // 8
     cout << "sizof Rectangle pointer: " << sizeof(p5) << endl; // 8
-
-    // whatever the type of the pointer the size same which is 8 bytes (64-bit machines)
 
     // ******************
 
@@ -92,6 +91,27 @@ int main()
     }
 
     delete[] ptr2;
+
+    // Pointer to Structure
+    Rectangle r = {10, 5};
+    Rectangle *rPtr = &r;
+
+    // using -> or . to access r with pointer
+    (*rPtr).breadth = 4;
+    rPtr->length = 2;
+
+    cout << "r.length: " << r.length << endl;   // 2
+    cout << "r.breadth: " << r.breadth << endl; // 4
+
+    // Creating Rectangle dinamically in Heap
+    Rectangle *dRec = new Rectangle; // allocacating memory in Heap
+    dRec->length = 6;
+    dRec->breadth = 3;
+
+    cout << "dRec length: " << dRec->length << endl;   // 6
+    cout << "dRec breadth: " << dRec->breadth << endl; // 3
+
+    delete dRec;
 
     return 0;
 }
