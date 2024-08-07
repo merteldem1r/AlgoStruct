@@ -1,5 +1,7 @@
 ### Data Structures and Algorithms with C & C++
 
+![Data Structures Algorithms](https://github.com/user-attachments/assets/7676b3b8-edfa-4cd4-b3f2-2e7059ae0572)
+
 DSA | Data Structures and Algorithms using C & C++ Essential Concepts like Pointers, OOP, Structures, References etc. with well explained comment lines and Readme files. Implementing all commonly used Data Structure from scratch and their Algorithms.
 
 **Project divided into 3 topics. Essential Concepts, Data Structures and Algorithms. Each topic contain code examples with explained comment lines and Readme file.**
