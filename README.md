@@ -61,8 +61,8 @@ _coming soon_
 
 _coming soon_
 
-Bibliography:
-[Abdul Bari](https://www.udemy.com/course/datastructurescncpp/)
-[geeksforgeeks](https://www.geeksforgeeks.org/)
+Search Resourses:
+[Abdul Bari](https://www.udemy.com/course/datastructurescncpp/),
+[geeksforgeeks](https://www.geeksforgeeks.org/),
 [w3schools](https://www.w3schools.com/)
 
