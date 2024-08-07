@@ -61,4 +61,8 @@ _coming soon_
 
 _coming soon_
 
-P.S. Some text and images taken from https://www.geeksforgeeks.org/
+Bibliography:
+[Abdul Bari](https://www.udemy.com/course/datastructurescncpp/)
+[geeksforgeeks](https://www.geeksforgeeks.org/)
+[w3schools](https://www.w3schools.com/)
+
