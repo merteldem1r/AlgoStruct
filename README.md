@@ -15,7 +15,7 @@ Essential concepts of C & C++ **before diving into DSA**. Arrays, Structures, OO
 - Representation of Arrays in C & C++
 - Declaring and initializing dynamic and static arrays
 
-[arrays.cpp](Essential-Concepts/Arrays/arrays.cpp)
+Code: [arrays.cpp](Essential-Concepts/Arrays/arrays.cpp)
 
 ### 1.2) Structures
 
@@ -25,7 +25,7 @@ Structures in C++ are user defined data types which are used to store group of i
 - Creating struct objects in Stack and heap.
 - Manipulating with members of the structure.
 
-structures.cpp:**
+Code: [structures.cpp](Essential-Concepts/Structures/structures.cpp)
 
 ### 1.3) Pointers
 
@@ -37,6 +37,10 @@ The address of the variable you’re working with is assigned to the pointer var
 - Creating and allocating memory on Heap and seeing difference between C style and C++ style
 - Manuallt deallocating memory from Heap
 
+Code: [reference.cpp](Essential-Concepts/Reference/reference.cpp)
+  
+Readme: [Reference.md](Essential-Concepts/Reference/Reference.md)
+
 ### 1.4) Reference
 
   When a variable is declared as a reference, it becomes an **alternative name for an existing variable.** A variable can be declared as a reference by putting ‘&’ in the declaration.
@@ -44,6 +48,10 @@ The address of the variable you’re working with is assigned to the pointer var
   - Creating references to variables
   - Manipulating values of the variables with references
   - Use cases of references in for each blocks
+
+Code: [pointers.cpp](Essential-Concepts/Reference/pointers.cpp)
+  
+Readme: [Pointers.md](Essential-Concepts/Reference/Pointers.md)
 
 ## 2) Data Structures
 
