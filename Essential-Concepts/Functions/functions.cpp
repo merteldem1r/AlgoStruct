@@ -2,26 +2,6 @@
 
 using namespace std;
 
-/*
-Formal Parameter: A variable and its type as it appears in the prototype of the function or method.
-
-Actual Parameter: The variable or expression corresponding to a formal parameter that appears in the function or method call in the calling environment.
-*/
-
-/*
-Parameter Passing Methods:
-
-Pass by Value:
-    This method uses in-mode semantics. Changes made to formal parameters do not get transmitted back to the caller. Any modifications to the formal parameter variable inside the called function or method affect only the separate storage location and will not be reflected in the actual parameter in the calling environment.
-
-Pass by Address:
-    This technique uses a pointer. In function we pass memory address (pointer) of a variable rather than passing the actual value of variable. This passing technique allows the function to access and modify the content at that particular memory location.
-
-
-Pass by Reference:
-    When a variable is passed as a reference to a function, the address of the variable is stored in a pointer variable inside the function. Hence, the variable inside the function is an alias for the passed variable. Therefore, any operations performed on the variable inside the function will also be reflected in the calling function.
-*/
-
 //  Pass by Value
 int add(int a, int b) // prototype | (int a, int b) => formal parameters
 {
@@ -39,21 +19,6 @@ void swap(int *a, int *b) // formal parameters must be pointers
 }
 
 // Pass by Reference (Feature of C++)
-
-/*
-important point about Call by Reference:
-
-One function cannot access the variables of another function directly, it can access indirectly (via pointers) but Call by Reference accessing variables directly because they uses alias for variables.
-Call by Reference Function not becoming a separate function it has became a part of main function and there is only one activation record.
-
-When the main function running when the CBR function starts variables becoming alias name and it's happening inside the same stack frame. So that CBR function is not a separate body of a function it has becoming part of the main function.
-
-So the machine code is more like monolitic. Though the
-sourse code is procedural or modular.
-
-You can use the Call by Reference for the small functions but don't use it for heavy functions which are having loops and complex logic.
-*/
-
 void swapRef(int &a, int &b) // with ampersand(&), it's just alias for actual variables in memory
 {
     auto temp = a;
@@ -114,6 +79,36 @@ Rectangle *retRec()
     rec->length = 30;
     rec->breadth = 40;
     return rec;
+}
+
+// Callback function
+typedef void (*CallbackFun)();
+
+void performeFunction(CallbackFun callback)
+{
+    cout << "Performing an action..." << endl;
+    callback();
+}
+
+void sayHello()
+{
+    cout << "Hello!" << endl;
+}
+
+// Function declarations for array of function pointers
+int addFunc(int a, int b)
+{
+    return a + b;
+}
+
+int subtractFunc(int a, int b)
+{
+    return a - b;
+}
+
+int multiplyFunc(int a, int b)
+{
+    return a * b;
 }
 
 int main()
@@ -187,6 +182,20 @@ int main()
     cout << "rPtr->breadth: " << rPtr->breadth << endl; // 40
 
     delete rPtr;
+
+    // Callback function
+    performeFunction(sayHello); // Performing an action... Hello!
+
+    // An array of function pointer and how the elements are accessed
+    int (*funcArray[3])(int, int) = {addFunc, subtractFunc, multiplyFunc};
+
+    // Variables to use as function parameters
+    int t = 2, e = 3;
+
+    // Access and call the functions using the arrae of function pointers
+    cout << "Add: " << funcArray[0](t, e) << endl;      // Calls add(10, 5)
+    cout << "Subtract: " << funcArray[1](t, e) << endl; // Calls subtract(10, 5)
+    cout << "Multiply: " << funcArray[2](t, e) << endl; // Calls multiply(10, 5)
 
     return 0;
 }
