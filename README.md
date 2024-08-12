@@ -43,15 +43,29 @@ Readme: [Pointers.md](Essential-Concepts/Pointers/Pointers.md)
 
 ### 1.4) Reference
 
-  When a variable is declared as a reference, it becomes an **alternative name for an existing variable.** A variable can be declared as a reference by putting ‘&’ in the declaration.
+When a variable is declared as a reference, it becomes an **alternative name for an existing variable.** A variable can be declared as a reference by putting ‘&’ in the declaration.
 
-  - Creating references to variables
-  - Manipulating values of the variables with references
-  - Use cases of references in for each blocks
+- Creating references to variables
+- Manipulating values of the variables with references
+- Use cases of references in for each blocks
 
 Code: [reference.cpp](Essential-Concepts/Reference/reference.cpp)
 </br>
 Readme: [Reference.md](Essential-Concepts/Reference/Reference.md)
+
+### 1.5) Functions
+
+- Creating and calling functions
+- Formal and actual parameters
+- Parameter passing methods (by Value, Address, Reference)
+- Functions that using and returning pointers
+- Passing Arrays as parameters
+- Passing Structures as parameters
+- Callback functions
+- Array of function pointer and how the elements are accessed
+
+Code: [functions.cpp](Essential-Concepts/Functions/functions.cpp)
+Readme: [Functions.md](Essential-Concepts/Functions/Functions.md)
 
 ## 2) Data Structures
 
@@ -66,4 +80,3 @@ Search Resourses:
 [Abdul Bari](https://www.udemy.com/course/datastructurescncpp/),
 [geeksforgeeks](https://www.geeksforgeeks.org/),
 [w3schools](https://www.w3schools.com/)
-
