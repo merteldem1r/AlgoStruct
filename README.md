@@ -15,7 +15,7 @@ Essential concepts of C / C++ **before diving into DSA**. Arrays, Structures, OO
 - Representation of Arrays in C & C++
 - Declaring and initializing dynamic and static arrays
 
-Code: [arrays.cpp](Essential-Concepts/Arrays/arrays.cpp)
+  Code: [arrays.cpp](Essential-Concepts/Arrays/arrays.cpp)
 
 ### 1.2) Structures
 
@@ -25,7 +25,7 @@ Structures in C++ are user defined data types which are used to store group of i
 - Creating struct objects in Stack and heap.
 - Manipulating members of the structure.
 
-Code: [structures.cpp](Essential-Concepts/Structures/structures.cpp)
+  Code: [structures.cpp](Essential-Concepts/Structures/structures.cpp)
 
 ### 1.3) Pointers
 
@@ -37,9 +37,9 @@ The address of the variable you’re working with is assigned to the pointer var
 - Creating and allocating memory on Heap and seeing difference between C style and C++ style
 - Manually deallocating memory from Heap
 
-Code: [pointers.cpp](Essential-Concepts/Pointers/pointers.cpp)
-</br>
-Readme: [Pointers.md](Essential-Concepts/Pointers/Pointers.md)
+  Code: [pointers.cpp](Essential-Concepts/Pointers/pointers.cpp)
+  </br>
+  Readme: [Pointers.md](Essential-Concepts/Pointers/Pointers.md)
 
 ### 1.4) Reference
 
@@ -49,9 +49,9 @@ When a variable is declared as a reference, it becomes an **alternative name for
 - Manipulating values of the variables with references
 - Use cases of references in for each blocks
 
-Code: [reference.cpp](Essential-Concepts/Reference/reference.cpp)
-</br>
-Readme: [Reference.md](Essential-Concepts/Reference/Reference.md)
+  Code: [reference.cpp](Essential-Concepts/Reference/reference.cpp)
+  </br>
+  Readme: [Reference.md](Essential-Concepts/Reference/Reference.md)
 
 ### 1.5) Functions
 
@@ -64,8 +64,9 @@ Readme: [Reference.md](Essential-Concepts/Reference/Reference.md)
 - Callback functions
 - Array of function pointer and how the elements are accessed
 
-Code: [functions.cpp](Essential-Concepts/Functions/functions.cpp)
-Readme: [Functions.md](Essential-Concepts/Functions/Functions.md)
+  Code: [functions.cpp](Essential-Concepts/Functions/functions.cpp)
+  </br>
+  Readme: [Functions.md](Essential-Concepts/Functions/Functions.md)
 
 ## 2) Data Structures
 
