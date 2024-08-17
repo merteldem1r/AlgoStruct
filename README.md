@@ -77,6 +77,8 @@ When a variable is declared as a reference, it becomes an **alternative name for
 
 ### 1.7) Scope Resolution
 
+In programming, scope refers to the **context within which a variable or function is accessible**. C++ has several scopes, such as **global scope, local scope, class scope, and namespace scope**. When a variable or function is declared, it exists within a specific scope, and that scope defines where it can be accessed.
+
 - What is :: operator and Scope Resolution
 - Accessing Global Variables
 - Defining Class Member Functions Outside the Class
