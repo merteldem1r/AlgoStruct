@@ -75,6 +75,18 @@ When a variable is declared as a reference, it becomes an **alternative name for
 
   Code: [c-code.c](Essential-Concepts/Converting-C-to-CPP/c-code.c) [cpp-code.cpp](Essential-Concepts/Converting-C-to-CPP/cpp-code.cpp)
 
+### 1.7) Scope Resolution
+
+- What is :: operator and Scope Resolution
+- Accessing Global Variables
+- Defining Class Member Functions Outside the Class
+- Accessing Static Members
+- Accessing Namespaces
+
+  Code: [scope-resolution.cpp](Essential-Concepts/Scope-Resolution/scope-resolution.cpp)
+  </br>
+  Readme: [ScopeResolution.md](Essential-Concepts/Scope-Resolution/ScopeResolution.md)
+
 ## 2) Data Structures
 
 _coming soon_
