@@ -68,6 +68,13 @@ When a variable is declared as a reference, it becomes an **alternative name for
   </br>
   Readme: [Functions.md](Essential-Concepts/Functions/Functions.md)
 
+### 1.6) Converting C code to C++
+
+- Difference between writing C and C++ code
+- Rewriting structure based C code into OOP based C++ code
+
+  Code: [c-code.c](Essential-Concepts/Converting-C-to-CPP/c-code.cpp) [cpp-code.cpp](Essential-Concepts/Converting-C-to-CPP/cpp-code.cpp)
+
 ## 2) Data Structures
 
 _coming soon_
