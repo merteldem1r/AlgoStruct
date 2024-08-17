@@ -100,5 +100,5 @@ _coming soon_
 Author: [Mert Eldemir](https://github.com/merteldem1r)</br>
 Search Resourses:
 [Abdul Bari](https://www.udemy.com/course/datastructurescncpp/),
-[geeksforgeeks](https://www.geeksforgeeks.org/),
-[w3schools](https://www.w3schools.com/)
+[cplusplus](https://cplusplus.com/doc/tutorial/),
+[geeksforgeeks](https://www.geeksforgeeks.org/)
