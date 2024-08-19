@@ -44,6 +44,9 @@ public:
         cout << "Owner Name: " << ownerName << endl;
         cout << "Balance: $" << balance << endl;
     }
+
+    // Destructor
+    ~BankAccount() {}
 };
 
 class SavingsAccount : public BankAccount
