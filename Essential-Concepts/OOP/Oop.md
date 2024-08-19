@@ -100,3 +100,9 @@ Classes can be defined not only with keyword class, but also with keywords **str
 The keyword **struct**, generally used to declare plain **data structures**, can also be used to declare classes that have **member functions**, with the same syntax as with keyword class. The only difference between both is that members of classes declared with the keyword struct have _public_ access by default, while members of classes declared with the keyword class have _private_ access by default. For all other purposes both keywords are equivalent in this context.
 
 Conversely, the concept of **unions** is different from that of classes declared with struct and class, since unions only store one data member at a time, but nevertheless they are also classes and can thus also hold member functions. The default access in union classes is _public_.
+
+# Static members
+
+A class can contain static members, either data or functions.
+
+A static data member of a class is also known as a "class variable", because there is only one common variable for all the objects of that same class, sharing the same value: i.e., its value is not different from one object of this class to another.
