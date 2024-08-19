@@ -89,6 +89,24 @@ In programming, scope refers to the **context within which a variable or functio
   </br>
   Readme: [ScopeResolution.md](Essential-Concepts/Scope-Resolution/ScopeResolution.md)
 
+### 1.8) Object Oriented Programming
+
+Object-oriented programming – As the name suggests uses objects in programming. Object-oriented programming aims to implement real-world entities like inheritance, hiding, polymorphism, etc. in programming. The main aim of OOP is to bind together the data and the functions that operate on them so that no other part of the code can access this data except that function.
+
+- Classes and structs
+- Class Members
+- Definition of Memeber Functions
+- Constructors
+- Member initialization in constructors
+- Pointers to classes
+- Classes defined with struct and union
+- Static members
+- OOP Concepts (Encapsulation, Inheritance, Polymorphism, Abstraction etc.)
+
+  Code: [oop.cpp](Essential-Concepts/Scope-Resolution/oop.cp)
+  </br>
+  Readme: [Oop.md](Essential-Concepts/OOP/Oop.md)
+
 ## 2) Data Structures
 
 _coming soon_
