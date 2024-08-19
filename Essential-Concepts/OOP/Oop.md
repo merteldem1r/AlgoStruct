@@ -109,7 +109,7 @@ A static data member of a class is also known as a "class variable", because the
 
 # Characteristics of an Object-Oriented Programming Language
 
-// image
+![OOPs-Concepts](https://github.com/user-attachments/assets/e57c134a-530b-4d49-9070-5b00915bf113)
 
 ## Class
 
@@ -151,7 +151,7 @@ The word polymorphism means having many forms. In simple words, we can define po
 
 **Example:** Suppose we have to write a function to add some integers, sometimes there are 2 integers, and sometimes there are 3 integers. We can write the Addition Method with the same name having different parameters, the concerned method will be called according to parameters.
 
-// image
+![polymorphismexample-660x460](https://github.com/user-attachments/assets/208a7947-f535-42fa-9b48-a67b089dac80)
 
 ## Inheritance
 
