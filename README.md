@@ -1,4 +1,4 @@
-# Data Structures and Algorithms using C / C++
+# Essential Concepts and DSA using C / C++
 
 ![Data Structures Algorithms](https://github.com/user-attachments/assets/9d7eda38-a40f-4673-bef2-960c03522266)
 
@@ -6,11 +6,11 @@ DSA | Data Structures and Algorithms using C & C++ Essential Concepts like Point
 
 **Project divided into 3 topics. Essential Concepts, Data Structures and Algorithms. Each topic contain code examples with explained comment lines and Readme file.**
 
-## Essential Concepts of C++
+## Essential Concepts of C / C++
 
 Essential concepts of C / C++ **before diving into DSA**. Arrays, Structures, OOP, Pointer and a lot more with explanation and example code.
 
-### <u>Array Basics</u>
+### Array Basics
 
 - Representation of Arrays in C & C++
 - Declaring and initializing dynamic and static arrays
