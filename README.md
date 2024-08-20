@@ -6,18 +6,18 @@ DSA | Data Structures and Algorithms using C & C++ Essential Concepts like Point
 
 **Project divided into 3 topics. Essential Concepts, Data Structures and Algorithms. Each topic contain code examples with explained comment lines and Readme file.**
 
-## 1) Essential Concepts of C++
+## Essential Concepts of C++
 
 Essential concepts of C / C++ **before diving into DSA**. Arrays, Structures, OOP, Pointer and a lot more with explanation and example code.
 
-### 1.1) Array Basics
+### Array Basics
 
 - Representation of Arrays in C & C++
 - Declaring and initializing dynamic and static arrays
 
   Code: [arrays.cpp](Essential-Concepts/Arrays/arrays.cpp)
 
-### 1.2) Structures
+### Structures
 
 Structures in C++ are user defined data types which are used to store group of items of non-similar data types.
 
@@ -27,7 +27,7 @@ Structures in C++ are user defined data types which are used to store group of i
 
   Code: [structures.cpp](Essential-Concepts/Structures/structures.cpp)
 
-### 1.3) Pointers
+### Pointers
 
 **Pointers are symbolic representations of addresses.** They enable programs to simulate call-by-reference as well as to create and manipulate dynamic data structures. Iterating over elements in arrays or other data structures is one of the main use of pointers.
 
@@ -41,7 +41,7 @@ The address of the variable you’re working with is assigned to the pointer var
   </br>
   Readme: [Pointers.md](Essential-Concepts/Pointers/Pointers.md)
 
-### 1.4) Reference
+### Reference
 
 When a variable is declared as a reference, it becomes an **alternative name for an existing variable.** A variable can be declared as a reference by putting ‘&’ in the declaration.
 
@@ -53,7 +53,7 @@ When a variable is declared as a reference, it becomes an **alternative name for
   </br>
   Readme: [Reference.md](Essential-Concepts/Reference/Reference.md)
 
-### 1.5) Functions
+### Functions
 
 - Creating and calling functions
 - Formal and actual parameters
@@ -68,14 +68,14 @@ When a variable is declared as a reference, it becomes an **alternative name for
   </br>
   Readme: [Functions.md](Essential-Concepts/Functions/Functions.md)
 
-### 1.6) Converting C code to C++
+### Converting C code to C++
 
 - Difference between writing C and C++ code
 - Rewriting structure based C code into OOP based C++ code
 
   Code: [c-code.c](Essential-Concepts/Converting-C-to-CPP/c-code.c) [cpp-code.cpp](Essential-Concepts/Converting-C-to-CPP/cpp-code.cpp)
 
-### 1.7) Scope Resolution
+### Scope Resolution
 
 In programming, scope refers to the **context within which a variable or function is accessible**. C++ has several scopes, such as **global scope, local scope, class scope, and namespace scope**. When a variable or function is declared, it exists within a specific scope, and that scope defines where it can be accessed.
 
@@ -89,7 +89,7 @@ In programming, scope refers to the **context within which a variable or functio
   </br>
   Readme: [ScopeResolution.md](Essential-Concepts/Scope-Resolution/ScopeResolution.md)
 
-### 1.8) Object Oriented Programming
+### Object Oriented Programming
 
 Object-oriented programming – As the name suggests uses objects in programming. Object-oriented programming aims to implement real-world entities like inheritance, hiding, polymorphism, etc. in programming. The main aim of OOP is to bind together the data and the functions that operate on them so that no other part of the code can access this data except that function.
 
@@ -103,15 +103,23 @@ Object-oriented programming – As the name suggests uses objects in programming
 - Static members
 - OOP Concepts (Encapsulation, Inheritance, Polymorphism, Abstraction etc.)
 
-  Code: [oop.cpp](Essential-Concepts/Scope-Resolution/oop.cp)
+  Code: [oop.cpp](Essential-Concepts/OOP/oop.cpp)
   </br>
   Readme: [Oop.md](Essential-Concepts/OOP/Oop.md)
 
-## 2) Data Structures
+### Templates
+
+- ..
+
+  Code: [templates.cpp](Essential-Concepts/Templates/templates.cpp)
+  </br>
+  Readme: [Templates.md](Essential-Concepts/Templates/Templates.md)
+
+## Data Structures
 
 _coming soon_
 
-## 3) Algorithms
+## Algorithms
 
 _coming soon_
 
