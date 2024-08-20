@@ -10,7 +10,7 @@ DSA | Data Structures and Algorithms using C & C++ Essential Concepts like Point
 
 Essential concepts of C / C++ **before diving into DSA**. Arrays, Structures, OOP, Pointer and a lot more with explanation and example code.
 
-### Array Basics
+### <u>Array Basics</u>
 
 - Representation of Arrays in C & C++
 - Declaring and initializing dynamic and static arrays
