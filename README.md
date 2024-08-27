@@ -107,6 +107,18 @@ Object-oriented programming – As the name suggests uses objects in programming
   </br>
   Readme: [Oop.md](Essential-Concepts/OOP/Oop.md)
 
+### Generics
+
+**Generics** is the idea to allow type (Integer, String, … etc and user-defined types) to be a **parameter to methods, classes and interfaces.** For example, classes like an array, map, etc, which can be used using generics very efficiently.
+
+Before diving into **Templates** would be better to understand concept of Generics.
+
+- Generic Functions using Template
+- Generic Class using Template
+- Working with multi-type Generics
+
+  Code: [generics.cpp](Essential-Concepts/Generics/generics.cpp)
+
 ### Templates
 
 - ..
