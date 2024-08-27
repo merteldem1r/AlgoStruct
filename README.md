@@ -122,6 +122,8 @@ Before diving into **Templates** would be better to understand concept of Generi
 ### Templates
 
 - ..
+- ..
+- ..
 
   Code: [templates.cpp](Essential-Concepts/Templates/templates.cpp)
   </br>

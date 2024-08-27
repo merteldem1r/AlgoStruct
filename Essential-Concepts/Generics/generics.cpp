@@ -83,8 +83,9 @@ int main()
 
     // 2)
     int arr[5] = {1, 2, 3, 4, 5};
-    int arrLen = sizeof(arr) / sizeof(arr[0]);
-    Array<int> myArray = Array(arr, arrLen);
+    int arrSize = sizeof(arr) / sizeof(arr[0]);
+
+    Array<int> myArray = Array(arr, arrSize);
     myArray.print();
 
     // 3)
