@@ -8,4 +8,5 @@ C++ adds two new keywords to support templates: ‘template’ and _‘typename�
 
 Templates are expanded at compiler time. This is like macros. The difference is, that the compiler does type-checking before template expansion. The idea is simple, source code contains only function/class, but compiled code may contain multiple copies of the same function/class.
 
-// image
+![templates-cpp](https://github.com/user-attachments/assets/b7aa957d-32e5-4e12-8352-0c54b2c5c4c9)
+
