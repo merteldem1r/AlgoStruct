@@ -121,9 +121,10 @@ Before diving into **Templates** would be better to understand concept of Generi
 
 ### Templates
 
-- ..
-- ..
-- ..
+A **template** is a simple yet very powerful tool in C++. The simple idea is to pass the data type as a parameter so that we don’t need to write the same code for different data types.
+
+- Function Templates
+- Class Templates
 
   Code: [templates.cpp](Essential-Concepts/Templates/templates.cpp)
   </br>
