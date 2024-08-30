@@ -23,10 +23,6 @@ public:
     Arithametic(T a, T b);
     T add();
     T sub();
-    void printValues()
-    {
-        cout << "a: " << this->a << " b: " << this->b << endl;
-    }
 };
 
 template <class T>

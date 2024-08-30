@@ -136,7 +136,13 @@ _coming soon_
 
 ## Algorithms
 
-_coming soon_
+The **algorithms** are used to **solve problems or provide functionality**. Algorithms work exclusively on values; they don't affect the size or storage of a container. Simple algorithms can be implemented within a function. Complex algorithms might require several functions or even a class to implement them.
+
+### Recursion
+
+- ..
+- ..
+- ..
 
 Author: [Mert Eldemir](https://github.com/merteldem1r)</br>
 Search Resourses:
