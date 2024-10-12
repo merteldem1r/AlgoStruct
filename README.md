@@ -140,9 +140,15 @@ The **algorithms** are used to **solve problems or provide functionality**. Algo
 
 ### Recursion
 
-- ..
-- ..
-- ..
+**Generalising Recursion**
+
+- Behaviour of Recursion
+- Ascending & Descending Phases
+- CALLING time & RETURNING time
+
+  Code: [recursion.cpp](Essential-Concepts/Recursion/recursion.cpp)
+  </br>
+  Readme: [Recursion.md](Essential-Concepts/Recursion/Recursion.md)
 
 Author: [Mert Eldemir](https://github.com/merteldem1r)</br>
 Search Resourses:
