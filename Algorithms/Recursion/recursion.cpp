@@ -24,6 +24,26 @@ void func2(int x)
     }
 }
 
+/*
+    Generalising Recursion
+
+    * loops (for & while) has only Ascending phase rather than Recursion
+    * there is two PHASES on Recursion -> Ascending and Descending
+
+    void func(int n) {
+
+        if (n > 0) {
+            1. execute at CALLING time; (Ascending)
+
+            2. RECURION func(n - 1);
+
+            3. execute at RETURNING time; (Descending)
+        }
+
+    }
+
+*/
+
 int main()
 {
     int x = 3;
