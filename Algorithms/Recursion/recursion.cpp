@@ -4,7 +4,7 @@ using namespace std;
 
 // Simple difference between two Recursion functions:
 
-// first PRINT then CALL itself
+// first PRINT then CALL itself || Time Complexity: O(n) Space Complexity: O(n)
 void func1(int x)
 {
     if (x > 0)
@@ -14,7 +14,7 @@ void func1(int x)
     }
 }
 
-// first CALL itself then PRINT
+// first CALL itself then PRINT || Time Complexity: O(n) Space Complexity: O(n)
 void func2(int x)
 {
     if (x > 0)
@@ -44,6 +44,74 @@ void func2(int x)
 
 */
 
+// LOCAL STATIC VARIABLES RECURSION
+
+// LOCAL variables of a function
+int fun(int n)
+{
+    if (n > 0)
+    {
+        // n having its own value on each call
+        return fun(n - 1) + n;
+    }
+
+    return 0;
+}
+
+/*
+
+                        fun(5) = 15
+                        /
+                    fun(4) + 5 = 15
+                    /
+                fun(3) + 4 = 10
+                /
+            fun(2) + 3 = 6
+            /
+        fun(1) + 2 = 3
+        /
+    fun(0) + 1 = 1
+        |
+    fun(0) = 0
+*/
+
+// *************************************************************
+
+// STATIC variable for X which has only one copy
+
+int funStatic(int n)
+{
+    // each call will use same copy of x (it's the same as creating x in global scope)
+    static int x = 0;
+
+    if (n > 0)
+    {
+        x++;
+        // this x will be added at RETURNING time of the function
+        return funStatic(n - 1) + x;
+    }
+
+    return 0;
+}
+
+/*
+
+                        fun(5) = 25 | x = 0
+                        /
+                    fun(4) + 5 = 25 | x = 1
+                    /
+                fun(3) + 5 = 20 | x = 2
+                /
+            fun(2) + 5 = 15 | x = 3
+            /
+        fun(1) + 5 = 10 | x = 4
+        /
+    fun(0) + 5 = 5 | x = 5
+        |
+    fun(0) = 0
+
+*/
+
 int main()
 {
     int x = 3;
@@ -53,6 +121,13 @@ int main()
 
     cout << "func2 outputs: " << endl;
     func2(x); // 1 2 3
+
+    // Local and StaticS
+
+    int a = 5;
+
+    cout << "fun: " << fun(a) << endl;             // 15
+    cout << "funStatic: " << funStatic(a) << endl; // 25
 
     return 0;
 }
