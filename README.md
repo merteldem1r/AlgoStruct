@@ -145,10 +145,24 @@ The **algorithms** are used to **solve problems or provide functionality**. Algo
 - Behaviour of Recursion
 - Ascending & Descending Phases
 - CALLING time & RETURNING time
+- Local and Static variables in Recursion
 
   Code: [recursion.cpp](Algorithms/Recursion/recursion.cpp)
-  </br>
-  Readme: [Recursion.md](Algorithms/Recursion/Recursion.md)
+
+**Types Of Recursion**
+
+- Tail Recursion
+- Head Recursion
+- Tree Recursion
+- Indirect Recursion
+- Nested Recursion
+
+  Code: [Types-of-Recursion](Algorithms/Recursion/Types-of-Recursion)
+
+**Algorithms & Problems**
+
+- ...
+- ...
 
 Author: [Mert Eldemir](https://github.com/merteldem1r)</br>
 Search Resourses:
