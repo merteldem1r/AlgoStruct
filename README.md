@@ -157,7 +157,7 @@ The **algorithms** are used to **solve problems or provide functionality**. Algo
 - Indirect Recursion
 - Nested Recursion
 
-  Folder: [Types-of-Recursion](Algorithms/Recursion/Types-of-Recursion)
+  Folder: [types-of-recursion](Algorithms/Recursion/types-of-recursion)
 
 **Algorithms & Problems**
 
