@@ -163,9 +163,9 @@ The **algorithms** are used to **solve problems or provide functionality**. Algo
 
 Common algorithm problems using **recursion** vs **iterative approach**.
 
-_Combination_ - _Factorial_ - _Fibonacci_ - _Power_ - _Sum Of Natural Nums_ - _Taylor Series_
+- _Combination_ - _Factorial_ - _Fibonacci_ - _Power_ - _Sum Of Natural Nums_ - _Taylor Series_
 
-Algorithms: [algorithms](Algorithms/Recursion/algorithms)
+  Algorithms: [algorithms](Algorithms/Recursion/algorithms)
 
 ### Sorting
 
