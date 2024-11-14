@@ -157,12 +157,31 @@ The **algorithms** are used to **solve problems or provide functionality**. Algo
 - Indirect Recursion
 - Nested Recursion
 
-  Folder: [types-of-recursion](Algorithms/Recursion/types-of-recursion)
+  Folder: [Types-of-Recursion](Algorithms/Recursion/Types-of-Recursion)
 
 **Algorithms & Problems**
 
-- ...
-- ...
+Common algorithm problems using **recursion** vs **iterative approach**.
+
+**\*\***Combination**\*\*** - **\*\***Factorial**\*\*** - **\*\***Fibonacci**\*\*** - **\*\***Power**\*\*** - **\*\***Sum Of Natural Nums**\*\*** - **\*\***Taylor Series**\*\***
+
+Algorithms: [algorithms](Algorithms/Recursion/algorithms)
+
+### Sorting
+
+A **Sorting Algorithm** is used to rearrange a given array or list of elements in an order. Selecting best sorting algoritms in a certain cases is crutial for system performans and stability.
+
+- Bubble Sort
+- Selection Sort
+- Insertion Sort
+- Merge Sort
+- Quick Sort
+- Count Sort
+- Bin / Bucket Sort
+- Radix Sort
+- Shell Sort
+
+  Folder: [Sorting-Techniques](Algorithms/Sorting-Techniques)
 
 Author: [Mert Eldemir](https://github.com/merteldem1r)</br>
 Search Resourses:
