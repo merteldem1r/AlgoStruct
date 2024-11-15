@@ -3,7 +3,7 @@
 using namespace std;
 
 // MERGE SORT
-// Time: O(nlogn) || Space: O(nlogn)
+// Time Worst & Best & Average: O(n logn) || Space: O(n)
 
 /*
     Example merge() functions letters:
