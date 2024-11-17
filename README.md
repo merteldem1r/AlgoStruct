@@ -167,7 +167,7 @@ Common algorithm problems using **recursion** vs **iterative approach**.
 
 A **Sorting Algorithm** is used to rearrange a given array or list of elements in an order. Selecting best sorting algoritms in a certain cases is crutial for system performans and stability.
 
-- _Bubble Sort_ - _Selection Sort_ - _Insertion Sort_ - Merge Sort_ - _Quick Sort_ - _*Bin / Bucket Sort_ - _Radix Sort_ - _Shell Sort_
+- _Bubble Sort_ - _Selection Sort_ - _Insertion Sort_ - Merge Sort_ - _Quick Sort_ - _Bin / Bucket Sort_ - _Radix Sort_ - _Shell Sort_
   
   Folder: [Sorting-Techniques](Algorithms/Sorting-Techniques)
 
