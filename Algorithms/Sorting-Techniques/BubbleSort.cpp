@@ -1,6 +1,6 @@
 #include <iostream>
 
-// BUBBLE SORT (Not Adaptive (except using swapped) & Stable)
+// BUBBLE SORT (Adaptive (with swapped) & Stable)
 // Time Average & Worst: O(n^2) Time Best: O(n) || Space: O(1)
 
 void bubbleSort(int arr[], int arrSize)
