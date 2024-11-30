@@ -1,6 +1,6 @@
 #include <iostream>
 
-// MERGE SORT
+// MERGE SORT (Not Adaptive & Stable)
 // Time Worst & Best & Average: O(n logn) || Space: O(n)
 
 /*

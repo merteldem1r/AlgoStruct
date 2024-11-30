@@ -1,6 +1,6 @@
 #include <iostream>
 
-// INSERTION SORT
+// INSERTION SORT (Adaptive & Stable)
 // Time Average & Worst: O(n^2) Time Best: O(n) || Space: O(1)
 
 void insertionSort(int arr[], int arrSize)
@@ -10,7 +10,7 @@ void insertionSort(int arr[], int arrSize)
         const int key = arr[i];
         int j = i - 1;
 
-        while (j >= 0 && key < arr[j])
+        while (j >= 0 && arr[j] > key)
         {
             arr[j + 1] = arr[j];
             --j;
@@ -32,7 +32,7 @@ void printArr(int arr[], int arrSize)
 
 int main()
 {
-    // Quick Sort
+    // Insertion Sort
     int A[] = {50, 70, 60, 40, 80, 10, 20, 30};
 
     int aSize = sizeof(A) / sizeof(A[0]);

@@ -1,25 +1,26 @@
 #include <iostream>
 
-// BUBBLE SORT (Not Adaptive (except using swapped) & Stable)
-// Time Average & Worst: O(n^2) Time Best: O(n) || Space: O(1)
+// SELECTION SORT (Not Adaptive & Not Stable)
+// Time: O(n^2) || Space: O(1)
 
-void bubbleSort(int arr[], int arrSize)
+void selectionSort(int A[], int arrSize)
 {
     for (int i = 0; i < arrSize - 1; ++i)
     {
-        bool swapped = false;
+        int minIdx = i;
 
-        for (int j = 0; j < arrSize - i - 1; ++j)
+        for (int j = i + 1; j < arrSize; ++j)
         {
-            if (arr[j] > arr[j + 1])
+            if (A[j] < A[minIdx])
             {
-                std::swap(arr[j], arr[j + 1]);
-                swapped = true;
+                minIdx = j;
             }
         }
 
-        if (!swapped)
-            break;
+        if (minIdx != i)
+        {
+            std::swap(A[i], A[minIdx]);
+        }
     }
 }
 
@@ -35,7 +36,6 @@ void printArr(int arr[], int arrSize)
 
 int main()
 {
-    // Bubble Sort
     int A[] = {50, 70, 60, 40, 80, 10, 20, 30};
 
     int aSize = sizeof(A) / sizeof(A[0]);
@@ -43,9 +43,9 @@ int main()
     std::cout << "A: ";
     printArr(A, aSize);
 
-    bubbleSort(A, aSize);
+    selectionSort(A, aSize);
 
-    std::cout << "A after Bubble Sort: ";
+    std::cout << "A after Selection Sort: ";
     printArr(A, aSize);
 
     return 0;

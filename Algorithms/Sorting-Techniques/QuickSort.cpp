@@ -1,6 +1,6 @@
 #include <iostream>
 
-// QUICK SORT
+// QUICK SORT (Not Adaptive & Not Stable)
 // Time Average & Best: O(n logn) Time Worst: O(n^2) || Space: O(n logn)
 
 void printArr(int arr[], int arrSize)
