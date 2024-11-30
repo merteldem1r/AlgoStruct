@@ -1,7 +1,5 @@
 #include <iostream>
 
-using namespace std;
-
 // HEAD RECURSION
 // when the first statement is the recursion call
 
@@ -25,7 +23,7 @@ void funRecursion(int n) // Time: O(n) || Space: O(n)
     if (n > 0)
     {
         funRecursion(n - 1);
-        cout << n << " ";
+        std::cout << n << " ";
     }
 };
 
@@ -35,7 +33,7 @@ void funLoop(int n) // Time: O(n) || Space: O(1)
 
     while (i <= n)
     {
-        cout << i << " ";
+        std::cout << i << " ";
         ++i;
     }
 }
@@ -46,7 +44,7 @@ void funLoop(int n) // Time: O(n) || Space: O(1)
 int main()
 {
     funRecursion(3); // 1 2 3
-    cout << endl;
+    std::cout << std::endl;
     funLoop(3); // 1 2 3
 
     return 0;

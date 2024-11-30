@@ -1,7 +1,5 @@
 #include <iostream>
 
-using namespace std;
-
 // NESTED RECURSION
 // recursive call taking parameter as recursive call
 // recursion inside recursion
@@ -63,7 +61,7 @@ fun(95)
 int main()
 {
     int a = fun(95);
-    cout << a << endl; // 91
+    std::cout << a << std::endl; // 91
 
     return 0;
 }

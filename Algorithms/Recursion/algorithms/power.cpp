@@ -1,7 +1,5 @@
 #include <iostream>
 
-using namespace std;
-
 // Power (m^n)
 
 int powerRec(int base, int power) // Time: O(n) | Space: O(n)
@@ -47,11 +45,11 @@ int powerRecFast(int base, int power) // Time: O(logN) | Space: O(logN)
 int main()
 {
 
-    cout << "powerRec: " << powerRec(3, 4) << endl;   // 81
-    cout << "powerLoop: " << powerLoop(2, 0) << endl; // 0
+    std::cout << "powerRec: " << powerRec(3, 4) << std::endl;   // 81
+    std::cout << "powerLoop: " << powerLoop(2, 0) << std::endl; // 0
 
     // Efficient
-    cout << "powerRecFast: " << powerRecFast(2, 8) << endl; // 256
+    std::cout << "powerRecFast: " << powerRecFast(2, 8) << std::endl; // 256
 
     return 0;
 }

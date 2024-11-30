@@ -1,18 +1,16 @@
 #include <iostream>
 
-using namespace std;
-
 // QUICK SORT
 // Time Average & Best: O(n logn) Time Worst: O(n^2) || Space: O(n logn)
 
 void printArr(int arr[], int arrSize)
 {
-    cout << "[ ";
+    std::cout << "[ ";
     for (int i = 0; i < arrSize; ++i)
     {
-        cout << arr[i] << " ";
+        std::cout << arr[i] << " ";
     }
-    cout << "]" << endl;
+    std::cout << "]" << std::endl;
 }
 
 int partition(int A[], int low, int high)
@@ -33,11 +31,11 @@ int partition(int A[], int low, int high)
         }
         if (left < right)
         {
-            swap(A[left], A[right]);
+            std::swap(A[left], A[right]);
         }
     }
 
-    swap(A[low], A[right]);
+    std::swap(A[low], A[right]);
     return right;
 }
 
@@ -58,12 +56,12 @@ int main()
 
     int aSize = sizeof(A) / sizeof(A[0]);
 
-    cout << "A: ";
+    std::cout << "A: ";
     printArr(A, aSize);
 
     quickSort(A, 0, aSize - 1);
 
-    cout << "A after Quick Sort: ";
+    std::cout << "A after Quick Sort: ";
     printArr(A, aSize);
 
     return 0;

@@ -2,8 +2,6 @@
 #include <vector>
 #include <algorithm>
 
-using namespace std;
-
 // nCr -> Combination Formula
 
 // C(n, r) = n! / [r! (n - r)!]
@@ -81,7 +79,7 @@ int numerDenumerCalculation(int n, int r) // Time: O(r) || Space: O(1)
     if (r == 0 || r == n || n - 1 == 1)
         return 1;
 
-    int lowestR = min(r, n - r);
+    int lowestR = std::min(r, n - r);
 
     int numer = 1;
     int denumer = 1;
@@ -98,15 +96,15 @@ int numerDenumerCalculation(int n, int r) // Time: O(r) || Space: O(1)
 int main()
 {
     // Using Factorial
-    cout << "Combination Factorial: " << combinationFactorial(3, 2) << endl; // 3
-    cout << "Combination Factorial: " << combinationFactorial(7, 3) << endl; // 35
+    std::cout << "Combination Factorial: " << combinationFactorial(3, 2) << std::endl; // 3
+    std::cout << "Combination Factorial: " << combinationFactorial(7, 3) << std::endl; // 35
 
     // Using Pascal Triangle
-    cout << "Combination Pascal: " << combinationFactorial(8, 3) << endl; //
+    std::cout << "Combination Pascal: " << combinationFactorial(8, 3) << std::endl; //
 
     // Using Numerator Denumerator Method
-    cout << "combination Numerator Denumerator: " << combinationFactorial(5, 4) << endl;  // 5
-    cout << "combination Numerator Denumerator: " << combinationFactorial(12, 4) << endl; // 495
+    std::cout << "combination Numerator Denumerator: " << combinationFactorial(5, 4) << std::endl;  // 5
+    std::cout << "combination Numerator Denumerator: " << combinationFactorial(12, 4) << std::endl; // 495
 
     return 0;
 }

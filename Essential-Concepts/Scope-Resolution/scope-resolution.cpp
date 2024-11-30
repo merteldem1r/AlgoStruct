@@ -1,7 +1,5 @@
 #include <iostream>
 
-using namespace std;
-
 int x = 10; // Global variable
 
 class MyClass
@@ -12,14 +10,14 @@ public:
     static int count; // Static member declaration
     static void displayCount()
     {
-        cout << "Count: " << count << endl;
+        std::cout << "Count: " << count << std::endl;
     }
 };
 
 // Definition outside the class using scope resolution
 void MyClass::display()
 {
-    cout << "Hello, World!" << endl;
+    std::cout << "Hello, World!" << std::endl;
 }
 
 int MyClass::count = 5; // Definition of static member outside the class
@@ -34,8 +32,8 @@ int main()
     // 1) Accessing Global Variables:
 
     int x = 20; // Local variable
-    cout << "Local x: " << x << endl;
-    cout << "Global x: " << ::x << endl; // Accessing global variable
+    std::cout << "Local x: " << x << std::endl;
+    std::cout << "Global x: " << ::x << std::endl; // Accessing global variable
 
     // Local x: 20
     // Global x: 10
@@ -51,7 +49,7 @@ int main()
 
     // 4) Accessing Namespaces:
 
-    cout << "Value: " << MyNamespace::value << endl; // Accessing value inside namespace // Value: 42
+    std::cout << "Value: " << MyNamespace::value << std::endl; // Accessing value inside namespace // Value: 42
 
     return 0;
 }

@@ -1,7 +1,5 @@
 #include <iostream>
 
-using namespace std;
-
 int main()
 {
     int A[5];
@@ -10,13 +8,13 @@ int main()
 
     int B[] = {1, 2, 3};
 
-    cout << "sizeof(A): " << sizeof(A) << endl;           // 20 bytes
-    cout << "sizeof(B): " << sizeof(B) << endl;           // 12 bytes
-    cout << "size: " << sizeof(B) / sizeof(B[0]) << endl; // 3
+    std::cout << "sizeof(A): " << sizeof(A) << std::endl;           // 20 bytes
+    std::cout << "sizeof(B): " << sizeof(B) << std::endl;           // 12 bytes
+    std::cout << "size: " << sizeof(B) / sizeof(B[0]) << std::endl; // 3
 
     for (auto num : B)
     {
-        cout << "num: " << num << endl;
+        std::cout << "num: " << num << std::endl;
     }
 
     return 0;

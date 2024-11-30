@@ -151,7 +151,7 @@ The **algorithms** are used to **solve problems or provide functionality**. Algo
 
 **Types Of Recursion**
 
-- _Tail Recursion_ - _Head Recursion_ - Tree Recursion* - Indirect Recursion* - _Nested Recursion_
+- _Tail Recursion_ - _Head Recursion_ - _Tree Recursion_ - _Indirect Recursion_ - _Nested Recursion_
 
   Folder: [Types-of-Recursion](Algorithms/Recursion/Types-of-Recursion)
 

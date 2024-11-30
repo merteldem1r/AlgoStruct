@@ -1,7 +1,5 @@
 #include <iostream>
 
-using namespace std;
-
 // TAIL RECURSION
 // if the recursion call is the last statement in the function it names as Tail Recursion
 
@@ -35,7 +33,7 @@ void funRecursion(int n) // Time: O(n) || Space: O(n)
 {
     if (n > 0)
     {
-        cout << n << " ";
+        std::cout << n << " ";
         funRecursion(n - 1);
     }
 };
@@ -44,7 +42,7 @@ void funLoop(int n) // Time: O(n) || Space: O(1)
 {
     while (n > 0)
     {
-        cout << n << " ";
+        std::cout << n << " ";
         --n;
     }
 }
@@ -54,7 +52,7 @@ void funLoop(int n) // Time: O(n) || Space: O(1)
 int main()
 {
     funRecursion(3); // 3 2 1
-    cout << endl;
+    std::cout << std::endl;
     funLoop(3); // 3 2 1
 
     return 0;

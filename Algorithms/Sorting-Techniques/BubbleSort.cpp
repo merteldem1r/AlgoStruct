@@ -1,22 +1,25 @@
 #include <iostream>
 
-// INSERTION SORT
+// BUBBLE SORT
 // Time Average & Worst: O(n^2) Time Best: O(n) || Space: O(1)
 
-void insertionSort(int arr[], int arrSize)
+void bubbleSort(int arr[], int arrSize)
 {
-    for (int i = 1; i < arrSize; ++i)
+    for (int i = 0; i < arrSize - 1; ++i)
     {
-        const int key = arr[i];
-        int j = i - 1;
+        bool swapped = false;
 
-        while (j >= 0 && key < arr[j])
+        for (int j = 0; j < arrSize - i - 1; ++j)
         {
-            arr[j + 1] = arr[j];
-            --j;
+            if (arr[j] > arr[j + 1])
+            {
+                std::swap(arr[j], arr[j + 1]);
+                swapped = true;
+            }
         }
 
-        arr[j + 1] = key;
+        if (!swapped)
+            break;
     }
 }
 
@@ -40,9 +43,9 @@ int main()
     std::cout << "A: ";
     printArr(A, aSize);
 
-    insertionSort(A, aSize);
+    bubbleSort(A, aSize);
 
-    std::cout << "A after Insertion Sort: ";
+    std::cout << "A after Bubble Sort: ";
     printArr(A, aSize);
 
     return 0;

@@ -1,7 +1,5 @@
 #include <iostream>
 
-using namespace std;
-
 struct Rectangle
 {
     int length;
@@ -14,8 +12,8 @@ int main()
 
     int *p = &a; // pointer occupies memory on the Stack
 
-    cout << p << endl;  // e.g: 0x43ca9ff....
-    cout << *p << endl; // 10
+    std::cout << p << std::endl;  // e.g: 0x43ca9ff....
+    std::cout << *p << std::endl; // 10
 
     // pointer to an array
     int A[5] = {1, 2, 3, 4, 5};
@@ -26,13 +24,13 @@ int main()
 
     for (int i = 0; i < 5; ++i)
     {
-        cout << "aPtr[i]: " << aPtr[i] << endl;
+        std::cout << "aPtr[i]: " << aPtr[i] << std::endl;
     }
 
     int *aEnd = A + 5;
     while (aPtr < aEnd)
     {
-        cout << "*aPtr: " << *aPtr << endl;
+        std::cout << "*aPtr: " << *aPtr << std::endl;
         ++aPtr;
     }
 
@@ -44,11 +42,11 @@ int main()
     Rectangle *p5;
 
     // whatever the type of the pointer the size same which is 8 bytes (64-bit machines)
-    cout << "sizof int pointer: " << sizeof(p1) << endl;       // 8
-    cout << "sizof char pointer: " << sizeof(p2) << endl;      // 8
-    cout << "sizof float pointer: " << sizeof(p3) << endl;     // 8
-    cout << "sizof double pointer: " << sizeof(p4) << endl;    // 8
-    cout << "sizof Rectangle pointer: " << sizeof(p5) << endl; // 8
+    std::cout << "sizof int pointer: " << sizeof(p1) << std::endl;       // 8
+    std::cout << "sizof char pointer: " << sizeof(p2) << std::endl;      // 8
+    std::cout << "sizof float pointer: " << sizeof(p3) << std::endl;     // 8
+    std::cout << "sizof double pointer: " << sizeof(p4) << std::endl;    // 8
+    std::cout << "sizof Rectangle pointer: " << sizeof(p5) << std::endl; // 8
 
     // ******************
 
@@ -62,11 +60,11 @@ int main()
 
     if (ptr == nullptr)
     {
-        cout << "Null pointer has been returned" << endl;
+        std::cout << "Null pointer has been returned" << std::endl;
     }
     else
     {
-        cout << "Memory has been allocated at address: " << ptr << endl;
+        std::cout << "Memory has been allocated at address: " << ptr << std::endl;
     }
 
     free(ptr);
@@ -79,15 +77,15 @@ int main()
     ptr2[3] = 4;
     ptr2[4] = 5;
 
-    cout << "ptr2[3] array inside Heap: " << ptr2[3] << endl; // 4
+    std::cout << "ptr2[3] array inside Heap: " << ptr2[3] << std::endl; // 4
 
     if (ptr == nullptr)
     {
-        cout << "ptr2 allocation failure" << endl;
+        std::cout << "ptr2 allocation failure" << std::endl;
     }
     else
     {
-        cout << "ptr2 address: " << ptr2 << endl;
+        std::cout << "ptr2 address: " << ptr2 << std::endl;
     }
 
     delete[] ptr2;
@@ -100,16 +98,16 @@ int main()
     (*rPtr).breadth = 4; // C style
     rPtr->length = 2;    // C++ style
 
-    cout << "r.length: " << r.length << endl;   // 2
-    cout << "r.breadth: " << r.breadth << endl; // 4
+    std::cout << "r.length: " << r.length << std::endl;   // 2
+    std::cout << "r.breadth: " << r.breadth << std::endl; // 4
 
     // Creating Rectangle dinamically in Heap
     Rectangle *dRec = new Rectangle; // allocacating memory in Heap
     dRec->length = 6;
     dRec->breadth = 3;
 
-    cout << "dRec length: " << dRec->length << endl;   // 6
-    cout << "dRec breadth: " << dRec->breadth << endl; // 3
+    std::cout << "dRec length: " << dRec->length << std::endl;   // 6
+    std::cout << "dRec breadth: " << dRec->breadth << std::endl; // 3
 
     delete dRec;
 

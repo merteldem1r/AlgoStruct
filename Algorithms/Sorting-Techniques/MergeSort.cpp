@@ -1,7 +1,5 @@
 #include <iostream>
 
-using namespace std;
-
 // MERGE SORT
 // Time Worst & Best & Average: O(n logn) || Space: O(n)
 
@@ -80,12 +78,12 @@ void recursiveMergeSort(int A[], int arrSize, int l, int h)
 
 void printArr(int arr[], int arrSize)
 {
-    cout << "[ ";
+    std::cout << "[ ";
     for (int i = 0; i < arrSize; ++i)
     {
-        cout << arr[i] << " ";
+        std::cout << arr[i] << " ";
     }
-    cout << "]" << endl;
+    std::cout << "]" << std::endl;
 }
 
 int main()
@@ -95,12 +93,12 @@ int main()
 
     int aSize = sizeof(A) / sizeof(A[0]);
 
-    cout << "A: ";
+    std::cout << "A: ";
     printArr(A, aSize);
 
     iterativeMergeSort(A, aSize);
 
-    cout << "A after Iterative Merge Sort: ";
+    std::cout << "A after Iterative Merge Sort: ";
     printArr(A, aSize);
 
     // Recursive Merge Sort
@@ -109,12 +107,12 @@ int main()
 
     int bSize = sizeof(B) / sizeof(B[0]);
 
-    cout << "B: ";
+    std::cout << "B: ";
     printArr(B, bSize);
 
     recursiveMergeSort(B, bSize, 0, bSize - 1);
 
-    cout << "B after Iterative Merge Sort: ";
+    std::cout << "B after Iterative Merge Sort: ";
     printArr(B, bSize);
 
     return 0;

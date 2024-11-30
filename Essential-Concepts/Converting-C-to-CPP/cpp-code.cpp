@@ -1,7 +1,5 @@
 #include <iostream>
 
-using namespace std;
-
 class Rectangle
 {
 private:
@@ -28,11 +26,11 @@ public:
 
 int main()
 {
-    Rectangle r = {10, 5};                // object
-    cout << "area: " << r.area() << endl; // 50;
+    Rectangle r = {10, 5};                          // object
+    std::cout << "area: " << r.area() << std::endl; // 50;
 
     r.changeLength(20);
 
-    cout << "area: " << r.area() << endl; // 100;
+    std::cout << "area: " << r.area() << std::endl; // 100;
     return 0;
 }

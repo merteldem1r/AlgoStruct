@@ -1,7 +1,5 @@
 #include <iostream>
 
-using namespace std;
-
 // 1) Function Templates
 
 template <typename T>
@@ -51,16 +49,16 @@ T Arithametic<T>::sub()
 int main()
 {
     // 1) Function Templates
-    cout << myMax<int>(3, 7) << endl;        // 7
-    cout << myMax<double>(3.0, 7.0) << endl; // 7
-    cout << myMax<char>('g', 'e') << endl;   // g
+    std::cout << myMax<int>(3, 7) << std::endl;        // 7
+    std::cout << myMax<double>(3.0, 7.0) << std::endl; // 7
+    std::cout << myMax<char>('g', 'e') << std::endl;   // g
 
     // 2) Class Templates
     Arithametic<int> ar(10, 5);
     Arithametic<float> ar2(2.5, 4.2);
 
-    cout << ar.add() << endl;  // 15
-    cout << ar2.sub() << endl; // -1.7
+    std::cout << ar.add() << std::endl;  // 15
+    std::cout << ar2.sub() << std::endl; // -1.7
 
     return 0;
 }

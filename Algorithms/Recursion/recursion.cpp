@@ -1,7 +1,5 @@
 #include <iostream>
 
-using namespace std;
-
 // Simple difference between two Recursion functions:
 
 // first PRINT then CALL itself || Time Complexity: O(n) Space Complexity: O(n)
@@ -9,7 +7,7 @@ void func1(int x)
 {
     if (x > 0)
     {
-        cout << x << endl;
+        std::cout << x << std::endl;
         func1(x - 1);
     }
 }
@@ -20,7 +18,7 @@ void func2(int x)
     if (x > 0)
     {
         func2(x - 1);
-        cout << x << endl;
+        std::cout << x << std::endl;
     }
 }
 
@@ -116,18 +114,18 @@ int main()
 {
     int x = 3;
 
-    cout << "func1 outputs: " << endl;
+    std::cout << "func1 outputs: " << std::endl;
     func1(x); // 3 2 1
 
-    cout << "func2 outputs: " << endl;
+    std::cout << "func2 outputs: " << std::endl;
     func2(x); // 1 2 3
 
     // Local and StaticS
 
     int a = 5;
 
-    cout << "fun: " << fun(a) << endl;             // 15
-    cout << "funStatic: " << funStatic(a) << endl; // 25
+    std::cout << "fun: " << fun(a) << std::endl;             // 15
+    std::cout << "funStatic: " << funStatic(a) << std::endl; // 25
 
     return 0;
 }

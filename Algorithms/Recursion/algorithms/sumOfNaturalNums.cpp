@@ -1,7 +1,5 @@
 #include <iostream>
 
-using namespace std;
-
 // Sum Of Natural Numbers
 
 int sumRec(int n) // Time: O(n) | Space: O(n)
@@ -44,10 +42,10 @@ int sumWithFormula(int n) // Time: O(1) | Space: O(1)
 int main()
 {
 
-    cout << "sumRec: " << sumRec(0) << endl;                 // 3
-    cout << "sumRecMemo: " << sumRecMemo(4) << endl;         // 10
-    cout << "sumLoop: " << sumLoop(5) << endl;               // 15
-    cout << "sumWithFormula: " << sumWithFormula(7) << endl; // 28
+    std::cout << "sumRec: " << sumRec(0) << std::endl;                 // 3
+    std::cout << "sumRecMemo: " << sumRecMemo(4) << std::endl;         // 10
+    std::cout << "sumLoop: " << sumLoop(5) << std::endl;               // 15
+    std::cout << "sumWithFormula: " << sumWithFormula(7) << std::endl; // 28
 
     return 0;
 }

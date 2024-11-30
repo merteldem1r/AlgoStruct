@@ -1,7 +1,5 @@
 #include <iostream>
 
-using namespace std;
-
 // TREE RECURSION
 
 /*
@@ -45,7 +43,7 @@ void fun(int n) // Time: O(2^n) || Space: O(n)
 {
     if (n > 0)
     {
-        cout << n << " ";
+        std::cout << n << " ";
         fun(n - 1); // will be performed at CALLING time
         fun(n - 1); // will be performed at RETURNING time
     }
@@ -84,9 +82,9 @@ int main()
 {
     fun(3); // 3 2 1 1 2 1 1
 
-    cout << endl;
+    std::cout << std::endl;
 
-    cout << "fibonacci: " << fibonacci(6) << endl; // 8
+    std::cout << "fibonacci: " << fibonacci(6) << std::endl; // 8
 
     return 0;
 }

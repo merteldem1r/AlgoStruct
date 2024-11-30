@@ -1,20 +1,18 @@
 #include <iostream>
 #include <string>
 
-using namespace std;
-
 class BankAccount
 {
 private:
-    string accountNumber; // Encapsulation: private data member
+    std::string accountNumber; // Encapsulation: private data member
     double balance;
 
 protected:
-    string ownerName; // Protected member accessible by derived classes
+    std::string ownerName; // Protected member accessible by derived classes
 
 public:
     // Constructor
-    BankAccount(string accNum, string owner, double initialBalance) : accountNumber(accNum), ownerName(owner), balance(initialBalance) {};
+    BankAccount(std::string accNum, std::string owner, double initialBalance) : accountNumber(accNum), ownerName(owner), balance(initialBalance) {};
 
     // Public method to get account balance (encapsulation: controlled access)
     double getBalance() const
@@ -34,15 +32,15 @@ public:
         if (amount <= balance)
             balance -= amount;
         else
-            cout << "Insufficient funds!" << endl;
+            std::cout << "Insufficient funds!" << std::endl;
     }
 
     // Public method to display account information
     void displayAccountInfo() const
     {
-        cout << "Account Number: " << accountNumber << endl;
-        cout << "Owner Name: " << ownerName << endl;
-        cout << "Balance: $" << balance << endl;
+        std::cout << "Account Number: " << accountNumber << std::endl;
+        std::cout << "Owner Name: " << ownerName << std::endl;
+        std::cout << "Balance: $" << balance << std::endl;
     }
 
     // Destructor
@@ -56,11 +54,11 @@ private:
 
 public:
     // Constructor
-    SavingsAccount(string accNum, string owner, double initialBalance, double rate) : BankAccount(accNum, owner, initialBalance), interestRate(rate) {}
+    SavingsAccount(std::string accNum, std::string owner, double initialBalance, double rate) : BankAccount(accNum, owner, initialBalance), interestRate(rate) {}
 
     void withdraw(double amount) override
     {
-        cout << "Withdrawals not allowed in savings accounts!" << endl;
+        std::cout << "Withdrawals not allowed in savings accounts!" << std::endl;
     }
 
     // Method to calculate and add interest to the balance
@@ -78,7 +76,7 @@ private:
 
 public:
     // Constructor
-    CheckingAccount(string accNum, string owner, double initialBalance, double overdraft) : BankAccount(accNum, owner, initialBalance), overdraftLimit(overdraft) {}
+    CheckingAccount(std::string accNum, std::string owner, double initialBalance, double overdraft) : BankAccount(accNum, owner, initialBalance), overdraftLimit(overdraft) {}
 
     // Overriding the withdraw method with additional functionality (polymorphism)
     void withdraw(double amount) override
@@ -89,7 +87,7 @@ public:
         }
         else
         {
-            cout << "Exceeds overdraft limit!" << endl;
+            std::cout << "Exceeds overdraft limit!" << std::endl;
         }
     }
 };
@@ -105,15 +103,15 @@ public:
 class SpecificCustomer : public BankCustomer
 {
 private:
-    string name;
+    std::string name;
     int age;
 
 public:
-    SpecificCustomer(string name, int age) : name(name), age(age) {}
+    SpecificCustomer(std::string name, int age) : name(name), age(age) {}
 
     void getCustomerInfo() override
     {
-        cout << "Customer Name: " << name << ", Age: " << age << endl;
+        std::cout << "Customer Name: " << name << ", Age: " << age << std::endl;
     }
 };
 

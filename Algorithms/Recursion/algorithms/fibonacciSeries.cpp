@@ -1,8 +1,6 @@
 #include <iostream>
 #include <vector>
 
-using namespace std;
-
 // Fibonacci Series
 
 // f(n) = 0,1,1,2,3,5,8,13,21,34 ...
@@ -54,7 +52,7 @@ int fibonacciMemoLoop(int n) // Time O(n) | Space(n)
     if (n <= 1)
         return n;
 
-    vector<int> arr(n + 1);
+    std::vector<int> arr(n + 1);
     arr[0] = 0;
     arr[1] = 1;
 
@@ -66,7 +64,7 @@ int fibonacciMemoLoop(int n) // Time O(n) | Space(n)
     return arr[n];
 }
 
-int fibonacciMemoRec(int n, vector<int> &arr) // Time O(n) | Space(n)
+int fibonacciMemoRec(int n, std::vector<int> &arr) // Time O(n) | Space(n)
 {
     if (n <= 1)
         return n;
@@ -106,15 +104,15 @@ fibonacciMemoRec(5)
 
 int fibonacciHelperRec(int n)
 {
-    vector<int> arr(n + 1, -1);
+    std::vector<int> arr(n + 1, -1);
     return fibonacciMemoRec(n, arr);
 }
 
 int main()
 {
-    cout << "fibonacciNaive: " << fibonacciNaive(3) << endl;         // 2
-    cout << "fibonacciMemoLoop: " << fibonacciMemoLoop(9) << endl;   // 34
-    cout << "fibonacciHelperRec: " << fibonacciHelperRec(4) << endl; // 3
+    std::cout << "fibonacciNaive: " << fibonacciNaive(3) << std::endl;         // 2
+    std::cout << "fibonacciMemoLoop: " << fibonacciMemoLoop(9) << std::endl;   // 34
+    std::cout << "fibonacciHelperRec: " << fibonacciHelperRec(4) << std::endl; // 3
 
     return 0;
 }

@@ -2,8 +2,6 @@
 #include <vector>
 #include <string>
 
-using namespace std;
-
 // Function having parameters as references
 void swap(int &first, int &second)
 {
@@ -18,25 +16,25 @@ int main()
     int a = 10;
     int &ref = a;
 
-    cout << "a: " << a << endl; // 10
+    std::cout << "a: " << a << std::endl; // 10
 
     ref = 20;
 
-    cout << "a: " << a << endl; // 20
+    std::cout << "a: " << a << std::endl; // 20
 
-    cout << "&a: " << &a << endl;     // 0xfcb55ff804
-    cout << "&ref: " << &ref << endl; // 0xfcb55ff804
+    std::cout << "&a: " << &a << std::endl;     // 0xfcb55ff804
+    std::cout << "&ref: " << &ref << std::endl; // 0xfcb55ff804
 
     int x = 1;
     int y = 2;
 
-    swap(x, y);
+    std::swap(x, y);
 
-    cout << "x: " << x << " y: " << y << endl; // x: 2 y: 1
+    std::cout << "x: " << x << " y: " << y << std::endl; // x: 2 y: 1
 
     // Using reference in for each loop to modify all elements
 
-    vector<int> nums = {10, 20, 30, 40};
+    std::vector<int> nums = {10, 20, 30, 40};
 
     for (auto &num : nums)
     {
@@ -45,15 +43,15 @@ int main()
 
     for (int num : nums)
     {
-        cout << "num: " << num << endl;
+        std::cout << "num: " << num << std::endl;
     }
 
-    vector<string> vect = {"hello world", "cpp essentials", "references examples"};
+    std::vector<std::string> vect = {"hello world", "cpp essentials", "references examples"};
 
-    // We avoid copy of the whole string
+    // We avoid copy of the whole std::string
     for (const auto &x : vect)
     {
-        cout << x << endl;
+        std::cout << x << std::endl;
     }
 
     return 0;

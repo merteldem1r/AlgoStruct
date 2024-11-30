@@ -1,7 +1,5 @@
 #include <iostream>
 
-using namespace std;
-
 // Taylor Series
 
 /*
@@ -69,9 +67,9 @@ double taylorHernerRec(int x, int n)
 
 int main()
 {
-    cout << "taylorSeries: " << taylorSeries(1, 10) << endl;      // 2.71828
-    cout << "taylorHorner: " << taylorHorner(1, 4) << endl;       // 2.70833
-    cout << "taylorHernerRec: " << taylorHernerRec(1, 4) << endl; // 2.70833
+    std::cout << "taylorSeries: " << taylorSeries(1, 10) << std::endl;      // 2.71828
+    std::cout << "taylorHorner: " << taylorHorner(1, 4) << std::endl;       // 2.70833
+    std::cout << "taylorHernerRec: " << taylorHernerRec(1, 4) << std::endl; // 2.70833
 
     return 0;
 }

@@ -1,7 +1,5 @@
 #include <iostream>
 
-using namespace std;
-
 /*
 Generics is the idea to allow type (Integer, String, … etc and user-defined types) to be a parameter to methods, classes and interfaces. For example, classes like an array, map, etc, which can be used using generics very efficiently. We can use them for any type.
 
@@ -55,7 +53,7 @@ void Array<A>::print()
 {
     for (int i = 0; i < size; ++i)
     {
-        cout << *(ptr + i) << endl;
+        std::cout << *(ptr + i) << std::endl;
     }
 }
 
@@ -70,16 +68,16 @@ class A
 public:
     A()
     {
-        cout << "Constructor Called" << endl;
+        std::cout << "Constructor Called" << std::endl;
     }
 };
 
 int main()
 {
     // 1)
-    cout << myMax<int>(3, 7) << endl;        // 7
-    cout << myMax<double>(3.0, 7.0) << endl; // 7
-    cout << myMax<char>('a', 'b') << endl;   // b
+    std::cout << myMax<int>(3, 7) << std::endl;        // 7
+    std::cout << myMax<double>(3.0, 7.0) << std::endl; // 7
+    std::cout << myMax<char>('a', 'b') << std::endl;   // b
 
     // 2)
     int arr[5] = {1, 2, 3, 4, 5};

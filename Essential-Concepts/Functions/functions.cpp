@@ -1,7 +1,5 @@
 #include <iostream>
 
-using namespace std;
-
 //  Pass by Value
 int add(int a, int b) // prototype | (int a, int b) => formal parameters
 {
@@ -31,7 +29,7 @@ void printArr(int A[], int n) // only local variable is "n", instead of writing 
 {
     for (int i = 0; i < n; ++i)
     {
-        cout << "A[i]: " << A[i] << endl;
+        std::cout << "A[i]: " << A[i] << std::endl;
     }
 
     A[n - 1] = 25; // modify actual array
@@ -86,13 +84,13 @@ typedef void (*CallbackFun)();
 
 void performeFunction(CallbackFun callback)
 {
-    cout << "Performing an action..." << endl;
+    std::cout << "Performing an action..." << std::endl;
     callback();
 }
 
 void sayHello()
 {
-    cout << "Hello!" << endl;
+    std::cout << "Hello!" << std::endl;
 }
 
 // Function declarations for array of function pointers
@@ -119,28 +117,28 @@ int main()
 
     int z = add(x, y); // (x,y) => actual parameters
 
-    cout << "z: " << z << endl; // 7
+    std::cout << "z: " << z << std::endl; // 7
 
     // Pass by Address ****
 
     int a = 1, b = 2;
     swap(&a, &b); // passing address
 
-    cout << "a: " << a << " b: " << b << endl; // a: 2 b :1
+    std::cout << "a: " << a << " b: " << b << std::endl; // a: 2 b :1
 
     // Pass by Reference *****
 
     int i = 1, j = 2;
     swapRef(i, j);
 
-    cout << "i: " << i << " j: " << j << endl; // i: 2 j :1
+    std::cout << "i: " << i << " j: " << j << std::endl; // i: 2 j :1
 
     // Passing array
     int A[5] = {1, 2, 3, 4, 5};
     int ASize = sizeof(A) / sizeof(A[0]);
     printArr(A, ASize);
 
-    cout << "A[ASize - 1]: " << A[ASize - 1] << endl; // 25
+    std::cout << "A[ASize - 1]: " << A[ASize - 1] << std::endl; // 25
 
     // Returning Array
     int *B;
@@ -155,7 +153,7 @@ int main()
 
     for (int i = 0; i < size; ++i)
     {
-        cout << "B[i]: " << B[i] << endl;
+        std::cout << "B[i]: " << B[i] << std::endl;
     }
 
     delete[] B;
@@ -164,22 +162,22 @@ int main()
     Rectangle r = {10, 5};
 
     // call by value
-    cout << "area of r: " << area(r) << endl; // 50;
+    std::cout << "area of r: " << area(r) << std::endl; // 50;
 
     // call by reference
-    cout << "area of r: " << rArea(r) << endl;  // 50;
-    cout << "r.length: " << r.length << endl;   // 15;
-    cout << "r.breadth: " << r.breadth << endl; // 20;
+    std::cout << "area of r: " << rArea(r) << std::endl;  // 50;
+    std::cout << "r.length: " << r.length << std::endl;   // 15;
+    std::cout << "r.breadth: " << r.breadth << std::endl; // 20;
 
     // call by address
-    changeLen(&r);                            // pass adress
-    cout << "r.length: " << r.length << endl; // 30;
+    changeLen(&r);                                      // pass adress
+    std::cout << "r.length: " << r.length << std::endl; // 30;
 
     // function which return pointer to structure object that created on Heap
     Rectangle *rPtr = retRec();
 
-    cout << "rPtr->length: " << rPtr->length << endl;   // 30
-    cout << "rPtr->breadth: " << rPtr->breadth << endl; // 40
+    std::cout << "rPtr->length: " << rPtr->length << std::endl;   // 30
+    std::cout << "rPtr->breadth: " << rPtr->breadth << std::endl; // 40
 
     delete rPtr;
 
@@ -193,9 +191,9 @@ int main()
     int t = 2, e = 3;
 
     // Access and call the functions using the arrae of function pointers
-    cout << "Add: " << funcArray[0](t, e) << endl;      // Calls add(10, 5)
-    cout << "Subtract: " << funcArray[1](t, e) << endl; // Calls subtract(10, 5)
-    cout << "Multiply: " << funcArray[2](t, e) << endl; // Calls multiply(10, 5)
+    std::cout << "Add: " << funcArray[0](t, e) << std::endl;      // Calls add(10, 5)
+    std::cout << "Subtract: " << funcArray[1](t, e) << std::endl; // Calls subtract(10, 5)
+    std::cout << "Multiply: " << funcArray[2](t, e) << std::endl; // Calls multiply(10, 5)
 
     return 0;
 }

@@ -1,7 +1,5 @@
 #include <iostream>
 
-using namespace std;
-
 // Factorial
 
 int factorial(int n) // Time: O(n) | Space: O(n)
@@ -29,8 +27,8 @@ int factorialLoop(int n) // // Time: O(n) | Space: O(1)
 int main()
 {
 
-    cout << "factorial: " << factorial(5) << endl;         // 120
-    cout << "factorialLoop: " << factorialLoop(4) << endl; // 24
+    std::cout << "factorial: " << factorial(5) << std::endl;         // 120
+    std::cout << "factorialLoop: " << factorialLoop(4) << std::endl; // 24
 
     return 0;
 }
