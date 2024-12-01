@@ -132,7 +132,15 @@ A **template** is a simple yet very powerful tool in C++. The simple idea is to 
 
 ## Data Structures
 
-_coming soon_
+**Data structures** in programming are ways to _organize_, _store_, and _manage_ data efficiently for operations like searching, sorting, and modification. Examples include **arrays, strings, linked lists, stacks, queues, trees, graphs etc.** Each is designed for specific tasks to optimize performance.
+
+### Array Representations
+
+- Declaring & Initializing arrays on Stack and Heap
+- Dimensional Arrays (2D & 3D)
+- Row & Column Major formulas, Formulas for nD & 3D arrays
+
+  Folder: [Arrays-Representations](Data-Structures/Arrays-Representations)
 
 ## Algorithms
 
