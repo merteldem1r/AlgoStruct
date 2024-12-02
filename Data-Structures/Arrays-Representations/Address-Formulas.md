@@ -11,6 +11,8 @@ Address(A[i1][i2][i3][i4]) =
     _L0: is the base address of the array in memory._
     _w: represents the size of each element in memory, typically in bytes._
 
+![word-image-264](https://github.com/user-attachments/assets/4b737a76-cbe3-4bb6-9c3b-145145e993e5)
+
 ### Why the Formula Works:
 
 - Arrays are stored linearly in memory: While arrays might be logically
