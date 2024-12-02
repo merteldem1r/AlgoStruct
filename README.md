@@ -138,9 +138,10 @@ A **template** is a simple yet very powerful tool in C++. The simple idea is to 
 
 - Declaring & Initializing arrays on Stack and Heap
 - Dimensional Arrays (2D & 3D)
-- Row & Column Major formulas, Formulas for nD & 3D arrays (from geekforgeeks.org)
+- Row-Column Major formulas, Address Formulas for 1D, 2D, 3D and nD Arrays
 
   Folder: [Arrays-Representations](Data-Structures/Arrays-Representations)
+  Address Formulas: [Address-Formulas](Data-Structures/Arrays-Representations/Address-Formulas.md)
 
 ## Algorithms
 
