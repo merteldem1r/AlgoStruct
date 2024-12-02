@@ -1,6 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+// ARRAY ADT
+
+#define DISPLAY 1
+#define APPEND 2
+#define INSERT 3
+#define DELETE 4
+#define SEARCH 5
+#define EXIT 0
+
 struct Array
 {
     int *A;
@@ -28,7 +37,7 @@ void Append(struct Array *arr, int num) // Time: O(1)
     ++arr->length;
 }
 
-void Insert(struct Array *arr, int indx, int num) // Time: 0(n)
+void Insert(struct Array *arr, int indx, int num) // Time Worst: O(n) Best: O(1)
 {
     if (arr->size == arr->length)
     {
@@ -55,11 +64,55 @@ void Insert(struct Array *arr, int indx, int num) // Time: 0(n)
     ++arr->length;
 }
 
+int Delete(struct Array *arr, int indx) // Time Worst: O(n) Best: O(1)
+{
+    if (indx < 0 || indx >= arr->length)
+    {
+        fprintf(stderr, "Error: Invalid index for Delete\n");
+        return -1;
+    }
+
+    int x = arr->A[indx];
+
+    for (int i = indx; i < arr->length - 1; ++i)
+    {
+        arr->A[i] = arr->A[i + 1];
+    }
+
+    --arr->length;
+    arr->A[arr->length] = 0;
+
+    return x;
+}
+
+int Search(struct Array *arr, int key) // Time Worst: O(n) Best: O(1)
+{
+    /*
+        Suggestions for Improving Linear Search:
+            1. Transposition (moving element i-1 index on each search)
+            2. Mo to Front (moving element to 0 index)
+            3. Two Pointer Approach (in cases when chance of key on the end is same as on beginning)
+            4. Binary Search (has O(logn) time complexity for sorted elements)
+     */
+
+    for (int i = 0; i < arr->length; ++i)
+    {
+        if (arr->A[i] == key)
+        {
+            return i;
+        }
+    }
+
+    return -1;
+}
+
 void displayOptions()
 {
     printf("\t1: Display\n");
     printf("\t2: Append\n");
     printf("\t3: Insert\n");
+    printf("\t4: Delete\n");
+    printf("\t5: Search\n");
     printf("\t0: Exit\n");
 }
 
@@ -101,6 +154,7 @@ int main()
     arr.length = elemCount;
     Display(&arr);
 
+    // Manipulatios on created Array from console
     while (1)
     {
         printf("Choose Options on Array:  \n");
@@ -112,11 +166,11 @@ int main()
 
         switch (option)
         {
-        case 1:
+        case DISPLAY:
             Display(&arr);
             break;
 
-        case 2:
+        case APPEND:
         {
             printf("\t\tEnter number: ");
             int num;
@@ -124,7 +178,7 @@ int main()
             Append(&arr, num);
             break;
         }
-        case 3:
+        case INSERT:
         {
             int index, num;
             printf("\t\tEnter insert index: ");
@@ -136,8 +190,28 @@ int main()
             Insert(&arr, index, num);
             break;
         }
-        case 0:
+        case DELETE:
+        {
+            int index;
+            printf("\t\tEnter delete index: ");
+            scanf("%d", &index);
+
+            printf("\t\tDeleted value: %d\n", Delete(&arr, index));
             break;
+        }
+        case SEARCH:
+        {
+            int key;
+            printf("\t\tEnter num to search: ");
+            scanf("%d", &key);
+            printf("\t\tFound num at index: %d\n", Search(&arr, key));
+            break;
+        }
+
+        case EXIT:
+            free(arr.A);
+            arr.A = NULL;
+            return 0;
         }
     }
 

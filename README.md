@@ -145,10 +145,12 @@ A **template** is a simple yet very powerful tool in C++. The simple idea is to 
 
 ### Array ADT
 
+The array is a basic **abstract data type** that holds an ordered collection of items accessible by an integer index. These items can be anything from _primitive types_ such as integers to more complex types like instances of classes.
+
 - Console program that create and manipulate with Array from scratch
 - Functions like **Display, Append, Insert, Search, Get & Set, Max/Min, Reverse, Shift/Rotate**
 
-  Array ADT: [Array-ADT](Data-Structures/Array-ADT/array.c)
+  Array ADT: [Array-ADT](Data-Structures/Array-ADT/Array.c)
 
 ## Algorithms
 
