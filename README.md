@@ -143,6 +143,13 @@ A **template** is a simple yet very powerful tool in C++. The simple idea is to 
   Folder: [Arrays-Representations](Data-Structures/Arrays-Representations)
   Address Formulas: [Address-Formulas](Data-Structures/Arrays-Representations/Address-Formulas.md)
 
+### Array ADT
+
+- Console program that create and manipulate with Array from scratch
+- Functions like **Display, Append, Insert, Search, Get & Set, Max/Min, Reverse, Shift/Rotate**
+
+  Array ADT: [Array-ADT](Data-Structures/Array-ADT/array.c)
+
 ## Algorithms
 
 The **algorithms** are used to **solve problems or provide functionality**. Algorithms work exclusively on values; they don't affect the size or storage of a container. Simple algorithms can be implemented within a function. Complex algorithms might require several functions or even a class to implement them.
