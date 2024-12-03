@@ -8,6 +8,12 @@
 #define INSERT 3
 #define DELETE 4
 #define SEARCH 5
+#define GET 6
+#define SET 7
+#define MAX 8
+#define MIN 9
+#define SUM 10
+#define AVG 11
 #define EXIT 0
 
 struct Array
@@ -16,6 +22,22 @@ struct Array
     int size;
     int length;
 };
+
+// Optional: Resize for dynamic array implementation
+void Resize(struct Array *arr)
+{
+    arr->size *= 2;
+    int *temp = (int *)realloc(arr->A, arr->size * sizeof(int));
+
+    if (temp == NULL)
+    {
+        printf("**Error: Memory reallocation failed!");
+        free(arr->A);
+        exit(1);
+    }
+
+    arr->A = temp;
+}
 
 void Display(struct Array *arr) // Time: O(n)
 {
@@ -29,7 +51,7 @@ void Append(struct Array *arr, int num) // Time: O(1)
 {
     if (arr->size == arr->length)
     {
-        fprintf(stderr, "Error: No empty space to Append");
+        printf("\t\t** Error: No empty space to Append");
         return;
     }
 
@@ -37,44 +59,44 @@ void Append(struct Array *arr, int num) // Time: O(1)
     ++arr->length;
 }
 
-void Insert(struct Array *arr, int indx, int num) // Time Worst: O(n) Best: O(1)
+void Insert(struct Array *arr, int index, int num) // Time Worst: O(n) Best: O(1)
 {
     if (arr->size == arr->length)
     {
-        fprintf(stderr, "Error: No empty space to Insert\n");
+        printf("\t\t** Error: No empty space to Insert\n");
         return;
     }
 
-    if (indx < 0 || indx > arr->length)
+    if (index < 0 || index > arr->length)
     {
-        fprintf(stderr, "Error: Invalid index. Index should be between 0 and %d\n", arr->length);
+        printf("\t\t** Error: Invalid index. Index should be between 0 and %d\n", arr->length);
         return;
     }
 
-    if (indx == arr->length)
+    if (index == arr->length)
     {
         Append(arr, num);
         return;
     }
 
-    for (int i = arr->length; i > indx; --i)
+    for (int i = arr->length; i > index; --i)
         arr->A[i] = arr->A[i - 1];
 
-    arr->A[indx] = num;
+    arr->A[index] = num;
     ++arr->length;
 }
 
-int Delete(struct Array *arr, int indx) // Time Worst: O(n) Best: O(1)
+int Delete(struct Array *arr, int index) // Time Worst: O(n) Best: O(1)
 {
-    if (indx < 0 || indx >= arr->length)
+    if (index < 0 || index >= arr->length)
     {
-        fprintf(stderr, "Error: Invalid index for Delete\n");
+        printf("\t\t** Error: Invalid index for Delete\n");
         return -1;
     }
 
-    int x = arr->A[indx];
+    int x = arr->A[index];
 
-    for (int i = indx; i < arr->length - 1; ++i)
+    for (int i = index; i < arr->length - 1; ++i)
     {
         arr->A[i] = arr->A[i + 1];
     }
@@ -106,6 +128,81 @@ int Search(struct Array *arr, int key) // Time Worst: O(n) Best: O(1)
     return -1;
 }
 
+int Get(struct Array *arr, int index) // Time: O(1)
+{
+    if (index < 0 || index >= arr->length)
+    {
+        printf("Error: Invalid index to Get\n");
+        return -1;
+    }
+
+    return arr->A[index];
+}
+
+int Set(struct Array *arr, int index, int num) // Time: O(1)
+{
+    if (index < 0 || index >= arr->length)
+    {
+        printf("Error: Invalid index to Set\n");
+        return -1;
+    }
+
+    return arr->A[index] = num;
+}
+
+int Max(struct Array *arr) // Time: O(n)
+{
+    if (arr->length == 0)
+    {
+        printf("Error: Max number not found\n");
+        return -1;
+    }
+
+    int max = INT_MIN;
+
+    for (int i = 0; i < arr->length; ++i)
+    {
+        if (arr->A[i] > max)
+            max = arr->A[i];
+    }
+
+    return max;
+}
+
+int Min(struct Array *arr) // Time: O(n)
+{
+    if (arr->length == 0)
+    {
+        printf("Error: Min number not found\n");
+        return -1;
+    }
+
+    int min = INT_MAX;
+
+    for (int i = 0; i < arr->length; ++i)
+    {
+        if (arr->A[i] < min)
+            min = arr->A[i];
+    }
+
+    return min;
+}
+
+int Sum(struct Array *arr) // Time: O(n)
+{
+    int sum = 0;
+
+    for (int i = 0; i < arr->length; ++i)
+        sum += arr->A[i];
+
+    return sum;
+}
+
+float Avg(struct Array *arr) // Time: O(n)
+{
+    return (float)Sum(arr) / arr->length;
+}
+
 void displayOptions()
 {
     printf("\t1: Display\n");
@@ -113,6 +210,12 @@ void displayOptions()
     printf("\t3: Insert\n");
     printf("\t4: Delete\n");
     printf("\t5: Search\n");
+    printf("\t6: Get\n");
+    printf("\t7: Set\n");
+    printf("\t8: Max\n");
+    printf("\t9: Min\n");
+    printf("\t10: Sum\n");
+    printf("\t11: Avg\n");
     printf("\t0: Exit\n");
 }
 
@@ -127,7 +230,7 @@ int main()
 
     if (arr.size <= 0)
     {
-        fprintf(stderr, "Error: Array size must be positive\n");
+        printf("\t\t** Error: Array size must be positive\n");
         return 1;
     }
 
@@ -139,7 +242,7 @@ int main()
 
     if (elemCount > arr.size)
     {
-        fprintf(stderr, "Error: Number of elements can not be greater than allocated array size\n");
+        printf("\t\t** Error: Number of elements can not be greater than allocated array size\n");
         free(arr.A);
         return 1;
     }
@@ -196,7 +299,7 @@ int main()
             printf("\t\tEnter delete index: ");
             scanf("%d", &index);
 
-            printf("\t\tDeleted value: %d\n", Delete(&arr, index));
+            printf("-> Deleted value: %d\n", Delete(&arr, index));
             break;
         }
         case SEARCH:
@@ -204,7 +307,46 @@ int main()
             int key;
             printf("\t\tEnter num to search: ");
             scanf("%d", &key);
-            printf("\t\tFound num at index: %d\n", Search(&arr, key));
+            printf("-> Found num at index: %d\n", Search(&arr, key));
+            break;
+        }
+        case GET:
+        {
+            int index;
+            printf("\t\tEnter index to get: ");
+            scanf("%d", &index);
+            printf("-> Found num: %d\n", Get(&arr, index));
+            break;
+        }
+        case SET:
+        {
+            int index, num;
+            printf("\t\tEnter index to set: ");
+            scanf("%d", &index);
+
+            printf("\t\tEnter number to set: ");
+            scanf("%d", &num);
+            printf("-> Setted num: %d\n at index: %d\n", Set(&arr, index, num), index);
+            break;
+        }
+        case MAX:
+        {
+            printf("-> Max found number: %d\n", Max(&arr));
+            break;
+        }
+        case MIN:
+        {
+            printf("-> Min found number: %d\n", Min(&arr));
+            break;
+        }
+        case SUM:
+        {
+            printf("-> Sum of all elements: %d\n", Sum(&arr));
+            break;
+        }
+        case AVG:
+        {
+            printf("-> Average of all elements: %.2f\n", Avg(&arr));
             break;
         }
 
