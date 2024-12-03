@@ -8,6 +8,8 @@ DSA | Data Structures and Algorithms using C & C++ Essential Concepts like Point
 
 ## Essential Concepts of C / C++
 
+![2](https://github.com/user-attachments/assets/bbf5630d-c834-4b5a-8e1b-900b20252e96)
+
 Essential concepts of C / C++ **before diving into DSA**. Arrays, Structures, OOP, Pointer and a lot more with explanation and example code.
 
 ### Array Basics
@@ -132,6 +134,8 @@ A **template** is a simple yet very powerful tool in C++. The simple idea is to 
 
 ## Data Structures
 
+![3](https://github.com/user-attachments/assets/a85a5b26-7660-4ec1-8281-1bd4b14f2029)
+
 **Data structures** in programming are ways to _organize_, _store_, and _manage_ data efficiently for operations like searching, sorting, and modification. Examples include **arrays, strings, linked lists, stacks, queues, trees, graphs etc.** Each is designed for specific tasks to optimize performance.
 
 ### Array Representations
@@ -153,6 +157,8 @@ The array is a basic **abstract data type** that holds an ordered collection of 
   Array ADT: [Array-ADT](Data-Structures/Array-ADT/Array.c)
 
 ## Algorithms
+
+![4](https://github.com/user-attachments/assets/1daa6d18-c241-44b5-831a-c6e38bf89f84)
 
 The **algorithms** are used to **solve problems or provide functionality**. Algorithms work exclusively on values; they don't affect the size or storage of a container. Simple algorithms can be implemented within a function. Complex algorithms might require several functions or even a class to implement them.
 
