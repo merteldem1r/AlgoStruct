@@ -1,5 +1,3 @@
-## Row Major and Column Major Formulas to Calculate Address of Element
-
 ## Row Major formula for nD Arrays:
 
 **Type A[d1][d2][d3][d4];**
