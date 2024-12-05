@@ -14,6 +14,10 @@
 #define MIN 9
 #define SUM 10
 #define AVG 11
+#define REVERSE 12
+#define LEFT_SHIFT 13
+#define RIGHT_SHIFT 14
+#define IS_SORTED 16
 #define EXIT 0
 
 struct Array
@@ -203,20 +207,67 @@ float Avg(struct Array *arr) // Time: O(n)
     return (float)Sum(arr) / arr->length;
 }
 
+void Reverse(struct Array *arr) // Time: O(n)
+{
+    int l = 0, r = arr->length - 1;
+
+    while (l < r)
+    {
+        int temp = arr->A[l];
+        arr->A[l] = arr->A[r];
+        arr->A[r] = temp;
+        ++l, --r;
+    }
+}
+
+int LeftShift(struct Array *arr) // Time: O(n)
+{
+    int prev = arr->A[arr->length - 1];
+    arr->A[arr->length - 1] = 0;
+
+    for (int i = arr->length - 2; i >= 0; --i)
+    {
+        int temp = arr->A[i];
+        arr->A[i] = prev;
+        prev = temp;
+    }
+}
+
+int RightShift(struct Array *arr) // Time: O(n)
+{
+    int prev = arr->A[0];
+    arr->A[0] = 0;
+
+    for (int i = 1; i < arr->length; ++i)
+    {
+        int temp = arr->A[i];
+        arr->A[i] = prev;
+        prev = temp;
+    }
+}
+
+int IsSorted(struct Array *arr) // Time: O(n)
+{
+    // non-descending order
+    for (int i = 0; i < arr->length - 1; ++i)
+    {
+        if (arr->A[i] > arr->A[i + 1])
+            return 0;
+    }
+
+    return 1;
+}
+
 void displayOptions()
 {
-    printf("\t1: Display\n");
-    printf("\t2: Append\n");
-    printf("\t3: Insert\n");
-    printf("\t4: Delete\n");
-    printf("\t5: Search\n");
-    printf("\t6: Get\n");
-    printf("\t7: Set\n");
-    printf("\t8: Max\n");
-    printf("\t9: Min\n");
-    printf("\t10: Sum\n");
-    printf("\t11: Avg\n");
-    printf("\t0: Exit\n");
+    printf("\t1: Display\t6: Get\t\t11: Avg\n");
+    printf("\t2: Append\t7: Set\t\t12: Reverse\n");
+    printf("\t3: Insert\t8: Max\t\t13: Left Shift\n");
+    printf("\t4: Delete\t9: Min\t\t14: Right Shift\n");
+    printf("\t5: Search\t10: Sum\t\t16: Is Sorted\n");
+
+    printf("\t 0: Exit");
+    printf("\n");
 }
 
 int main()
@@ -347,6 +398,37 @@ int main()
         case AVG:
         {
             printf("-> Average of all elements: %.2f\n", Avg(&arr));
+            break;
+        }
+        case REVERSE:
+        {
+            Reverse(&arr);
+            printf("-> Elements reversed: ");
+            Display(&arr);
+            break;
+        }
+        case LEFT_SHIFT:
+        {
+            LeftShift(&arr);
+            printf("-> Elements left shifted: ");
+            Display(&arr);
+            break;
+        }
+        case RIGHT_SHIFT:
+        {
+            RightShift(&arr);
+            printf("-> Elements right shifted: ");
+            Display(&arr);
+            break;
+        }
+        case IS_SORTED:
+        {
+
+            if (IsSorted(&arr))
+                printf("-> Array is Sorted in non-descending order!\n");
+            else
+                printf("-> Array is NOT Sorted in non-descending order!\n");
+
             break;
         }
 
