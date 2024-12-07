@@ -58,7 +58,7 @@ When a variable is declared as a reference, it becomes an **alternative name for
 - Parameter passing methods (by Value, Address, Reference)
 - Functions that using and returning pointers
 - Passing Arrays/Structures as parameters & Callback functions
-  
+
   Code: [functions.cpp](Essential-Concepts/Functions/functions.cpp)
   </br>
   Readme: [Functions.md](Essential-Concepts/Functions/Functions.md)
@@ -86,7 +86,7 @@ In programming, scope refers to the **context within which a variable or functio
 
 Object-oriented programming – As the name suggests uses objects in programming. Object-oriented programming aims to implement real-world entities like inheritance, hiding, polymorphism, etc. in programming. The main aim of OOP is to bind together the data and the functions that operate on them so that no other part of the code can access this data except that function.
 
-- Classes and structs 
+- Classes and structs
 - Class Members / Definition of Memeber Functions / Classes defined with struct and union
 - Constructors & Member initialization in constructors
 - Pointers to classes
@@ -184,4 +184,5 @@ Author: [Mert Eldemir](https://github.com/merteldem1r)</br>
 Search Resourses:
 [Abdul Bari](https://www.udemy.com/course/datastructurescncpp/),
 [cplusplus](https://cplusplus.com/doc/tutorial/),
-[geeksforgeeks](https://www.geeksforgeeks.org/)
+[geeksforgeeks](https://www.geeksforgeeks.org/),
+[leetcode](https://leetcode.com/)

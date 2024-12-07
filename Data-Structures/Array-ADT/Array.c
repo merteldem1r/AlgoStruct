@@ -17,8 +17,11 @@
 #define REVERSE 12
 #define LEFT_SHIFT 13
 #define RIGHT_SHIFT 14
-#define IS_SORTED 16
+#define ROTATE 16
+#define IS_SORTED 17
 #define EXIT 0
+
+void swap();
 
 struct Array
 {
@@ -27,7 +30,7 @@ struct Array
     int length;
 };
 
-// Optional: Resize for dynamic array implementation
+// Optional: Resizing for dynamic array implementation
 void Resize(struct Array *arr)
 {
     arr->size *= 2;
@@ -213,9 +216,7 @@ void Reverse(struct Array *arr) // Time: O(n)
 
     while (l < r)
     {
-        int temp = arr->A[l];
-        arr->A[l] = arr->A[r];
-        arr->A[r] = temp;
+        swap(&arr->A[l], &arr->A[r]);
         ++l, --r;
     }
 }
@@ -246,6 +247,38 @@ int RightShift(struct Array *arr) // Time: O(n)
     }
 }
 
+void Rotate(struct Array *arr, int k) // Time: O(n) Space: O(n)
+{
+    // rotate the array to the right by k steps.
+
+    if (k < 0)
+    {
+        printf("\t\t** Error: Invalid negative step for Rotate\n");
+        return;
+    }
+
+    if (arr->length == 1 || k == 0 || k % arr->length == 0)
+        return;
+
+    if (arr->length == 2)
+    {
+        if (k % 2 != 0)
+            swap(&arr->A[0], &arr->A[1]);
+        return;
+    }
+
+    const int arrLen = arr->length;
+    int *temp = (int *)malloc(arrLen * sizeof(int));
+
+    for (int i = 0; i < arrLen; ++i)
+        temp[(i + k) % arrLen] = arr->A[i];
+
+    for (int i = 0; i < arrLen; ++i)
+        arr->A[i] = temp[i];
+
+    free(temp);
+}
+
 int IsSorted(struct Array *arr) // Time: O(n)
 {
     // non-descending order
@@ -260,14 +293,21 @@ int IsSorted(struct Array *arr) // Time: O(n)
 
 void displayOptions()
 {
-    printf("\t1: Display\t6: Get\t\t11: Avg\n");
+    printf("\t1: Display\t6: Get\t\t11: Avg\t\t17: Is Sorted\n");
     printf("\t2: Append\t7: Set\t\t12: Reverse\n");
     printf("\t3: Insert\t8: Max\t\t13: Left Shift\n");
     printf("\t4: Delete\t9: Min\t\t14: Right Shift\n");
-    printf("\t5: Search\t10: Sum\t\t16: Is Sorted\n");
+    printf("\t5: Search\t10: Sum\t\t16: Rotate\n");
 
-    printf("\t 0: Exit");
+    printf("0: Exit");
     printf("\n");
+}
+
+void swap(int *x, int *y)
+{
+    int temp = *x;
+    *x = *y;
+    *y = temp;
 }
 
 int main()
@@ -418,6 +458,16 @@ int main()
         {
             RightShift(&arr);
             printf("-> Elements right shifted: ");
+            Display(&arr);
+            break;
+        }
+        case ROTATE:
+        {
+            int k;
+            printf("\tEnter non-negative Rotate step: ");
+            scanf("%d", &k);
+            Rotate(&arr, k);
+            printf("-> Elements right roted for %d steps: ", k);
             Display(&arr);
             break;
         }
