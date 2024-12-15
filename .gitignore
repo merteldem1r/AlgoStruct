@@ -1,5 +1,6 @@
 # Ignore Visual Studio Code settings folder
 .vscode/
+.idea/
 
 # Ignore compiled files
 *.out
