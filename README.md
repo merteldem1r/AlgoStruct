@@ -180,6 +180,10 @@ A **Sorting Algorithm** is used to rearrange a given array or list of elements i
 
   Folder: [Sorting-Techniques](Algorithms/Sorting-Techniques)
 
+### Array Algorithms
+
+_coming_
+
 Author: [Mert Eldemir](https://github.com/merteldem1r)</br>
 Search Resourses:
 [Abdul Bari](https://www.udemy.com/course/datastructurescncpp/),

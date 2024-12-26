@@ -41,7 +41,7 @@ int partition(int A[], int low, int high)
 
 void quickSort(int A[], int low, int high)
 {
-    if (low > high)
+    if (low >= high)
         return;
 
     auto pivot = partition(A, low, high);
