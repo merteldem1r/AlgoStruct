@@ -139,7 +139,7 @@ The array is a basic **abstract data type** that holds an ordered collection of 
 - Console program that create and manipulate with Array from scratch
 - Functions like **Display, Append, Insert, Search, Get & Set, Max/Min, Reverse, Shift/Rotate**
 
-  Array ADT: [Array-ADT](Data-Structures/Array-ADT/Array.c)
+  Code: [Array-ADT](Data-Structures/Array-ADT/Array.c)
 
 ### Heap
 
@@ -153,6 +153,9 @@ Heaps are usually used to implement **priority queues**, where the smallest (or 
 - Max-Heap & Min-Heap Data Structure
 - Heap functions such as: MaxHeapify, extractMax, Parent, Left, Right, insert
 - Building and Sorting array using Heapify method
+
+  Code: [Heap](Data-Structures/Heap/Heap.cpp)
+  [Priority Queue using Binary Heap](https://www.geeksforgeeks.org/priority-queue-using-binary-heap/)
 
 ## Algorithms
 
