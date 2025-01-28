@@ -11,12 +11,15 @@
 
         * Min Heap: Every node should have the element less or equal to it's all descendants.
 
-        * Heaps usually represented as arrays
+        * From the Heap you can only delete largest (for Max Heap) or smallets (for Min Heap), you can not delete other elements
+
+        * Heaps usually represented as arrays where:
 
             * Root element will be at arr[0]
             * arr[(i - 1) / 2] returns the parent node
             * arr[(2 * i) + 1] returns the left child node
             * arr[(2 * i) + 2] return the right child node
+
 */
 
 class MaxHeap
@@ -28,7 +31,9 @@ class MaxHeap
 public:
     MaxHeap(int capacity);
 
-    void MaxHeapify(int i);
+    MaxHeap(int capacity, int A[], int arrSize);
+
+    void MaxHeapify(int i, int arrSize);
 
     int extractMax();
 
@@ -44,7 +49,9 @@ public:
 
     int getMax() { return heapArr[0]; }
 
-    ~MaxHeap() { std::cout << "Deleting Heap\n"; };
+    int *getHeapArr() { return heapArr; }
+
+    // ~MaxHeap() { std::cout << "Deleting Heap\n"; };
 };
 
 MaxHeap::MaxHeap(int cap)
@@ -52,6 +59,13 @@ MaxHeap::MaxHeap(int cap)
     heapSize = 0;
     capacity = cap;
     heapArr = new int[cap];
+}
+
+MaxHeap::MaxHeap(int cap, int A[], int arrSize)
+{
+    heapSize = arrSize;
+    capacity = cap;
+    heapArr = A;
 }
 
 void MaxHeap::insert(int key)
@@ -75,23 +89,23 @@ void MaxHeap::insert(int key)
     }
 }
 
-void MaxHeap::MaxHeapify(int i)
+void MaxHeap::MaxHeapify(int i, int arrSize) // Time Complexity: O(logn)
 {
     int l = Left(i);
     int r = Right(i);
 
     int largest = i;
 
-    if (l < heapSize && heapArr[l] > heapArr[largest])
+    if (l < arrSize && heapArr[l] > heapArr[largest])
         largest = l;
 
-    if (r < heapSize && heapArr[r] > heapArr[largest])
+    if (r < arrSize && heapArr[r] > heapArr[largest])
         largest = r;
 
     if (largest != i)
     {
         std::swap(heapArr[i], heapArr[largest]);
-        MaxHeapify(largest);
+        MaxHeapify(largest, arrSize);
     }
 }
 
@@ -109,7 +123,7 @@ int MaxHeap::extractMax()
     int root = heapArr[0];
     heapArr[0] = heapArr[heapSize - 1];
     --heapSize;
-    MaxHeapify(0);
+    MaxHeapify(0, heapSize);
 
     return root;
 }
@@ -126,7 +140,7 @@ void MaxHeap::print()
 
 int main()
 {
-    // Max Heap Example
+    // ************** Max Heap Example
     MaxHeap HeapA(10);
 
     HeapA.insert(30);
@@ -153,19 +167,56 @@ int main()
         [ 30 20 15 5 10 12 6 ]
     */
 
+    std::cout << "A Max-Heap: ";
     HeapA.print(); // [ 30 20 15 5 10 12 6 ]
+
     HeapA.extractMax();
+
+    std::cout << "A Max-Heap (after extractMax function): ";
     HeapA.print(); // [ 20 10 15 5 6 12 ]
 
-    // Creating Heap from given array using Insert() function
-    int arr[] = {10, 20, 25, 5, 40, 35};
+    // ************** Creating Heap from given array using Insert() function
+    std::cout << "\n";
+    int A[] = {10, 20, 25, 5, 40, 35};
 
     MaxHeap HeapB(6);
 
-    for (int i = 0; i < 6; ++i)
-        HeapB.insert(arr[i]);
+    for (int i = 0; i < 6; ++i) // Time Complexity: O(n log(n))
+        HeapB.insert(A[i]);
 
+    std::cout << "B Max-Heap: ";
     HeapB.print();
+
+    // ************** Creating Heap using Max-Heapify method and implementing Heap Sort
+    std::cout << "\n";
+    int C[] = {10, 20, 25, 5, 40, 35, 15};
+    int cSize = 6;
+
+    MaxHeap HeapC(6, C, cSize);
+
+    std::cout << "C Array (not Max-Heap yet): ";
+    HeapC.print();
+
+    for (int i = cSize / 2 - 1; i >= 0; --i)
+    {
+        HeapC.MaxHeapify(i, cSize);
+    }
+
+    std::cout << "C Max-Heap (after Max-Heapify): ";
+    HeapC.print();
+
+    // Implementing Heap Sort on created Max Heap
+    auto cArr = HeapC.getHeapArr();
+
+    // Here we starting from the last non-leaf node and keep extracting elements from heap and calling max heapify on reduced size Heap
+    for (int i = cSize - 1; i > 0; --i) // Time Complexity: O(n logn)
+    {
+        std::swap(cArr[0], cArr[i]);
+        HeapC.MaxHeapify(0, i);
+    }
+
+    std::cout << "C Array (after Heap Sort): ";
+    HeapC.print();
 
     return 0;
 }
