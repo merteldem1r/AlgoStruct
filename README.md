@@ -141,6 +141,19 @@ The array is a basic **abstract data type** that holds an ordered collection of 
 
   Array ADT: [Array-ADT](Data-Structures/Array-ADT/Array.c)
 
+### Heap
+
+A **Heap** is a _complete_ binary tree data structure that satisfies the heap property:
+
+**Max Heap:** Every node should have the element greater or equal to it's all descendants.
+**Min Heap:** Every node should have the element less or equal to it's all descendants.
+
+Heaps are usually used to implement **priority queues**, where the smallest (or largest) element is always at the root of the tree.
+
+- Max-Heap & Min-Heap Data Structure
+- Heap functions such as: MaxHeapify, extractMax, Parent, Left, Right, insert
+- Building and Sorting array using Heapify method
+
 ## Algorithms
 
 ![4](https://github.com/user-attachments/assets/1daa6d18-c241-44b5-831a-c6e38bf89f84)
@@ -176,9 +189,10 @@ Common algorithm problems using **recursion** vs **iterative approach**.
 
 A **Sorting Algorithm** is used to rearrange a given array or list of elements in an order. Selecting best sorting algoritms in a certain cases is crutial for system performans and stability.
 
-- _Bubble Sort_ - _Selection Sort_ - _Insertion Sort_ - _Merge Sort_ - _Quick Sort_ - _Bin / Bucket Sort_ - _Radix Sort_ - _Shell Sort_
+- _Bubble Sort_ - _Selection Sort_ - _Insertion Sort_ - _Merge Sort_ - _Quick Sort_ - _Bin / Bucket Sort_ - _Radix Sort_ - _Shell Sort_ - _Heap Sort_
 
   Folder: [Sorting-Techniques](Algorithms/Sorting-Techniques)
+  Time and Space Complexity Table: [Sorting-Techniques](Algorithms/Sorting-Techniques/sorting-algorithms.png)
 
 ### Array Algorithms
 
