@@ -1,8 +1,8 @@
 #include <iostream>
 
-// Rotate the array to the right by k steps.
+// Merge two sorted arrays into single one.
 
-int *merge(int A[], int B[], int aLen, int bLen)
+int *merge(int A[], int B[], int aLen, int bLen) // Time: O(n) Space O(m + n)
 {
     int *temp = new int[aLen + bLen];
     int i = 0, j = 0, k = 0;
