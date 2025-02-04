@@ -130,6 +130,7 @@ A **template** is a simple yet very powerful tool in C++. The simple idea is to 
 - Row-Column Major formulas, Address Formulas for 1D, 2D, 3D and nD Arrays
 
   Folder: [Arrays-Representations](Data-Structures/Arrays-Representations)
+  </br>
   Address Formulas: [Address-Formulas](Data-Structures/Arrays-Representations/Address-Formulas.md)
 
 ### Array ADT
@@ -143,7 +144,7 @@ The array is a basic **abstract data type** that holds an ordered collection of 
 
 ### Heap
 
-A **Heap** is a _complete_ binary tree data structure that satisfies the heap property:
+A **Heap** is a [complete binary](https://www.geeksforgeeks.org/complete-binary-tree/) tree data structure that satisfies the heap property:
 
 **Max Heap:** Every node should have the element greater or equal to it's all descendants.
 **Min Heap:** Every node should have the element less or equal to it's all descendants.
@@ -155,6 +156,7 @@ Heaps are usually used to implement **priority queues**, where the smallest (or 
 - Building and Sorting array using Heapify method
 
   Code: [Heap](Data-Structures/Heap/Heap.cpp)
+  </br>
   [Priority Queue using Binary Heap](https://www.geeksforgeeks.org/priority-queue-using-binary-heap/)
 
 ## Algorithms
@@ -195,6 +197,7 @@ A **Sorting Algorithm** is used to rearrange a given array or list of elements i
 - _Bubble Sort_ - _Selection Sort_ - _Insertion Sort_ - _Merge Sort_ - _Quick Sort_ - _Bin / Bucket Sort_ - _Radix Sort_ - _Shell Sort_ - _Heap Sort_
 
   Folder: [Sorting-Techniques](Algorithms/Sorting-Techniques)
+  </br>
   Time and Space Complexity Table: [Sorting-Techniques](Algorithms/Sorting-Techniques/sorting-algorithms.png)
 
 ### Array Algorithms
