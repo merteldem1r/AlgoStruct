@@ -202,7 +202,9 @@ A **Sorting Algorithm** is used to rearrange a given array or list of elements i
 
 ### Array Algorithms
 
-_coming_
+- _Find Duplicates_ - _Find Max Min_ - _Find Mulpiple Missing_ - _Find Single Missing_ - _Merge Sorted Arrays_ - _Rotate Array_ - _Pair Sum_
+
+  Folder: [Array-Algorithms](Algorithms/Arrays)
 
 Author: [Mert Eldemir](https://github.com/merteldem1r)</br>
 Search Resourses:
