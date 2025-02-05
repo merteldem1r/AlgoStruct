@@ -25,12 +25,12 @@ void bubbleSort(int arr[], int arrSize)
 
 void printArr(int arr[], int arrSize)
 {
-    std::cout << "[ ";
+    std::cout << "{ ";
     for (int i = 0; i < arrSize; ++i)
     {
         std::cout << arr[i] << " ";
     }
-    std::cout << "]" << std::endl;
+    std::cout << "}" << std::endl;
 }
 
 int main()

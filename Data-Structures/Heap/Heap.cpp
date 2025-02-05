@@ -130,12 +130,12 @@ int MaxHeap::extractMax()
 
 void MaxHeap::print()
 {
-    std::cout << "[ ";
+    std::cout << "{ ";
 
     for (int i = 0; i < heapSize; ++i)
         std::cout << heapArr[i] << " ";
 
-    std::cout << "]" << std::endl;
+    std::cout << "}" << std::endl;
 }
 
 int main()
