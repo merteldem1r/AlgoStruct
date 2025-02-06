@@ -1,6 +1,6 @@
 # Heap (Data Structure)
 
-// Image
+![Data Structures Algorithms](https://github.com/user-attachments/assets/6a5c9b96-95ac-4b61-8700-d05e1f509723)
 
 In computer science, a **Heap** is a tree-based data structure that satisfies the heap property: In a max heap, for any given node C, if P is the parent node of C, then the key (the value) of P is greater than or equal to the key of C. In a min heap, the key of P is less than or equal to the key of C. The node at the "top" of the heap (with no parents) is called the root node.
 
