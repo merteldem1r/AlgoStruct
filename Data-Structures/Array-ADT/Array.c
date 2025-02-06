@@ -2,6 +2,7 @@
 #include <stdlib.h>
 
 // ARRAY ADT
+// This is array modify console application. Run the application and perform various methods on Array.
 
 #define DISPLAY 1
 #define APPEND 2

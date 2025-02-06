@@ -4,7 +4,15 @@
 
 A comprehensive guide to Data Structures, Algorithms, and essential concepts like Pointers, OOP, Structures, Memory Management etc. Features well-documented code with clear comments and detailed Readme files, implementing all data structures and their algorithms from scratch.
 
-**Project divided into 3 topics. Essential Concepts, Data Structures and Algorithms. Each topic contain code examples with explained comment lines and Readme files.**
+Project divided into **3 topics**. **Essential Concepts**, **Data Structures** and **Algorithms**. Each topic contain code examples with explained comment lines and Readme files.
+
+**AUTHOR**: [Mert Eldemir](https://github.com/merteldem1r)</br>
+**SEARCH RESOURSES**:
+[Abdul Bari](https://www.udemy.com/course/datastructurescncpp/),
+[cplusplus](https://cplusplus.com/doc/tutorial/),
+[geeksforgeeks](https://www.geeksforgeeks.org/),
+[leetcode](https://leetcode.com/)
+[wikipedia](https://en.wikipedia.org/)
 
 ## Essential Concepts of C & C++
 
@@ -205,10 +213,3 @@ A **Sorting Algorithm** is used to rearrange a given array or list of elements i
 - _Find Duplicates_ - _Find Max Min_ - _Find Mulpiple Missing_ - _Find Single Missing_ - _Merge Sorted Arrays_ - _Rotate Array_ - _Pair Sum_
 
   Folder: [Array-Algorithms](Algorithms/Arrays)
-
-Author: [Mert Eldemir](https://github.com/merteldem1r)</br>
-Search Resourses:
-[Abdul Bari](https://www.udemy.com/course/datastructurescncpp/),
-[cplusplus](https://cplusplus.com/doc/tutorial/),
-[geeksforgeeks](https://www.geeksforgeeks.org/),
-[leetcode](https://leetcode.com/)

@@ -2,26 +2,6 @@
 
 // HEAP
 
-/*
-    Heap Properties:
-
-        * It's complete binary tree which means always the  height of the tree will be log N only
-
-        * Max Heap: Every node should have the element greater or equal to it's all descendants.
-
-        * Min Heap: Every node should have the element less or equal to it's all descendants.
-
-        * From the Heap you can only delete largest (for Max Heap) or smallets (for Min Heap), you can not delete other elements
-
-        * Heaps usually represented as arrays where:
-
-            * Root element will be at arr[0]
-            * arr[(i - 1) / 2] returns the parent node
-            * arr[(2 * i) + 1] returns the left child node
-            * arr[(2 * i) + 2] return the right child node
-
-*/
-
 class MaxHeap
 {
     int *heapArr;
