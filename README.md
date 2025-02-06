@@ -1,8 +1,8 @@
-# Essential Concepts and DSA using C & C++
+# AlgoStruct: Mastering DSA with C & C++
 
 ![Data Structures Algorithms](https://github.com/user-attachments/assets/9d7eda38-a40f-4673-bef2-960c03522266)
 
-DSA | Data Structures and Algorithms using C & C++ Essential Concepts like Pointers, OOP, Structures, References, Templates etc. with well explained comment lines and Readme files. Implementing all commonly used Data Structure from scratch and their Algorithms.
+A comprehensive guide to Data Structures, Algorithms, and essential concepts like Pointers, OOP, Structures, Memory Management etc. Features well-documented code with clear comments and detailed Readme files, implementing all data structures and their algorithms from scratch.
 
 **Project divided into 3 topics. Essential Concepts, Data Structures and Algorithms. Each topic contain code examples with explained comment lines and Readme files.**
 
