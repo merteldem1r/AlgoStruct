@@ -23,7 +23,7 @@ int main()
     // Using double quotes (compiler automatically adds a null terminator at the end)
     char str2[] = "ELDEMIR";
     printf("Str2: %s \n", str2);                // ELDEMIR
-    printf("Str2 sizeof: %d \n", sizeof(str2)); // 7 characters + \0 = 8 bytes
+    printf("Str2 sizeof: %d \n", sizeof(str2)); // 7 characters + \0 = 8
 
     return 0;
 }
