@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 
 // Strings
 
@@ -24,6 +25,22 @@ int main()
     char str2[] = "ELDEMIR";
     printf("Str2: %s \n", str2);                // ELDEMIR
     printf("Str2 sizeof: %d \n", sizeof(str2)); // 7 characters + \0 = 8
+
+    // In C++ (unlike C), string literals are read-only and stored in a special memory section (typically .rodata in compiled binaries). Modifying a string literal is undefined behavior (UB).
+    const char *str3 = "String Representation"; // should be const
+    printf("Str3 (String literal): %s\n", str3);
+
+    // ****************** STRINGS (C++ style std::string) ******************
+
+    std::string str4 = "AlgoStruct Repository";
+    std::cout << "Str4 (std::string): " << str4 << std::endl;
+
+    // Iterate through string
+    std::cout << "Str 4 Characters for loop:" << std::endl;
+
+    // The reference (&) avoids unnecessary copying, making it more efficient.
+    for (auto &chr : str4)
+        std::cout << chr << " ";
 
     return 0;
 }

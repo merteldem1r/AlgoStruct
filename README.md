@@ -154,7 +154,9 @@ The array is a basic **abstract data type** that holds an ordered collection of 
 
 In computer programming, a string is traditionally a sequence of characters, either as a literal constant or as some kind of variable.
 
-- foo
+- Characters & Character Arrays
+- Null-Termination & Mutability & Efficient Copying & Concatenation
+- std::string
 
   Code: [Strings.cpp](Data-Structures/Strings/Strings.cpp)
   Readme: [Strings.md](Data-Structures/Strings/Strings.md)
@@ -225,3 +227,9 @@ A **Sorting Algorithm** is used to rearrange a given array or list of elements i
 - _Find Duplicates_ - _Find Max Min_ - _Find Mulpiple Missing_ - _Find Single Missing_ - _Merge Sorted Arrays_ - _Rotate Array_ - _Pair Sum_
 
   Folder: [Array-Algorithms](Algorithms/Arrays)
+
+### String Algorithms
+
+- _foo_
+
+  Folder: [String-Algorithms](Algorithms/Strings)
