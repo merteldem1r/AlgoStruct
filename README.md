@@ -8,9 +8,9 @@ Project divided into **3 topics**. **Essential Concepts**, **Data Structures** a
 
 **AUTHOR**: [Mert Eldemir](https://github.com/merteldem1r)</br>
 **SEARCH RESOURSES**:
-[Abdul Bari](https://www.udemy.com/course/datastructurescncpp/),
-[cplusplus](https://cplusplus.com/doc/tutorial/),
-[geeksforgeeks](https://www.geeksforgeeks.org/),
+[Abdul Bari](https://www.udemy.com/course/datastructurescncpp/)
+[cplusplus](https://cplusplus.com/doc/tutorial/)
+[geeksforgeeks](https://www.geeksforgeeks.org/)
 [leetcode](https://leetcode.com/)
 [wikipedia](https://en.wikipedia.org/)
 
@@ -148,7 +148,17 @@ The array is a basic **abstract data type** that holds an ordered collection of 
 - Console program that create and manipulate with Array from scratch
 - Functions like **Display, Append, Insert, Search, Get & Set, Max/Min, Reverse, Shift/Rotate**
 
-  Code: [Array-ADT](Data-Structures/Array-ADT/Array.c)
+  Code: [Array.c](Data-Structures/Array-ADT/Array.c)
+
+### Strings
+
+In computer programming, a string is traditionally a sequence of characters, either as a literal constant or as some kind of variable.
+
+- foo
+
+  Code: [Strings.cpp](Data-Structures/Strings/Strings.cpp)
+  Readme: [Strings.md](Data-Structures/Strings/Strings.md)
+  ASCII TABLE: [ASCII-Table.png](Data-Structures/Strings/ASCII-Table.png)
 
 ### Heap
 
@@ -163,7 +173,9 @@ Heaps are usually used to implement **priority queues**, where the smallest (or 
 - Heap functions such as: MaxHeapify, extractMax, Parent, Left, Right, insert
 - Building and Sorting array using Heapify method
 
-  Code: [Heap](Data-Structures/Heap/Heap.cpp)
+  Code: [Heap.cpp](Data-Structures/Heap/Heap.cpp)
+  </br>
+  Readme: [Heap.md](Data-Structures/Heap/Heap.md)
   </br>
   [Priority Queue using Binary Heap](https://www.geeksforgeeks.org/priority-queue-using-binary-heap/)
 
