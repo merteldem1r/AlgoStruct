@@ -23,7 +23,7 @@ void changeToLowerCase2(std::string &str) // Time: O(n) Space: O(1)
     }
 }
 
-void changeCase(std::string &str) // Time: O(n) Space: O(1)
+void changeCaseToOpposite(std::string &str) // Time: O(n) Space: O(1)
 {
     for (auto &chr : str)
     {
@@ -47,7 +47,7 @@ int main()
 
     // Change string cases
     std::string str3 = "ThIs iS String ALGOrithms"; // tHiS Is sTRING algoRITHMS
-    changeCase(str3);
+    changeCaseToOpposite(str3);
     std::cout << str3 << std::endl;
 
     return 0;

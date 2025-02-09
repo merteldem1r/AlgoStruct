@@ -125,7 +125,7 @@ A **template** is a simple yet very powerful tool in C++. The simple idea is to 
   </br>
   Readme: [Templates.md](Essential-Concepts/Templates/Templates.md)
 
-## Data Structures
+## DATA STRUCTURES
 
 ![3](https://github.com/user-attachments/assets/a85a5b26-7660-4ec1-8281-1bd4b14f2029)
 
@@ -141,7 +141,7 @@ A **template** is a simple yet very powerful tool in C++. The simple idea is to 
   </br>
   Address Formulas: [Address-Formulas](Data-Structures/Arrays-Representations/Address-Formulas.md)
 
-### Array ADT
+### ARRAY ADT
 
 The array is a basic **abstract data type** that holds an ordered collection of items accessible by an integer index. These items can be anything from _primitive types_ such as integers to more complex types like instances of classes.
 
@@ -150,7 +150,7 @@ The array is a basic **abstract data type** that holds an ordered collection of 
 
   Code: [Array.c](Data-Structures/Array-ADT/Array.c)
 
-### Strings
+### STRINGS
 
 In computer programming, a string is traditionally a sequence of characters, either as a literal constant or as some kind of variable.
 
@@ -162,7 +162,7 @@ In computer programming, a string is traditionally a sequence of characters, eit
   Readme: [Strings.md](Data-Structures/Strings/Strings.md)
   ASCII TABLE: [ASCII-Table.png](Data-Structures/Strings/ASCII-Table.png)
 
-### Heap
+### HEAP
 
 A **Heap** is a [complete binary](https://www.geeksforgeeks.org/complete-binary-tree/) tree data structure that satisfies the heap property:
 
@@ -181,7 +181,7 @@ Heaps are usually used to implement **priority queues**, where the smallest (or 
   </br>
   [Priority Queue using Binary Heap](https://www.geeksforgeeks.org/priority-queue-using-binary-heap/)
 
-## Algorithms
+## ALGORITHMS
 
 ![4](https://github.com/user-attachments/assets/1daa6d18-c241-44b5-831a-c6e38bf89f84)
 
@@ -222,13 +222,13 @@ A **Sorting Algorithm** is used to rearrange a given array or list of elements i
   </br>
   Time and Space Complexity Table: [Sorting-Techniques](Algorithms/Sorting-Techniques/sorting-algorithms.png)
 
-### Array Algorithms
+### ARRAY Algorithms
 
 - _Find Duplicates_ - _Find Max Min_ - _Find Multiple Missing_ - _Find Single Missing_ - _Merge Sorted Arrays_ - _Rotate Array_ - _Pair Sum_
 
   Folder: [Array-Algorithms](Algorithms/Arrays)
 
-### String Algorithms
+### STRING Algorithms
 
 - _foo_
 
