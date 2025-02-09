@@ -6,8 +6,8 @@ A comprehensive guide to Data Structures, Algorithms, and essential concepts lik
 
 Project divided into **3 topics**. **Essential Concepts**, **Data Structures** and **Algorithms**. Each topic contain code examples with explained comment lines and Readme files.
 
-**AUTHOR**: [Mert Eldemir](https://github.com/merteldem1r)</br>
-**SEARCH RESOURSES**:
+**<ins>AUTHOR**</ins>: [Mert Eldemir](https://github.com/merteldem1r)</br>
+**<ins>SEARCH RESOURSES</ins>**:
 [Abdul Bari](https://www.udemy.com/course/datastructurescncpp/)
 [cplusplus](https://cplusplus.com/doc/tutorial/)
 [geeksforgeeks](https://www.geeksforgeeks.org/)
