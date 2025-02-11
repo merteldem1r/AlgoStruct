@@ -222,13 +222,13 @@ A **Sorting Algorithm** is used to rearrange a given array or list of elements i
   </br>
   Time and Space Complexity Table: [Sorting-Techniques](Algorithms/Sorting-Techniques/sorting-algorithms.png)
 
-### ARRAY Algorithms
+### Array Algorithms
 
 - _Find Duplicates_ - _Find Max Min_ - _Find Multiple Missing_ - _Find Single Missing_ - _Merge Sorted Arrays_ - _Rotate Array_ - _Pair Sum_
 
   Folder: [Array-Algorithms](Algorithms/Arrays)
 
-### STRING Algorithms
+### String Algorithms
 
 - _foo_
 
