@@ -5,6 +5,7 @@
 # Ignore compiled files
 *.out
 *.exe
+*.o
 
 # Ignore logs
 *.log
