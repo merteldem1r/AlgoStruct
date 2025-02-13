@@ -228,8 +228,19 @@ A **Sorting Algorithm** is used to rearrange a given array or list of elements i
 
   Folder: [Array-Algorithms](Algorithms/Arrays)
 
+### Bitwise Operations
+
+In C+, Bitwise Operators are the operators that are used to perform bit-level operations on the integers. While performing these operations, integers are considered as sequences of binary digits. These operators are useful for low-level programming, system programming, and optimizing performance.
+
+- AND, OR, XOR, NOT, Left Shift, Right Shift
+  
+  Code: [bitwise.cpp](Algorithms/Bitwise-Operaitons/bitwise.cpp)
+  </br>
+  Readme: [Bitwise.md](Algorithms/Bitwise-Operaitons/Bitwise.md)
+
 ### String Algorithms
 
-- _foo_
+- _changingCase_ - _permutationString_ - _countWordsAndVowels_ - _findDuplicates_ - _findStringLength_ - _isPalindrome_ - _reverseString_ - _validateString_ - _checkAnagram_
 
   Folder: [String-Algorithms](Algorithms/Strings)
+
