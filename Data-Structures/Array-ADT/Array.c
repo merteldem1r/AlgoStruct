@@ -23,7 +23,7 @@
 #define IS_SORTED 17
 #define EXIT 0
 
-void swap();
+void swap(int *x, int *y);
 
 struct Array
 {
@@ -223,7 +223,7 @@ void Reverse(struct Array *arr) // Time: O(n)
     }
 }
 
-int LeftShift(struct Array *arr) // Time: O(n)
+void LeftShift(struct Array *arr) // Time: O(n)
 {
     int prev = arr->A[arr->length - 1];
     arr->A[arr->length - 1] = 0;
@@ -236,7 +236,7 @@ int LeftShift(struct Array *arr) // Time: O(n)
     }
 }
 
-int RightShift(struct Array *arr) // Time: O(n)
+void RightShift(struct Array *arr) // Time: O(n)
 {
     int prev = arr->A[0];
     arr->A[0] = 0;
