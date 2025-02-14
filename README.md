@@ -241,7 +241,7 @@ In C+, Bitwise Operators are the operators that are used to perform bit-level op
 
 ### String Algorithms
 
-- _changingCase_ - _permutationString_ - _countWordsAndVowels_ - _findDuplicates_ - _findStringLength_ - _isPalindrome_ - _reverseString_ - _validateString_ - _checkAnagram_
+- _changingCase_ - _permutationString_ - _countWordsAndVowels_ - _findDuplicates_ - _findDuplicatesBitwise_ - _findStringLength_ - _isPalindrome_ - _reverseString_ - _validateString_ - _checkAnagram_
 
   Folder: [String-Algorithms](Algorithms/Strings)
 
