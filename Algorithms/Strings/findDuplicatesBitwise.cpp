@@ -11,11 +11,11 @@ bool isDuplicateCharactersBitwise(char str[])
     int bitmask = 0;
 
     for (int i = 0; str[i] != '\0'; ++i) {
-        const int positon = str[i] - 'a';
+        const int position = str[i] - 'a';
 
-        int existBit = bitmask & (1 << positon);
+        int existBit = bitmask & (1 << position);
         if (existBit) return true;
-        else bitmask |= 1 << positon;
+        else bitmask |= 1 << position;
     }
 
     return false;
