@@ -4,11 +4,30 @@
 
 A comprehensive guide to Data Structures, Algorithms, and essential concepts like Pointers, OOP, Structures, Memory Management etc. Features well-documented code with clear comments and detailed Readme files, implementing all data structures and their algorithms from scratch.
 
-Project divided into **3 topics**.
+Project divided into **3 topics**. Here the table of **headings** and **subheadings**:
 
 - [Essential Concepts of C & C++](#essential-concepts-of-c--c)
+  - [Array Basics](#array-basics)
+  - [Structures](#structures)
+  - [Pointers](#pointers)
+  - [Reference](#reference)
+  - [Functions](#functions)
+  - [Converting C code to C++](#converting-c-code-to-c)
+  - [Scope Resolution](#scope-resolution)
+  - [Object Oriented Programming](#object-oriented-programming)
+  - [Generics](#generics)
+  - [Templates](#templates)
 - [DATA STRUCTURES](#data-structures)
+  - [Array Representations](#array-representations)
+  - [ARRAY ADT](#array-adt)
+  - [STRINGS](#strings)
+  - [HEAP](#heap)
 - [ALGORITHMS](#algorithms)
+  - [Recursion](#recursion)
+  - [Sorting Algorithms](#sorting-algorithms)
+  - [Array Algorithms](#array-algorithms)
+  - [Bitwise Operations](#bitwise-operations)
+  - [String Algorithms](#string-algorithms)
 
 Each topic contain **code examples** with explained **comment lines** and **Readme files**.
 
