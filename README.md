@@ -4,7 +4,16 @@
 
 A comprehensive guide to Data Structures, Algorithms, and essential concepts like Pointers, OOP, Structures, Memory Management etc. Features well-documented code with clear comments and detailed Readme files, implementing all data structures and their algorithms from scratch.
 
-Project divided into **3 topics**. Here the table of **headings** and **subheadings**:
+**<ins>AUTHOR**</ins>: [Mert Eldemir](https://github.com/merteldem1r)</br>
+**<ins>SEARCH RESOURSES</ins>**:
+[Abdul Bari](https://www.udemy.com/course/datastructurescncpp/)
+[cplusplus](https://cplusplus.com/doc/tutorial/)
+[geeksforgeeks](https://www.geeksforgeeks.org/)
+[leetcode](https://leetcode.com/)
+[wikipedia](https://en.wikipedia.org/)
+
+Project divided into **3 topics**. Here the table of **headings** and **subheadings**.
+Each topic contain **code examples** with explained **comment lines** and **Readme files**.
 
 - [Essential Concepts of C & C++](#essential-concepts-of-c--c)
   - [Array Basics](#array-basics)
@@ -17,11 +26,13 @@ Project divided into **3 topics**. Here the table of **headings** and **subheadi
   - [Object Oriented Programming](#object-oriented-programming)
   - [Generics](#generics)
   - [Templates](#templates)
+
 - [DATA STRUCTURES](#data-structures)
   - [Array Representations](#array-representations)
   - [ARRAY ADT](#array-adt)
   - [STRINGS](#strings)
   - [HEAP](#heap)
+
 - [ALGORITHMS](#algorithms)
   - [Recursion](#recursion)
   - [Sorting Algorithms](#sorting-algorithms)
@@ -29,15 +40,6 @@ Project divided into **3 topics**. Here the table of **headings** and **subheadi
   - [Bitwise Operations](#bitwise-operations)
   - [String Algorithms](#string-algorithms)
 
-Each topic contain **code examples** with explained **comment lines** and **Readme files**.
-
-**<ins>AUTHOR**</ins>: [Mert Eldemir](https://github.com/merteldem1r)</br>
-**<ins>SEARCH RESOURSES</ins>**:
-[Abdul Bari](https://www.udemy.com/course/datastructurescncpp/)
-[cplusplus](https://cplusplus.com/doc/tutorial/)
-[geeksforgeeks](https://www.geeksforgeeks.org/)
-[leetcode](https://leetcode.com/)
-[wikipedia](https://en.wikipedia.org/)
 
 ## Essential Concepts of C & C++
 
