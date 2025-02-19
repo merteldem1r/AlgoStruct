@@ -4,7 +4,13 @@
 
 A comprehensive guide to Data Structures, Algorithms, and essential concepts like Pointers, OOP, Structures, Memory Management etc. Features well-documented code with clear comments and detailed Readme files, implementing all data structures and their algorithms from scratch.
 
-Project divided into **3 topics**. **Essential Concepts**, **Data Structures** and **Algorithms**. Each topic contain code examples with explained comment lines and Readme files.
+Project divided into **3 topics**.
+
+- [Essential Concepts of C & C++](#essential-concepts-of-c--c)
+- [DATA STRUCTURES](#data-structures)
+- [ALGORITHMS](#algorithms)
+
+Each topic contain **code examples** with explained **comment lines** and **Readme files**.
 
 **<ins>AUTHOR**</ins>: [Mert Eldemir](https://github.com/merteldem1r)</br>
 **<ins>SEARCH RESOURSES</ins>**:
@@ -234,7 +240,7 @@ In C+, Bitwise Operators are the operators that are used to perform bit-level op
 
 - AND, OR, XOR, NOT, Left Shift, Right Shift
 - _hammingWeight_ - _swapVariables_
-  
+
   Folder: [Bitwise-Operations](Algorithms/Bitwise-Operaitons)
   </br>
   Readme: [Bitwise.md](Algorithms/Bitwise-Operaitons/Bitwise.md)
@@ -244,4 +250,3 @@ In C+, Bitwise Operators are the operators that are used to perform bit-level op
 - _changingCase_ - _permutationString_ - _countWordsAndVowels_ - _findDuplicates_ - _findDuplicatesBitwise_ - _findStringLength_ - _isPalindrome_ - _reverseString_ - _validateString_ - _isAnagram_
 
   Folder: [String-Algorithms](Algorithms/Strings)
-
