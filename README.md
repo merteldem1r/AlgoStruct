@@ -192,13 +192,15 @@ In computer programming, a string is traditionally a sequence of characters, eit
   Readme: [Strings.md](Data-Structures/Strings/Strings.md)
   ASCII TABLE: [ASCII-Table.png](Data-Structures/Strings/ASCII-Table.png)
 
-### Linked List Algorithms
+### LINKED LIST
 
 **Linked list** is a **linear data structure** that allows the users to store data in **non-contiguous memory locations**. A linked list is defined as a **collection of nodes** where each node consists of two members which represents its value and a next pointer which stores the address for the next node.
 
-- _foo_
+- Linked List, Nodes
+- Single & Double & Circular Linked Lists
 
   Folder: [Linked-Lists](Data-Structures/Linked-Lists)
+  Readme: [LinkedLists.md](Data-Structures/Linked-Lists/LinkedLists.md)
 
 ### HEAP
 
