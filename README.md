@@ -16,6 +16,7 @@ Project divided into **3 topics**. Here the table of **headings** and **subheadi
 Each topic contain **code examples** with explained **comment lines** and **Readme files**.
 
 - [Essential Concepts of C & C++](#essential-concepts-of-c--c)
+
   - [Array Basics](#array-basics)
   - [Structures](#structures)
   - [Pointers](#pointers)
@@ -27,19 +28,21 @@ Each topic contain **code examples** with explained **comment lines** and **Read
   - [Generics](#generics)
   - [Templates](#templates)
 
-- [DATA STRUCTURES](#data-structures)
-  - [Array Representations](#array-representations)
-  - [ARRAY ADT](#array-adt)
-  - [STRINGS](#strings)
-  - [HEAP](#heap)
+- [Data Structures](#data-structures)
 
-- [ALGORITHMS](#algorithms)
+  - [Array Representations](#array-representations)
+  - [Array ADT](#array-adt)
+  - [Strings](#strings)
+  - [Linked Lists](#linked-lists)
+  - [Heap](#heap)
+
+- [Algorithms](#algorithms)
   - [Recursion](#recursion)
   - [Sorting Algorithms](#sorting-algorithms)
   - [Array Algorithms](#array-algorithms)
   - [Bitwise Operations](#bitwise-operations)
   - [String Algorithms](#string-algorithms)
-
+  - [Linked List Algorithms](#linked-lists-algorithms)
 
 ## Essential Concepts of C & C++
 
@@ -189,6 +192,14 @@ In computer programming, a string is traditionally a sequence of characters, eit
   Readme: [Strings.md](Data-Structures/Strings/Strings.md)
   ASCII TABLE: [ASCII-Table.png](Data-Structures/Strings/ASCII-Table.png)
 
+### Linked List Algorithms
+
+**Linked list** is a **linear data structure** that allows the users to store data in **non-contiguous memory locations**. A linked list is defined as a **collection of nodes** where each node consists of two members which represents its value and a next pointer which stores the address for the next node.
+
+- _foo_
+
+  Folder: [Linked-Lists](Data-Structures/Linked-Lists)
+
 ### HEAP
 
 A **Heap** is a [complete binary](https://www.geeksforgeeks.org/complete-binary-tree/) tree data structure that satisfies the heap property:
@@ -271,3 +282,9 @@ In C+, Bitwise Operators are the operators that are used to perform bit-level op
 - _changingCase_ - _permutationString_ - _countWordsAndVowels_ - _findDuplicates_ - _findDuplicatesBitwise_ - _findStringLength_ - _isPalindrome_ - _reverseString_ - _validateString_ - _isAnagram_
 
   Folder: [String-Algorithms](Algorithms/Strings)
+
+### Linked List Algorithms
+
+- _foo_
+
+  Folder: [Linked-List-Algorithms](Algorithms/Linked-Lists/)
