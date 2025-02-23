@@ -38,7 +38,7 @@ void display(Node *head)
 
 // Reverse Linked List
 
-Node *reverseLinkedList(Node *head)
+Node *reverseLinkedList(Node *head) // Time: O(n) Space: O(1)
 {
     auto temp = head;
     Node *prev = nullptr;
@@ -57,10 +57,23 @@ Node *reverseLinkedList(Node *head)
     return prev;
 }
 
+Node *reverseLinkedListRecursive(Node *temp, Node* prev = nullptr) // Time: O(n) Space: O(n)
+{
+    if (temp == nullptr)
+        return prev;
+
+    Node* next = temp->next;
+    temp->next = prev;
+
+    return reverseLinkedListRecursive(next, temp);
+}
+
 int main()
 {
     const std::vector<int> arr = {1, 3, 5, 2, 6, 7, 12};
+    const std::vector<int> arr2 = {1, 3, 5, 2, 6, 7, 12};
     Node *head = createLinkedList(arr);
+    Node *head2 = createLinkedList(arr2);
 
     // Reverse linked list
     std::cout << "Linked lift before: ";
@@ -69,6 +82,14 @@ int main()
     std::cout << "Linked list after reverse: ";
     const auto newHead = reverseLinkedList(head);
     display(newHead);
+
+    // Recursive reverse linked list
+    std::cout << "Linked lift before: ";
+    display(head2);
+
+    std::cout << "Linked list after reverse (recursive): ";
+    const auto newHead2 = reverseLinkedListRecursive(head2);
+    display(newHead2);
 
     return 0;
 }

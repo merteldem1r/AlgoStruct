@@ -25,16 +25,33 @@ Node *createLinkedList(std::vector<int> arr)
 
 // Check wether the linked list sorted or not (in ascending order)
 
+bool isSorted(Node *head) // Time: O(n) Space: O(1)
+{
+    auto temp = head;
 
+    while (temp->next != nullptr)
+    {
+        if (temp->next->val < temp->val)
+            return false;
+        temp = temp->next;
+    }
+
+    return true;
+}
 
 int main()
 {
     const std::vector<int> arr = {1, 3, 5, 2, 6, 7, 12};
     const std::vector<int> arr2 = {1, 3, 5, 7, 12, 18, 25};
     Node *head = createLinkedList(arr);
-    Node* head2 = createLinkedList(arr2);
+    Node *head2 = createLinkedList(arr2);
 
     // code
+    std::cout << std::boolalpha;
 
+    std::cout << isSorted(head) << std::endl;  // false
+    std::cout << isSorted(head2) << std::endl; // true
+
+    std::cout << std::noboolalpha;
     return 0;
 }
