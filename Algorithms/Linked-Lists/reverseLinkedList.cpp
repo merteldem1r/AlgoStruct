@@ -8,7 +8,7 @@ struct Node
     Node(int data) : val(data), next(nullptr) {};
 };
 
-Node *createLinkenList(std::vector<int> arr)
+Node *createLinkedList(std::vector<int> arr)
 {
     Node *head = new Node(arr[0]);
     auto temp = head;
@@ -60,7 +60,7 @@ Node *reverseLinkedList(Node *head)
 int main()
 {
     const std::vector<int> arr = {1, 3, 5, 2, 6, 7, 12};
-    Node *head = createLinkenList(arr);
+    Node *head = createLinkedList(arr);
 
     // Reverse linked list
     std::cout << "Linked lift before: ";

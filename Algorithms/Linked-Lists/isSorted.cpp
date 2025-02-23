@@ -23,33 +23,18 @@ Node *createLinkedList(std::vector<int> arr)
     return head;
 }
 
-std::pair<int, int> maxMin(Node *head)
-{
-    int max = head->val;
-    int min = head->val;
-    auto temp = head;
+// Check wether the linked list sorted or not (in ascending order)
 
-    while (temp != nullptr)
-    {
-        if (temp->val > max)
-            max = temp->val;
-        if (temp->val < min)
-            min = temp->val;
 
-        temp = temp->next;
-    }
-
-    return {max, min};
-}
 
 int main()
 {
     const std::vector<int> arr = {1, 3, 5, 2, 6, 7, 12};
+    const std::vector<int> arr2 = {1, 3, 5, 7, 12, 18, 25};
     Node *head = createLinkedList(arr);
+    Node* head2 = createLinkedList(arr2);
 
-    auto [max, min] = maxMin(head);
-
-    std::cout << "Min: " << min << " Max: " << max << std::endl; // Min: 1 Max: 12
+    // code
 
     return 0;
 }
