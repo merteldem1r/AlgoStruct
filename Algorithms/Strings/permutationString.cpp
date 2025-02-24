@@ -55,8 +55,6 @@ void recursivePermutation(char str[], int l, int h) // Time: O(n * n!) Space: O(
 // Lexicographic order
 void recursivePermutation2(std::string &str, int l, int h) // Time: O(n * n!) Space: O(n)
 {
-    int i;
-
     if (l == h)
         std::cout << str << " ";
     else
