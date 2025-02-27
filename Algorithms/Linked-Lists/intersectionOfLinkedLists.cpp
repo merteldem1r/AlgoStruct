@@ -9,7 +9,11 @@ struct Node
     Node(int data) : val(data), next(nullptr) {};
 };
 
-Node *getIntersectionNode(Node *headA, Node *headB)
+// Given the heads of two singly linked-lists headA and headB, return the node at which the two lists intersect. If the two linked lists have no intersection at all, return null.
+// LeetCode problem: https://leetcode.com/problems/intersection-of-two-linked-lists/description/
+
+// 1) Method using Additional Space (unordered_map)
+Node *getIntersectionNode(Node *headA, Node *headB) // Time: O(n) Space: O(n)
 {
     std::unordered_map<Node *, int> listMap;
 
@@ -30,6 +34,10 @@ Node *getIntersectionNode(Node *headA, Node *headB)
 
     return nullptr;
 }
+
+// 2) Method using Two Pointers
+
+
 
 int main()
 {
