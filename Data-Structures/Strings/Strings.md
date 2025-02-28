@@ -1,7 +1,5 @@
 # Strings (Data Structure)
 
-![Data Structures Algorithms (1)](https://github.com/user-attachments/assets/15e79d95-c16e-4b88-be52-f93b9c09631f)
-
 In computer programming, a string is traditionally a sequence of characters, either as a literal constant or as some kind of variable. The latter may allow its elements to be mutated and the length changed, or it may be fixed (after creation). A string is generally considered as a data type and is often implemented as an array data structure of bytes (or words) that stores a sequence of elements, typically characters, using some character encoding. String may also denote more general arrays or other sequence (or list) data types and structures.
 
 ## General Properties of Strings in C and C++
@@ -83,3 +81,5 @@ In computer programming, a string is traditionally a sequence of characters, eit
 - **Immutable**: Cannot change contents after creation.
 - **Inefficient Copying**: Creating a modified string results in a new string, leading to **O(n)** copying each time.
 - **Concatenation**: Repeated concatenation inside a loop can degrade to **O(n^2)** due to repeated copying.
+
+

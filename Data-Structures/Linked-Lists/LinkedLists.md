@@ -1,7 +1,5 @@
 # Linked Lists Data Structure
 
-*This readme file modified usind AI*
-
 A **linked list** is a fundamental data structure in computer science used to store a collection of elements. Unlike arrays, linked lists are dynamic in size and provide efficient insertion and deletion operations. This document provides an overview of linked lists, their importance, and the different variations.
 
 ---
@@ -127,3 +125,5 @@ Linked lists are a versatile and essential data structure in programming. Unders
 ---
 
 Feel free to contribute or suggest improvements to this document!
+
+
