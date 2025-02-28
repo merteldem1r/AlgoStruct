@@ -34,6 +34,7 @@ Each topic contain **code examples** with explained **comment lines** and **Read
   - [Array ADT](#array-adt)
   - [Strings](#strings)
   - [Linked Lists](#linked-lists)
+  - [Stack](#stack)
   - [Heap](#heap)
 
 - [Algorithms](#algorithms)
@@ -43,6 +44,7 @@ Each topic contain **code examples** with explained **comment lines** and **Read
   - [Bitwise Operations](#bitwise-operations)
   - [String Algorithms](#string-algorithms)
   - [Linked List Algorithms](#linked-lists-algorithms)
+  - [Stack Algorihtms](#stack-algorithms)
 
 ## Essential Concepts of C & C++
 
