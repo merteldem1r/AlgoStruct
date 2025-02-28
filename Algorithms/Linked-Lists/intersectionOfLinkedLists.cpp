@@ -26,18 +26,28 @@ Node *getIntersectionNode(Node *headA, Node *headB) // Time: O(n) Space: O(n)
     while (headB != nullptr)
     {
         if (listMap.count(headB) > 0)
-        {
             return headB;
-        }
+
         headB = headB->next;
     }
 
     return nullptr;
 }
 
-// 2) Method using Two Pointers
+// 2) Method using One Iteration
+Node *getIntersectionNode2(Node *headA, Node *headB)
+{
+    auto tempA = headA;
+    auto tempB = headB;
 
+    while (tempA != tempB)
+    {
+        tempA = tempA == nullptr ? headB : tempA->next;
+        tempB = tempB == nullptr ? headA : tempB->next;
+    }
 
+    return tempA;
+}
 
 int main()
 {
