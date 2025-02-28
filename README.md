@@ -202,6 +202,16 @@ In computer programming, a string is traditionally a sequence of characters, eit
   Folder: [Linked-Lists](Data-Structures/Linked-Lists)
   Readme: [LinkedLists.md](Data-Structures/Linked-Lists/LinkedLists.md)
 
+### STACK
+
+A **Stack** is a linear data structure that follows the **Last In, First Out (LIFO)** principle. This means that the last element added to the stack will be the first one to be removed.
+
+- Stack implementation using std::vector<>
+- Stack implementation from scratch with manual memory management (on Heap)
+
+  Folder: [Stack](Data-Structures/Stack/)
+  Readme: [Stack.md](Data-Structures/Stack/Stack.md)
+
 ### HEAP
 
 A **Heap** is a [complete binary](https://www.geeksforgeeks.org/complete-binary-tree/) tree data structure that satisfies the heap property:
@@ -293,6 +303,6 @@ In C+, Bitwise Operators are the operators that are used to perform bit-level op
 
 ### Stack Algorithms
 
-- _foo_
+- _coming_
 
   Folder: [Linked-List-Algorithms](Algorithms/Stack/)
