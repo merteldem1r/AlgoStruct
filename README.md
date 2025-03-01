@@ -305,6 +305,6 @@ In C+, Bitwise Operators are the operators that are used to perform bit-level op
 
 ### Stack Algorithms
 
-- _coming_
+- _isValidParantheses_
 
   Folder: [Linked-List-Algorithms](Algorithms/Stack/)
