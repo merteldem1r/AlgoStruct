@@ -13,6 +13,7 @@ Postfix expression: The expression of the form “a b operator” (ab+) i.e., Wh
     +, -            1
     *, /            2
     ( )             3
+
     - Compiler needs paratheses for all expressions, no expression should be outside of parantheses, if they are not compiler will logically paranthesyze it by using "precedence".
 
     Example (infix form): a + b * c
@@ -50,7 +51,7 @@ Postfix expression: The expression of the form “a b operator” (ab+) i.e., Wh
     ( )             5               L - R
 
 
-    Unary Operators (most higher presedence):
+    Unary Operators (most higher precedence):
         -a
         pre: -a     post: a-
 
@@ -92,7 +93,7 @@ Postfix expression: The expression of the form “a b operator” (ab+) i.e., Wh
     8. Finally, print the postfix expression.
 */
 
-int presedence(char c)
+int precedence(char c)
 {
     if (c == '^')
         return 3;
@@ -104,26 +105,40 @@ int presedence(char c)
         return -1;
 }
 
-std::string infixToPostfix(std::string &infix)
+std::string infixToPostfix(const std::string &infix)
 {
     std::string postfix;
     std::stack<char> operatorSt;
 
     for (char c : infix)
     {
-        if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+        if (std::isalnum(c))
         {
             postfix.push_back(c);
-            continue;
         }
-
-        while (!operatorSt.empty() && presedence(c) <= presedence(operatorSt.top()))
+        else if (c == '(')
         {
-            postfix.push_back(operatorSt.top());
+            operatorSt.push(c);
+        }
+        else if (c == ')')
+        {
+            while (!operatorSt.empty() && operatorSt.top() != '(')
+            {
+                postfix.push_back(operatorSt.top());
+                operatorSt.pop();
+            }
             operatorSt.pop();
         }
+        else
+        {
+            while (!operatorSt.empty() && precedence(c) <= precedence(operatorSt.top()))
+            {
+                postfix.push_back(operatorSt.top());
+                operatorSt.pop();
+            }
 
-        operatorSt.push(c);
+            operatorSt.push(c);
+        }
     }
 
     while (!operatorSt.empty())
@@ -135,10 +150,68 @@ std::string infixToPostfix(std::string &infix)
     return postfix;
 }
 
+int performOperation(const char c, const int a, const int b)
+{
+    switch (c)
+    {
+    case '+':
+        return a + b;
+    case '-':
+        return a - b;
+    case '*':
+        return a * b;
+    case '/':
+        return b != 0 ? a / b : 0;
+    default:
+        std::cout << "Invalid Operation" << std::endl;
+        return -1;
+    }
+}
+
+// Findindg the actual result of the expression
+int evaluatePostfix(const std::string &postfix)
+{
+    std::stack<int> resStack;
+
+    for (char c : postfix)
+    {
+        if (std::isdigit(c))
+        {
+            short digit = c - '0';
+            resStack.push(digit);
+        }
+        else if (!resStack.empty())
+        {
+            const int a = resStack.top();
+            resStack.pop();
+
+            const int b = resStack.top();
+            resStack.pop();
+
+            const int operationRes = performOperation(c, b, a); // first value poped out comes to the right hand side
+            resStack.push(operationRes);
+        }
+    }
+
+    return resStack.top();
+}
+
 int main()
 {
     std::string example = "a+b*c-d/e";
+    std::string example2 = "a+b*(c^d-e)^(f+g*h)-i";
 
-    std::cout << "Postfix form of: " << example << " is: " << infixToPostfix(example) << std::endl; // abc*+de/-
+    std::cout << "Postfix form of: " << example << " is: " << infixToPostfix(example) << std::endl;  // abc*+de/-
+    std::cout << "Postfix form of: " << example << " is: " << infixToPostfix(example) << std::endl;  // abc*+de/-
+    std::cout << "Postfix form of: " << example << " is: " << infixToPostfix(example2) << std::endl; // abcd^e-fgh*+^*+i-
+
+    std::string example3 = "3*5+6/2-4";
+
+    std::string example3PostFix = infixToPostfix(example3);
+    const int result = evaluatePostfix(example3PostFix);
+
+    std::cout << "Postfix form of: " << example3 << " is: " << example3PostFix << std::endl; // 35*62/+4-
+    std::cout << "Result of: " << example3PostFix << " is: " << result << std::endl;         // 14
+
     return 0;
 }
