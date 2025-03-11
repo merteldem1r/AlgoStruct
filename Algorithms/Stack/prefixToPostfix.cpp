@@ -13,7 +13,6 @@ Postfix expression: The expression of the form “a b operator” (ab+) i.e., Wh
     +, -            1
     *, /            2
     ( )             3
-
     - Compiler needs paratheses for all expressions, no expression should be outside of parantheses, if they are not compiler will logically paranthesyze it by using "precedence".
 
     Example (infix form): a + b * c
