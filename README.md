@@ -191,7 +191,9 @@ In computer programming, a string is traditionally a sequence of characters, eit
 - std::string
 
   Code: [Strings.cpp](Data-Structures/Strings/Strings.cpp)
+  </br>
   Readme: [Strings.md](Data-Structures/Strings/Strings.md)
+  </br>
   ASCII TABLE: [ASCII-Table.png](Data-Structures/Strings/ASCII-Table.png)
 
 ### LINKED LIST
@@ -202,6 +204,7 @@ In computer programming, a string is traditionally a sequence of characters, eit
 - Single & Double & Circular Linked Lists
 
   Folder: [Linked-Lists](Data-Structures/Linked-Lists)
+  </br>
   Readme: [LinkedLists.md](Data-Structures/Linked-Lists/LinkedLists.md)
 
 ### STACK
@@ -212,6 +215,7 @@ A **Stack** is a linear data structure that follows the **Last In, First Out (LI
 - Stack implementation from scratch with manual memory management (on Heap)
 
   Folder: [Stack](Data-Structures/Stack/)
+  </br>
   Readme: [Stack.md](Data-Structures/Stack/Stack.md)
 
 ### HEAP
