@@ -1,6 +1,6 @@
 #include <iostream>
 
-// Implementing Queue using Nodes
+// Implementing Queue using Linked List
 
 struct Node
 {
