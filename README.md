@@ -35,6 +35,7 @@ Each topic contain **code examples** with explained **comment lines** and **Read
   - [Strings](#strings)
   - [Linked Lists](#linked-lists)
   - [Stack](#stack)
+  - [Queue](#queue)
   - [Heap](#heap)
 
 - [Algorithms](#algorithms)
@@ -45,6 +46,7 @@ Each topic contain **code examples** with explained **comment lines** and **Read
   - [String Algorithms](#string-algorithms)
   - [Linked List Algorithms](#linked-lists-algorithms)
   - [Stack Algorihtms](#stack-algorithms)
+  - [Queue Algorithms](#queue-algorithms)
 
 ## Essential Concepts of C & C++
 
@@ -218,6 +220,16 @@ A **Stack** is a linear data structure that follows the **Last In, First Out (LI
   </br>
   Readme: [Stack.md](Data-Structures/Stack/Stack.md)
 
+### QUEUE
+
+A **Queue** Data Structure is a fundamental concept in computer science used for storing and managing data in a specific order. It follows the principle of **"First in, First out" (FIFO)**, where the first element added to the queue is the first one to be removed.
+
+- Queue implementation using Linked Lists
+
+  Folder: [Queue](Data-Structures/Queue/)
+  </br>
+  // _readme_
+
 ### HEAP
 
 A **Heap** is a [complete binary](https://www.geeksforgeeks.org/complete-binary-tree/) tree data structure that satisfies the heap property:
@@ -291,9 +303,9 @@ In C+, Bitwise Operators are the operators that are used to perform bit-level op
 - AND, OR, XOR, NOT, Left Shift, Right Shift
 - _hammingWeight_ - _swapVariables_
 
-  Folder: [Bitwise-Operations](Algorithms/Bitwise-Operaitons)
+  Folder: [Bitwise-Operations](Algorithms/Bitwise-Operations)
   </br>
-  Readme: [Bitwise.md](Algorithms/Bitwise-Operaitons/Bitwise.md)
+  Readme: [Bitwise.md](Algorithms/Bitwise-Operations/Bitwise.md)
 
 ### String Algorithms
 
@@ -311,4 +323,10 @@ In C+, Bitwise Operators are the operators that are used to perform bit-level op
 
 - _isValidParantheses_ - _prefixToPostfix_
 
-  Folder: [Linked-List-Algorithms](Algorithms/Stack/)
+  Folder: [Stack-Algorithms](Algorithms/Stack/)
+
+### Queue Algorithms
+
+- _foo_
+
+  Folder: [Queue-Algorithms](Algorithms/Queue/)
