@@ -1,4 +1,4 @@
-# Linked Lists Data Structure
+# Linked List - Data Structure
 
 A **linked list** is a fundamental data structure in computer science used to store a collection of elements. Unlike arrays, linked lists are dynamic in size and provide efficient insertion and deletion operations. This document provides an overview of linked lists, their importance, and the different variations.
 

@@ -1,4 +1,4 @@
-# Heap (Data Structure)
+# Heap - Data Structure
 
 In computer science, a **Heap** is a specialized tree-based data structure that satisfies the **heap property**. A heap can be either a **Max Heap** or a **Min Heap**:
 

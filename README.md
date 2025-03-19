@@ -224,11 +224,13 @@ A **Stack** is a linear data structure that follows the **Last In, First Out (LI
 
 A **Queue** Data Structure is a fundamental concept in computer science used for storing and managing data in a specific order. It follows the principle of **"First in, First out" (FIFO)**, where the first element added to the queue is the first one to be removed.
 
-- Queue implementation using Linked Lists
+- Queue implementation using array with circular two pointer approach
+- Queue implementation using Linked List
+- Deque (double-ended queue) implementation using Linked List
 
   Folder: [Queue](Data-Structures/Queue/)
   </br>
-  // _readme_
+  Readme: [Queue.md](Data-Structures/Queue/Queue.md)
 
 ### HEAP
 
