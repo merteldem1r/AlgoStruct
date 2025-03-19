@@ -15,15 +15,17 @@ class Queue
 private:
     Node *front;
     Node *rear;
+    int size;
     int length;
 
 public:
-    Queue(int value)
+    Queue(int frontValue, int size)
     {
-        const auto newNode = new Node(value);
-        front = newNode;
-        rear = newNode;
-        length = 1;
+        const auto newNode = new Node(frontValue);
+        this->front = newNode;
+        this->rear = newNode;
+        this->size = size;
+        this->length = 1;
     }
 
     ~Queue()
@@ -42,6 +44,12 @@ public:
     {
         Node *newNode = new Node(value);
 
+        if (isFull())
+        {
+            std::cout << "Queue is already full" << std::endl;
+            return;
+        }
+
         if (front == nullptr)
         {
             front = rear = newNode;
@@ -56,28 +64,39 @@ public:
 
     int dequeue() // Time: O(1)
     {
-        if (front == nullptr)
+        if (empty())
         {
             std::cout << "Queue is empty." << std::endl;
             return -1;
         }
 
         int val = front->val;
-
-        if (front == rear)
-        {
-            delete rear;
-            front = rear = nullptr;
-            --length;
-            return val;
-        }
-
         Node *frontNext = front->next;
+
         delete front;
         front = frontNext;
+
+        if (front == nullptr)
+        {
+            rear = nullptr;
+        }
+
         --length;
 
         return val;
+    }
+
+    int Front()
+    {
+        if (!empty())
+        {
+            return front->val;
+        }
+        else
+        {
+            return -1;
+            std::cout << "Queue is empty" << std::endl;
+        }
     }
 
     void traverse() // Time: O(n)
@@ -95,29 +114,36 @@ public:
 
     bool empty() { return length == 0; } // Time: O(1)
 
-    int size() { return length; } // Time: O(1)
+    int getLength() { return length; } // Time: O(1)
+
+    bool isFull()
+    {
+        return length == size;
+    }
 };
 
 int main()
 {
-    Queue Q(1);
+    Queue Q(1, 10); // Front Element: 1 Size: 10
 
     Q.enqueue(2);
     Q.enqueue(3);
     Q.enqueue(4);
     Q.enqueue(5);
 
-    Q.traverse(); // 1 -> 2 -> 3 -> 4 -> 5 -> nullptr
-    Q.size();     // 5
+    Q.traverse();  // 1 -> 2 -> 3 -> 4 -> 5 -> nullptr
+    Q.getLength(); // 5
 
     Q.dequeue();
     Q.dequeue();
 
-    Q.traverse(); // 3 -> 4 -> 5 -> nullptr
-    Q.size();     // 3
+    Q.traverse();                            // 3 -> 4 -> 5 -> nullptr
+    std::cout << Q.Front() << std::endl;     // 3
+    std::cout << Q.getLength() << std::endl; // 3
 
     std::cout << std::boolalpha;
-    std::cout << Q.empty() << std::endl; // false
+    std::cout << Q.empty() << std::endl;  // false
+    std::cout << Q.isFull() << std::endl; // false
     std::cout << std::noboolalpha;
 
     return 0;
