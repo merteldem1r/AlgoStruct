@@ -10,20 +10,51 @@ Unlike linear data structures (e.g., arrays, linked lists), a tree follows a hie
 
 ## Terminology
 
-- **Node**: A single element in a tree that contains data and references to child nodes.
-- **Root**: The topmost node in a tree (has no parent).
-- **Parent**: A node that has child nodes.
-- **Child**: A node that descends from another node (parent).
-- **Sibling**: Nodes that share the same parent.
-- **Leaf Node**: A node that has no children.
-- **Edge**: A connection between two nodes.
-- **Depth**: The number of edges from the root node to a specific node.
-- **Height**: The number of edges from a node to its deepest descendant.
-- **Degree**: The number of children a node has.
-- **Subtree**: A tree consisting of a node and its descendants.
-- **Descendants**: descendants of a node refer to all the nodes that are directly or indirectly below it in the hierarchy. This includes its children, grandchildren, great-grandchildren, and so on.
-- **Ancestors**: Ancestors of a node are all the nodes that come before it in the hierarchy, moving from the node upward toward the root.
-- **Internal/External Nodes**: An internal node (also called a non-leaf node) is a node that has at least one child. In other words, it is not a leaf node. An internal node (also called a non-leaf node) is a node that has at least one child. In other words, it is not a leaf node.
+### **Root**
+The topmost node in a tree (e.g., `A` in the example below).
+
+### **Parent & Child**
+A **parent** node has one or more **children** nodes. Example: `A` is the parent of `B` and `C`.
+
+### **Ancestors & Descendants**
+- **Ancestors**: All nodes on the path from a given node to the root.
+- **Descendants**: All nodes below a given node.
+  
+#### **Example:**
+```
+        A
+       / \
+      B   C
+     / \   \
+    D   E   F
+```
+- **Ancestors of D**: `B`, `A`
+- **Descendants of B**: `D`, `E`
+
+### **Internal & External (Leaf) Nodes**
+- **Internal Nodes**: Nodes that have at least one child (e.g., `A`, `B`, `C`).
+- **External Nodes (Leaf Nodes)**: Nodes that have no children (e.g., `D`, `E`, `F`).
+
+### **Degree**
+- The **degree of a node** is the number of children it has.
+- The **degree of a tree** is the maximum degree of any node in the tree.
+
+### **Depth & Height**
+- **Depth of a node**: The number of edges from the root to that node.
+- **Height of a node**: The number of edges in the longest path from that node to a leaf.
+- **Height of a tree**: The height of the root node.
+
+### **Forest**
+A **forest** is a collection of disjoint trees.
+
+#### **Example:**
+If we remove the root `A` from the tree above, we get:
+```
+      B       C
+     / \       \
+    D   E       F
+```
+Now `{B → (D, E)}` and `{C → (F)}` form a **forest**.
 
 ---
 
