@@ -329,6 +329,6 @@ In C+, Bitwise Operators are the operators that are used to perform bit-level op
 
 ### Queue Algorithms
 
-- _foo_
+- _implementQueueUsingStack_
 
   Folder: [Queue-Algorithms](Algorithms/Queue/)
