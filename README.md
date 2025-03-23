@@ -232,6 +232,19 @@ A **Queue** Data Structure is a fundamental concept in computer science used for
   </br>
   Readme: [Queue.md](Data-Structures/Queue/Queue.md)
 
+### TREES
+
+**Tree data structure** is a hierarchical structure that is used to represent and organize data in the form of **parent-child** relationship. The following are some real world situations which are naturally a tree.
+
+The topmost node of the tree is called the root, and the nodes below it are called the child nodes. Each node can have multiple child nodes, and these child nodes can also have their own child nodes, forming a recursive structure.
+
+- General idea about trees; terminology, use cases, types etc.
+- foo
+
+  Folder: [Trees](Data-Structures/Trees/)
+  </br>
+  Readme: [Trees.md](Data-Structures/Trees/Trees.md)
+
 ### HEAP
 
 A **Heap** is a [complete binary](https://www.geeksforgeeks.org/complete-binary-tree/) tree data structure that satisfies the heap property:
@@ -332,3 +345,4 @@ In C+, Bitwise Operators are the operators that are used to perform bit-level op
 - _implementQueueUsingStack_
 
   Folder: [Queue-Algorithms](Algorithms/Queue/)
+
