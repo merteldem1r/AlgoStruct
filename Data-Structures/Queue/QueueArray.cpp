@@ -1,6 +1,6 @@
 #include <iostream>
 
-// Implementing Queue using array
+// Implementing Queue using Array with circular approach (two pointers)
 
 class Queue
 {
@@ -23,19 +23,20 @@ public:
 
     ~Queue() { delete[] arr; }
 
-    void enqueue(int value)
+    void enqueue(int value) // Time: O(1)
     {
         if (isFull())
         {
             std::cout << "Queue is full" << std::endl;
             return;
         }
+
         rear = (rear + 1) % capacity;
         arr[rear] = value;
         size++;
     }
 
-    int dequeue()
+    int dequeue() // Time: O(1)
     {
         if (empty())
         {
@@ -49,7 +50,7 @@ public:
         return value;
     }
 
-    int Front()
+    int Front() // Time: O(1)
     {
         if (empty())
         {
@@ -59,13 +60,13 @@ public:
         return arr[front];
     }
 
-    bool empty() { return size == 0; }
+    bool empty() { return size == 0; } // Time: O(1)
 
-    bool isFull() { return size == capacity; }
+    bool isFull() { return size == capacity; } // Time: O(1)
 
-    int getSize() { return size; }
+    int getSize() { return size; } // Time: O(1)
 
-    void display()
+    void display() // Time: O(n)
     {
         if (empty())
         {
@@ -93,14 +94,14 @@ int main()
     Q.enqueue(40);
     Q.enqueue(50);
 
-    Q.display(); // - 10 - 20 - 30 - 40 - 50 - 
+    Q.display(); // - 10 - 20 - 30 - 40 - 50 -
 
     std::cout << "Front: " << Q.Front() << std::endl; // Front: 10
 
     Q.dequeue();
     Q.dequeue();
 
-    Q.display();                                      // - 30 - 40 - 50 - 
+    Q.display();                                      // - 30 - 40 - 50 -
     std::cout << "Front: " << Q.Front() << std::endl; // Front: 30
 
     Q.enqueue(60);

@@ -1,5 +1,7 @@
 #include <iostream>
 
+// Implementing Dequeue using linked list
+
 struct Node
 {
     int val;
