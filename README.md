@@ -233,7 +233,7 @@ A **Queue** Data Structure is a fundamental concept in computer science used for
   </br>
   Readme: [Queue.md](Data-Structures/Queue/Queue.md)
 
-### TREES
+### BINARY TREES
 
 **Tree data structure** is a hierarchical structure that is used to represent and organize data in the form of **parent-child** relationship. The following are some real world situations which are naturally a tree.
 
@@ -346,6 +346,13 @@ In C+, Bitwise Operators are the operators that are used to perform bit-level op
 - _implementQueueUsingStack_
 
   Folder: [Queue-Algorithms](Algorithms/Queue/)
+
+
+### Binary Tree Algorithms
+
+- _catalanNumber_ - _minMaxNodesFromHeight_
+
+  Folder: [Binary-Tree-Algorithms](Algorithms/Binary-Tree//)
 
 ### BFS & DFS Algorithms
 
