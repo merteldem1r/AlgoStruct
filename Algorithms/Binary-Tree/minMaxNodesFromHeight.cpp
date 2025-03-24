@@ -6,8 +6,11 @@
 /*
     Binary tree height vs. node count:
 
-    Minimum number of nodes for height h: h + 1
-    Maximum number of nodes for height h: 2^(h+1) - 1
+    Minimum number of nodes for height => n = h + 1
+    Maximum number of nodes for height => n = 2^(h+1) - 1
+
+        n = node count
+        h = height of the binary tree
 
     Example cases:
 
@@ -24,6 +27,15 @@
                   2
                    \
                     3
+
+    For strict (full binary tree) min and max formulas:
+
+    Minimum number of nodes for height => n = 2h + 1
+    Maximum number fo nodes for height => n = 2^(h+1) - 1
+
+        n = node count
+        h = height of the binary tree
+
 */
 
 std::pair<int, int> maxMinNodeCountFromHeight(int height)

@@ -27,7 +27,37 @@ struct Node
     Node(int value) : left(nullptr), right(nullptr), val(value) {};
 };
 
+/*
+
+Binary Tree: 
+
+       1
+     /   \
+    2     7
+   / \   /
+  12  0 1
+
+
+Array Representation:
+
+    {1, 2, 7, 12, 0, 1} n = 6
+
+    Left: (i * 2) + 1
+    Rigth: (i * 2) + 2
+
+*/
+
+Node* buildBinaryFromArray(std::vector<int> arr) {
+    Node* root = new Node(1);
+    auto temp = root;
+
+    return root;
+}
+
+
 int main()
 {
+    Node root(1);
+    
     return 0;
 }

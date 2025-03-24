@@ -233,14 +233,15 @@ A **Queue** Data Structure is a fundamental concept in computer science used for
   </br>
   Readme: [Queue.md](Data-Structures/Queue/Queue.md)
 
-### BINARY TREES
+### TREES
 
 **Tree data structure** is a hierarchical structure that is used to represent and organize data in the form of **parent-child** relationship. The following are some real world situations which are naturally a tree.
 
 The topmost node of the tree is called the root, and the nodes below it are called the child nodes. Each node can have multiple child nodes, and these child nodes can also have their own child nodes, forming a recursive structure.
 
 - General idea about trees; terminology, use cases, types etc.
-- Binary Tree implementation (number of trees using n-nodes)
+- Binary Tree implementation (number of trees using n-nodes).
+- N-ary Trees
 
   Folder: [Trees](Data-Structures/Trees/)
   </br>
