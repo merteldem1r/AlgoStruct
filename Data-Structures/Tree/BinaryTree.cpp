@@ -51,6 +51,8 @@ Node* buildBinaryFromArray(std::vector<int> arr) {
     Node* root = new Node(1);
     auto temp = root;
 
+    // foo
+
     return root;
 }
 
