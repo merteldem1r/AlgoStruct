@@ -56,6 +56,119 @@ If we remove the root `A` from the tree above, we get:
 ```
 Now `{B → (D, E)}` and `{C → (F)}` form a **forest**.
 
+
+## Types of Binary Trees
+
+### **Full (Strict) Binary Tree**
+- A tree where **every node** has either **0 or 2 children**.
+- Example:
+```
+       1
+      / \
+     2   3
+    / \ 
+   4  5 
+```
+- **Nodes (n) & Height (h) Relation:** `n = 2h+1 - 1`
+
+### **Perfect Binary Tree**
+- A full binary tree where **all leaf nodes are at the same level**.
+- Example:
+```
+       1
+      / \
+     2   3
+    / \ / \
+   4  5 6  7
+```
+- **Nodes (n):** `2^(h+1) - 1`
+- **Height (h):** `log2(n + 1) - 1`
+
+### **Complete Binary Tree**
+- A binary tree where **all levels except possibly the last are completely filled**, and all nodes in the last level are **as left as possible**.
+- Example:
+```
+       1
+      / \
+     2   3
+    / \  /
+   4  5 6
+```
+- **Heap Data Structure** is based on complete binary trees.
+
+### **Balanced Binary Tree**
+- A tree where the **height difference** between left and right subtrees of any node is **at most 1**.
+- Example (Balanced AVL Tree):
+```
+       10
+      /  \
+     5    15
+    / \  /  \
+   2   7 12  17
+```
+- **Height is O(log n)** for efficient searching.
+
+### **Degenerate (Skewed) Binary Tree**
+- A tree where **every node has only one child**.
+- Can be **left-skewed** or **right-skewed**.
+- **Worst-case height = O(n)** (like a linked list).
+- Example:
+```
+       1        1
+      /          \
+     2            2
+    /              \
+   3                3
+```
+
+### **Binary Search Tree (BST)**
+- A **sorted** binary tree where:
+  - Left subtree contains **smaller** values.
+  - Right subtree contains **greater** values.
+- Example:
+```
+       8
+      / \
+     3   10
+    / \    \
+   1   6    14
+      / \   /
+     4   7 13
+```
+- **Search, Insert, Delete:** `O(log n)` (if balanced), `O(n)` (if skewed).
+
+---
+
+## Important Formulas
+| Property | Formula |
+|----------|---------|
+| Max nodes at height h | `2^(h+1) - 1` |
+| Min height for n nodes | `log2(n + 1) - 1` |
+| Min nodes for height h | `h + 1` |
+| Max nodes at level k | `2^(k-1)` |
+| Leaf nodes in a full tree | `(n + 1) / 2` |
+
+---
+
+## Special Binary Trees
+
+### **AVL Tree**
+- A self-balancing BST where height difference between left & right subtrees is at most **1**.
+- Operations like **insertion** & **deletion** trigger **rotations** to maintain balance.
+- **Time Complexity:** `O(log n)`.
+
+### **Red-Black Tree**
+- A self-balancing BST with additional **color property (Red/Black)**.
+- No path from root to a leaf is more than **twice as long** as any other.
+- Used in **map, set, multiset, multimap** in **C++ STL**.
+
+### **Heap (Min/Max Heap)**
+- A complete binary tree where:
+  - **Min-Heap:** Parent is smaller than children.
+  - **Max-Heap:** Parent is larger than children.
+- Used in **priority queues**.
+- **Insertion & Deletion:** `O(log n)`.
+
 ---
 
 ## Types of Trees

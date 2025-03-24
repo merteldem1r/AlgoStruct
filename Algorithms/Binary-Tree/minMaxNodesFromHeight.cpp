@@ -26,7 +26,7 @@
                     3
 */
 
-std::pair<int, int> maxMinNodeCount(int height)
+std::pair<int, int> maxMinNodeCountFromHeight(int height)
 {
     std::pair<int, int> maxMin = {0, 0};
 
@@ -38,8 +38,8 @@ std::pair<int, int> maxMinNodeCount(int height)
 
 int main()
 {
-    auto [max, min] = maxMinNodeCount(3);
-    auto [max2, min2] = maxMinNodeCount(5);
+    auto [max, min] = maxMinNodeCountFromHeight(3);
+    auto [max2, min2] = maxMinNodeCountFromHeight(5);
 
     std::cout << "Max node count for height: " << 3 << " is: " << max << std::endl; // 15
     std::cout << "Min node count for height: " << 3 << " is: " << min << std::endl; // 4
