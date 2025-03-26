@@ -48,6 +48,7 @@ Each topic contain **code examples** with explained **comment lines** and **Read
   - [Linked List Algorithms](#linked-lists-algorithms)
   - [Stack Algorihtms](#stack-algorithms)
   - [Queue Algorithms](#queue-algorithms)
+  - [Binary Tree Algorithms](#binary-tree-algorithms)
 
 ## Essential Concepts of C & C++
 
