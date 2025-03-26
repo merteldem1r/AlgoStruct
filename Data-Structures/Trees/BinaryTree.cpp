@@ -29,7 +29,7 @@ struct Node
 
 /*
 
-Binary Tree: 
+Binary Tree:
 
        1
      /   \
@@ -47,46 +47,49 @@ Array Representation:
 
 */
 
-void buildBinaryFromArray(const std::vector<int> &arr, Node* root, int currIndex) {
-    if (currIndex > arr.size()) return;
+void buildBinaryFromArray(const std::vector<int> &arr, Node *root, int currIndex)
+{
+    if (currIndex > arr.size())
+        return;
 
     int leftIndex = (currIndex * 2) + 1;
     int rightIndex = (currIndex * 2) + 2;
 
-
-    if (leftIndex < arr.size()) {
+    if (leftIndex < arr.size())
+    {
         root->left = new Node(arr[leftIndex]);
         buildBinaryFromArray(arr, root->left, leftIndex);
     }
 
-    if (rightIndex < arr.size()) {
+    if (rightIndex < arr.size())
+    {
         root->right = new Node(arr[rightIndex]);
         buildBinaryFromArray(arr, root->right, rightIndex);
     }
 }
 
-void bfs(Node* root) {
-    std::queue<Node*> treeQueue;
+void bfs(Node *root)
+{
+    std::queue<Node *> treeQueue;
     treeQueue.push(root);
 
-    while(!treeQueue.empty()) {
+    while (!treeQueue.empty())
+    {
         auto front = treeQueue.front();
         treeQueue.pop();
 
         std::cout << front->val << " ";
 
-        if (front->left) {
+        if (front->left)
             treeQueue.push(front->left);
-        }
-
-        if (front->right) treeQueue.push(front->right);
-        
+        if (front->right)
+            treeQueue.push(front->right);
     }
 }
 
 int main()
 {
-    Node* root = new Node(1);
+    Node *root = new Node(1);
     const std::vector<int> exampleArr = {1, 2, 7, 12, 0, 1};
 
     buildBinaryFromArray(exampleArr, root, 0);
