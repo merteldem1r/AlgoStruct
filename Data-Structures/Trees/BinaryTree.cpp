@@ -47,7 +47,7 @@ Array Representation:
 
 */
 
-void buildBinaryFromArray(const std::vector<int> &arr, Node *root, int currIndex)
+void buildBinaryTreeFromArray(const std::vector<int> &arr, Node *root, int currIndex)
 {
     if (currIndex > arr.size())
         return;
@@ -58,17 +58,17 @@ void buildBinaryFromArray(const std::vector<int> &arr, Node *root, int currIndex
     if (leftIndex < arr.size())
     {
         root->left = new Node(arr[leftIndex]);
-        buildBinaryFromArray(arr, root->left, leftIndex);
+        buildBinaryTreeFromArray(arr, root->left, leftIndex);
     }
 
     if (rightIndex < arr.size())
     {
         root->right = new Node(arr[rightIndex]);
-        buildBinaryFromArray(arr, root->right, rightIndex);
+        buildBinaryTreeFromArray(arr, root->right, rightIndex);
     }
 }
 
-void bfs(Node *root)
+void bfs(Node *root) // Time: O(n) Space: O(n)
 {
     std::queue<Node *> treeQueue;
     treeQueue.push(root);
@@ -92,7 +92,7 @@ int main()
     Node *root = new Node(1);
     const std::vector<int> exampleArr = {1, 2, 7, 12, 0, 1};
 
-    buildBinaryFromArray(exampleArr, root, 0);
+    buildBinaryTreeFromArray(exampleArr, root, 0); // {1, 2, 7, 12, 0, 1}
     bfs(root);
 
     return 0;
