@@ -29,7 +29,7 @@ struct Node
 
 /*
 
-Binary Tree:
+Binary Tree Linked List Representation:
 
        1
      /   \
@@ -38,7 +38,7 @@ Binary Tree:
   12  0 1
 
 
-Array Representation:
+Array Representation for the same Binary Tree:
 
     {1, 2, 7, 12, 0, 1} n = 6
 
@@ -47,7 +47,7 @@ Array Representation:
 
 */
 
-void buildBinaryTreeFromArray(const std::vector<int> &arr, Node *root, int currIndex)
+void binaryTreeFromArray(const std::vector<int> &arr, Node *root, int currIndex)
 {
     if (currIndex > arr.size())
         return;
@@ -58,13 +58,13 @@ void buildBinaryTreeFromArray(const std::vector<int> &arr, Node *root, int currI
     if (leftIndex < arr.size())
     {
         root->left = new Node(arr[leftIndex]);
-        buildBinaryTreeFromArray(arr, root->left, leftIndex);
+        binaryTreeFromArray(arr, root->left, leftIndex);
     }
 
     if (rightIndex < arr.size())
     {
         root->right = new Node(arr[rightIndex]);
-        buildBinaryTreeFromArray(arr, root->right, rightIndex);
+        binaryTreeFromArray(arr, root->right, rightIndex);
     }
 }
 
@@ -92,7 +92,7 @@ int main()
     Node *root = new Node(1);
     const std::vector<int> exampleArr = {1, 2, 7, 12, 0, 1};
 
-    buildBinaryTreeFromArray(exampleArr, root, 0); // {1, 2, 7, 12, 0, 1}
+    binaryTreeFromArray(exampleArr, root, 0); // {1, 2, 7, 12, 0, 1}
     bfs(root);
 
     return 0;
