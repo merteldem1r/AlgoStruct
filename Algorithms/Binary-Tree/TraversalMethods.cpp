@@ -9,7 +9,7 @@ struct Node
     Node(int value) : val(value), left(nullptr), right(nullptr) {};
 };
 
-// Function to insert nodes in level order
+// Function to insert nodes in level order (to create bunary tree from the array of integers)
 Node *insertLevelOrder(std::vector<int> arr, int index)
 {
     if (index >= arr.size())
@@ -35,7 +35,8 @@ Node *insertLevelOrder(std::vector<int> arr, int index)
 
 */
 
-void preorder(Node *root)
+// 1) PREORDER RECURSIVE
+void preorder(Node *root) // Time: O(n) Space: O(n)
 {
     if (root != nullptr)
     {
@@ -45,7 +46,27 @@ void preorder(Node *root)
     }
 }
 
-void inorder(Node *root)
+// 1.1) PREORDER ITERATIVE
+void preorderIterative(Node *root)
+{
+    std::stack<Node *> st;
+    st.push(root);
+
+    while (!st.empty())
+    {
+        auto top = st.top();
+        std::cout << top->val << " ";
+        st.pop();
+
+        if (top->right != nullptr)
+            st.push(top->right);
+        if (top->left != nullptr)
+            st.push(top->left);
+    }
+}
+
+// 2) INORDER RECURSIVE
+void inorder(Node *root) // Time: O(n) Space: O(n)
 {
     if (root != nullptr)
     {
@@ -55,7 +76,14 @@ void inorder(Node *root)
     }
 }
 
-void postorder(Node *root)
+// 2.1) INORDER ITERATIVE
+void inorderIterative(Node *root)
+{
+    // code
+}
+
+// 3) POSTORDER
+void postorder(Node *root) // Time: O(n) Space: O(n)
 {
     if (root != nullptr)
     {
@@ -65,7 +93,7 @@ void postorder(Node *root)
     }
 }
 
-// 4) Level Order Traversal
+// 4) LEVEL ORDER
 void levelOrder(Node *root) // Time: O(n) Space: O(n)
 {
     std::queue<Node *> treeQueue;
@@ -98,18 +126,26 @@ int main()
          12  0 21
     */
 
+    // 1) PREORDER
     std::cout << "preorder: ";
-    preorder(root); // 1 2 12 0 7 21
+    preorder(root); // // 1 2 12 0 7 21
+    std::cout << " preorder iterative: ";
+    preorderIterative(root); // // 1 2 12 0 7 21
     std::cout << std::endl;
 
+    // 2) INORDER
     std::cout << "inorder: ";
     inorder(root); // 2 12 0 1 7 21
+    std::cout << " inorder iterative: ";
+    inorderIterative(root);
     std::cout << std::endl;
 
+    // 3) POSTORDER
     std::cout << "postorder: ";
     postorder(root); // 2 12 0 7 21 1
     std::cout << std::endl;
 
+    // 4) LEVEL ORDER
     std::cout << "level order: ";
     levelOrder(root); // 1 2 7 12 0 21
     std::cout << std::endl;
