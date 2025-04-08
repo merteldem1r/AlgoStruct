@@ -27,6 +27,7 @@ Each topic contain **code examples** with explained **comment lines** and **Read
   - [Object Oriented Programming](#object-oriented-programming)
   - [Generics](#generics)
   - [Templates](#templates)
+  - [Operator Overloading](#operator-overloading)
 
 - [Data Structures](#data-structures)
 
@@ -160,6 +161,15 @@ A **template** is a simple yet very powerful tool in C++. The simple idea is to 
   Code: [templates.cpp](Essential-Concepts/Templates/templates.cpp)
   </br>
   Readme: [Templates.md](Essential-Concepts/Templates/Templates.md)
+
+### Operator Overloading
+
+**Operator Overloading** is a fundamental **feature of C++** that allows developers to redefine the behavior of operators for user-defined types (classes and structs). This powerful mechanism enhances the expressiveness and readability of code, making user-defined types behave more like built-in types.
+
+- Operator overloading, use cases, examples
+
+  Code: [OperatorOverloading.cpp](Essential-Concepts/Operator-Overloading/OperatorOverloading.cpp)
+  Readme: [OperatorOverloading.md](Essential-Concepts/Operator-Overloading//OperatorOverloading.md)
 
 ## DATA STRUCTURES
 
@@ -349,11 +359,10 @@ In C+, Bitwise Operators are the operators that are used to perform bit-level op
 
   Folder: [Queue-Algorithms](Algorithms/Queue/)
 
-
 ### Binary Tree Algorithms
 
 - _TraversalMethods_ - _catalanNumber_ - _minMaxNodesFromHeight_
- 
+
   Folder: [Binary-Tree-Algorithms](Algorithms/Binary-Tree//)
 
 ### BFS & DFS Algorithms
@@ -363,4 +372,3 @@ In C+, Bitwise Operators are the operators that are used to perform bit-level op
 
   Folder: [BFS-DFS](Algorithms/BFS-DFS/)
   Readme: [BFS-DFC Readme](Algorithms/BFS-DFS/Readme.md)
-
