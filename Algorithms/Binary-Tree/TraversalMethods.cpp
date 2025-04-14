@@ -47,21 +47,24 @@ void preorder(Node *root) // Time: O(n) Space: O(n)
 }
 
 // 1.1) PREORDER ITERATIVE
-void preorderIterative(Node *root)
+void preorderIterative(Node *root) // Time: O(n) Space: O(n)
 {
+    if (!root)
+        return;
+
     std::stack<Node *> st;
     st.push(root);
 
     while (!st.empty())
     {
-        auto top = st.top();
-        std::cout << top->val << " ";
+        Node *curr = st.top();
         st.pop();
+        std::cout << curr->val << " ";
 
-        if (top->right != nullptr)
-            st.push(top->right);
-        if (top->left != nullptr)
-            st.push(top->left);
+        if (curr->right)
+            st.push(curr->right);
+        if (curr->left)
+            st.push(curr->left);
     }
 }
 
@@ -77,9 +80,26 @@ void inorder(Node *root) // Time: O(n) Space: O(n)
 }
 
 // 2.1) INORDER ITERATIVE
-void inorderIterative(Node *root)
+void inorderIterative(Node *root) // Time: O(n) Space: O(n)
 {
-    // code
+    std::stack<Node *> st;
+    auto temp = root;
+
+    while (!st.empty() || temp != nullptr)
+    {
+        if (temp != nullptr)
+        {
+            st.push(temp);
+            temp = temp->left;
+        }
+        else
+        {
+            auto topNode = st.top();
+            st.pop();
+            std::cout << topNode->val << " ";
+            temp = topNode->right;
+        }
+    }
 }
 
 // 3) POSTORDER
@@ -90,6 +110,65 @@ void postorder(Node *root) // Time: O(n) Space: O(n)
         preorder(root->left);
         preorder(root->right);
         std::cout << root->val << " ";
+    }
+}
+
+// 3.1) POSTORDER ITERATIVE
+void postorderIterative(Node *root) // Time: O(n) Space: O(n)
+{
+    std::stack<std::pair<Node *, bool>> visitedStack;
+    visitedStack.push({root, false});
+    std::vector<int> res;
+
+    while (!visitedStack.empty())
+    {
+        auto [curr, isVisited] = visitedStack.top();
+        visitedStack.pop();
+
+        if (curr != nullptr)
+        {
+            if (isVisited)
+            {
+                res.push_back(curr->val);
+            }
+            else
+            {
+                visitedStack.push({curr, true});
+                visitedStack.push({curr->right, false});
+                visitedStack.push({curr->left, false});
+            }
+        }
+    }
+
+    for (auto &val : res)
+        std::cout << val << " ";
+}
+
+// 3.2) POSTORDER ITERATIVE
+void postorderIterative2(Node *root) // Time: O(n) Space: O(n)
+{
+    if (!root)
+        return;
+
+    std::stack<Node *> st1, st2;
+    st1.push(root);
+
+    while (!st1.empty())
+    {
+        Node *curr = st1.top();
+        st1.pop();
+        st2.push(curr);
+
+        if (curr->left)
+            st1.push(curr->left);
+        if (curr->right)
+            st1.push(curr->right);
+    }
+
+    while (!st2.empty())
+    {
+        std::cout << st2.top()->val << " ";
+        st2.pop();
     }
 }
 
@@ -143,6 +222,10 @@ int main()
     // 3) POSTORDER
     std::cout << "postorder: ";
     postorder(root); // 2 12 0 7 21 1
+    std::cout << " postorder iterative: ";
+    postorderIterative(root); // 2 12 0 7 21 1
+    std::cout << " postorder iterative 2nd version: ";
+    postorderIterative2(root); // 2 12 0 7 21 1
     std::cout << std::endl;
 
     // 4) LEVEL ORDER
