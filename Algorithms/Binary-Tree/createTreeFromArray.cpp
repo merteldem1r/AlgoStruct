@@ -2,14 +2,6 @@
 
 /*
 
-        To generate Trees using Traversal methods:
-
-        * Preorder, Inorder, Postorder traversal CAN NOT CREATE TREE because possible tree combinations from these traversals are: 2n(Cn) / n + 1
-
-        That's why we should use LEVEL ORDER traversal method!
-
-
-
         Array: {1, 2, 7, 12, 0, 21}
 
         Left: (2 * i) + 1
@@ -34,7 +26,7 @@ struct Node
     Node(int value) : val(value), left(nullptr), right(nullptr) {};
 };
 
-Node *generateTree(std::vector<int> &arr, int indx)
+Node *generateTree(std::vector<int> &arr, int indx) // Time: O(n) Space: O(n)
 {
     if (indx >= arr.size())
         return nullptr;

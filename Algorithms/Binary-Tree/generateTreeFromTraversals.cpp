@@ -187,10 +187,64 @@ Final Tree Structure from Inorder + Postorder:
     D  E F
 */
 
+struct Node
+{
+    int val;
+    Node *left;
+    Node *right;
 
+    Node(int value) : val(value), left(nullptr), right(nullptr) {};
+};
 
+int getInorderIndex(std::vector<int> &inorderArr, int value, int low, int high);
+
+Node *generateTree(std::vector<int> &inorderArr, std::vector<int> &preorderArr, int low, int high) // Time: O(n^2) Space: O(n)
+{
+    if (low > high)
+        return nullptr;
+
+    static int preorderIndx = 0;
+
+    Node* root = new Node(preorderArr[preorderIndx++]);
+    
+    if (low == high) return root;
+
+    int inorderIndex = getInorderIndex(inorderArr, low, high, root->val);
+    root->left = generateTree(inorderArr, preorderArr, low, inorderIndex - 1);
+    root->right = generateTree(inorderArr, preorderArr, inorderIndex + 1, high);
+
+    return root;
+}
+
+int getInorderIndex(std::vector<int> &inorderArr, int low, int high, int value)
+{
+    for (int i = low; i <= high; ++i)
+    {
+        if (inorderArr[i] == value)
+            return i;
+    }
+
+    return -1;
+}
+
+// just to check is generated tree is correct
+void inorderTraversal(Node *root)
+{
+    if (root == nullptr)
+        return;
+
+    inorderTraversal(root->left);
+    std::cout << root->val << " ";
+    inorderTraversal(root->right);
+}
 
 int main()
 {
+    std::vector<int> inorder = {2, 5, 6, 10, 12, 14, 15}; 
+    std::vector<int> preorder = {10, 5, 2, 6, 14, 12, 15};
+
+    auto root = generateTree(inorder, preorder, 0, inorder.size() - 1);
+    inorderTraversal(root); // 2 5 6 10 12 14 15 which shows that the generate function was correct
+
     return 0;
 }
