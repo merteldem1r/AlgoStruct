@@ -198,6 +198,8 @@ int main()
     Node *root = insertLevelOrder(arr, 0);
 
     /*
+        Visualization of Binary Tree that were created from the array:
+
               1
             /   \
            2     7
