@@ -1,55 +1,48 @@
-# AlgoStruct: Mastering DSA with C & C++
+# AlgoStruct - Mastering DSA with C & C++
 
 ![Data Structures Algorithms](https://github.com/user-attachments/assets/9d7eda38-a40f-4673-bef2-960c03522266)
 
 A comprehensive guide to Data Structures, Algorithms, and essential concepts like Pointers, OOP, Structures, Memory Management etc. Features well-documented code with clear comments and detailed Readme files, implementing all data structures and their algorithms from scratch.
 
-**<ins>AUTHOR**</ins>: [Mert Eldemir](https://github.com/merteldem1r)</br>
-**<ins>SEARCH RESOURSES</ins>**:
-[Abdul Bari](https://www.udemy.com/course/datastructurescncpp/)
-[cplusplus](https://cplusplus.com/doc/tutorial/)
-[geeksforgeeks](https://www.geeksforgeeks.org/)
-[leetcode](https://leetcode.com/)
-[wikipedia](https://en.wikipedia.org/)
+**AUTHOR**: [Mert Eldemir](https://github.com/merteldem1r)</br>
+**SEARCH RESOURSES**:
+[Abdul Bari](https://www.udemy.com/course/datastructurescncpp/) |
+[CPlusPlus](https://cplusplus.com/doc/tutorial/) |
+[GeeksforGeeks](https://www.geeksforgeeks.org/) |
+[NeetCodeIO](https://www.youtube.com/@NeetCodeIO) |
+[LeetCode](https://leetcode.com/) |
+[Wikipedia](https://en.wikipedia.org/) 
+
 
 Project divided into **3 topics**. Here the table of **headings** and **subheadings**.
 Each topic contain **code examples** with explained **comment lines** and **Readme files**.
 
-- [Essential Concepts of C & C++](#essential-concepts-of-c--c)
+## Table of Contents
 
-  - [Array Basics](#array-basics)
-  - [Structures](#structures)
-  - [Pointers](#pointers)
-  - [Reference](#reference)
-  - [Functions](#functions)
-  - [Converting C code to C++](#converting-c-code-to-c)
-  - [Scope Resolution](#scope-resolution)
-  - [Object Oriented Programming](#object-oriented-programming)
-  - [Generics](#generics)
-  - [Templates](#templates)
-  - [Operator Overloading](#operator-overloading)
+### Essential Concepts
+- [Array Basics](#array-basics) • [Structures](#structures) • [Pointers](#pointers) • [Reference](#reference)
+- [Functions](#functions) • [Converting C to C++](#converting-c-code-to-c)
+- [Scope Resolution](#scope-resolution) • [OOP](#object-oriented-programming)
+- [Generics](#generics) • [Templates](#templates) • [Operator Overloading](#operator-overloading)
 
-- [Data Structures](#data-structures)
+---
 
-  - [Array Representations](#array-representations)
-  - [Array ADT](#array-adt)
-  - [Strings](#strings)
-  - [Linked Lists](#linked-lists)
-  - [Stack](#stack)
-  - [Queue](#queue)
-  - [Trees](#trees)
-  - [Heap](#heap)
+### Data Structures
+- [Array Representations](#array-representations) • [Array ADT](#array-adt) • [Strings](#strings)
+- [Linked Lists](#linked-lists) • [Stack](#stack) • [Queue](#queue)
+- [Trees](#trees) • [Heap](#heap)
 
-- [Algorithms](#algorithms)
-  - [Recursion](#recursion)
-  - [Sorting Algorithms](#sorting-algorithms)
-  - [Array Algorithms](#array-algorithms)
-  - [Bitwise Operations](#bitwise-operations)
-  - [String Algorithms](#string-algorithms)
-  - [Linked List Algorithms](#linked-lists-algorithms)
-  - [Stack Algorihtms](#stack-algorithms)
-  - [Queue Algorithms](#queue-algorithms)
-  - [Binary Tree Algorithms](#binary-tree-algorithms)
+---
+
+### Algorithms
+- [Recursion](#recursion) • [Sorting](#sorting-algorithms) • [Array](#array-algorithms)
+- [Bitwise](#bitwise-operations) • [Strings](#string-algorithms)
+- [Linked List](#linked-list-algorithms) • [Stack](#stack-algorithms) • [Queue](#queue-algorithms)
+-  [Binary Tree](#binary-tree-algorithms)
+
+Each section of this repository was created with **genuine passion**, **thorough research**, and **dedicated implementation**. I hope it proves helpful to others.
+
+**Let's get started! 🚀**
 
 ## Essential Concepts of C & C++
 
