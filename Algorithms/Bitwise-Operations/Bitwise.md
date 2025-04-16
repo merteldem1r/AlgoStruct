@@ -1,7 +1,5 @@
 # Bitwise Operations in C++
 
-(This small overview about bitwise operation I have created with AI)
-
 This tutorial covers the following common bitwise operations:
 - AND (&)
 - OR (|)

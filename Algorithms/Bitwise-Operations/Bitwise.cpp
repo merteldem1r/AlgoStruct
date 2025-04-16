@@ -1,10 +1,8 @@
-// BitwiseOperations.cpp
-// A tutorial on common bitwise operations in C++
 #include <iostream>
 using namespace std;
 
 // Brief overview of bitwise operations: 
-// (This small overview about bitwise operation I have created with AI)
+// This small overview about bitwise operation I have created with AI
 // All operaritns run at O(1) time complexity
 
 // Function to demonstrate AND operation
