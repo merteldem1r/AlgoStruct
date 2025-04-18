@@ -31,7 +31,7 @@ Each topic contain **code examples** with explained **comment lines** and **Read
 
 - [Array Representations](#array-representations) • [Array ADT](#array-adt) • [Strings](#strings)
 - [Linked Lists](#linked-lists) • [Stack](#stack) • [Queue](#queue)
-- [Trees](#trees) • [Heap](#heap)
+- [Trees](#trees) • [Binary Search Tree](#binary-search-tree) • [Heap](#heap)
 
 ---
 
@@ -40,7 +40,7 @@ Each topic contain **code examples** with explained **comment lines** and **Read
 - [Recursion](#recursion) • [Sorting](#sorting-algorithms) • [Array](#array-algorithms)
 - [Bitwise](#bitwise-operations) • [Strings](#string-algorithms)
 - [Linked List](#linked-list-algorithms) • [Stack](#stack-algorithms) • [Queue](#queue-algorithms)
-- [Binary Tree](#binary-tree-algorithms)
+- [Binary Tree](#binary-tree-algorithms) • [Binary Search Tree](#binary-search-tree-algorithms)
 
 Each section of this repository was created with **genuine passion**, **thorough research**, and **dedicated implementation**. I hope it proves helpful to others.
 
@@ -371,7 +371,7 @@ In C+, Bitwise Operators are the operators that are used to perform bit-level op
 
   Folder: [Binary-Tree-Algorithms](Algorithms/Binary-Tree/)
 
-### Binary Search Tree Algorithms (BST)
+### Binary Search Tree Algorithms
 
 - _foo_
 
