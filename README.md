@@ -11,8 +11,7 @@ A comprehensive guide to Data Structures, Algorithms, and essential concepts lik
 [GeeksforGeeks](https://www.geeksforgeeks.org/) |
 [NeetCodeIO](https://www.youtube.com/@NeetCodeIO) |
 [LeetCode](https://leetcode.com/) |
-[Wikipedia](https://en.wikipedia.org/) 
-
+[Wikipedia](https://en.wikipedia.org/)
 
 Project divided into **3 topics**. Here the table of **headings** and **subheadings**.
 Each topic contain **code examples** with explained **comment lines** and **Readme files**.
@@ -20,6 +19,7 @@ Each topic contain **code examples** with explained **comment lines** and **Read
 ## Table of Contents
 
 ### Essential Concepts
+
 - [Array Basics](#array-basics) • [Structures](#structures) • [Pointers](#pointers) • [Reference](#reference)
 - [Functions](#functions) • [Converting C to C++](#converting-c-code-to-c)
 - [Scope Resolution](#scope-resolution) • [OOP](#object-oriented-programming)
@@ -28,6 +28,7 @@ Each topic contain **code examples** with explained **comment lines** and **Read
 ---
 
 ### Data Structures
+
 - [Array Representations](#array-representations) • [Array ADT](#array-adt) • [Strings](#strings)
 - [Linked Lists](#linked-lists) • [Stack](#stack) • [Queue](#queue)
 - [Trees](#trees) • [Heap](#heap)
@@ -35,10 +36,11 @@ Each topic contain **code examples** with explained **comment lines** and **Read
 ---
 
 ### Algorithms
+
 - [Recursion](#recursion) • [Sorting](#sorting-algorithms) • [Array](#array-algorithms)
 - [Bitwise](#bitwise-operations) • [Strings](#string-algorithms)
 - [Linked List](#linked-list-algorithms) • [Stack](#stack-algorithms) • [Queue](#queue-algorithms)
--  [Binary Tree](#binary-tree-algorithms)
+- [Binary Tree](#binary-tree-algorithms)
 
 Each section of this repository was created with **genuine passion**, **thorough research**, and **dedicated implementation**. I hope it proves helpful to others.
 
@@ -252,6 +254,16 @@ The topmost node of the tree is called the root, and the nodes below it are call
   </br>
   Readme: [Trees.md](Data-Structures/Trees/Trees.md)
 
+### BINARY SEARCH TREE
+
+A **Binary Search Tree (or BST)** is a data structure used in computer science for **organizing** and **storing** data in a **sorted manner**. Each node in a Binary Search Tree **has at most two children**, a left child and a right child, with the **left child containing values less than the parent node and the right child containing values greater than the parent node**. This hierarchical structure allows for efficient searching, insertion, and deletion operations on the data stored in the tree.
+
+- coming...
+
+  Code: [BST.cpp](Data-Structures/Binary-Search-Tree/BST.cpp)
+  </br>
+  Readme: [BST.md](Data-Structures/Binary-Search-Tree/BST.md)
+
 ### HEAP
 
 A **Heap** is a [complete binary](https://www.geeksforgeeks.org/complete-binary-tree/) tree data structure that satisfies the heap property:
@@ -357,7 +369,13 @@ In C+, Bitwise Operators are the operators that are used to perform bit-level op
 
 - _TraversalMethods_ - _countNodesAndHeight_ - _sumOfNodes_ - _generateTreeFromTraversals_ - _createTreeFromArray_ - _catalanNumber_ - _minMaxNodesFromHeight_ - _countLeafAndNonleafNodes_
 
-  Folder: [Binary-Tree-Algorithms](Algorithms/Binary-Tree//)
+  Folder: [Binary-Tree-Algorithms](Algorithms/Binary-Tree/)
+
+### Binary Search Tree Algorithms (BST)
+
+- _foo_
+
+  Folder: [Binary-Search-Tree-Algorithms](Algorithms/Binary-Search-Tree/)
 
 ### BFS & DFS Algorithms
 
