@@ -35,10 +35,6 @@ int sumOfNodes(Node *root) // Time: O(n) Space: O(n)
     return left + right + root->val;
 }
 
-int sumOfNodes2(Node* root) {
-    static std::vector<int> nodes;
-}
-
 int main()
 {
     std::vector<int> arr = {1, 2, 7, 12, 0, 21};

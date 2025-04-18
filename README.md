@@ -355,7 +355,7 @@ In C+, Bitwise Operators are the operators that are used to perform bit-level op
 
 ### Binary Tree Algorithms
 
-- _TraversalMethods_ - _generateTreeFromTraversals_ - _createTreeFromArray_ - _catalanNumber_ - _minMaxNodesFromHeight_
+- _TraversalMethods_ - _countNodesAndHeight_ - _sumOfNodes_ - _generateTreeFromTraversals_ - _createTreeFromArray_ - _catalanNumber_ - _minMaxNodesFromHeight_ - _countLeafAndNonleafNodes_
 
   Folder: [Binary-Tree-Algorithms](Algorithms/Binary-Tree//)
 
@@ -365,4 +365,5 @@ In C+, Bitwise Operators are the operators that are used to perform bit-level op
 - Breadth First Search
 
   Folder: [BFS-DFS](Algorithms/BFS-DFS/)
+  </br>
   Readme: [BFS-DFC Readme](Algorithms/BFS-DFS/Readme.md)

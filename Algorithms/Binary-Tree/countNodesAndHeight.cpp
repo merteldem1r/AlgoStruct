@@ -80,17 +80,23 @@ int countNodesWithDegreeTwo(Node *root) // Time: O(n) Space: O(n)
         return left + right;
 }
 
-// find HEIGHT of the binary tree
-int heightOfTree(Node* root) { // Time: O(n) Space: O(n)
-    if (root == nullptr) return 0;
+// Count nodes only with degree on (which mean it has rather right or left child only)
+int countNodesWithDegreeOne(Node *root)
+{
+    if (root == nullptr)
+        return 0;
 
-    int left = heightOfTree(root->left);
-    int right = heightOfTree(root->right);
+    int left = countNodesWithDegreeOne(root->left);
+    int right = countNodesWithDegreeOne(root->right);
 
-    if (left > right) 
-        return left + 1;
-    else 
-        return right + 1;
+    if (root->left != nullptr ^ root->right != nullptr) // XOR operation (which means if only one is TRUE)
+    {
+        return left + right + 1;
+    }
+    else
+    {
+        return left + right;
+    }
 }
 
 int countNodesLevelOrder(Node *root) // Time: O(n) Space: O(n)
@@ -117,15 +123,45 @@ int countNodesLevelOrder(Node *root) // Time: O(n) Space: O(n)
     return res;
 }
 
+// find HEIGHT of the binary tree
+int heightOfTree(Node *root)
+{ // Time: O(n) Space: O(n)
+    if (root == nullptr)
+        return 0;
+
+    int left = heightOfTree(root->left);
+    int right = heightOfTree(root->right);
+
+    if (left > right)
+        return left + 1;
+    else
+        return right + 1;
+}
+
 int main()
 {
     std::vector<int> arr = {1, 2, 7, 12, 0, 21};
     Node *root = insertLevelOrder(arr, 0);
 
-    std::cout << "Node count: " << countNodes(root) << std::endl;                                                           // 6
-    std::cout << "Node count (level order): " << countNodesLevelOrder(root) << std::endl;                                            // 6
-    std::cout << "Node count with degree of two (having left and right child): " << countNodesWithDegreeTwo(root) << std::endl; // 2
-    std::cout << "Height of a tree: " << heightOfTree(root) << std::endl; // 3
+    /*
+
+                  1
+                /   \
+               2     7
+              / \   /
+             12  0 21
+
+             Node count: 6
+             Nodes with degree of TWO: 1, 2
+             Nodes with degree of ONE: 7
+
+    */
+
+    std::cout << "Node count: " << countNodes(root) << std::endl;                                                                          // 6
+    std::cout << "Node count (level order): " << countNodesLevelOrder(root) << std::endl;                                                  // 6
+    std::cout << "Node count with degree of TWO (having left and right child): " << countNodesWithDegreeTwo(root) << std::endl;            // 2
+    std::cout << "Node count with degree of ONE (having rather left or right child only): " << countNodesWithDegreeOne(root) << std::endl; // 1
+    std::cout << "Height of a tree: " << heightOfTree(root) << std::endl;                                                                  // 3
 
     return 0;
 }
