@@ -3,11 +3,20 @@
 /*
     Catalan Formula:
 
-        Catalan numbers are defined as a mathematical sequence that consists of positive integers, which can be used to find the number of possibilities of various combinations.  The nth term in the sequence denoted Cn, is found in the following formula:alignas
+        Catalan numbers are defined as a mathematical sequence that consists of positive integers, which can be used to find the number of possibilities of various combinations.  The nth term in the sequence denoted Cn, is found in the following formula:
 
-        (2n!) / [(n+1)! * n!]
+            Catalan Number Formula:
+                Cn = (1 / (n + 1)) * (2n choose n)
+                = (2n)! / [(n + 1)! * n!]
 
-        The first few Catalan numbers for n = 0, 1, 2, 3, 4, 5… are: 1, 1, 2, 5, 14, 42, 132, 429, 1430, 4862, …  so on.
+            --- What is (2n choose n)? ---
+            This is the **combination formula**, written as:
+                (2n choose n) = (2n)! / (n! * n!)
+
+            It represents the number of ways to choose 'n' elements from a set of '2n'
+            elements, without considering order.
+
+            The first few Catalan numbers for n = 0, 1, 2, 3, 4, 5… are: 1, 1, 2, 5, 14, 42, 132, 429, 1430, 4862, …  so on.
 
         Catalan numbers occur in many interesting counting problems like the following:
 

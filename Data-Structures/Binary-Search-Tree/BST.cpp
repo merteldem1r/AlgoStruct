@@ -1,6 +1,168 @@
 #include <iostream>
 
-int main() {
+// Binary Search Tree
+
+/*
+
+    Example Binary Search Tree:
+
+        30
+       /  \
+     15    50
+    /  \   / \
+  10   20 40 60
+
+    Some Properties:
+
+    1) No duplicates
+    2) Inorder traversal gives SORTED order
+
+    3) Number of "n" nodes from which BST can be created:
+
+        Number of Unique Binary Search Trees (BSTs) from 'n' distinct nodes:
+
+        This is given by the nth Catalan Number (C_n), which counts the number of
+        unique BSTs that can be constructed from 'n' distinct keys.
+
+        Catalan Number Formula:
+            Cn = (1 / (n + 1)) * (2n choose n)
+            = (2n)! / [(n + 1)! * n!]
+
+        --- What is (2n choose n)? ---
+        This is the **combination formula**, written as:
+            (2n choose n) = (2n)! / (n! * n!)
+
+        It represents the number of ways to choose 'n' elements from a set of '2n'
+        elements, without considering order.
+
+        --- So, what is Cn doing? ---
+        The Catalan number takes that combination and divides it by (n + 1),
+        giving the number of unique BSTs (or valid parenthesis sequences, etc.)
+        for a given 'n'.
+
+        Example Catalan Values:
+            C0 = 1
+            C1 = 1
+            C2 = 2
+            C3 = 5
+            C4 = 14
+            C5 = 42
+            C6 = 132
+            C7 = 429
+
+        For n = 7 (as in the example array {30, 15, 50, 10, 20, 40, 60}):
+            Total Unique BSTs = C7 = 429
+*/
+
+// Let's implement Binary Search Tree from the scratch
+
+struct Node
+{
+    int val;
+    Node *left;
+    Node *right;
+
+    Node(int value) : val(value), left(nullptr), right(nullptr) {};
+};
+
+class BinarySearchTree
+{
+private:
+    Node *root;
+    int nodeCount;
+
+public:
+    BinarySearchTree() : root(nullptr), nodeCount(0) {};
+    BinarySearchTree(int value) : root(new Node(value)), nodeCount(1) {};
+
+    int getNodeCount() { return nodeCount; }
+
+    Node *getRoot() { return root; }
+
+    void Insert(int value)
+    {
+        if (search(value))
+        {
+            std::cout << "Provided value already exists" << std::endl;
+            return;
+        }
+
+        auto temp = root;
+        Node *prev = nullptr;
+
+        while (temp != nullptr)
+        {
+            prev = temp;
+
+            if (temp->val > value)
+                temp = temp->left;
+            else
+                temp = temp->right;
+        }
+
+        Node *newNode = new Node(value);
+
+        if (prev == nullptr)
+            root = newNode;
+        else if (newNode->val > prev->val)
+            prev->right = newNode;
+        else
+            prev->left = newNode;
+
+        ++nodeCount;
+        std::cout << "Inserted value: " << newNode->val << std::endl;
+    }
+
+    int Delete(int value) { return -1; }
+
+    bool search(int value)
+    {
+        auto temp = root;
+
+        while (temp != nullptr)
+        {
+            if (temp->val == value)
+                return true;
+            else if (temp->val > value)
+                temp = temp->right;
+            else if (temp->val < value)
+                temp = temp->left;
+        }
+
+        return false;
+    }
+
+    int max() { return 1; }
+
+    int min() { return -1; }
+
+    int height() { return 0; }
+
+    bool isBalanced() { return false; }
+};
+
+void inorder(Node *root)
+{
+    if (root == nullptr)
+        return;
+
+    inorder(root->left);
+    std::cout << root->val << " ";
+    inorder(root->right);
+}
+
+int main()
+{
+    BinarySearchTree *BST = new BinarySearchTree(30);
+
+    BST->Insert(15);
+    BST->Insert(50);
+    BST->Insert(10);
+    BST->Insert(20);
+    BST->Insert(40);
+    BST->Insert(60);
+
+    inorder(BST->getRoot()); // 10 15 20 30 40 50 60
 
     return 0;
 }
