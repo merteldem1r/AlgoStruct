@@ -75,13 +75,13 @@ public:
     BinarySearchTree() : root(nullptr), nodeCount(0) {};
     BinarySearchTree(int value) : root(new Node(value)), nodeCount(1) {};
 
-    int getNodeCount() { return nodeCount; }
+    int getNodeCount() const { return nodeCount; }
 
-    Node *getRoot() { return root; }
+    Node *getRoot() const { return root; }
 
     void Insert(int value)
     {
-        if (search(value))
+        if (search(value) != nullptr)
         {
             std::cout << "Provided value already exists" << std::endl;
             return;
@@ -113,32 +113,155 @@ public:
         std::cout << "Inserted value: " << newNode->val << std::endl;
     }
 
-    int Delete(int value) { return -1; }
+    int Delete(int value)
+    {
+        auto temp = root;
+        Node *foundNode = nullptr;
+        Node *parentNodeOfFoundNode = nullptr;
 
-    bool search(int value)
+        while (temp != nullptr)
+        {
+            if (temp->val == value)
+            {
+                foundNode = temp;
+                break;
+            }
+
+            parentNodeOfFoundNode = temp;
+
+            if (value > temp->val)
+                temp = temp->right;
+            else
+                temp = temp->left;
+        }
+
+        if (foundNode == nullptr)
+        {
+            std::cout << "Value not found" << std::endl;
+            return -1;
+        }
+
+        //  1. Case: Leaf Node
+        /*
+                Step 1: delete node from the Heap
+                Step 2: Reassign the parent node of deleted node to nullptr
+        */
+
+        const int foundValue = foundNode->val;
+
+        if (foundNode->left == nullptr && foundNode->right == nullptr)
+        {
+            if (parentNodeOfFoundNode->right == foundNode)
+                parentNodeOfFoundNode->right = nullptr;
+            else
+                parentNodeOfFoundNode->left = nullptr;
+
+            delete foundNode;
+
+            return foundValue;
+        }
+
+        // 2. Case: Parent Node
+        /*
+            Step 1: Find the minimum of nodes that bigger than foundNode (which is right then leftmost)
+            Step 2:
+                a) if foundNode does not have right child: assign left child to the parentNodeOfFoundNode
+                b) if foundNode do have right child: go to the leftmost of the right subtree to find minimum
+
+        */
+
+        // a) No right child
+        if (foundNode->right == nullptr)
+        {
+            if (parentNodeOfFoundNode->right == foundNode)
+                parentNodeOfFoundNode->right = foundNode->left;
+            else
+                parentNodeOfFoundNode->left = foundNode->left;
+
+            delete foundNode;
+
+            return foundValue;
+        }
+
+        // b) Right child
+        Node *leftMostRightSubtreeNode = foundNode->right;
+        Node *parentLeftMostRightSubtreeNode = foundNode;
+
+        while (leftMostRightSubtreeNode->left != nullptr)
+        {
+            parentLeftMostRightSubtreeNode = leftMostRightSubtreeNode;
+            leftMostRightSubtreeNode = leftMostRightSubtreeNode->left;
+        }
+
+        leftMostRightSubtreeNode->right = foundNode->right;
+        leftMostRightSubtreeNode->left = foundNode->left;
+
+        if (parentNodeOfFoundNode == nullptr) root = leftMostRightSubtreeNode;
+        else if (parentNodeOfFoundNode->right == foundNode)
+            parentNodeOfFoundNode->right = leftMostRightSubtreeNode;
+        else
+            parentNodeOfFoundNode->left = leftMostRightSubtreeNode;
+
+        if (parentLeftMostRightSubtreeNode->right == leftMostRightSubtreeNode) 
+            parentLeftMostRightSubtreeNode->right = nullptr;
+        else 
+            parentLeftMostRightSubtreeNode->left = nullptr;
+
+        delete foundNode;
+
+        return foundValue;
+    }
+
+    Node *search(int value) const
     {
         auto temp = root;
 
         while (temp != nullptr)
         {
             if (temp->val == value)
-                return true;
-            else if (temp->val > value)
+                return temp;
+            else if (value > temp->val)
                 temp = temp->right;
-            else if (temp->val < value)
+            else
                 temp = temp->left;
         }
 
-        return false;
+        return nullptr;
     }
 
-    int max() { return 1; }
+    int max() const
+    {
+        if (root == nullptr)
+        {
+            std::cout << "Binary Search Tree is empty" << std::endl;
+            return -1;
+        }
 
-    int min() { return -1; }
+        auto temp = root;
+        for (; temp->right != nullptr; temp = temp->right)
+        {
+        }
+        return temp->val;
+    }
 
-    int height() { return 0; }
+    int min() const
+    {
+        if (root == nullptr)
+        {
+            std::cout << "Binary Search Tree is empty" << std::endl;
+            return -1;
+        }
 
-    bool isBalanced() { return false; }
+        auto temp = root;
+        for (; temp->left != nullptr; temp = temp->left)
+        {
+        }
+        return temp->val;
+    }
+
+    int height() const { return 0; }
+
+    bool isBalanced() const { return false; }
 };
 
 void inorder(Node *root)
@@ -153,8 +276,9 @@ void inorder(Node *root)
 
 int main()
 {
-    BinarySearchTree *BST = new BinarySearchTree(30);
+    BinarySearchTree *BST = new BinarySearchTree();
 
+    BST->Insert(30);
     BST->Insert(15);
     BST->Insert(50);
     BST->Insert(10);
@@ -162,7 +286,22 @@ int main()
     BST->Insert(40);
     BST->Insert(60);
 
-    inorder(BST->getRoot()); // 10 15 20 30 40 50 60
+    /*
+
+        30
+       /  \
+     15    50
+    /  \   / \
+  10   20 40 60
+
+    */
+
+    inorder(BST->getRoot());                               // 10 15 20 30 40 50 60
+    std::cout << "Max value: " << BST->max() << std::endl; // 60
+    std::cout << "Min value: " << BST->min() << std::endl; // 10
+
+    BST->Delete(50);
+    inorder(BST->getRoot());
 
     return 0;
 }
