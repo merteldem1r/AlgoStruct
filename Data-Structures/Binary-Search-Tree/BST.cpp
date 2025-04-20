@@ -79,6 +79,16 @@ public:
 
     Node *getRoot() const { return root; }
 
+    Node *getSuccessor(Node *root)
+    {
+        auto temp = root->right;
+        while (temp != nullptr && temp->left != nullptr)
+        {
+            temp = temp->left;
+        }
+        return temp;
+    }
+
     void Insert(int value)
     {
         if (search(value) != nullptr)
@@ -113,103 +123,38 @@ public:
         std::cout << "Inserted value: " << newNode->val << std::endl;
     }
 
-    int Delete(int value)
+    Node *Delete(Node *root, int value)
     {
-        auto temp = root;
-        Node *foundNode = nullptr;
-        Node *parentNodeOfFoundNode = nullptr;
-
-        while (temp != nullptr)
+        if (root == nullptr)
+            return root;
+        else if (value < root->val)
+            root->left = Delete(root->left, value);
+        else if (value > root->val)
+            root->right = Delete(root->right, value);
+        else // Node is found
         {
-            if (temp->val == value)
+            if (root->left == nullptr) // 1) Found node = LEAF node OR has only RIGHT child
             {
-                foundNode = temp;
-                break;
+                Node *temp = root;
+                root = root->right;
+                delete temp;
             }
-
-            parentNodeOfFoundNode = temp;
-
-            if (value > temp->val)
-                temp = temp->right;
-            else
-                temp = temp->left;
+            else if (root->right == nullptr) // 2) Found node has only LEFT child
+            {
+                Node *temp = root;
+                root = root->left;
+                delete temp;
+            }
+            else // 3) It has both RIGHT and LEFT child
+            {
+                // We need to find minimum in the right subtree of found node (it calls as SUCCESSOR)
+                Node *successor = getSuccessor(root);
+                root->val = successor->val;                        // Reassign the successor value to the root value
+                root->right = Delete(root->right, successor->val); // now delete the successor from the right subtree as usual
+            }
         }
 
-        if (foundNode == nullptr)
-        {
-            std::cout << "Value not found" << std::endl;
-            return -1;
-        }
-
-        //  1. Case: Leaf Node
-        /*
-                Step 1: delete node from the Heap
-                Step 2: Reassign the parent node of deleted node to nullptr
-        */
-
-        const int foundValue = foundNode->val;
-
-        if (foundNode->left == nullptr && foundNode->right == nullptr)
-        {
-            if (parentNodeOfFoundNode->right == foundNode)
-                parentNodeOfFoundNode->right = nullptr;
-            else
-                parentNodeOfFoundNode->left = nullptr;
-
-            delete foundNode;
-
-            return foundValue;
-        }
-
-        // 2. Case: Parent Node
-        /*
-            Step 1: Find the minimum of nodes that bigger than foundNode (which is right then leftmost)
-            Step 2:
-                a) if foundNode does not have right child: assign left child to the parentNodeOfFoundNode
-                b) if foundNode do have right child: go to the leftmost of the right subtree to find minimum
-
-        */
-
-        // a) No right child
-        if (foundNode->right == nullptr)
-        {
-            if (parentNodeOfFoundNode->right == foundNode)
-                parentNodeOfFoundNode->right = foundNode->left;
-            else
-                parentNodeOfFoundNode->left = foundNode->left;
-
-            delete foundNode;
-
-            return foundValue;
-        }
-
-        // b) Right child
-        Node *leftMostRightSubtreeNode = foundNode->right;
-        Node *parentLeftMostRightSubtreeNode = foundNode;
-
-        while (leftMostRightSubtreeNode->left != nullptr)
-        {
-            parentLeftMostRightSubtreeNode = leftMostRightSubtreeNode;
-            leftMostRightSubtreeNode = leftMostRightSubtreeNode->left;
-        }
-
-        leftMostRightSubtreeNode->right = foundNode->right;
-        leftMostRightSubtreeNode->left = foundNode->left;
-
-        if (parentNodeOfFoundNode == nullptr) root = leftMostRightSubtreeNode;
-        else if (parentNodeOfFoundNode->right == foundNode)
-            parentNodeOfFoundNode->right = leftMostRightSubtreeNode;
-        else
-            parentNodeOfFoundNode->left = leftMostRightSubtreeNode;
-
-        if (parentLeftMostRightSubtreeNode->right == leftMostRightSubtreeNode) 
-            parentLeftMostRightSubtreeNode->right = nullptr;
-        else 
-            parentLeftMostRightSubtreeNode->left = nullptr;
-
-        delete foundNode;
-
-        return foundValue;
+        return root;
     }
 
     Node *search(int value) const
@@ -300,7 +245,7 @@ int main()
     std::cout << "Max value: " << BST->max() << std::endl; // 60
     std::cout << "Min value: " << BST->min() << std::endl; // 10
 
-    BST->Delete(50);
+    // BST->Delete(50);
     inorder(BST->getRoot());
 
     return 0;
