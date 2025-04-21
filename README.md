@@ -375,7 +375,7 @@ In C+, Bitwise Operators are the operators that are used to perform bit-level op
 
 ### Binary Search Tree Algorithms
 
-- _resursiveInsert_
+- _resursiveInsert_ - _createBSTFromArray_
 - NOTE: most of the Binary Tree algorithms on the section: [Binary Tree](#binary-tree-algorithms)
 
   Folder: [Binary-Search-Tree-Algorithms](Algorithms/Binary-Search-Tree/)
