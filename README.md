@@ -44,6 +44,8 @@ Each topic contain **code examples** with explained **comment lines** and **Read
 
 Each section of this repository was created with **genuine passion**, **thorough research**, and **dedicated implementation**. I hope it proves helpful to others.
 
+**NOTE:** **Time** and **space complexity** values are usually provided as **comments near the algorithms**. Unless otherwise specified (e.g., best, average, or worst case), you should assume that **the given complexities refer to the worst-case scenario**.
+
 **Let's get started! 🚀**
 
 ## Essential Concepts of C & C++
@@ -373,8 +375,8 @@ In C+, Bitwise Operators are the operators that are used to perform bit-level op
 
 ### Binary Search Tree Algorithms
 
-- NOTE: most of the algorithms on the section: [Binary Tree](#binary-tree-algorithms)
-- Other algirthms related on BST maybe coming soon...
+- _resursiveInsert_
+- NOTE: most of the Binary Tree algorithms on the section: [Binary Tree](#binary-tree-algorithms)
 
   Folder: [Binary-Search-Tree-Algorithms](Algorithms/Binary-Search-Tree/)
 

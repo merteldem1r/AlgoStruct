@@ -75,11 +75,11 @@ public:
     BinarySearchTree() : root(nullptr), nodeCount(0) {};
     BinarySearchTree(int value) : root(new Node(value)), nodeCount(1) {};
 
-    int getNodeCount() const { return nodeCount; }
+    int getNodeCount() const { return nodeCount; } // Time: O(1)
 
-    Node *getRoot() const { return root; }
+    Node *getRoot() const { return root; } // Time: O(1)
 
-    Node *getSuccessor(Node *root)
+    Node *getSuccessor(Node *root) // Time: O(n) Space: O(1)
     {
         auto temp = root->right;
         while (temp != nullptr && temp->left != nullptr)
@@ -89,7 +89,7 @@ public:
         return temp;
     }
 
-    void Insert(int value)
+    void Insert(int value) // Time: O(n) Space: O(1)
     {
         if (search(value) != nullptr)
         {
@@ -123,7 +123,7 @@ public:
         std::cout << "Inserted value: " << newNode->val << std::endl;
     }
 
-    Node *Delete(Node *root, int value)
+    Node *Delete(Node *root, int value) // Time: O(n) Space: O(n)
     {
         if (root == nullptr)
             return root;
@@ -157,7 +157,7 @@ public:
         return root;
     }
 
-    Node *search(int value) const
+    Node *search(int value) const // Time: O(n) Space: O(1)
     {
         auto temp = root;
 
@@ -174,7 +174,7 @@ public:
         return nullptr;
     }
 
-    int max() const
+    int max() const // Time: O(n) Space: O(1)
     {
         if (root == nullptr)
         {
@@ -189,7 +189,7 @@ public:
         return temp->val;
     }
 
-    int min() const
+    int min() const // Time: O(n) Space: O(1)
     {
         if (root == nullptr)
         {
@@ -204,12 +204,12 @@ public:
         return temp->val;
     }
 
-    int height() const { return 0; }
+    int height() const { return 0; } // Time: O(1)
 
-    bool isBalanced() const { return false; }
+    bool isBalanced() const { return false; } // Time: O(1)
 };
 
-void inorder(Node *root)
+void inorder(Node *root) // Time: O(n) Space: O(n)
 {
     if (root == nullptr)
         return;
