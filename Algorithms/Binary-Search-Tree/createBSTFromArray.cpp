@@ -74,7 +74,7 @@ int main()
     Node *root = createBST(arr);
 
     /*
-        Builded Binary Search Tree: 
+        Built Binary Search Tree: 
                   9
              /         \
            5             15
