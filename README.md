@@ -2,7 +2,7 @@
 
 ![Data Structures Algorithms](https://github.com/user-attachments/assets/9d7eda38-a40f-4673-bef2-960c03522266)
 
-A comprehensive guide to Data Structures, Algorithms, and essential concepts like Pointers, OOP, Structures, Memory Management etc. Features well-documented code with clear comments and detailed Readme files, implementing all data structures and their algorithms from scratch.
+Mastering DSA in C & C++ • A complete guide up to 100+ algorithms (Recursion, Sorting, Hashing etc.) with common and advanced data structures (Array, Linked List, Stack, Queue, Trees, AVL, Heap, Graph etc.) implemented completely from scratch. Covers core programming concepts like Pointers, OOP, Structures, Memory Management etc.
 
 **AUTHOR**: [Mert Eldemir](https://github.com/merteldem1r)</br>
 **SEARCH RESOURSES**:
@@ -281,6 +281,7 @@ An AVL tree **maintains its height by doing some extra work during insert and de
 - coming soon
 
   File: [AVL-Tree.cpp](Data-Structures/AVL-Tree/AVL-Tree.cpp)
+  </br>
   Readme: [AVL-Tree.md](Data-Structures/AVL-Tree/AVL-Tree.md)
 
 ### HEAP
