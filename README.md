@@ -31,7 +31,7 @@ Each topic contain **code examples** with explained **comment lines** and **Read
 
 - [Array Representations](#array-representations) • [Array ADT](#array-adt) • [Strings](#strings)
 - [Linked Lists](#linked-lists) • [Stack](#stack) • [Queue](#queue)
-- [Trees](#trees) • [Binary Search Tree](#binary-search-tree) • [Heap](#heap)
+- [Trees](#trees) • [Binary Search Tree](#binary-search-tree) • [AVL Tree](#avl-tree) • [Heap](#heap)
 
 ---
 
@@ -260,11 +260,28 @@ The topmost node of the tree is called the root, and the nodes below it are call
 
 A **Binary Search Tree (or BST)** is a data structure used in computer science for **organizing** and **storing** data in a **sorted manner**. Each node in a Binary Search Tree **has at most two children**, a left child and a right child, with the **left child containing values less than the parent node and the right child containing values greater than the parent node**. This hierarchical structure allows for efficient searching, insertion, and deletion operations on the data stored in the tree.
 
-- coming...
+- Create Binary Search Tree class from scratch
+- Undertand the main concepts and properties of BST (Catalan Number Formula, traversals, etc.)
+- Implement common methods such as **search**, **insert**, **delete**, **successor** etc.
 
   Code: [BST.cpp](Data-Structures/Binary-Search-Tree/BST.cpp)
   </br>
   Readme: [BST.md](Data-Structures/Binary-Search-Tree/BST.md)
+
+### AVL TREE
+
+An **AVL tree** defined as a **self-balancing Binary Search Tree (BST)** where the **difference between heights of left and right subtrees for any node cannot be more than one**.
+
+The absolute difference between the heights of the left subtree and the right subtree for any node is known as the balance factor of the node. The **balance factor** for all nodes **must be less than or equal to 1**.
+
+**Every AVL tree is also a Binary Search Tree** (Left subtree values Smaller and Right subtree values greater for every node), but every BST is not AVL Tree. The main advantage of an AVL Tree is, the **time complexities of all operations (search, insert and delete, max, min, floor and ceiling) become O(Log n)**. **This happens because height of an AVL tree is bounded by O(Log n)**. In case of a normal BST, the height can go up to O(n).
+
+An AVL tree **maintains its height by doing some extra work during insert and delete operations**. It mainly uses rotations to maintain both BST properties and height balance.
+
+- coming soon
+
+  File: [AVL-Tree.cpp](Data-Structures/AVL-Tree/AVL-Tree.cpp)
+  Readme: [AVL-Tree.md](Data-Structures/AVL-Tree/AVL-Tree.md)
 
 ### HEAP
 
