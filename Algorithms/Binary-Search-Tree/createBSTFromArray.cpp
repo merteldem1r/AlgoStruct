@@ -34,7 +34,7 @@ Node *insert(Node *root, int value)
     return root;
 }
 
-Node *createBST(std::vector<int> arr) // Time Average: O(nlogn)
+Node *createBST(std::vector<int> arr) // Time Average: O(nlogn) Time Worst: O(n^2)
 {
     if (arr.size() == 0)
         return nullptr;
