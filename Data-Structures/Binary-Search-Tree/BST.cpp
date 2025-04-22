@@ -89,7 +89,7 @@ public:
         return temp;
     }
 
-    void Insert(int value) // Time: O(n) Space: O(1)
+    void Insert(int value) // Time Average: O(logn) Time Worst: O(n) Space: O(1)
     {
         if (search(value) != nullptr)
         {
@@ -157,7 +157,7 @@ public:
         return root;
     }
 
-    Node *search(int value) const // Time: O(n) Space: O(1)
+    Node *search(int value) const // Time Average: O(logn) Time Worst: O(n) Space: O(1)
     {
         auto temp = root;
 
