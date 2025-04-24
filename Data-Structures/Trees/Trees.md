@@ -1,4 +1,4 @@
-# Tree Data Structure
+# Tree - Data Structure
 
 ## Introduction
 

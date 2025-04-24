@@ -1,4 +1,4 @@
-# Binary Search Trees (BST) - A Deep Dive
+# Binary Search Trees (BST) - Data Structure
 
 ## Introduction
 A Binary Search Tree (BST) is a data structure that facilitates fast lookup, addition, and removal of items. It maintains a dynamic set of numbers in a sorted manner, ensuring that search operations can be performed efficiently.
