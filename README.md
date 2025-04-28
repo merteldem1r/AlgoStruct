@@ -110,7 +110,9 @@ When a variable is declared as a reference, it becomes an **alternative name for
 - Difference between writing C and C++ code
 - Rewriting structure based C code into OOP based C++ code
 
-  Code: [c-code.c](Essential-Concepts/Converting-C-to-CPP/c-code.c) [cpp-code.cpp](Essential-Concepts/Converting-C-to-CPP/cpp-code.cpp)
+  C Code: [c-code.c](Essential-Concepts/Converting-C-to-CPP/c-code.c)
+  </br>
+  C++ Code: [cpp-code.cpp](Essential-Concepts/Converting-C-to-CPP/cpp-code.cpp)
 
 ### Scope Resolution
 

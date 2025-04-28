@@ -67,30 +67,36 @@ is a pointer to an object of class _Rectangle_.
 
 Similarly as with plain data structures, the members of an object can be accessed directly from a pointer by using the arrow operator (->). Here is an example with some possible combinations:
 
-`#include <iostream>
+```cpp
+#include <iostream>
 
 class Rectangle {
-int width, height;
+  int width, height;
 public:
-Rectangle(int x, int y) : width(x), height(y) {}
-int area(void) { return width \* height; }
+  Rectangle(int x, int y) : width(x), height(y) {}
+  int area(void) { return width \* height; }
 };
 
 int main() {
-Rectangle obj (3, 4);
-Rectangle _ foo, _ bar, * baz;
-foo = &obj;
-bar = new Rectangle (5, 6);
-baz = new Rectangle[2] { {2,5}, {3,6} };
-std::cout << "obj's area: " << obj.area() << '\n';
-std::cout << "*foo's area: " << foo->area() << '\n';
-std::cout << "\*bar's area: " << bar->area() << '\n';
-std::cout << "baz[0]'s area:" << baz[0].area() << '\n';
-std::cout << "baz[1]'s area:" << baz[1].area() << '\n';  
- delete bar;
-delete[] baz;
-return 0;
-}`
+  Rectangle obj (3, 4);
+  Rectangle _ foo, _ bar, * baz;
+  
+  foo = &obj;
+  bar = new Rectangle (5, 6);
+  baz = new Rectangle[2] { {2,5}, {3,6} };
+
+  std::cout << "obj's area: " << obj.area() << '\n';
+  std::cout << "*foo's area: " << foo->area() << '\n';
+  std::cout << "bar's area: " << bar->area() << '\n';
+  std::cout << "baz[0]'s area:" << baz[0].area() << '\n';
+  std::cout << "baz[1]'s area:" << baz[1].area() << '\n';
+
+  delete bar;
+  delete[] baz;
+
+  return 0;
+}
+```
 
 # Classes defined with struct and union
 
