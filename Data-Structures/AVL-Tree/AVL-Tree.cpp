@@ -2,7 +2,7 @@
 
 // AVL Tree Data Structure
 
-// Effective links for reading and understanding the topic:
+// Informative links for reading and understanding the topic:
 //  https://www.geeksforgeeks.org/introduction-to-avl-tree/
 //  https://www.geeksforgeeks.org/insertion-in-an-avl-tree/
 
@@ -123,28 +123,11 @@ struct Node
 class AVL
 {
 private:
-    Node *root;
+    //
 
 public:
-    int getMax() { return 1; };
-    int getMin() { return -1; };
-
-    void Insert(int value) {};
-    void Delete(int value) {};
+    //
 };
-
-int height(Node *root)
-{
-    if (root == nullptr)
-    {
-        return 0;
-    }
-
-    int left = 1 + height(root->left);
-    int right = 1 + height(root->right);
-
-    return left - right;
-}
 
 int main()
 {
