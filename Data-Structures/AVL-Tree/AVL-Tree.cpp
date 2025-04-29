@@ -141,15 +141,61 @@ private:
         else
             std::cout << "Insertion skipped, value already exists" << std::endl;
 
-        // Find Balance Factor and make rotations if needed
+        // Get balance factor and handle rotations if unbalanced
         int balance = balanceFactor(Root);
 
         return current;
     }
 
+    // get smallest Node from the right subtree of given node (current)
+    Node *successor(Node *current)
+    {
+        Node *temp = current->right;
+        while (temp != nullptr && temp->left != nullptr)
+        {
+            temp = temp->left;
+        }
+        return temp;
+    }
+
     Node *removeUtility(Node *current, int value)
     {
-        return nullptr;
+        if (current == nullptr)
+        {
+            std::cout << "Node not found" << std::endl;
+            return nullptr;
+        }
+
+        // Start recursive traversal to find the Node
+        if (value > current->val)
+            current->right = removeUtility(current->right, value);
+        else if (value < current->val)
+            current->left = removeUtility(current->left, value);
+        else // Node FOUND
+        {
+            if (current->left == nullptr) // 1) LEAF or has only RIGHT CHILD
+            {
+                Node *temp = current;
+                current = current->right;
+                delete temp;
+            }
+            else if (current->right == nullptr) // 2) has only LEFT CHILD
+            {
+                Node *temp = current;
+                current = current->left;
+                delete temp;
+            }
+            else // has BOTH RIGHT and LEFT CHILD
+            {
+                Node *successorNode = successor(current);
+                current->val = successorNode->val;                                  // replace found node with successor value
+                current->right = removeUtility(current->right, successorNode->val); // delete successor node as usual
+            }
+        }
+
+        // Get balance factor and handle rotations if unbalanced
+
+        return current;
     }
 
     int height(Node *current)
@@ -181,7 +227,7 @@ private:
 
         while (!treeQueue.empty())
         {
-            auto front = treeQueue.front();
+            Node *front = treeQueue.front();
             treeQueue.pop();
 
             std::cout << front->val << " ";
