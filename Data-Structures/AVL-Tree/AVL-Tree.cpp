@@ -113,20 +113,118 @@
         IMPORTANT POINT: Rotations always done with the 3 nodes only, even Tree has thousands Nodes; rotations is performed ONLY OVER 3 NODES.
 */
 
-struct Node
-{
-    int val;
-    Node *left;
-    Node *right;
-};
-
 class AVL
 {
 private:
-    //
+    struct Node
+    {
+        int val;
+        Node *left;
+        Node *right;
+
+        Node(int value) : val(value), left(nullptr), right(nullptr) {};
+    };
+
+    Node *Root = nullptr;
+
+private:
+    Node *insertUtility(Node *current, int value)
+    {
+        // Here is we insert as usual with recursion
+        if (current == nullptr)
+            return new Node(value);
+
+        if (value > current->val)
+            current->right = insertUtility(current->right, value);
+        else if (value < current->val)
+            current->left = insertUtility(current->left, value);
+        else
+            std::cout << "Insertion skipped, value already exists" << std::endl;
+
+        // Find Balance Factor and make rotations if needed
+        int balance = balanceFactor(Root);
+
+        return current;
+    }
+
+    Node *removeUtility(Node *current, int value)
+    {
+        return nullptr;
+    }
+
+    int height(Node *current)
+    {
+        if (current == nullptr)
+            return 0;
+
+        int left = height(current->left);
+        int right = height(current->right);
+
+        return 1 + std::max(left, right);
+    }
+
+    int balanceFactor(Node *current)
+    {
+        if (current == nullptr)
+            return 0;
+
+        int leftHeight = height(current->left);
+        int rightHeight = height(current->right);
+
+        return leftHeight - rightHeight;
+    }
+
+    void levelOrderUtility(Node *current)
+    {
+        std::queue<Node *> treeQueue;
+        treeQueue.push(current);
+
+        while (!treeQueue.empty())
+        {
+            auto front = treeQueue.front();
+            treeQueue.pop();
+
+            std::cout << front->val << " ";
+
+            if (front->left != nullptr)
+                treeQueue.push(front->left);
+            if (front->right != nullptr)
+                treeQueue.push(front->right);
+        }
+    }
+
+    void inorderUtility(Node *current)
+    {
+        if (current == nullptr)
+            return;
+
+        inorderUtility(current->left);
+        std::cout << current->val << " ";
+        inorderUtility(current->right);
+    }
 
 public:
-    //
+    void insert(int value)
+    {
+        insertUtility(Root, value);
+    }
+
+    void remove(int value)
+    {
+        removeUtility(Root, value);
+    }
+
+    void levelOrder()
+    {
+        levelOrderUtility(Root);
+        std::cout << std::endl;
+    }
+
+    void inorder()
+    {
+        inorderUtility(Root);
+        std::cout << std::endl;
+    }
 };
 
 int main()
