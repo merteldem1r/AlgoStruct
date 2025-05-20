@@ -7,7 +7,6 @@
 // HERE IS MY EXPLANATION:
 // https://leetcode.com/problems/maximum-depth-of-binary-tree/solutions/5411377/bfs-without-recursion-example-dry-run-we-cfuf/
 
-
 /*
 Given the root of a binary tree, return its maximum depth.
 
@@ -31,7 +30,6 @@ struct Node
     Node *left;
     Node *right;
 };
-
 
 // Using Queue data structure, level order traversal
 int maxDepthUsingQueue(Node *root) // Time: O(n) Space: O(n)
@@ -80,7 +78,8 @@ int maxDepthUsingQueue(Node *root) // Time: O(n) Space: O(n)
 }
 
 // Using Recursion
-int maxDepth(Node* root) {
+int maxDepth(Node *root)
+{
     if (root == nullptr)
         return 0;
     int maxLeft = maxDepth(root->left);

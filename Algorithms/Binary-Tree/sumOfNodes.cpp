@@ -27,7 +27,8 @@ Node *insertLevelOrder(std::vector<int> arr, int index)
 
 int sumOfNodes(Node *root) // Time: O(n) Space: O(n)
 {
-    if (root == nullptr) return 0;
+    if (root == nullptr)
+        return 0;
 
     int left = sumOfNodes(root->left);
     int right = sumOfNodes(root->right);

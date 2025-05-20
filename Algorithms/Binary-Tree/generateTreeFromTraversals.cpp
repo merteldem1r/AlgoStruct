@@ -208,9 +208,10 @@ Node *generateTree(std::vector<int> &inorderArr, std::vector<int> &preorderArr, 
 
     static int preorderIndx = 0;
 
-    Node* root = new Node(preorderArr[preorderIndx++]);
-    
-    if (low == high) return root;
+    Node *root = new Node(preorderArr[preorderIndx++]);
+
+    if (low == high)
+        return root;
 
     int inorderIndex = getInorderIndex(inorderArr, low, high, root->val);
     root->left = generateTree(inorderArr, preorderArr, low, inorderIndex - 1);
@@ -243,7 +244,7 @@ void inorderTraversal(Node *root)
 
 int main()
 {
-    std::vector<int> inorder = {2, 5, 6, 10, 12, 14, 15}; 
+    std::vector<int> inorder = {2, 5, 6, 10, 12, 14, 15};
     std::vector<int> preorder = {10, 5, 2, 6, 14, 12, 15};
 
     auto root = generateTree(inorder, preorder, 0, inorder.size() - 1);
