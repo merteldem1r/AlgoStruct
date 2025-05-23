@@ -1,6 +1,7 @@
 #include <iostream>
 
 // Binary Search Tree
+// AUTHOR: Mert Eldemir
 
 /*
 

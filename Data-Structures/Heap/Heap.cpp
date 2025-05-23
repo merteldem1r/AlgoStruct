@@ -1,6 +1,7 @@
 #include <iostream>
 
 // HEAP
+// AUTHOR: Mert Eldemir
 
 class MaxHeap
 {

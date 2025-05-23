@@ -1,10 +1,12 @@
 #include <iostream>
 
 // AVL Tree Data Structure
+// AUTHOR: Mert Eldemir
 
-// Informative links for reading and understanding the topic:
+// Informative links for understanding the topic:
 //  https://www.geeksforgeeks.org/introduction-to-avl-tree/
 //  https://www.geeksforgeeks.org/insertion-in-an-avl-tree/
+//  https://www.udemy.com/course/datastructurescncpp
 
 /*
 
@@ -195,7 +197,7 @@ private:
         currRight->left = current;
         current->right = currRightLeft;
 
-        // current and the currLeft height gonna change, we update them
+        // current and the currRight height gonna change, we update them
         current->height = nodeHeight(current);
         currRight->height = nodeHeight(currRight);
 

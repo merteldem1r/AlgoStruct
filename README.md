@@ -44,7 +44,7 @@ Each topic contain **code examples** with explained **comment lines** and **Read
 
 Each section of this repository was created with **genuine passion**, **thorough research**, and **dedicated implementation**. I hope it proves helpful to others.
 
-**NOTE:** **Time** and **space complexity** values are usually provided as **comments near the algorithms**. Unless otherwise specified (e.g., best, average, or worst case), you should assume that **the given complexities refer to the worst-case scenario**.
+**NOTE:** **Time** and **space complexity** values are usually provided as **comments near the algorithms**. Unless otherwise specified (e.g., best, average, or worst case), you should assume that **the given complexities refer to the worst-case scenario**. Some of base explanations made using AI for better understanding.
 
 **Let's get started! 🚀**
 
@@ -280,7 +280,9 @@ The absolute difference between the heights of the left subtree and the right su
 
 An AVL tree **maintains its height by doing some extra work during insert and delete operations**. It mainly uses rotations to maintain both BST properties and height balance.
 
-- coming soon
+- **Inserting** & **Removing** nodes from AVL tree while taking care of **balance factor** and **heights** of each node
+- **LL**, **LR**, **RR**, **RL** rotations explained and implemented for unbalanced cases of the nodes
+- **Visualizations** for each functions with comment lines
 
   File: [AVL-Tree.cpp](Data-Structures/AVL-Tree/AVL-Tree.cpp)
   </br>

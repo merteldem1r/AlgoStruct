@@ -3,6 +3,8 @@
 #include <limits.h>
 
 // ARRAY ADT
+// AUTHOR: Mert Eldemir
+
 // This is array modify console aspplication. Run the application and perform various methods on Array.
 
 #define DISPLAY 1
