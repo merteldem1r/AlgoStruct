@@ -234,7 +234,7 @@ private:
                 /
                x
             */
-            if (balanceFactor(current->left) == 1)
+            if (balanceFactor(current->left) > 0)
             {
                 return rightRotation(current);
             }
@@ -260,7 +260,7 @@ private:
                    \
                     x
             */
-            if (balanceFactor(current->right) == -1)
+            if (balanceFactor(current->right) < 0)
             {
                 return leftRotation(current);
             }
@@ -326,7 +326,70 @@ private:
             }
         }
 
+        if (current == nullptr)
+        {
+            // if deleted node becomes the nullptr (in case of leaf)
+            return nullptr;
+        }
+
+        current->height = nodeHeight(current); // update every node height on returning phase
+
         // Get balance factor and handle rotations if unbalanced
+        int balance = balanceFactor(current);
+
+        if (balance > 1) // not balanced, left is taller
+        {
+
+            // 1. LL Rotation
+            /*
+                   z
+                  /
+                 y
+                /
+               x
+            */
+            if (balanceFactor(current->left) > 0)
+            {
+                return rightRotation(current);
+            }
+
+            // 2. LR Rotation
+            /*
+                 z
+               /
+              y
+               \
+                x
+            */
+            current->left = leftRotation(current->left);
+            return rightRotation(current);
+        }
+        else if (balance < -1) // not balanced, right is taller
+        {
+            // 1. RR rotation
+            /*
+                z
+                 \
+                  y
+                   \
+                    x
+            */
+            if (balanceFactor(current->right) < 0)
+            {
+                return leftRotation(current);
+            }
+
+            // 2. RL rotation
+            /*
+                z
+                 \
+                  y
+                 /
+                x
+            */
+            current->right = rightRotation(current->right);
+            return leftRotation(current);
+        }
 
         return current;
     }
