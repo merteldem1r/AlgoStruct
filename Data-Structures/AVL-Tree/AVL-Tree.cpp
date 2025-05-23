@@ -119,20 +119,97 @@ private:
     struct Node
     {
         int val;
+        int height;
         Node *left;
         Node *right;
 
-        Node(int value) : val(value), left(nullptr), right(nullptr) {};
+        Node(int value, int h) : val(value), left(nullptr), right(nullptr), height(h) {};
     };
 
     Node *Root = nullptr;
 
 private:
+    Node *rightRotation(Node *current)
+    {
+        /*
+            Right Rotation
+
+            Before:
+
+                c
+               /
+             cl
+               \
+               clr
+
+            After:
+
+               cl
+               / \
+             ..   c
+                 /
+               clr
+        */
+
+        Node *currLeft = current->left;
+        Node *currLeftRight = currLeft->right;
+
+        currLeft->right = current;
+        current->left = currLeftRight;
+
+        // current and the currLeft height gonna change, we update them
+        current->height = nodeHeight(current);
+        currLeft->height = nodeHeight(currLeft);
+
+        if (Root == current) // also check if the rotation was performing on the Root
+            Root = currLeft;
+
+        return currLeft;
+    }
+
+    Node *leftRotation(Node *current)
+    {
+        /*
+            Left Rotation
+
+            Before:
+
+               c
+                \
+                cr
+               /
+             crl
+
+            After:
+
+               cr
+              /  \
+             c   ..
+              \
+             crl
+        */
+
+        Node *currRight = current->right;
+        Node *currRightLeft = currRight->left;
+
+        currRight->left = current;
+        current->right = currRightLeft;
+
+        // current and the currLeft height gonna change, we update them
+        current->height = nodeHeight(current);
+        currRight->height = nodeHeight(currRight);
+
+        if (Root == current) // also check if the rotation was performing on the Root
+            Root = currRight;
+
+        return currRight;
+    }
+
     Node *insertUtility(Node *current, int value)
     {
         // Here is we insert as usual with recursion
         if (current == nullptr)
-            return new Node(value);
+            return new Node(value, 1); // create new Node with val and height (setting as 1) properties
 
         if (value > current->val)
             current->right = insertUtility(current->right, value);
@@ -141,8 +218,64 @@ private:
         else
             std::cout << "Insertion skipped, value already exists" << std::endl;
 
+        current->height = nodeHeight(current); // update every node height on returning phase
+
         // Get balance factor and handle rotations if unbalanced
-        int balance = balanceFactor(Root);
+        int balance = balanceFactor(current);
+
+        if (balance > 1) // not balanced, left is taller
+        {
+
+            // 1. LL Rotation
+            /*
+                   z
+                  /
+                 y
+                /
+               x
+            */
+            if (balanceFactor(current->left) == 1)
+            {
+                return rightRotation(current);
+            }
+
+            // 2. LR Rotation
+            /*
+                 z
+               /
+              y
+               \
+                x
+            */
+            current->left = leftRotation(current->left);
+            return rightRotation(current);
+        }
+        else if (balance < -1) // not balanced, right is taller
+        {
+            // 1. RR rotation
+            /*
+                z
+                 \
+                  y
+                   \
+                    x
+            */
+            if (balanceFactor(current->right) == -1)
+            {
+                return leftRotation(current);
+            }
+
+            // 2. RL rotation
+            /*
+                z
+                 \
+                  y
+                 /
+                x
+            */
+            current->right = rightRotation(current->right);
+            return leftRotation(current);
+        }
 
         return current;
     }
@@ -198,15 +331,12 @@ private:
         return current;
     }
 
-    int height(Node *current)
+    int nodeHeight(Node *current)
     {
         if (current == nullptr)
             return 0;
 
-        int left = height(current->left);
-        int right = height(current->right);
-
-        return 1 + std::max(left, right);
+        return 1 + std::max(current->left->height, current->right->height);
     }
 
     int balanceFactor(Node *current)
@@ -214,8 +344,8 @@ private:
         if (current == nullptr)
             return 0;
 
-        int leftHeight = height(current->left);
-        int rightHeight = height(current->right);
+        int leftHeight = nodeHeight(current->left);
+        int rightHeight = nodeHeight(current->right);
 
         return leftHeight - rightHeight;
     }
