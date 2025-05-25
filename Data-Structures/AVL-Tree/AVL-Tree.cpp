@@ -1,4 +1,5 @@
 #include <iostream>
+#include <queue>
 
 // AVL Tree Data Structure
 // AUTHOR: Mert Eldemir
@@ -129,6 +130,9 @@ private:
     };
 
     Node *Root = nullptr;
+
+public:
+    AVL() : Root(nullptr) {};
 
 private:
     Node *rightRotation(Node *current)
@@ -401,7 +405,10 @@ private:
         if (current == nullptr)
             return 0;
 
-        return 1 + std::max(current->left->height, current->right->height);
+        int leftHeight = current->left != nullptr ? current->left->height : 0;
+        int rightHeight = current->right != nullptr ? current->right->height : 0;
+
+        return 1 + std::max(leftHeight, rightHeight);
     }
 
     int balanceFactor(Node *current)
@@ -444,15 +451,25 @@ private:
         inorderUtility(current->right);
     }
 
+    void preorderUtility(Node *current)
+    {
+        if (current == nullptr)
+            return;
+
+        std::cout << current->val << " ";
+        preorderUtility(current->left);
+        preorderUtility(current->right);
+    }
+
 public:
     void insert(int value)
     {
-        insertUtility(Root, value);
+        Root = insertUtility(Root, value);
     }
 
     void remove(int value)
     {
-        removeUtility(Root, value);
+        Root = removeUtility(Root, value);
     }
 
     void levelOrder()
@@ -466,9 +483,49 @@ public:
         inorderUtility(Root);
         std::cout << std::endl;
     }
+
+    void preorder()
+    {
+        preorderUtility(Root);
+        std::cout << std::endl;
+    }
 };
 
 int main()
 {
+    AVL *AVLTree = new AVL();
+
+    AVLTree->insert(3);
+    AVLTree->insert(4);
+    AVLTree->insert(5);
+    AVLTree->insert(6);
+    AVLTree->insert(-2);
+    AVLTree->insert(12);
+    AVLTree->insert(8);
+    AVLTree->insert(2);
+    AVLTree->insert(1);
+    AVLTree->insert(-3);
+
+    /*
+    Created AVL:
+
+              4
+            /   \
+           2     6
+         /  \   /  \
+       -2   3  5   12
+       / \         /
+     -3   1       8
+    */
+
+    std::cout << "inorder: "; // -3 -2 1 2 3 4 5 6 8 12
+    AVLTree->inorder();
+
+    std::cout << "preorder: "; // 4 2 -2 -3 1 3 6 5 12 8
+    AVLTree->preorder();
+
+    std::cout << "level order: "; // 4 2 6 -2 3 5 12 -3 1 8
+    AVLTree->levelOrder();
+
     return 0;
 }
