@@ -2,23 +2,6 @@
 
 A **linked list** is a fundamental data structure in computer science used to store a collection of elements. Unlike arrays, linked lists are dynamic in size and provide efficient insertion and deletion operations. This document provides an overview of linked lists, their importance, and the different variations.
 
----
-
-## Table of Contents
-
-1. [What is a Linked List?](#what-is-a-linked-list)
-2. [Why Do We Need Linked Lists?](#why-do-we-need-linked-lists)
-3. [Types of Linked Lists](#types-of-linked-lists)
-   - [Singly Linked List](#singly-linked-list)
-   - [Doubly Linked List](#doubly-linked-list)
-   - [Circular Linked List](#circular-linked-list)
-   - [Circular Doubly Linked List](#circular-doubly-linked-list)
-4. [Advantages and Disadvantages](#advantages-and-disadvantages)
-5. [Common Operations](#common-operations)
-6. [Applications of Linked Lists](#applications-of-linked-lists)
-
----
-
 ## What is a Linked List?
 
 A linked list is a linear data structure where each element, called a **node**, contains two parts:
