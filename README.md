@@ -31,7 +31,7 @@ Each topic contain **code examples** with explained **comment lines** and **Read
 
 - [Array Representations](#array-representations) • [Array ADT](#array-adt) • [Strings](#strings)
 - [Linked Lists](#linked-lists) • [Stack](#stack) • [Queue](#queue)
-- [Trees](#trees) • [Binary Search Tree](#binary-search-tree) • [AVL Tree](#avl-tree) • [Heap](#heap)
+- [Trees](#trees) • [Binary Search Tree](#binary-search-tree) • [AVL Tree](#avl-tree) • [2-3 Tree](#2-3-tree) • [Heap](#heap)
 
 ---
 
@@ -287,6 +287,23 @@ An AVL tree **maintains its height by doing some extra work during insert and de
   File: [AVL-Tree.cpp](Data-Structures/AVL-Tree/AVL-Tree.cpp)
   </br>
   Readme: [AVL-Tree.md](Data-Structures/AVL-Tree/AVL-Tree.md)
+
+### 2-3 TREE
+
+In binary search trees we have seen the average-case time for operations like search/insert/delete is O(log N) and the worst-case time is O(N) where N is the number of nodes in the tree.
+
+Like other Trees include AVL trees, Red Black Tree, B tree, 2-3 Tree is also a height balanced tree.
+
+The time complexity of search/insert/delete is O(log N) .
+
+A 2-3 tree is a [B-tree](https://www.geeksforgeeks.org/introduction-of-b-tree-2/) of order 3.
+
+- ..
+- ..
+
+  File: [2-3-Tree.cpp](Data-Structures/2-3-Tree/2-3-Tree.cpp)
+  </br>
+  Readme: [2-3-Tree.md](Data-Structures/2-3-Tree/2-3-Tree.md)
 
 ### HEAP
 
