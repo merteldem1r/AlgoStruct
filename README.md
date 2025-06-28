@@ -298,8 +298,7 @@ The time complexity of search/insert/delete is O(log N) .
 
 A 2-3 tree is a [B-tree](https://www.geeksforgeeks.org/introduction-of-b-tree-2/) of order 3.
 
-- ..
-- ..
+- implementation coming soon
 
   File: [2-3-Tree.cpp](Data-Structures/2-3-Tree/2-3-Tree.cpp)
   </br>
