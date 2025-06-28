@@ -31,7 +31,7 @@ Each topic contain **code examples** with explained **comment lines** and **Read
 
 - [Array Representations](#array-representations) • [Array ADT](#array-adt) • [Strings](#strings)
 - [Linked Lists](#linked-lists) • [Stack](#stack) • [Queue](#queue)
-- [Trees](#trees) • [Binary Search Tree](#binary-search-tree) • [AVL Tree](#avl-tree) • [2-3 Tree](#2-3-tree) • [Heap](#heap)
+- [Trees](#trees) • [Binary Search Tree](#binary-search-tree) • [AVL Tree](#avl-tree) • [2-3 Tree](#2-3-tree) • [Red Black Tree](#red-black-tree) • [Heap](#heap)
 
 ---
 
@@ -298,11 +298,20 @@ The time complexity of search/insert/delete is O(log N) .
 
 A 2-3 tree is a [B-tree](https://www.geeksforgeeks.org/introduction-of-b-tree-2/) of order 3.
 
-- implementation coming soon
+- implementation coming soon...
 
   File: [2-3-Tree.cpp](Data-Structures/2-3-Tree/2-3-Tree.cpp)
   </br>
   Readme: [2-3-Tree.md](Data-Structures/2-3-Tree/2-3-Tree.md)
+
+### RED BLACK TREE
+
+**Red Black Trees** are a type of balanced binary search tree that use a set of rules to maintain balance, ensuring logarithmic time complexity for operations like **insertion**, **deletion**, and **searching**, regardless of the initial shape of the tree. Red Black Trees are self-balancing, using a simple **color-coding scheme** to adjust the tree after each modification.
+
+- ..
+  File: [RedBlackTree.cpp](Data-Structures/Red-Black-Tree/RedBlackTree.cpp)
+  </br>
+  Readme: [RedBlackTree.md](Data-Structures/Red-Black-Tree/RedBlackTree.md)
 
 ### HEAP
 
