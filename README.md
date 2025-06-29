@@ -308,7 +308,12 @@ A 2-3 tree is a [B-tree](https://www.geeksforgeeks.org/introduction-of-b-tree-2/
 
 **Red Black Trees** are a type of balanced binary search tree that use a set of rules to maintain balance, ensuring logarithmic time complexity for operations like **insertion**, **deletion**, and **searching**, regardless of the initial shape of the tree. Red Black Trees are self-balancing, using a simple **color-coding scheme** to adjust the tree after each modification.
 
-- ..
+The **AVL** trees are more balanced compared to **Red-Black Trees**, but they may cause more **rotations** during **insertion** and **deletion**. So if your application involves frequent insertions and deletions, then Red-Black trees should be preferred. And if the insertions and deletions are less frequent and **search** is a more frequent operation, then AVL tree should be preferred over the Red-Black Tree.
+
+- 2 case of balancing: **Recoloring** & **Rotation**
+- **Red** and **Black** Node properties
+- **Insert** & **Delete** & **Search** methods
+
   File: [RedBlackTree.cpp](Data-Structures/Red-Black-Tree/RedBlackTree.cpp)
   </br>
   Readme: [RedBlackTree.md](Data-Structures/Red-Black-Tree/RedBlackTree.md)
@@ -367,7 +372,12 @@ Common algorithm problems using **recursion** vs **iterative approach**.
 
 A **Sorting Algorithm** is used to rearrange a given array or list of elements in an order. Selecting best sorting algoritms in a certain cases is crutial for system performans and stability.
 
-- _Bubble Sort_ - _Selection Sort_ - _Insertion Sort_ - _Merge Sort_ - _Quick Sort_ - _Bin / Bucket Sort_ - _Radix Sort_ - _Shell Sort_ - _Heap Sort_
+- [_Bubble Sort_](Algorithms/Sorting-Techniques/BubbleSort.cpp) - [_Selection Sort_](Algorithms/Sorting-Techniques/SelectionSort.cpp) - [_Insertion Sort_](Algorithms/Sorting-Techniques/InsertionSort.cpp)
+- [_Merge Sort_](Algorithms/Sorting-Techniques/MergeSort.cpp) - [_Quick Sort_](Algorithms/Sorting-Techniques/QuickSort.cpp)
+- [_Counting Sort_](Algorithms/Sorting-Techniques/CountingSort.cpp) - _Bin / Bucket Sort_
+- _Radix Sort_
+- _Shell Sort_
+- [_Heap Sort_](Algorithms/Sorting-Techniques/HeapSort.cpp)
 
   Folder: [Sorting-Techniques](Algorithms/Sorting-Techniques)
   </br>
