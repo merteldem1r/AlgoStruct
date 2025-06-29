@@ -1,6 +1,7 @@
 #include <iostream>
 
-// Red Black Tree
+// RED BLACK TREE
+// AUTHOR: Mert Eldemir
 
 /*
     Red Black Tree Properties:
@@ -55,7 +56,7 @@
 
         RULE: If PARENT is RED and UNCLE is BLACK or NULL (NULL also mean Black) use ROTATION!
 
-        Example: Left-Left Case (needs Right Rotation)
+        2.1) Left-Left (LL) Case (needs Right Rotation) also called ZIG-ZAG
 
             G (Black)
             /     \
@@ -76,8 +77,8 @@
 
             G(B)
             /
-        P(R)
-        /
+         P(R)
+         /
         n(R)
 
         After Right Rotation:
@@ -86,9 +87,57 @@
             /  \
          n(R)   G(R)
 
-        Result:
-        - Tree structure changes
-        - Red-Black properties restored
+        2.2) Right-Right (RR) Case (Needs Left Rotation) also called ZIG-ZIG
+
+            G (Black)
+                \
+                P(R)
+                \
+                n(R)
+            U (Black or NIL)
+
+        Fix:
+        - Left Rotate G
+        - Swap colors of G and P
+
+        Before rotation:
+
+            G(B)
+               \
+               P(R)
+                  \
+                 n(R)
+
+        After Left Rotation:
+
+             P(B)
+            /   \
+          G(R)  n(R)
+
+    IMPORTANT NOTES:
+
+        * Recoloring is cheaper than rotating — so Red-Black Trees only rotate when necessary.
+        That’s why they are more efficient for frequent insertions/deletions than AVL Trees.
+        * Recoloring doesn’t fix structure, but it fixes the “black-height” property — the part that guarantees that no path from root to leaf can be more than twice as long as any other.
+
+        Comparation with AVL Tree:
+
+            AVL Tree
+                *Tracks an explicit balance factor at every node.
+                *Allows at most 1 height difference between left and right subtrees.
+                *If that limit is broken, it must rotate immediately, no matter what.
+                *This keeps the tree very close to perfect balance → minimal height.
+                *But it means more rotations, especially for insert-heavy or delete-heavy workloads.
+
+            Red-Black Tree
+                *Doesn’t store or check numeric balance factors.
+                *Uses color rules to approximate the same goal:
+                *No two reds in a row.
+                *Paths from a node to any leaf must have the same number of black nodes.
+                *If inserting a node creates a problem, it tries recoloring first, only rotating when strictly needed.
+                *This means it sometimes accepts a bit more imbalance.
+                *Its height can be up to 2× log₂(n) vs. ~1.44× log₂(n) for AVL.
+                *But it saves time by avoiding unnecessary rotations.
 
 */
 
@@ -115,6 +164,31 @@ private:
 
 public:
     RedBlackTree(int value) : Root(new RBNode(value)) {};
+
+    
+
+    RBNode *Search(const int val)
+    {
+        RBNode *temp = Root;
+
+        while (temp != nullptr)
+        {
+            if (temp->value > val)
+            {
+                temp = temp->left;
+            }
+            else if (temp->value < val)
+            {
+                temp = temp->right;
+            }
+            else
+            {
+                return temp;
+            }
+        }
+
+        return nullptr;
+    }
 };
 
 int main()
