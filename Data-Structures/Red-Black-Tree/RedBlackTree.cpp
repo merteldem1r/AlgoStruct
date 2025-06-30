@@ -7,12 +7,12 @@
     Red Black Tree Properties:
 
     1. It's Height Balanced Binary Search Trees, similart to 2-3-4 Tree
-    2. Node is either Read or Black
-    3. Root of a Tree is always Black
-    4. NULL is also taken as Black
-    5. Number of Blacks on Path from Root to the leas are same
-    6. No 2 consecutive Red; Parent and Children of Red is Black
-    7. New Inserted node is Red
+    2. Node is either RED or BLACK Color
+    3. Root of a Tree is always BLACK
+    4. NULL is also taken as BLACK
+    5. Number of Blacks on Path from Root to the leafes are same
+    6. RED node must not have RED children
+    7. New Inserted node is RED
     8. Height is logN <= h <= 2logN
         * minimum logN, maximum is double of logN
 
@@ -165,7 +165,16 @@ private:
 public:
     RedBlackTree(int value) : Root(new RBNode(value)) {};
 
-    
+    int height(RBNode* current) {
+        if (current == nullptr) {
+            return 0;
+        }
+
+        int left = height(current->left);
+        int right = height(current->right);
+
+        return 1 + std::max(left, right);
+    }
 
     RBNode *Search(const int val)
     {
