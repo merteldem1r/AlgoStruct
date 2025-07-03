@@ -426,7 +426,7 @@ In C+, Bitwise Operators are the operators that are used to perform bit-level op
 
 ### Binary Tree Algorithms
 
-- _TraversalMethods_ - _countNodesAndHeight_ - _sumOfNodes_ - _generateTreeFromTraversals_ - _createTreeFromArray_ - _catalanNumber_ - _minMaxNodesFromHeight_ - _countLeafAndNonleafNodes_ - _invertBinaryTree_
+- _TraversalMethods_ - _countNodesAndHeight_ - _sumOfNodes_ - _generateTreeFromTraversals_ - _createTreeFromArray_ - _catalanNumber_ - _minMaxNodesFromHeight_ - _countLeafAndNonleafNodes_ - _invertBinaryTree_ - isBalancedBinaryTree
 
   Folder: [Binary-Tree-Algorithms](Algorithms/Binary-Tree/)
 

@@ -12,7 +12,7 @@
     4. NULL is also taken as BLACK
     5. Number of Blacks on Path from Root to the leafes are same
     6. RED node must not have RED children
-    7. New Inserted node is RED
+    7. New Inserted node must be RED
     8. Height is logN <= h <= 2logN
         * minimum logN, maximum is double of logN
 
@@ -149,34 +149,81 @@ typedef enum Color
 struct RBNode
 {
     int value;
+    Color color;
     RBNode *left;
     RBNode *right;
-    Color color;
+    RBNode *parent;
 
     RBNode(int value) : value(value), color(RED), right(nullptr), left(nullptr) {};
 };
-
 
 class RedBlackTree
 {
 private:
     RBNode *Root;
 
-public:
+private:
     RedBlackTree(int value) : Root(new RBNode(value)) {};
 
-    int height(RBNode* current) {
-        if (current == nullptr) {
-            return 0;
+    void rightRotation(RBNode *current)
+    {
+        /*
+            Right Rotation
+
+            Before:
+                
+                p
+                |
+                c
+               /
+             cl
+               \
+               clr
+
+            After:
+
+                p
+                |
+               cl
+               / \
+             ..   c
+                 /
+               clr
+
+            c and the clr parrents (p) are changed, we must update them
+        */
+
+        RBNode *currLeft = current->left;
+        RBNode *currLeftRight = currLeft->right;
+
+        currLeft->right = current;
+        current->left = currLeftRight;
+
+        current->parent = currLeft; 
+        if (currLeftRight != nullptr) {
+            currLeftRight->parent = current;
         }
 
-        int left = height(current->left);
-        int right = height(current->right);
-
-        return 1 + std::max(left, right);
+        // if there was the parent of the current node we have to configure relations
+        replaceParent(current->parent, current, currLeft); 
     }
 
-    RBNode *Search(const int val)
+    void replaceParent(RBNode* parent, RBNode* oldChild, RBNode* newChild) {
+        if (parent == nullptr) { 
+            // oldChild was the Root
+            Root = oldChild;
+        } else if (oldChild == parent->left) {
+            // oldChild was on left from parent
+            parent->left = newChild;
+        } else if (oldChild == parent->right) {
+            // oldChild was on right from parent
+            parent->right = newChild;
+        } else {
+            throw std::logic_error("Did not find the node's parent");
+        }
+    }
+
+    RBNode *SearchUtil(const int val)
     {
         RBNode *temp = Root;
 
@@ -197,6 +244,58 @@ public:
         }
 
         return nullptr;
+    }
+
+    void levelOrderUtil(RBNode *root)
+    {
+        std::queue<RBNode *> treeQueue;
+        treeQueue.push(root);
+
+        while (!treeQueue.empty())
+        {
+            RBNode *front = treeQueue.front();
+            treeQueue.pop();
+
+            std::cout << front->value << " ";
+
+            if (front->left != nullptr)
+            {
+                treeQueue.push(front->left);
+            }
+
+            if (front->right != nullptr)
+            {
+                treeQueue.push(front->right);
+            }
+        }
+    }
+
+    void inorderUtil(RBNode *root)
+    {
+        if (root == nullptr)
+        {
+            return;
+        }
+
+        inorderUtil(root->left);
+        std::cout << root->value << " ";
+        inorderUtil(root->right);
+    }
+
+public:
+    RBNode Search(const int val)
+    {
+        SearchUtil(val);
+    }
+
+    void levelOrder()
+    {
+        levelOrderUtil(Root);
+    }
+
+    void inorder()
+    {
+        inorderUtil(Root);
     }
 };
 
