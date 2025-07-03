@@ -16,8 +16,6 @@
     8. Height is logN <= h <= 2logN
         * minimum logN, maximum is double of logN
 
-    * Color (Red & Black) is only need to maintain the balancing rule of the tree,
-
     There is 2 methods to handle balance on the Red Black Tree:
 
         1) Recoloring Case
@@ -114,13 +112,14 @@
             /   \
           G(R)  n(R)
 
-    IMPORTANT NOTES:
+        IMPORTANT NOTES:
 
-        * Recoloring is cheaper than rotating — so Red-Black Trees only rotate when necessary.
-        That’s why they are more efficient for frequent insertions/deletions than AVL Trees.
-        * Recoloring doesn’t fix structure, but it fixes the “black-height” property — the part that guarantees that no path from root to leaf can be more than twice as long as any other.
+            * Recoloring is cheaper than rotating — so Red-Black Trees only rotate when necessary.
+            That’s why they are more efficient for frequent insertions/deletions than AVL Trees.
+            * Recoloring doesn’t fix structure, but it fixes the “black-height” property — the part that guarantees that no path from root to leaf can be more than twice as long as any other.
+            * So the color (Red & Black) is only need to maintain the balancing rule of the tree, it do not directly modify shape of the tree as Rotation does.
 
-        Comparation with AVL Tree:
+            Comparation with AVL Tree:
 
             AVL Tree
                 *Tracks an explicit balance factor at every node.
@@ -141,7 +140,7 @@
 
 */
 
-enum Color
+typedef enum Color
 {
     RED,
     BLACK
@@ -150,12 +149,13 @@ enum Color
 struct RBNode
 {
     int value;
-    Color color;
     RBNode *left;
     RBNode *right;
+    Color color;
 
     RBNode(int value) : value(value), color(RED), right(nullptr), left(nullptr) {};
 };
+
 
 class RedBlackTree
 {
