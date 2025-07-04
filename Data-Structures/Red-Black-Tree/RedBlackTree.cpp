@@ -1,7 +1,13 @@
 #include <iostream>
+#include <fmt/format.h>
 
 // RED BLACK TREE
 // AUTHOR: Mert Eldemir
+
+// Look for visualization of Red Black Tree: https://www.cs.usfca.edu/~galles/visualization/RedBlack.html
+// Learning Resourses:
+// * https://www.udemy.com/course/datastructurescncpp/?couponCode=LOCLZDOFFPTRCTRL
+// *
 
 /*
     Red Black Tree Properties:
@@ -154,6 +160,7 @@ struct RBNode
     RBNode *right;
     RBNode *parent;
 
+    // default created node is always RED
     RBNode(int value) : value(value), color(RED), right(nullptr), left(nullptr) {};
 };
 
@@ -169,9 +176,10 @@ private:
     {
         /*
             Right Rotation
+            Rotation performend on current (c), currentLeft (cl), currentLeftRight (clr)
 
             Before:
-                
+
                 p
                 |
                 c
@@ -190,40 +198,100 @@ private:
                  /
                clr
 
-            c and the clr parrents (p) are changed, we must update them
+            c, cl, clr parrents (p) are changed, we must update them
         */
 
+        RBNode *parent = current->parent;
         RBNode *currLeft = current->left;
         RBNode *currLeftRight = currLeft->right;
 
-        currLeft->right = current;
+        // rotation
         current->left = currLeftRight;
+        currLeft->right = current;
 
-        current->parent = currLeft; 
-        if (currLeftRight != nullptr) {
+        // update parents
+        current->parent = currLeft;
+        if (currLeftRight != nullptr)
+        {
             currLeftRight->parent = current;
         }
 
-        // if there was the parent of the current node we have to configure relations
-        replaceParent(current->parent, current, currLeft); 
+        // there was a parrent (p) of current (c); it was on left or right we don't know yet. Now new child of parrent (p) is currentLeft (cl).
+        replaceParentChild(parent, current, currLeft);
     }
 
-    void replaceParent(RBNode* parent, RBNode* oldChild, RBNode* newChild) {
-        if (parent == nullptr) { 
+    void leftRotation(RBNode *current)
+    {
+        /*
+            Left Rotation
+            Rotation performend on current (c), currentRight (cr), currentRightLeft (crl)
+
+            Before:
+
+               p
+               |
+               c
+                \
+                cr
+               /
+             crl
+
+            After:
+
+                p
+                |
+               cr
+              /  \
+             c   ..
+              \
+             crl
+
+             c, cr, crl parents (p) are changed, we must update them
+        */
+
+        RBNode *parent = current->parent;
+        RBNode *currRight = current->right;
+        RBNode *currRightLeft = currRight->left;
+
+        // rotation
+        current->right = currRightLeft;
+        currRight->left = current;
+
+        // update parents
+        current->parent = currRight;
+        if (currRightLeft != nullptr)
+        {
+            currRightLeft->parent = current;
+        }
+
+        // there was a parrent (p) of current (c); it was on left or right we don't know yet. Now new child of parrent (p) is currentRight (cr).
+        replaceParentChild(parent, current, currRight);
+    }
+
+    void replaceParentChild(RBNode *parent, RBNode *oldChild, RBNode *newChild)
+    {
+        if (parent == nullptr)
+        {
             // oldChild was the Root
-            Root = oldChild;
-        } else if (oldChild == parent->left) {
+            Root = newChild;
+        }
+        else if (oldChild == parent->left)
+        {
             // oldChild was on left from parent
             parent->left = newChild;
-        } else if (oldChild == parent->right) {
+        }
+        else if (oldChild == parent->right)
+        {
             // oldChild was on right from parent
             parent->right = newChild;
-        } else {
+        }
+        else
+        {
             throw std::logic_error("Did not find the node's parent");
         }
     }
 
-    RBNode *SearchUtil(const int val)
+    RBNode *searchUtil(const int val)
     {
         RBNode *temp = Root;
 
@@ -244,6 +312,16 @@ private:
         }
 
         return nullptr;
+    }
+
+    RBNode *insertUtil(const int val)
+    {
+        RBNode *foundNode = searchUtil(val);
+
+        if (foundNode != nullptr)
+        {
+            throw std::logic_error(fmt::format("Red Black Tree already contains node with value: {}", val));
+        }
     }
 
     void levelOrderUtil(RBNode *root)
@@ -285,7 +363,12 @@ private:
 public:
     RBNode Search(const int val)
     {
-        SearchUtil(val);
+        searchUtil(val);
+    }
+
+    RBNode Insert(const int val)
+    {
+        insertUtil(val);
     }
 
     void levelOrder()
