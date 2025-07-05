@@ -7,7 +7,7 @@
 // Look for visualization of Red Black Tree: https://www.cs.usfca.edu/~galles/visualization/RedBlack.html
 // Learning Resourses:
 // * https://www.udemy.com/course/datastructurescncpp/?couponCode=LOCLZDOFFPTRCTRL
-// *
+// * https://www.happycoders.eu/algorithms/red-black-tree-java/
 
 /*
     Red Black Tree Properties:
@@ -361,12 +361,12 @@ private:
     }
 
 public:
-    RBNode Search(const int val)
+    RBNode *Search(const int val)
     {
         searchUtil(val);
     }
 
-    RBNode Insert(const int val)
+    RBNode *Insert(const int val)
     {
         insertUtil(val);
     }
