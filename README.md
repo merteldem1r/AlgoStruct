@@ -44,7 +44,7 @@ Each topic contain **code examples** with explained **comment lines** and **Read
 
 Each section of this repository was created with **genuine passion**, **thorough research**, and **dedicated implementation**. I hope it proves helpful to others.
 
-**NOTE:** **Time** and **space complexity** values are usually provided as **comments near the algorithms**. Unless otherwise specified (e.g., best, average, or worst case), you should assume that **the given complexities refer to the worst-case scenario**. Some of base explanations made using AI for better understanding.
+**NOTE:** **Time** and **space complexity** values are usually provided as **comments near the algorithms**. Unless otherwise specified (e.g., best, average, or worst case), you should assume that **the given complexities refer to the worst-case scenario**. Some of explanations in **.md** files are made by using AI for better understanding the topic.
 
 **Let's get started! 🚀**
 
@@ -341,7 +341,7 @@ Heaps are usually used to implement **priority queues**, where the smallest (or 
 
 ![4](https://github.com/user-attachments/assets/1daa6d18-c241-44b5-831a-c6e38bf89f84)
 
-The **algorithms** are used to **solve problems or provide functionality**. Algorithms work exclusively on values; they don't affect the size or storage of a container. Simple algorithms can be implemented within a function. Complex algorithms might require several functions or even a class to implement them.
+**Algorithm** is a step-by-step procedure for **solving a problem** or accomplishing a task. In the context of **data structures** and **algorithms**, it is a set of well-defined instructions for performing a specific computational task. **Algorithms** are fundamental to **Computer Science** and play a very important role in designing **efficient solutions** for various problems.
 
 ### Recursion
 
