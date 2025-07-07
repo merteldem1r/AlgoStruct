@@ -284,9 +284,9 @@ An AVL tree **maintains its height by doing some extra work during insert and de
 - **LL**, **LR**, **RR**, **RL** rotations explained and implemented for unbalanced cases of the nodes
 - **Visualizations** for each functions with comment lines
 
-  File: [AVL-Tree.cpp](Data-Structures/AVL-Tree/AVL-Tree.cpp)
+  File: [AVL.cpp](Data-Structures/AVL-Tree/AVL.cpp)
   </br>
-  Readme: [AVL-Tree.md](Data-Structures/AVL-Tree/AVL-Tree.md)
+  Readme: [AVL.md](Data-Structures/AVL-Tree/AVL.md)
 
 ### 2-3 TREE
 

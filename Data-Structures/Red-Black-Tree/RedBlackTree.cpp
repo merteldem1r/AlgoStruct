@@ -5,7 +5,7 @@
 // AUTHOR: Mert Eldemir
 
 // Look for visualization of Red Black Tree: https://www.cs.usfca.edu/~galles/visualization/RedBlack.html
-// Learning Resourses:
+// Some very useful resourses:
 // * https://www.udemy.com/course/datastructurescncpp/?couponCode=LOCLZDOFFPTRCTRL
 // * https://www.happycoders.eu/algorithms/red-black-tree-java/
 
@@ -17,7 +17,7 @@
     3. Root of a Tree is always BLACK
     4. NULL is also taken as BLACK
     5. Number of Blacks on Path from Root to the leafes are same
-    6. RED node must not have RED children
+    6. RED node must NOT have RED children
     7. New Inserted node must be RED
     8. Height is logN <= h <= 2logN
         * minimum logN, maximum is double of logN
@@ -58,7 +58,7 @@
 
         2) Rotation Case
 
-        RULE: If PARENT is RED and UNCLE is BLACK or NULL (NULL also mean Black) use ROTATION!
+        RULE: If PARENT is RED and UNCLE is BLACK or NULL (NULL also mean Black) we use ROTATION
 
         2.1) Left-Left (LL) Case (needs Right Rotation) also called ZIG-ZAG
 
@@ -85,7 +85,7 @@
          /
         n(R)
 
-        After Right Rotation:
+        After Right Rotation + Recoloring:
 
             P(B)
             /  \
@@ -93,15 +93,15 @@
 
         2.2) Right-Right (RR) Case (Needs Left Rotation) also called ZIG-ZIG
 
-            G (Black)
-                \
-                P(R)
-                \
-                n(R)
-            U (Black or NIL)
+               G (B)
+              /      \
+        U(B or NULL)  P(R)
+                         \
+                         n(R)
+
 
         Fix:
-        - Left Rotate G
+        - Left Rotate on G
         - Swap colors of G and P
 
         Before rotation:
@@ -112,11 +112,16 @@
                   \
                  n(R)
 
-        After Left Rotation:
+        After Left Rotation: + Recoloring:
 
              P(B)
             /   \
           G(R)  n(R)
+
+        2.3 and 2.4) RIGHT-LEFT ROTATION (RL) and LEFT-RIGHT ROTATION (LR):
+
+        Look to the AVL-Tree.cpp code where these to cases is shown also.
+        The idea of rotations is same, but here the shape of that case is look like the triangle. So we have to rotate 2 times.
 
         IMPORTANT NOTES:
 
@@ -160,10 +165,11 @@ struct RBNode
     RBNode *right;
     RBNode *parent;
 
-    // default created node is always RED
+    // default created node always RED
     RBNode(int value) : value(value), color(RED), right(nullptr), left(nullptr) {};
 };
 
+// Before dive deep into code I advice to look above for deep explanations.
 class RedBlackTree
 {
 private:
@@ -338,33 +344,154 @@ private:
         }
 
         RBNode *newNode = new RBNode(val);
-        
-        // insert
-        if (tempParent == nullptr) {
+
+        if (tempParent == nullptr)
+        {
             Root = newNode;
-        } else if (val > tempParent->value) {
+            newNode->color = BLACK; // root is always BLACK
+            return;
+        }
+        else if (val > tempParent->value)
+        {
             tempParent->left = newNode;
-        } else {
+        }
+        else
+        {
             tempParent->right = newNode;
         }
 
-        fixRedBlackInsert(newNode);
+        fixRedBlackProperties(newNode);
     }
 
-    void fixRedBlackInsert(RBNode* insertedNode) {
-        // Case 1: new node is Root
-        if (insertedNode == Root) {
-            insertedNode->color = BLACK;
-        } else if () {
-        // Case 2 RECOLOR: Uncle is RED and PARENT is RED
-        /*
-                G (Black)
-                / \
-            P(R) U(R)
-            /
-        newNode(R)
-        */
+    void fixRedBlackProperties(RBNode *newNode)
+    {
 
+        RBNode *parent = newNode->parent;
+
+        // Base case to stop recursion
+        if (parent == nullptr)
+        {
+            return;
+        }
+
+        // Properties are corret
+        if (parent->color == BLACK)
+        {
+            return;
+        }
+
+        RBNode *grandParent = parent->parent;
+        RBNode *uncle = getUncle(parent);
+
+        // Case 1 RECOLOR: Uncle is RED and PARENT is RED
+        if (uncle != nullptr && uncle->color == RED)
+        {
+            /*
+            Case visualization:
+
+                   ... (GG)
+                    |
+                    G (Black)
+                    / \
+                P(R) U(R)
+                /
+            newNode(R)
+            */
+            parent->color = BLACK;
+            uncle->color = BLACK;
+            grandParent->color = RED;
+
+            // we don't know upper nodes (GG), that's why we recursively call function on grandParent (G)
+            fixRedBlackProperties(grandParent);
+        }
+        // Case 2 ROTATION: Uncle is BLACK and PARENT is RED
+        else if (grandParent->left == parent)
+        {
+
+            if (newNode == parent->left)
+            {
+                // CASE 2.1 Right ROTATION (LL Shape):
+                /*
+                        G(B)
+                       /   \
+                     P(R)  U(B)
+                    /
+                newNode(R)
+                */
+                rightRotation(grandParent);
+
+                parent->color = BLACK;
+                grandParent->color = RED;
+            }
+            else
+            {
+                // CASE 2.2) Left-Right ROTATION (LR Shape):
+                /*
+                        G(B)
+                       /   \
+                     P(R)  U(B)
+                        \
+                    newNode(R)
+                */
+                leftRotation(parent);
+                rightRotation(grandParent);
+
+                newNode->color = BLACK;
+                grandParent->color = RED;
+            }
+        }
+        else
+        {
+            if (newNode == parent->right)
+            {
+                // CASE 2.3 Left ROTATION (RR Shape):
+                /*
+                    G(B)
+                    /   \
+                 U(B)   P(R)
+                          \
+                          newNode(R)
+                */
+                leftRotation(grandParent);
+
+                parent->color = BLACK;
+                grandParent->color = RED;
+            }
+            else
+            {
+                // CASE 2.4 Right-Left (RL Shape) ROTATION:
+                /*
+                    G(B)
+                    /   \
+                 U(B)   P(R)
+                        /
+                    newNode(R)
+                */
+                rightRotation(parent);
+                leftRotation(grandParent);
+
+                newNode->color = BLACK;
+                grandParent->color = RED;
+            }
+        }
+    }
+
+    // uncle may be on the left or right of the grandParent
+    RBNode *getUncle(RBNode *parent)
+    {
+        RBNode *grandParent = parent->parent;
+
+        if (parent == grandParent->left)
+        {
+            return grandParent->right;
+        }
+        else if (parent == grandParent->right)
+        {
+            return grandParent->left;
+        }
+        else
+        {
+            throw std::logic_error("Parent grandParent relation error");
         }
     }
 
