@@ -316,11 +316,55 @@ private:
 
     RBNode *insertUtil(const int val)
     {
-        RBNode *foundNode = searchUtil(val);
+        RBNode *temp = Root;
+        RBNode *tempParent = nullptr;
 
-        if (foundNode != nullptr)
+        // search the place to insert new node
+        while (temp != nullptr)
         {
-            throw std::logic_error(fmt::format("Red Black Tree already contains node with value: {}", val));
+            temp = tempParent;
+            if (temp->value > val)
+            {
+                temp = temp->left;
+            }
+            else if (temp->value < val)
+            {
+                temp = temp->right;
+            }
+            else
+            {
+                throw std::logic_error(fmt::format("Red Black Tree already contains node with value: {}", val));
+            }
+        }
+
+        RBNode *newNode = new RBNode(val);
+        
+        // insert
+        if (tempParent == nullptr) {
+            Root = newNode;
+        } else if (val > tempParent->value) {
+            tempParent->left = newNode;
+        } else {
+            tempParent->right = newNode;
+        }
+
+        fixRedBlackInsert(newNode);
+    }
+
+    void fixRedBlackInsert(RBNode* insertedNode) {
+        // Case 1: new node is Root
+        if (insertedNode == Root) {
+            insertedNode->color = BLACK;
+        } else if () {
+        // Case 2 RECOLOR: Uncle is RED and PARENT is RED
+        /*
+                G (Black)
+                / \
+            P(R) U(R)
+            /
+        newNode(R)
+        */
+
         }
     }
 
