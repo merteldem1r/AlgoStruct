@@ -16,7 +16,7 @@
     2. Node is either RED or BLACK Color
     3. Root of a Tree is always BLACK
     4. NULL is also taken as BLACK
-    5. Number of Blacks on Path from Root to the leafes are same
+    5. Number of BLACK Nodes on Path from Root to the leafes are same
     6. RED node must NOT have RED children
     7. New Inserted node must be RED
     8. Height is logN <= h <= 2logN
@@ -493,6 +493,64 @@ private:
         {
             throw std::logic_error("Parent grandParent relation error");
         }
+    }
+
+    // Deletion is looks similar to deletion on Binary Search Trees with additional rotation & recoloring steps
+    RBNode *deleteUtil(const int val)
+    {
+        RBNode *nodeToDelete = searchUtil(val);
+
+        if (nodeToDelete == nullptr)
+        {
+            std::cout << "Not found the Node of value: " << val << std::endl;
+            return;
+        }
+
+        // CASE 1: when the nodeToDelete is RED
+        // In that case we simply delete that RED node without much complexities as similar on BST, because the Red-Black property is not affected (Number of BLACK Nodes on Path from Root to the leafes are same).
+        if (nodeToDelete->color == RED)
+        {
+        }
+        // CASE 2: when nodeToDelete is BLACK
+        // This is the case when a different subcases comes with a little bit more complex variations.
+        else if (nodeToDelete->color == BLACK)
+        {
+        }
+    }
+
+    RBNode *deleteRedNode(RBNode *nodeToDelete)
+    {
+        if (nodeToDelete->left == nullptr)
+        {
+            // nodeToDelete (RED) is LEAF Node OR has only Right child
+            RBNode *temp = nodeToDelete;
+            nodeToDelete = nodeToDelete->right;
+            delete temp;
+        }
+        else if (nodeToDelete->right == nullptr)
+        {
+            // nodeToDelete (RED) has only Left child
+            RBNode *temp = nodeToDelete;
+            nodeToDelete = nodeToDelete->left;
+            delete temp;
+        }
+        else
+        {
+            // nodeToDelete (RED) has both Right and Left child
+            // ..
+        }
+    }
+
+    // smallest Node from the right subtree of given node (current)
+    RBNode *getInorderSuccessor(RBNode *current)
+    {
+        RBNode *temp = current->right;
+        while (temp != nullptr && temp->left != nullptr)
+        {
+            temp = temp->left;
+        }
+
+        return temp;
     }
 
     void levelOrderUtil(RBNode *root)

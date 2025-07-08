@@ -308,7 +308,7 @@ A 2-3 tree is a [B-tree](https://www.geeksforgeeks.org/introduction-of-b-tree-2/
 
 **Red Black Trees** are a type of balanced binary search tree that use a set of rules to maintain balance, ensuring logarithmic time complexity for operations like **insertion**, **deletion**, and **searching**, regardless of the initial shape of the tree. Red Black Trees are self-balancing, using a simple **color-coding scheme** to adjust the tree after each modification.
 
-The **AVL** trees are more balanced compared to **Red-Black Trees**, but they may cause more **rotations** during **insertion** and **deletion**. So if your application involves frequent insertions and deletions, then Red-Black trees should be preferred. And if the insertions and deletions are less frequent and **search** is a more frequent operation, then AVL tree should be preferred over the Red-Black Tree.
+The **Red-Black Trees** is less balanced compared to **AVL** trees, because **AVL** trees may cause more **rotations** during **insertion** and **deletion**. So if your application involves frequent insertions and deletions, then Red-Black trees should be preferred. And if the insertions and deletions are less frequent and **search** is a more frequent operation, then AVL tree should be preferred over the Red-Black Tree.
 
 - 2 case of balancing: **Recoloring** & **Rotation**
 - **Red** and **Black** Node properties

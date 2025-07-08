@@ -80,7 +80,7 @@ public:
 
     Node *getRoot() const { return root; } // Time: O(1)
 
-    Node *getSuccessor(Node *root) // Time: O(n) Space: O(1)
+    Node *getInorderSucessor(Node *root) // Time: O(n) Space: O(1)
     {
         auto temp = root->right;
         while (temp != nullptr && temp->left != nullptr)
@@ -149,9 +149,9 @@ public:
             else // 3) It has both RIGHT and LEFT child
             {
                 // We need to find minimum in the right subtree of found node (it calls as SUCCESSOR)
-                Node *successor = getSuccessor(root);
-                root->val = successor->val;                        // Reassign the successor value to the root value
-                root->right = Delete(root->right, successor->val); // now delete the successor from the right subtree as usual
+                Node *inorderSuccessor = getInorderSucessor(root);
+                root->val = inorderSuccessor->val;                        // Reassign the inorderSuccessor value to the root value
+                root->right = Delete(root->right, inorderSuccessor->val); // now delete the inorderSuccessor from the right subtree as usual
             }
         }
 
