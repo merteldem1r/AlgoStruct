@@ -507,9 +507,20 @@ private:
         }
 
         // CASE 1: when the nodeToDelete is RED
-        // In that case we simply delete that RED node without much complexities as similar on BST, because the Red-Black property is not affected (Number of BLACK Nodes on Path from Root to the leafes are same).
+        // There is only 2 cases with RED node:
+        // 1. It has no children (leaf node)
+        // 2. It has both right and left child
         if (nodeToDelete->color == RED)
         {
+            if (nodeToDelete->left == nullptr && nodeToDelete->right == nullptr) {
+                // CASE 1.1: RED Node has no child
+                delete nodeToDelete;
+            } else {
+                // CASE 1.2: RED Node has right and left child
+                RBNode* inorderSuccessor = getInorderSuccessor(nodeToDelete);
+                nodeToDelete->value = inorderSuccessor->value;
+                // 
+            }
         }
         // CASE 2: when nodeToDelete is BLACK
         // This is the case when a different subcases comes with a little bit more complex variations.
@@ -518,7 +529,7 @@ private:
         }
     }
 
-    RBNode *deleteRedNode(RBNode *nodeToDelete)
+    RBNode *deleteNodeWithOneChild(RBNode *nodeToDelete)
     {
         if (nodeToDelete->left == nullptr)
         {
