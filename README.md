@@ -41,6 +41,7 @@ Each topic contain **code examples** with explained **comment lines** and **Read
 - [Bitwise](#bitwise-operations) • [Strings](#string-algorithms)
 - [Linked List](#linked-list-algorithms) • [Stack](#stack-algorithms) • [Queue](#queue-algorithms)
 - [Binary Tree](#binary-tree-algorithms) • [Binary Search Tree](#binary-search-tree-algorithms)
+- [Backtracking](#backtracking)
 
 Each section of this repository was created with **genuine passion**, **thorough research**, and **dedicated implementation**. I hope it proves helpful to others.
 
@@ -402,7 +403,7 @@ In C+, Bitwise Operators are the operators that are used to perform bit-level op
 
 ### String Algorithms
 
-- _changingCase_ - _permutationString_ - _countWordsAndVowels_ - _findDuplicates_ - _findDuplicatesBitwise_ - _findStringLength_ - _isPalindrome_ - _reverseString_ - _validateString_ - _isAnagram_
+- _changingCase_ - _countWordsAndVowels_ - _findDuplicates_ - _findDuplicatesBitwise_ - _findStringLength_ - _isPalindrome_ - _reverseString_ - _validateString_ - _isAnagram_
 
   Folder: [String-Algorithms](Algorithms/Strings)
 
@@ -444,3 +445,9 @@ In C+, Bitwise Operators are the operators that are used to perform bit-level op
   Folder: [BFS-DFS](Algorithms/BFS-DFS/)
   </br>
   Readme: [BFS-DFC Readme](Algorithms/BFS-DFS/Readme.md)
+
+### Backtracking
+
+- _permutationString_
+
+  Folder: [Backtracking](Algorithms/Backtracking/)
