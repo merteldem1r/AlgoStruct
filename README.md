@@ -40,7 +40,7 @@ Each topic contain **code examples** with explained **comment lines** and **Read
 - [Recursion](#recursion) • [Sorting](#sorting-algorithms) • [Array](#array-algorithms)
 - [Bitwise](#bitwise-operations) • [Strings](#string-algorithms)
 - [Linked List](#linked-list-algorithms) • [Stack](#stack-algorithms) • [Queue](#queue-algorithms)
-- [Binary Tree](#binary-tree-algorithms) • [Binary Search Tree](#binary-search-tree-algorithms)
+- [Binary Tree](#binary-tree-algorithms) • [Binary Search Tree](#binary-search-tree-algorithms) • [Heap](#heap-algorithms)
 - [Backtracking](#backtracking)
 
 Each section of this repository was created with **genuine passion**, **thorough research**, and **dedicated implementation**. I hope it proves helpful to others.
@@ -436,6 +436,14 @@ In C+, Bitwise Operators are the operators that are used to perform bit-level op
 - _generateBSTFromOneTraversal_ - _resursiveInsert_ - _createBSTFromArray_
 
   Folder: [Binary-Search-Tree-Algorithms](Algorithms/Binary-Search-Tree/)
+
+### Heap Algorithms
+
+Also known as **Priority Queues**
+
+- _kthLargestElementInStream_
+
+  Folder: [Heap-Algorithms](Algorithms/Heap/)
 
 ### BFS & DFS Algorithms
 
