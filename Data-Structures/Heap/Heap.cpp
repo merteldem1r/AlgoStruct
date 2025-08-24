@@ -16,6 +16,8 @@ public:
 
     void MaxHeapify(int i, int arrSize);
 
+    void MaxHeapifyIterative(int i, int arrSize);
+
     int extractMax();
 
     int Parent(int i) { return (i - 1) / 2; };
@@ -49,7 +51,7 @@ MaxHeap::MaxHeap(int cap, int A[], int arrSize)
     heapArr = A;
 }
 
-void MaxHeap::insert(int key)
+void MaxHeap::insert(int key) // Time: O(log N)
 {
     if (heapSize == capacity)
     {
@@ -70,7 +72,7 @@ void MaxHeap::insert(int key)
     }
 }
 
-void MaxHeap::MaxHeapify(int i, int arrSize) // Time Complexity: O(logn)
+void MaxHeap::MaxHeapify(int i, int arrSize) // Time: O(log N) Space: O(n)
 {
     int l = Left(i);
     int r = Right(i);
@@ -90,7 +92,30 @@ void MaxHeap::MaxHeapify(int i, int arrSize) // Time Complexity: O(logn)
     }
 }
 
-int MaxHeap::extractMax()
+void MaxHeap::MaxHeapifyIterative(int i, int arrSize) // Time: O(log N) Space: O(1)
+{
+    while (true) {
+        int l = Left(i);
+        int r = Right(i);
+
+        int largest = i;
+
+        if (l < arrSize && heapArr[l] > heapArr[largest])
+            largest = l;
+
+        if (r < arrSize && heapArr[r] > heapArr[largest])
+            largest = r;
+
+        if (largest == i) {
+            break;
+        }
+        
+        std::swap(heapArr[i], heapArr[largest]);
+        i = largest;
+    }
+}
+
+int MaxHeap::extractMax() // Time: O(log N)
 {
     if (heapSize == 0)
         return INT_MIN;
@@ -159,10 +184,11 @@ int main()
     // ************** Creating Heap from given array using Insert() function
     std::cout << "\n";
     int A[] = {10, 20, 25, 5, 40, 35};
+    int aSize = sizeof(A) / sizeof(A[0]);
 
     MaxHeap HeapB(6);
 
-    for (int i = 0; i < 6; ++i) // Time Complexity: O(n log(n))
+    for (int i = 0; i < aSize; ++i) // Time Complexity: O(n log(n))
         HeapB.insert(A[i]);
 
     std::cout << "B Max-Heap: ";
@@ -171,14 +197,13 @@ int main()
     // ************** Creating Heap using Max-Heapify method and implementing Heap Sort
     std::cout << "\n";
     int C[] = {10, 20, 25, 5, 40, 35, 15};
-    int cSize = 6;
-
-    MaxHeap HeapC(6, C, cSize);
+    int cSize = sizeof(C) / sizeof(C[0]);
+    MaxHeap HeapC(cSize, C, cSize);
 
     std::cout << "C Array (not Max-Heap yet): ";
     HeapC.print();
 
-    for (int i = cSize / 2 - 1; i >= 0; --i)
+    for (int i = cSize / 2 - 1; i >= 0; --i) // Time: O(n)
     {
         HeapC.MaxHeapify(i, cSize);
     }
