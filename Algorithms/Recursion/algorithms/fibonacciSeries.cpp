@@ -108,11 +108,30 @@ int fibonacciHelperRec(int n)
     return fibonacciMemoRec(n, arr);
 }
 
+int fibonacciIterative(int n)
+{
+    if (n <= 1)
+    {
+        return n;
+    }
+
+    int x = 0, y = 1;
+    for (int i = 2; i <= n; ++i)
+    {
+        const int tempX = x;
+        x = y;
+        y = tempX + y;
+    }
+
+    return y;
+}
+
 int main()
 {
     std::cout << "fibonacciNaive: " << fibonacciNaive(3) << std::endl;         // 2
     std::cout << "fibonacciMemoLoop: " << fibonacciMemoLoop(9) << std::endl;   // 34
     std::cout << "fibonacciHelperRec: " << fibonacciHelperRec(4) << std::endl; // 3
+    std::cout << "fibonacciIterative: " << fibonacciIterative(3) << std::endl; // 3
 
     return 0;
 }
