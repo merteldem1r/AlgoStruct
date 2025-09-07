@@ -136,7 +136,7 @@ Object-oriented programming – As the name suggests uses objects in programming
 - Constructors & Member initialization in constructors
 - Pointers to classes
 - OOP Concepts (Encapsulation, Inheritance, Polymorphism, Abstraction etc.)
-- Runtime vs Compile Time Polymorphism
+- **Runtime** vs **Compile Time** Polymorphism
 
   Code: [oop.cpp](Essential-Concepts/OOP/oop.cpp), [polymorphism.cpp](Essential-Concepts/OOP/polymorphism.cpp)
   </br>
