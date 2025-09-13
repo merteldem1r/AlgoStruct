@@ -1,5 +1,7 @@
 #include <iostream>
-#include <fmt/format.h>
+#include <stdexcept>
+#include <queue>
+#include <sstream>
 
 // RED BLACK TREE
 // AUTHOR: Mert Eldemir
@@ -151,7 +153,7 @@
 
 */
 
-typedef enum Color
+enum Color
 {
     RED,
     BLACK
@@ -165,8 +167,20 @@ struct RBNode
     RBNode *right;
     RBNode *parent;
 
+    // for NilNode check
+    bool isNilNode = false;
+
     // default created node always RED
-    RBNode(int value) : value(value), color(RED), right(nullptr), left(nullptr) {};
+    RBNode(int value) : value(value), color(RED), right(nullptr), left(nullptr), parent(nullptr), isNilNode(false) {};
+};
+
+struct NilNode : RBNode
+{
+    NilNode() : RBNode(0)
+    {
+        color = BLACK;
+        isNilNode = true;
+    }
 };
 
 // Before dive deep into code I advice to look above for deep explanations.
@@ -175,9 +189,18 @@ class RedBlackTree
 private:
     RBNode *Root;
 
-private:
-    RedBlackTree(int value) : Root(new RBNode(value)) {};
+public:
+    RedBlackTree(int value) : Root(new RBNode(value))
+    {
+        Root->color = BLACK; // Root must always be BLACK
+    };
 
+    ~RedBlackTree()
+    {
+        deleteTree(Root);
+    }
+
+private:
     void rightRotation(RBNode *current)
     {
         /*
@@ -280,6 +303,10 @@ private:
         {
             // oldChild was the Root
             Root = newChild;
+            if (newChild != nullptr)
+            {
+                newChild->parent = nullptr;
+            }
         }
         else if (oldChild == parent->left)
         {
@@ -328,7 +355,7 @@ private:
         // search the place to insert new node
         while (temp != nullptr)
         {
-            temp = tempParent;
+            tempParent = temp;
             if (temp->value > val)
             {
                 temp = temp->left;
@@ -339,7 +366,9 @@ private:
             }
             else
             {
-                throw std::logic_error(fmt::format("Red Black Tree already contains node with value: {}", val));
+                std::ostringstream oss;
+                oss << "Red Black Tree already contains node with value: " << val;
+                throw std::logic_error(oss.str());
             }
         }
 
@@ -348,10 +377,10 @@ private:
         if (tempParent == nullptr)
         {
             Root = newNode;
-            newNode->color = BLACK; // root is always BLACK
-            return;
+            Root->color = BLACK; // root is always BLACK
+            return newNode;
         }
-        else if (val > tempParent->value)
+        else if (val < tempParent->value)
         {
             tempParent->left = newNode;
         }
@@ -360,7 +389,10 @@ private:
             tempParent->right = newNode;
         }
 
+        newNode->parent = tempParent;
         fixRedBlackProperties(newNode);
+        Root->color = BLACK;
+        return newNode;
     }
 
     void fixRedBlackProperties(RBNode *newNode)
@@ -374,7 +406,7 @@ private:
             return;
         }
 
-        // Properties are corret
+        // Properties are corret, parent is BLACKS
         if (parent->color == BLACK)
         {
             return;
@@ -503,52 +535,194 @@ private:
         if (nodeToDelete == nullptr)
         {
             std::cout << "Not found the Node of value: " << val << std::endl;
-            return;
+            return nullptr;
         }
 
-        // CASE 1: when the nodeToDelete is RED
-        // There is only 2 cases with RED node:
-        // 1. It has no children (leaf node)
-        // 2. It has both right and left child
-        if (nodeToDelete->color == RED)
+        RBNode *movedUpNode;
+        bool deletedNodeColor;
+
+        // Node has one or no child
+        if (nodeToDelete->left == nullptr || nodeToDelete->right == nullptr)
         {
-            if (nodeToDelete->left == nullptr && nodeToDelete->right == nullptr) {
-                // CASE 1.1: RED Node has no child
-                delete nodeToDelete;
-            } else {
-                // CASE 1.2: RED Node has right and left child
-                RBNode* inorderSuccessor = getInorderSuccessor(nodeToDelete);
-                nodeToDelete->value = inorderSuccessor->value;
-                // 
+            movedUpNode = deleteNodeWithOneChild(nodeToDelete);
+            deletedNodeColor = nodeToDelete->color;
+        }
+        // Node has 2 children
+        else
+        {
+            // Finding the minimum node from the right subtree of the nodeToDelete
+            RBNode *inorderSuccessorNode = getInorderSuccessor(nodeToDelete);
+            nodeToDelete->value = inorderSuccessorNode->value;
+            movedUpNode = deleteNodeWithOneChild(inorderSuccessorNode);
+            deletedNodeColor = inorderSuccessorNode->color;
+        }
+
+        if (deletedNodeColor == BLACK)
+        {
+            fixRedBlackPropertiesAfterDelete(movedUpNode);
+
+            // removing the temporary NULL node
+            if (movedUpNode->isNilNode == true)
+            {
+                replaceParentChild(movedUpNode->parent, movedUpNode, nullptr);
+                delete movedUpNode;
             }
         }
-        // CASE 2: when nodeToDelete is BLACK
-        // This is the case when a different subcases comes with a little bit more complex variations.
-        else if (nodeToDelete->color == BLACK)
-        {
-        }
+
+        return movedUpNode;
     }
 
     RBNode *deleteNodeWithOneChild(RBNode *nodeToDelete)
     {
-        if (nodeToDelete->left == nullptr)
+        RBNode *child = nullptr;
+
+        if (nodeToDelete->left != nullptr)
         {
-            // nodeToDelete (RED) is LEAF Node OR has only Right child
-            RBNode *temp = nodeToDelete;
-            nodeToDelete = nodeToDelete->right;
-            delete temp;
+            // nodeToDelete has only Left child
+            child = nodeToDelete->left;
+            child->parent = nodeToDelete->parent;
+            replaceParentChild(nodeToDelete->parent, nodeToDelete, child);
         }
-        else if (nodeToDelete->right == nullptr)
+        else if (nodeToDelete->right != nullptr)
         {
-            // nodeToDelete (RED) has only Left child
-            RBNode *temp = nodeToDelete;
-            nodeToDelete = nodeToDelete->left;
-            delete temp;
+            // nodeToDelete has only Right child
+            child = nodeToDelete->right;
+            child->parent = nodeToDelete->parent;
+            replaceParentChild(nodeToDelete->parent, nodeToDelete, child);
         }
         else
         {
-            // nodeToDelete (RED) has both Right and Left child
-            // ..
+            // Node has no children
+            // if node is RED remove it, if node is BLACK replace it by temp NilNode
+            child = nodeToDelete->color == BLACK ? new NilNode() : nullptr;
+            if (child != nullptr)
+            {
+                child->parent = nodeToDelete->parent;
+            }
+            replaceParentChild(nodeToDelete->parent, nodeToDelete, child);
+        }
+
+        delete nodeToDelete;
+        return child;
+    }
+
+    void fixRedBlackPropertiesAfterDelete(RBNode *deletedNode)
+    {
+        // Case 1: Examined node is root, end of recursion
+        if (deletedNode == Root)
+        {
+            // Uncomment the following line if you want to enforce black roots (rule 2):
+            // node.color = BLACK;
+            return;
+        }
+
+        RBNode *sibling = getSibling(deletedNode);
+
+        // Case 2: Red sibling
+        if (sibling->color == RED)
+        {
+            handleRedSibling(deletedNode, sibling);
+            sibling = getSibling(deletedNode); // Get new sibling for fall-through to cases 3-6
+        }
+
+        // Cases 3+4: Black sibling with two black children
+        if (isBlackNode(sibling->left) && isBlackNode(sibling->right))
+        {
+            sibling->color = RED;
+
+            // Case 3: Black sibling with two black children + red parent
+            if (deletedNode->parent->color == RED)
+            {
+                deletedNode->parent->color = BLACK;
+            }
+
+            // Case 4: Black sibling with two black children + black parent
+            else
+            {
+                fixRedBlackPropertiesAfterDelete(deletedNode->parent);
+            }
+        }
+
+        // Case 5+6: Black sibling with at least one red child
+        else
+        {
+            handleBlackSiblingWithAtLeastOneRedChild(deletedNode, sibling);
+        }
+    }
+
+    bool isBlackNode(RBNode *node) { return node == nullptr || node->color == BLACK; }
+
+    RBNode *getSibling(RBNode *node)
+    {
+        RBNode *parentNode = node->parent;
+
+        if (parentNode->left == node)
+        {
+            return parentNode->right;
+        }
+        else if (parentNode->right == node)
+        {
+            return parentNode->left;
+        }
+        else
+        {
+            throw std::logic_error("Parent node is not a child of its grandparent");
+        }
+    }
+
+    RBNode *handleRedSibling(RBNode *node, RBNode *sibling)
+    {
+        // recolor
+        sibling->color = BLACK;
+        node->parent->color = RED;
+
+        // rotate
+        if (node == node->parent->left)
+        {
+            leftRotation(node->parent);
+        }
+        else
+        {
+            rightRotation(node->parent);
+        }
+
+        return sibling; // Return the new sibling after rotation
+    }
+
+    void handleBlackSiblingWithAtLeastOneRedChild(RBNode *node, RBNode *sibling)
+    {
+        bool nodeIsLeftChild = node == node->parent->left;
+
+        // Case: Black sibling with at least one red child + "outer nephew" is black
+        // Recolor sibling and its child, and rotate around sibling
+        if (nodeIsLeftChild && isBlackNode(sibling->right))
+        {
+            sibling->left->color = BLACK;
+            sibling->color = RED;
+            rightRotation(sibling);
+            sibling = node->parent->right;
+        }
+        else if (!nodeIsLeftChild && isBlackNode(sibling->left))
+        {
+            sibling->right->color = BLACK;
+            sibling->color = RED;
+            leftRotation(sibling);
+            sibling = node->parent->left;
+        }
+
+        // Case: Black sibling with at least one red child + "outer nephew" is red
+        // Recolor sibling + parent + sibling's child, and rotate around parent
+        sibling->color = node->parent->color;
+        node->parent->color = BLACK;
+        if (nodeIsLeftChild)
+        {
+            sibling->right->color = BLACK;
+            leftRotation(node->parent);
+        }
+        else
+        {
+            sibling->color = BLACK;
+            rightRotation(node->parent);
         }
     }
 
@@ -566,6 +740,9 @@ private:
 
     void levelOrderUtil(RBNode *root)
     {
+        if (root == nullptr)
+            return;
+
         std::queue<RBNode *> treeQueue;
         treeQueue.push(root);
 
@@ -574,14 +751,18 @@ private:
             RBNode *front = treeQueue.front();
             treeQueue.pop();
 
-            std::cout << front->value << " ";
+            // Skip NilNodes in output
+            if (!front->isNilNode)
+            {
+                std::cout << front->value << "(" << (front->color == RED ? "R" : "B") << ") ";
+            }
 
-            if (front->left != nullptr)
+            if (front->left != nullptr && !front->left->isNilNode)
             {
                 treeQueue.push(front->left);
             }
 
-            if (front->right != nullptr)
+            if (front->right != nullptr && !front->right->isNilNode)
             {
                 treeQueue.push(front->right);
             }
@@ -590,25 +771,37 @@ private:
 
     void inorderUtil(RBNode *root)
     {
-        if (root == nullptr)
+        if (root == nullptr || root->isNilNode)
         {
             return;
         }
 
         inorderUtil(root->left);
-        std::cout << root->value << " ";
+        std::cout << root->value << "(" << (root->color == RED ? "R" : "B") << ") ";
         inorderUtil(root->right);
+    }
+
+    void deleteTree(RBNode *root)
+    {
+        if (root == nullptr || root->isNilNode)
+        {
+            return;
+        }
+
+        deleteTree(root->left);
+        deleteTree(root->right);
+        delete root;
     }
 
 public:
     RBNode *Search(const int val)
     {
-        searchUtil(val);
+        return searchUtil(val);
     }
 
     RBNode *Insert(const int val)
     {
-        insertUtil(val);
+        return insertUtil(val);
     }
 
     void levelOrder()
@@ -620,9 +813,99 @@ public:
     {
         inorderUtil(Root);
     }
+
+    void Delete(const int val)
+    {
+        deleteUtil(val);
+    }
+
+    void printTree()
+    {
+        std::cout << "Level Order: ";
+        levelOrder();
+        std::cout << std::endl;
+        std::cout << "Inorder: ";
+        inorder();
+        std::cout << std::endl;
+    }
 };
 
 int main()
 {
+    // CODE BELOW WAS CREATED BY AI TO TEST CORRECTNESS OF THE CREATED RED BLACK TREE
+
+    std::cout << "=== Red-Black Tree Test ===" << std::endl;
+
+    try
+    {
+        // Test 1: Create tree and insert elements
+        std::cout << "\n1. Creating tree with root 10:" << std::endl;
+        RedBlackTree rbt(10);
+        rbt.printTree();
+
+        // Test 2: Insert more elements
+        std::cout << "\n2. Inserting elements: 20, 30, 40, 50, 25, 35" << std::endl;
+        rbt.Insert(20);
+        rbt.Insert(30);
+        rbt.Insert(40);
+        rbt.Insert(50);
+        rbt.Insert(25);
+        rbt.Insert(35);
+        rbt.printTree();
+
+        // Test 3: Insert elements that should trigger rotations
+        std::cout << "\n3. Inserting elements that trigger rotations: 5, 15, 12" << std::endl;
+        rbt.Insert(5);
+        rbt.Insert(15);
+        rbt.Insert(12);
+        rbt.printTree();
+
+        // Test 4: Search for elements
+        std::cout << "\n4. Searching for elements:" << std::endl;
+        RBNode *found = rbt.Search(25);
+        if (found)
+        {
+            std::cout << "Found 25: " << found->value << " Color: " << (found->color == RED ? "RED" : "BLACK") << std::endl;
+        }
+
+        found = rbt.Search(100);
+        if (!found)
+        {
+            std::cout << "Element 100 not found (as expected)" << std::endl;
+        }
+
+        // Test 5: Delete elements
+        std::cout << "\n5. Deleting elements: 25, 40" << std::endl;
+        rbt.Delete(25);
+        rbt.Delete(40);
+        rbt.printTree();
+
+        // Test 6: Try to delete non-existent element
+        std::cout << "\n6. Trying to delete non-existent element 100:" << std::endl;
+        rbt.Delete(100);
+
+        // Test 7: Insert duplicate (should throw exception)
+        std::cout << "\n7. Trying to insert duplicate element 20:" << std::endl;
+        try
+        {
+            rbt.Insert(20);
+        }
+        catch (const std::exception &e)
+        {
+            std::cout << "Exception caught: " << e.what() << std::endl;
+        }
+
+        // Test 8: Final tree state
+        std::cout << "\n8. Final tree state:" << std::endl;
+        rbt.printTree();
+
+        std::cout << "\n=== Test completed successfully! ===" << std::endl;
+    }
+    catch (const std::exception &e)
+    {
+        std::cout << "Error: " << e.what() << std::endl;
+        return 1;
+    }
+
     return 0;
 }

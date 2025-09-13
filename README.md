@@ -314,7 +314,7 @@ The **Red-Black Trees** is less balanced compared to **AVL** trees, because **AV
 
 - 2 case of balancing: **Recoloring** & **Rotation**
 - **Red** and **Black** Node properties
-- **Insert** & **Delete** & **Search** methods
+- **Insert** & **Delete** & **Search** methods with all case implementations
 
   File: [RedBlackTree.cpp](Data-Structures/Red-Black-Tree/RedBlackTree.cpp)
   </br>
