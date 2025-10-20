@@ -46,36 +46,6 @@ public:
     }
 };
 
-class SolutionBFS
-{
-public:
-    void dfs(Node *root, int &count, int pathMax) // Time: O(n) Space: O(n)
-    {
-        if (root == nullptr)
-        {
-            return;
-        }
-
-        int newPathMax = pathMax;
-        if (root->val >= pathMax)
-        {
-            ++count;
-            newPathMax = root->val;
-        }
-
-        dfs(root->left, count, newPathMax);
-        dfs(root->right, count, newPathMax);
-    }
-
-    int goodNodes(Node *root)
-    {
-        int count = 0;
-        dfs(root, count, root->val);
-
-        return count;
-    }
-};
-
 // BFS Solution
 class Solution
 {
