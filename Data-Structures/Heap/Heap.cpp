@@ -205,7 +205,7 @@ int main()
     HeapC.printHeapArr();
 
     // start from the last non-leaf element and call Max Heapify for each
-    for (int i = (arrSizeC / 2) - 1; i >= 0; --i)
+    for (int i = (arrSizeC / 2) - 1; i >= 0; --i) // Time: O(n) Space: O(logN)
     {
         HeapC.MaxHeapify(i, arrSizeC);
     }
@@ -219,7 +219,7 @@ int main()
 
     auto heapArrC = HeapC.getHeapArr();
 
-    for (int i = arrSizeC - 1; i >= 0; --i) // Time: O(nlogN)
+    for (int i = arrSizeC - 1; i >= 0; --i) // Time: O(nlogN) Space: O(logN)
     {
         std::swap(heapArrC[0], heapArrC[i]);
         HeapC.MaxHeapify(0, i);
