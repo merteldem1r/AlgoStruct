@@ -28,7 +28,34 @@
 // kthLargest.add(9); // return 8
 // kthLargest.add(4); // return 8
 
-// Solution 1: Manual Implementaion of Priority Queue (Heap)
+// Naive solutiion (WILL GET TIME LIMIT EXCEEDED ON LARGE DATA)
+class KthLargestSorting // Time: O(m * nlogN) m: is number of calls made add()
+{
+private:
+    std::vector<int> arr;
+    int k;
+
+    static bool comparator(int a, int b)
+    {
+        return a > b;
+    }
+
+public:
+    KthLargestSorting(int k, std::vector<int> &nums)
+    {
+        this->k = k;
+        this->arr = nums;
+    }
+
+    int add(int val)
+    {
+        arr.emplace_back(val);
+        std::sort(arr.begin(), arr.end(), comparator); // Time: O(nlogN)
+        return arr[k - 1];
+    }
+};
+
+// SOLUTION 1: Manual Implementaion of Priority Queue (Heap)
 class KthLargestManual // Time: O(log k) Space: O(k)
 {
 public:
@@ -150,7 +177,7 @@ public:
     }
 };
 
-// Solution 2: using built-in std::priority_queue<> data structure
+// SOLUTION 2: using built-in std::priority_queue<> data structure
 class KthLargestBuiltIn // Time: O(log k) Space: O(k)
 {
 public:
