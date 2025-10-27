@@ -9,7 +9,7 @@ Mastering DSA in C & C++ • A complete guide up to 100+ algorithms (Recursion, 
 [Abdul Bari](https://www.udemy.com/course/datastructurescncpp/) |
 [CPlusPlus](https://cplusplus.com/doc/tutorial/) |
 [GeeksforGeeks](https://www.geeksforgeeks.org/) |
-[NeetCode](https://neetcode.io/roadmap) | 
+[NeetCode](https://neetcode.io/roadmap) |
 [NeetCode YouTube](https://www.youtube.com/@NeetCodeIO) |
 [LeetCode](https://leetcode.com/) |
 [Wikipedia](https://en.wikipedia.org/)
@@ -38,7 +38,7 @@ Each topic contain **code examples** with explained **comment lines** and **Read
 
 ### Algorithms
 
-- [Recursion](#recursion) • [Sorting](#sorting-algorithms) • [Array](#array-algorithms)
+- [Recursion](#recursion) • [Sorting](#sorting-algorithms) • [Hashing](#hashing-algorithms) • [Array](#array-algorithms)
 - [Bitwise](#bitwise-operations) • [Strings](#string-algorithms)
 - [Linked List](#linked-list-algorithms) • [Stack](#stack-algorithms) • [Queue](#queue-algorithms)
 - [Binary Tree](#binary-tree-algorithms) • [Binary Search Tree](#binary-search-tree-algorithms) • [Heap](#heap-algorithms)
@@ -383,6 +383,14 @@ A **Sorting Algorithm** is used to rearrange a given array or list of elements i
 - [_Heap Sort_](Algorithms/Sorting-Techniques/HeapSort.cpp)
 
   Folder: [Sorting-Techniques](Algorithms/Sorting-Techniques)
+
+### Hashing Algorithms
+
+Hashing refers to the process of **generating a small sized output** (that can be used as index in a table) from an input of typically large and variable size. Hashing uses **mathematical formulas** known as **hash functions** to do the transformation. This technique determines an **index** or **location** for the storage of an item in a data structure called Hash Table.
+
+- foo
+
+  Folder: [Hashing](Algorithms/Hashing)
   </br>
   Time and Space Complexity Table: [Sorting-Techniques](Algorithms/Sorting-Techniques/sorting-algorithms.png)
 
