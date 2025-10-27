@@ -445,7 +445,7 @@ In C+, Bitwise Operators are the operators that are used to perform bit-level op
 
 ### Binary Search Tree Algorithms
 
-- _generateBSTFromOneTraversal_ - _resursiveInsert_ - _createBSTFromArray_
+- _generateBSTFromOneTraversal_ - _resursiveInsert_ - _createBSTFromArray_ - _lowestCommonAncestorBST_
 
   Folder: [Binary-Search-Tree-Algorithms](Algorithms/Binary-Search-Tree/)
 
