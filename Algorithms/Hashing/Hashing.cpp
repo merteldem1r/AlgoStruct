@@ -3,6 +3,18 @@
 // Hashing
 // Author: Mert Eldemir
 
+/*
+In hashing there is a hash function that maps keys to some values. But these hashing functions may lead to a collision that is two or more keys are mapped to same value. Chain hashing avoids collision. The idea is to make each cell of hash table point to a linked list of records that have same hash function value.
+
+    Loading Factor in Hash Table:
+
+        Formula:  lambda = n / size
+            * n: number of keys
+            * size: size of the table
+
+    Analysis of Hash Table based on loading factor.
+*/
+
 int main()
 {
     // ********************* Simple Hashing (One-to-One Mapping) *********************
