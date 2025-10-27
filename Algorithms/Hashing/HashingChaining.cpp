@@ -1,6 +1,6 @@
 #include <iostream>
 
-// Hahing - Chaining
+// Hashing - Chaining
 // Author: Mert Eldemir
 
 /*
@@ -22,7 +22,7 @@
 
     Average Unsuccessfull Search Time Complexity: 1 + lambda
 
-    Wors Case Time Complexity = O(n)
+    Worst Case Time Complexity = O(n) (if the hash functions generates same index for all keys)
 */
 
 struct Node
@@ -62,7 +62,7 @@ int main()
 
     Node *hashMap[10] = {nullptr};
 
-    // Insert
+    // INSERTING Phase
     for (int i = 0; i < keysSize; ++i)
     {
         const int hashedIdx = hashFunction(keys[i]);
@@ -99,8 +99,8 @@ int main()
         Index 9: 39 -> nullptr
     */
 
-    // Lookup
-    int lookingKey = 3;
+    // SEARCHING Phase
+    int lookingKey = 3; // modify this line for finding key
     int hashedIdx = hashFunction(lookingKey);
 
     if (hashMap[hashedIdx] == nullptr)
