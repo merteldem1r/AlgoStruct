@@ -42,7 +42,7 @@ Each topic contain **code examples** with explained **comment lines** and **Read
 - [Bitwise](#bitwise-operations) • [Strings](#string-algorithms)
 - [Linked List](#linked-list-algorithms) • [Stack](#stack-algorithms) • [Queue](#queue-algorithms)
 - [Binary Tree](#binary-tree-algorithms) • [Binary Search Tree](#binary-search-tree-algorithms) • [Heap](#heap-algorithms)
-- [Backtracking](#backtracking)
+- [Backtracking](#backtracking) • [Math & Geometry](#math-geometry-algorihms)
 
 Each section of this repository was created with **genuine passion**, **thorough research**, and **dedicated implementation**. I hope it proves helpful to others.
 
@@ -471,3 +471,9 @@ Also known as **Priority Queues**
 - _permutationString_
 
   Folder: [Backtracking](Algorithms/Backtracking/)
+
+### Math Geometry Algorihms
+
+- _multiplyStrings_
+
+Folder: [Math-Geometry](Algorithms/Math-Geometry/)
