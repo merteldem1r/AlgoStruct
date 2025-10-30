@@ -474,6 +474,6 @@ Also known as **Priority Queues**
 
 ### Math Geometry Algorihms
 
-- _multiplyStrings_
+- _multiplyStrings_ - _plusOne_
 
 Folder: [Math-Geometry](Algorithms/Math-Geometry/)
