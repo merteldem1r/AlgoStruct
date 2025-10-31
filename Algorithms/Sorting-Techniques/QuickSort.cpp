@@ -13,30 +13,22 @@ void printArr(int arr[], int arrSize)
     std::cout << "}" << std::endl;
 }
 
-int partition(int A[], int low, int high)
+int partition(int arr[], int low, int high)
 {
-    int pivot = A[low];
-    int left = low + 1;
-    int right = high;
+    int pivot = arr[high];
+    int i = low;
 
-    while (left <= right)
+    for (int j = low; j <= high - 1; ++j)
     {
-        while (left <= right && A[left] <= pivot)
+        if (arr[j] < pivot)
         {
-            ++left;
-        }
-        while (left <= right && A[right] > pivot)
-        {
-            --right;
-        }
-        if (left < right)
-        {
-            std::swap(A[left], A[right]);
+            std::swap(arr[i], arr[j]);
+            ++i;
         }
     }
 
-    std::swap(A[low], A[right]);
-    return right;
+    std::swap(arr[i], arr[high]);
+    return i;
 }
 
 void quickSort(int A[], int low, int high)
@@ -44,9 +36,9 @@ void quickSort(int A[], int low, int high)
     if (low >= high)
         return;
 
-    auto pivot = partition(A, low, high);
-    quickSort(A, low, pivot - 1);
-    quickSort(A, pivot + 1, high);
+    int pi = partition(A, low, high);
+    quickSort(A, low, pi - 1);
+    quickSort(A, pi + 1, high);
 }
 
 int main()
