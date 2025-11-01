@@ -49,6 +49,51 @@ public:
     }
 };
 
+class SolutionFaster
+{
+public:
+    void reorderList(Node *head) // Time: O(n) Space: O(1)
+    {
+        if (head == nullptr || head->next == nullptr)
+        {
+            return;
+        }
+
+        // find middle
+        auto slow = head, fast = head;
+        while (fast != nullptr && fast->next != nullptr)
+        {
+            slow = slow->next;
+            fast = fast->next->next;
+        }
+
+        // reverse second half
+        Node *prev = nullptr;
+        Node *curr = slow->next;
+        slow->next = nullptr;
+        while (curr != nullptr)
+        {
+            auto currNext = curr->next;
+            curr->next = prev;
+            prev = curr;
+            curr = currNext;
+        }
+
+        // merging first and second half
+        auto second = prev;
+        auto first = head;
+        while (second != nullptr)
+        {
+            auto fNext = first->next;
+            auto sNext = second->next;
+            first->next = second;
+            second->next = fNext;
+            first = fNext;
+            second = sNext;
+        }
+    }
+};
+
 int main()
 {
     return 0;
