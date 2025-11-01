@@ -421,7 +421,7 @@ In C+, Bitwise Operators are the operators that are used to perform bit-level op
 
 ### Linked List Algorithms
 
-- _reverseLinkedList_ - _intersectionOfLinkedLists_ - _displayLinkedList_ - _countNodes_ - _findMaxMin_ - _isSorted_ - _removeDuplicates_ - _mergeLinkedLists_ - _midlleOfLinkedList_ - _convertBinaryInLinkedListToInt_
+- _reverseLinkedList_ - _intersectionOfLinkedLists_ - _displayLinkedList_ - _countNodes_ - _findMaxMin_ - _isSorted_ - _removeDuplicates_ - _mergeLinkedLists_ - _midlleOfLinkedList_ - _convertBinaryInLinkedListToInt_ - _reorderList_
 
   Folder: [Linked-List-Algorithms](Algorithms/Linked-Lists/)
 
