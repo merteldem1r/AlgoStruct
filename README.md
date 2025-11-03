@@ -427,7 +427,7 @@ In C+, Bitwise Operators are the operators that are used to perform bit-level op
 
 ### Stack Algorithms
 
-- _isValidParantheses_ - _prefixToPostfix_ - _minStack_
+- _isValidParantheses_ - _prefixToPostfix_ - _minStack_ - _evaluateReversePolishNotation_
 
   Folder: [Stack-Algorithms](Algorithms/Stack/)
 
