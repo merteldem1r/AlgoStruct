@@ -476,4 +476,8 @@ Also known as **Priority Queues**
 
 - _multiplyStrings_ - _plusOne_
 
+### Intervals
+
+- _insertInterval_
+
 Folder: [Math-Geometry](Algorithms/Math-Geometry/)
