@@ -42,7 +42,7 @@ Each topic contain **code examples** with explained **comment lines** and **Read
 - [Bitwise](#bitwise-operations) • [Strings](#string-algorithms)
 - [Linked List](#linked-list-algorithms) • [Stack](#stack-algorithms) • [Queue](#queue-algorithms)
 - [Binary Tree](#binary-tree-algorithms) • [Binary Search Tree](#binary-search-tree-algorithms) • [Heap](#heap-algorithms)
-- [Backtracking](#backtracking) • [Math & Geometry](#math-geometry-algorihms)
+- [Backtracking](#backtracking) • [Math & Geometry](#math-geometry-algorihms) • [Intervals](#intervals)
 
 Each section of this repository was created with **genuine passion**, **thorough research**, and **dedicated implementation**. I hope it proves helpful to others.
 
