@@ -22,7 +22,35 @@ Example 3:
     Output: [1,2]
 */
 
-// Using Min Heap
+// Using Sorting
+class SolutionSorting // Time: O(nlogN) Space: O(n)
+{
+public:
+    std::vector<int> topKFrequent(std::vector<int> &nums, int k)
+    {
+        std::unordered_map<int, int> freqMap;
+        for (auto &num : nums)
+        {
+            freqMap[num]++;
+        }
+
+        std::vector<std::pair<int, int>> arr;
+        for (auto &entry : freqMap)
+        {
+            arr.emplace_back(entry.second, entry.first);
+        }
+        std::sort(arr.begin(), arr.end(), std::greater<std::pair<int, int>>());
+
+        std::vector<int> ans;
+        for (int i = 0; i < k; ++i)
+        {
+            ans.emplace_back(arr[i].second);
+        }
+
+        return ans;
+    }
+};
+
 class SolutionMinHeap // Time: O(nlogK) Space: O(n)
 {
 public:
