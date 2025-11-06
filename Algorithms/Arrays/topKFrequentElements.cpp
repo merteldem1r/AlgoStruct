@@ -85,6 +85,41 @@ public:
     }
 };
 
+class SolutionBucket // Time: O(n) Space: O(n)
+{
+public:
+    std::vector<int> topKFrequent(std::vector<int> &nums, int k)
+    {
+        std::unordered_map<int, int> freqMap;
+        std::vector<std::vector<int>> bucket(nums.size() + 1);
+
+        for (auto &num : nums)
+        {
+            ++freqMap[num];
+        }
+
+        for (auto &entry : freqMap)
+        {
+            bucket[entry.second].emplace_back(entry.first);
+        }
+
+        std::vector<int> ans;
+        for (int i = bucket.size() - 1; i >= 0; --i)
+        {
+            for (auto val : bucket[i])
+            {
+                ans.emplace_back(val);
+                if (ans.size() == k)
+                {
+                    return ans;
+                }
+            }
+        }
+
+        return ans;
+    }
+};
+
 int main()
 {
 }
