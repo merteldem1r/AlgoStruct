@@ -38,7 +38,7 @@ Each topic contain **code examples** with explained **comment lines** and **Read
 
 ### Algorithms
 
-- [Recursion](#recursion) • [Sorting](#sorting-algorithms) • [Hashing](#hashing-algorithms) • [Array](#array-algorithms)
+- [Recursion](#recursion) • [Sorting](#sorting-algorithms) • [Hashing](#hashing-algorithms) • [Array & Hashing](#array--hashing-algorithms)
 - [Bitwise](#bitwise-operations) • [Strings](#string-algorithms)
 - [Linked List](#linked-list-algorithms) • [Stack](#stack-algorithms) • [Queue](#queue-algorithms)
 - [Binary Tree](#binary-tree-algorithms) • [Binary Search Tree](#binary-search-tree-algorithms) • [Heap](#heap-algorithms)
@@ -396,9 +396,9 @@ Hashing refers to the process of **generating a small sized output** (that can b
   </br>
   Time and Space Complexity Table: [Sorting-Techniques](Algorithms/Sorting-Techniques/sorting-algorithms.png)
 
-### Array Algorithms
+### Array & Hashing Algorithms
 
-- _Find Duplicates_ - _Find Max Min_ - _Find Multiple Missing_ - _Find Single Missing_ - _Merge Sorted Arrays_ - _Rotate Array_ - _Pair Sum_ - _removeDuplicatesFromSortedArray_
+- _findDuplicates_ - _findMaxMinSingleScan_ - _findMultipleMissingElements_ - _findSingleMissingElement_ - _mergeSortedArrays_ - _rotateArray_ - _pairSum_ - _removeDuplicatesFromSortedArray_ - _topKFrequentElements_
 
   Folder: [Array-Algorithms](Algorithms/Arrays)
 
