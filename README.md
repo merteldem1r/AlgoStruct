@@ -376,8 +376,9 @@ Common algorithm problems using **recursion** vs **iterative approach**.
 A **Sorting Algorithm** is used to rearrange a given array or list of elements in an order. Selecting best sorting algoritms in a certain cases is crutial for system performans and stability.
 
 - [_Bubble Sort_](Algorithms/Sorting-Techniques/BubbleSort.cpp) - [_Selection Sort_](Algorithms/Sorting-Techniques/SelectionSort.cpp) - [_Insertion Sort_](Algorithms/Sorting-Techniques/InsertionSort.cpp)
-- [_Merge Sort_](Algorithms/Sorting-Techniques/MergeSort.cpp) - [_Quick Sort_](Algorithms/Sorting-Techniques/QuickSort.cpp)
-- [_Counting Sort_](Algorithms/Sorting-Techniques/CountingSort.cpp) - _Bin / Bucket Sort_
+- [_Merge Sort_](Algorithms/Sorting-Techniques/MergeSort.cpp) - [_Quick Sort_](Algorithms/Sorting-Techniques/QuickSort.cpp) 
+- [_Counting Sort_](Algorithms/Sorting-Techniques/CountingSort.cpp)
+- [_Bin / Bucket Sort_](Algorithms/Sorting-Techniques/BucketSort.cpp)
 - _Radix Sort_
 - _Shell Sort_
 - [_Heap Sort_](Algorithms/Sorting-Techniques/HeapSort.cpp)
