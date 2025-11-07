@@ -479,6 +479,6 @@ Also known as **Priority Queues**
 
 ### Intervals
 
-- _insertInterval_
+- _insertInterval_ - _mergeIntervals_
 
 Folder: [Math-Geometry](Algorithms/Math-Geometry/)
