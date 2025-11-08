@@ -376,7 +376,7 @@ Common algorithm problems using **recursion** vs **iterative approach**.
 A **Sorting Algorithm** is used to rearrange a given array or list of elements in an order. Selecting best sorting algoritms in a certain cases is crutial for system performans and stability.
 
 - [_Bubble Sort_](Algorithms/Sorting-Techniques/BubbleSort.cpp) - [_Selection Sort_](Algorithms/Sorting-Techniques/SelectionSort.cpp) - [_Insertion Sort_](Algorithms/Sorting-Techniques/InsertionSort.cpp)
-- [_Merge Sort_](Algorithms/Sorting-Techniques/MergeSort.cpp) - [_Quick Sort_](Algorithms/Sorting-Techniques/QuickSort.cpp) 
+- [_Merge Sort_](Algorithms/Sorting-Techniques/MergeSort.cpp) - [_Quick Sort_](Algorithms/Sorting-Techniques/QuickSort.cpp)
 - [_Counting Sort_](Algorithms/Sorting-Techniques/CountingSort.cpp)
 - [_Bin / Bucket Sort_](Algorithms/Sorting-Techniques/BucketSort.cpp)
 - _Radix Sort_
@@ -416,7 +416,7 @@ In C+, Bitwise Operators are the operators that are used to perform bit-level op
 
 ### String Algorithms
 
-- _changingCase_ - _countWordsAndVowels_ - _findDuplicates_ - _findDuplicatesBitwise_ - _findStringLength_ - _isPalindrome_ - _reverseString_ - _validateString_ - _isAnagram_
+- _changingCase_ - _countWordsAndVowels_ - _findDuplicates_ - _findDuplicatesBitwise_ - _findStringLength_ - _isPalindrome_ - _reverseString_ - _validateString_ - _isAnagram_ - _firstUniqueCharacterInString_
 
   Folder: [String-Algorithms](Algorithms/Strings)
 
