@@ -2,7 +2,7 @@
 
 ![Data Structures Algorithms](https://github.com/user-attachments/assets/9d7eda38-a40f-4673-bef2-960c03522266)
 
-Mastering DSA in C & C++ • A complete guide up to 200+ algorithms (Recursion, Sorting, Hashing etc.) with common and advanced data structures (Array, Linked List, Stack, Queue, Trees, AVL, Heap, Graph etc.) implemented completely from scratch. Covers core programming concepts like Pointers, OOP, Structures, Memory Management etc. Besides that solving algorithm problems from LeetCode platform, with different space and time complexity solutions using DSA knowledge.
+Mastering DSA in C & C++ • A complete guide up to 300+ algorithms (Recursion, Sorting, Hashing etc.) with common and advanced data structures (Array, Linked List, Stack, Queue, Trees, AVL, Heap, Graph etc.) implemented completely from scratch. Covers core programming concepts like Pointers, OOP, Structures, Memory Management etc. Besides that solving algorithm problems from LeetCode platform, with different space and time complexity solutions using DSA knowledge.
 
 **AUTHOR**: [Mert Eldemir](https://github.com/merteldem1r)</br>
 **SEARCH RESOURSES**:
@@ -394,8 +394,6 @@ Hashing refers to the process of **generating a small sized output** (that can b
 - How to solve Hash Collision - **Open Hashing** & **Closed Hashing**
 
   Folder: [Hashing](Algorithms/Hashing)
-  </br>
-  Time and Space Complexity Table: [Sorting-Techniques](Algorithms/Sorting-Techniques/sorting-algorithms.png)
 
 ### Array & Hashing Algorithms
 
@@ -457,15 +455,6 @@ Also known as **Priority Queues**
 - _kthLargestElementInStream_ - _lastStoneWeight_ - _kthLargestElementInArray_
 
   Folder: [Heap-Algorithms](Algorithms/Heap/)
-
-### BFS & DFS Algorithms
-
-- Depth First Search
-- Breadth First Search
-
-  Folder: [BFS-DFS](Algorithms/BFS-DFS/)
-  </br>
-  Readme: [BFS-DFC Readme](Algorithms/BFS-DFS/Readme.md)
 
 ### Backtracking
 
