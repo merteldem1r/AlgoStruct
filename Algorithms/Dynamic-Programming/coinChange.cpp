@@ -24,8 +24,7 @@ Example 3:
     Output: 0
 */
 
-// THIS Solution WON'T WORK ON LEETCODE due to Time Limit Exceeded
-class SolutionRecursion // Time: O(n^t) Space: O(t)
+class SolutionRecursion // Time: O(n^t) Space: O(t) => t: amount || THIS Solution WON'T WORK ON LEETCODE due to Time Limit Exceeded
 {
 public:
     int dfs(std::vector<int> &coins, int amount)
@@ -59,7 +58,7 @@ public:
     }
 };
 
-class SolutionDynamicProgramming
+class SolutionDynamicProgramming // Time: O(n * t) Space: O(t) => t: amount
 {
 public:
     std::unordered_map<int, int> memo;
