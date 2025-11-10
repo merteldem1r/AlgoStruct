@@ -477,6 +477,14 @@ Also known as **Priority Queues**
 
 - _multiplyStrings_ - _plusOne_
 
+  Folder: [Math-Geometry](Algorithms/Math-Geometry/)
+
+### Dynamic Programming
+
+- _coinChange_
+
+  Folder: [Dynamic-Programming](Algorithms/Dynamic-Programming/)
+
 ### Intervals
 
 - _insertInterval_ - _mergeIntervals_
