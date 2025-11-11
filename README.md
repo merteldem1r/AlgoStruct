@@ -470,7 +470,7 @@ Also known as **Priority Queues**
 
 ### Dynamic Programming
 
-- _coinChange_
+- _coinChange_ - _maximumSubarray_
 
   Folder: [Dynamic-Programming](Algorithms/Dynamic-Programming/)
 
