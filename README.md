@@ -31,7 +31,7 @@ Each topic contain **code examples** with explained **comment lines** and **Read
 ### Data Structures
 
 - [Array Representations](#array-representations) • [Array ADT](#array-adt) • [Strings](#strings)
-- [Linked Lists](#linked-lists) • [Stack](#stack) • [Queue](#queue)
+- [Linked Lists](#linked-list) • [Stack](#stack) • [Queue](#queue)
 - [Trees](#trees) • [Binary Search Tree](#binary-search-tree) • [AVL Tree](#avl-tree) • [2-3 Tree](#2-3-tree) • [Red Black Tree](#red-black-tree) • [Heap](#heap)
 
 ---
@@ -420,7 +420,7 @@ In C+, Bitwise Operators are the operators that are used to perform bit-level op
 
 ### Linked List Algorithms
 
-- _reverseLinkedList_ - _intersectionOfLinkedLists_ - _displayLinkedList_ - _countNodes_ - _findMaxMin_ - _isSorted_ - _removeDuplicates_ - _mergeLinkedLists_ - _midlleOfLinkedList_ - _convertBinaryInLinkedListToInt_ - _reorderList_
+- _reverseLinkedList_ - _intersectionOfLinkedLists_ - _displayLinkedList_ - _countNodes_ - _findMaxMin_ - _isSorted_ - _removeDuplicates_ - _mergeLinkedLists_ - _midlleOfLinkedList_ - _convertBinaryInLinkedListToInt_ - _reorderList_ - _lruCache_
 
   Folder: [Linked-List-Algorithms](Algorithms/Linked-Lists/)
 
