@@ -33,6 +33,101 @@ Explanation
     lRUCache.get(4);    // return 4
 */
 
+struct Node
+{
+    int key;
+    int value;
+    Node *next;
+    Node *prev;
+
+    Node(int k, int v) : key(k), value(v), next(nullptr), prev(nullptr) {}
+};
+
+class LRUCache // Time: O(1) for get() and put() Space: O(n)
+{
+public:
+    std::unordered_map<int, Node *> cache;
+    Node *head; // dummy node for LRU
+    Node *tail; // dummy node for MRU
+    int capacity;
+
+    LRUCache(int capacity)
+    {
+        this->capacity = capacity;
+        head = new Node(0, 0);
+        tail = new Node(0, 0);
+        head->next = tail;
+        tail->prev = head;
+    }
+
+    void insert(Node *node)
+    {
+        Node *prev = tail->prev;
+        prev->next = node;
+        node->next = tail;
+        node->prev = prev;
+        tail->prev = node;
+    }
+
+    void remove(Node *node)
+    {
+        Node *next = node->next;
+        Node *prev = node->prev;
+        prev->next = next;
+        next->prev = prev;
+    }
+
+    int get(int key)
+    {
+        if (cache.count(key) == 0)
+        {
+            return -1;
+        }
+
+        Node *node = cache[key];
+        // step 1: add to MRU
+        remove(node);
+        insert(node);
+
+        // step 2: return val
+        return node->value;
+    }
+
+    void put(int key, int value)
+    {
+        // case 1: if key exists remove from double linked list
+        if (cache.count(key) > 0)
+        {
+            Node *node = cache[key];
+            node->value = value; // update old value
+            remove(node);
+            insert(node); // move to MRU
+            return;
+        }
+
+        // case 2: insert new element to cache and MRU
+        Node *newNode = new Node(key, value);
+        cache[key] = newNode;
+        insert(newNode);
+
+        // case 3: if size is exceed capacity remove the LRU which is head->next
+        if (cache.size() > capacity)
+        {
+            Node *lru = head->next;
+            cache.erase(lru->key);
+            remove(lru);
+            delete lru;
+        }
+    }
+};
+
+/**
+ * Your LRUCache object will be instantiated and called as such:
+ * LRUCache* obj = new LRUCache(capacity);
+ * int param_1 = obj->get(key);
+ * obj->put(key,value);
+ */
+
 int main()
 {
     return 0;
