@@ -38,7 +38,7 @@ Each topic contain **code examples** with explained **comment lines** and **Read
 
 ### Algorithms
 
-- [Recursion](#recursion) • [Sorting](#sorting-algorithms) • [Hashing](#hashing-algorithms) • [Array & Hashing](#array--hashing-algorithms)
+- [Recursion](#recursion) • [Sorting](#sorting-algorithms) • [Hashing](#hashing-algorithms) • [Array & Hashing](#array--hash-map-algorithms)
 - [Bitwise](#bitwise-operations) • [Strings](#string-algorithms)
 - [Linked List](#linked-list-algorithms) • [Stack](#stack-algorithms) • [Queue](#queue-algorithms)
 - [Binary Tree](#binary-tree-algorithms) • [Binary Search Tree](#binary-search-tree-algorithms) • [Heap](#heap-algorithms)
@@ -395,9 +395,9 @@ Hashing refers to the process of **generating a small sized output** (that can b
 
   Folder: [Hashing](Algorithms/Hashing)
 
-### Array & Hashing Algorithms
+### Array & Hash Map Algorithms
 
-- _findDuplicates_ - _findMaxMinSingleScan_ - _findMultipleMissingElements_ - _findSingleMissingElement_ - _mergeSortedArrays_ - _rotateArray_ - _pairSum_ - _removeDuplicatesFromSortedArray_ - _topKFrequentElements_
+- _findDuplicates_ - _findMaxMinSingleScan_ - _findMultipleMissingElements_ - _findSingleMissingElement_ - _mergeSortedArrays_ - _rotateArray_ - _pairSum_ - _removeDuplicatesFromSortedArray_ - _topKFrequentElements_ - _validSudoku_
 
   Folder: [Array-Algorithms](Algorithms/Arrays)
 
