@@ -397,7 +397,7 @@ Hashing refers to the process of **generating a small sized output** (that can b
 
 ### Array & Hash Map Algorithms
 
-- _findDuplicates_ - _findMaxMinSingleScan_ - _findMultipleMissingElements_ - _findSingleMissingElement_ - _mergeSortedArrays_ - _rotateArray_ - _pairSum_ - _removeDuplicatesFromSortedArray_ - _topKFrequentElements_ - _validSudoku_
+- _findDuplicates_ - _findMaxMinSingleScan_ - _findMultipleMissingElements_ - _findSingleMissingElement_ - _mergeSortedArrays_ - _rotateArray_ - _pairSum_ - _removeDuplicatesFromSortedArray_ - _topKFrequentElements_ - _validSudoku_ - _groupAnagrams_
 
   Folder: [Array-Algorithms](Algorithms/Arrays)
 
