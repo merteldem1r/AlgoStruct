@@ -62,6 +62,50 @@ Example 5:
         Reading stops at the first non-digit character 'w'.
 */
 
+class Solution // Time: O(n) Space: O(1)
+{
+public:
+    bool isDigit(char c) { return c >= '0' && c <= '9'; }
+
+    int myAtoi(std::string s)
+    {
+        long long res = 0;
+        int sign = 1;
+        int i = 0, n = s.length();
+
+        // 1. whitespace
+        while (i < n && s[i] == ' ')
+        {
+            ++i;
+        }
+
+        // 2. sign
+        if (i < n && (s[i] == '-' || s[i] == '+'))
+        {
+            sign = (s[i] == '-') ? -1 : 1;
+            ++i;
+        }
+
+        // 3. digits
+        while (i < n && isDigit(s[i]))
+        {
+            const int digit = s[i] - '0';
+
+            // 4. overflow
+            if (res > INT_MAX / 10 ||
+                (res == INT_MAX / 10 && digit > INT_MAX % 10))
+            {
+                return sign == 1 ? INT_MAX : INT_MIN;
+            }
+
+            res = res * 10 + digit;
+            ++i;
+        }
+
+        return res * sign;
+    }
+};
+
 int main()
 {
     return 0;
