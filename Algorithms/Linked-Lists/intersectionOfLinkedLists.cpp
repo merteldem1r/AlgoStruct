@@ -1,6 +1,13 @@
 #include <iostream>
 #include <unordered_set>
 
+// LeetCode: 160. Intersection of Two Linked Lists
+// https://leetcode.com/problems/intersection-of-two-linked-lists/description/
+
+/*
+Given the heads of two singly linked-lists headA and headB, return the node at which the two lists intersect. If the two linked lists have no intersection at all, return null.
+*/
+
 struct Node
 {
     int val;
@@ -8,9 +15,6 @@ struct Node
 
     Node(int data) : val(data), next(nullptr) {};
 };
-
-// Given the heads of two singly linked-lists headA and headB, return the node at which the two lists intersect. If the two linked lists have no intersection at all, return null.
-// LeetCode problem: https://leetcode.com/problems/intersection-of-two-linked-lists/description/
 
 // 1) Method using Additional Space (unordered_map)
 Node *getIntersectionNode(Node *headA, Node *headB) // Time: O(n) Space: O(n)
@@ -35,7 +39,7 @@ Node *getIntersectionNode(Node *headA, Node *headB) // Time: O(n) Space: O(n)
 }
 
 // 2) Method using Lists Length Difference
-class Solution
+class Solution // Time: O(n) Space: O(1)
 {
 public:
     int listLength(Node *head)
@@ -71,10 +75,10 @@ public:
         return nullptr;
     }
 
-    Node *getIntersectionNode(Node *headA, Node *headB) // Time: O(n) Space: O(1)
+    Node *getIntersectionNode(Node *headA, Node *headB)
     {
-        int headALen = listLength(headA); 
-        int headBLen = listLength(headB); 
+        int headALen = listLength(headA);
+        int headBLen = listLength(headB);
 
         int diff = headALen - headBLen;
 

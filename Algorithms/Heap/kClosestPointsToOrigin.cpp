@@ -1,6 +1,5 @@
 #include <iostream>
 #include <cmath>
-
 #include <cmath>
 
 // LeetCode: 973. K Closest Points to  Origin

@@ -3,7 +3,7 @@
 #include <unordered_map>
 
 // Find pairs in array where sum of two elements = k
-// {6, 3, 8, 10, 16, 7, 5, 2, 9, 14} k = 10 should return {3, 7}   3 + 7 = 10
+// { 6, 3, 8, 10, 16, 7, 5, 2, 9, 14 } k = 10 should return {3, 7}   3 + 7 = 10
 
 // 1) UNSORTED ARRAY
 // Time: O(n) Space: O(n)

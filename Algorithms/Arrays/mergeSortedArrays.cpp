@@ -2,12 +2,12 @@
 
 // Merge two sorted arrays into single one.
 
-int *merge(int A[], int B[], int aLen, int bLen) // Time: O(n) Space O(m + n)
+int *merge(int A[], int B[], int aSize, int bSize) // Time: O(n) Space O(m + n)
 {
-    int *temp = new int[aLen + bLen];
+    int *temp = new int[aSize + bSize];
     int i = 0, j = 0, k = 0;
 
-    while (i < aLen && j < bLen)
+    while (i < aSize && j < bSize)
     {
         if (A[i] < B[j])
             temp[k++] = A[i++];
@@ -15,10 +15,10 @@ int *merge(int A[], int B[], int aLen, int bLen) // Time: O(n) Space O(m + n)
             temp[k++] = B[j++];
     }
 
-    for (; i < aLen; ++i)
+    for (; i < aSize; ++i)
         temp[k++] = A[i];
 
-    for (; j < bLen; ++j)
+    for (; j < bSize; ++j)
         temp[k++] = B[j];
 
     return temp;
