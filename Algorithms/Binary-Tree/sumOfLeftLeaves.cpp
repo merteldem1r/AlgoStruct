@@ -15,7 +15,6 @@ Example 1:
 Example 2:
     Input: root = [1]
     Output: 0
-
 */
 
 struct TreeNode
