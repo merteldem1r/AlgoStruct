@@ -464,7 +464,7 @@ Also known as **Priority Queues**
 
 ### Math & Geometry Algorihms
 
-- _multiplyStrings_ - _plusOne_ - _emirpNumber_
+- _multiplyStrings_ - _plusOne_ - _emirpNumber_ - _rotateImage_
 
   Folder: [Math-Geometry](Algorithms/Math-Geometry/)
 
