@@ -25,7 +25,35 @@ Example 3:
     Output: 23
 */
 
-class Solution // Time: O(m * logn) Space: O(1)
+// WON'T WORK ON LEETCODE due to Time Limit Exceed
+class SolutionBruteForce // Time: O(m * n) Space: O(1)
+{
+public:
+    int minEatingSpeed(std::vector<int> &piles, int h)
+    {
+        const int max = *std::max_element(piles.begin(), piles.end());
+
+        int k = 1;
+        while (k <= max)
+        {
+            long long totalTime = 0;
+            for (int pile : piles)
+            {
+                totalTime += (pile + k - 1) / k;
+            }
+
+            if (totalTime <= h)
+            {
+                return k;
+            }
+            k++;
+        }
+
+        return k;
+    }
+};
+
+class SolutionBinarySearch // Time: O(m * logn) Space: O(1)
 {
 public:
     int minEatingSpeed(std::vector<int> &piles, int h)

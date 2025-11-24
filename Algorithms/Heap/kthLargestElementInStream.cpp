@@ -30,7 +30,7 @@ Example 1:
         kthLargest.add(4); // return 8
 */
 
-// Naive solutiion (WILL GET TIME LIMIT EXCEEDED ON LARGE DATA)
+// WON'T WORK ON LEETCODE due to Time Limit Exceed
 class KthLargestSorting // Time: O(m * nlogN) m: is number of calls made add()
 {
 private:

@@ -24,7 +24,8 @@ Example 3:
     Output: 0
 */
 
-class SolutionRecursion // Time: O(n^t) Space: O(t) => t: amount || THIS Solution WON'T WORK ON LEETCODE due to Time Limit Exceeded
+// WON'T WORK ON LEETCODE due to Time Limit Exceed
+class SolutionRecursion // Time: O(n^t) Space: O(t) => t: amount
 {
 public:
     int dfs(std::vector<int> &coins, int amount)
