@@ -4,7 +4,6 @@
 // AUTHOR: Mert Eldemir
 
 /*
-
 HEAP also known as Priority Queue, is a Complete Binary tree; so it's height is always logN
 BUT Heap it's not useful for searching purposes
 
