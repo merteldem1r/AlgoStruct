@@ -108,7 +108,7 @@ public:
         }
     }
 
-    void removeMax()
+    void removeMax() // Time: O(logN) Space: O(1)
     {
         if (heapSize == 0)
         {
@@ -185,7 +185,7 @@ int main()
 
     MaxHeap HeapB(arrSize);
 
-    for (int i = 0; i < arrSize; ++i) // Time: O(nlogN)
+    for (int i = 0; i < arrSize; ++i) // Time: O(nlogN) Space: O(1)
     {
         HeapB.Insert(arr[i]);
     }
@@ -213,7 +213,7 @@ int main()
     HeapC.printHeapArr();
 
     // * First element of our Heap is always the largest one
-    // 1 - So by moving this element at the end by swapping with last element, we can move the largest element at the end (swap(lastIndex, 0))
+    // 1 - So by moving this element at the end (by swapping with last element), we can move the largest element at the end (swap(lastIndex, 0))
     // 2 - Then by applying MaxHeapify on first element (arr[0]) we can restore Heap property again by moving largest to the top
 
     auto heapArrC = HeapC.getHeapArr();
