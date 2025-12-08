@@ -458,7 +458,7 @@ In C+, Bitwise Operators are the operators that are used to perform bit-level op
 
 Also known as **Priority Queues**
 
-- _kthLargestElementInStream_ - _lastStoneWeight_ - _kthLargestElementInArray_
+- _kthLargestElementInStream_ - _lastStoneWeight_ - _kthLargestElementInArray_ - _designTwitter_
 
   Folder: [Heap-Algorithms](Algorithms/Heap/)
 
