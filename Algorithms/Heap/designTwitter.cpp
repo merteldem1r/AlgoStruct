@@ -34,56 +34,69 @@ Example 1:
 
 */
 
-class TwitterSolutionMinHeap
+// Time: O(F × T × log(F × T)) F: number of followees, T: tweets per followee || Space: O(n)
+class TwitterSolution1
 {
 private:
-    int tweetPriority = 0;
+    long long time;
     std::unordered_map<int, std::unordered_set<int>> followingMap;
-    std::unordered_map<int, std::pair<int, int>> priorityUserTweetMap;
+    std::unordered_map<int, std::vector<std::pair<int, int>>> tweetMap;
 
     struct Comparator
     {
-        bool operator()(std::pair<int, int> a, std::pair<int, int> b) const
+        bool operator()(std::pair<int, int> a, std::pair<int, int> b)
         {
             return a.second < b.second;
         }
     };
 
 public:
-    TwitterSolutionMinHeap() {}
-
-    void postTweet(int userId, int tweetId) // Time: O(1) Space: O(1)
+    TwitterSolution1()
     {
-        priorityUserTweetMap[tweetPriority] = {userId, tweetId};
-        ++tweetPriority;
+        this->time = 0;
     }
 
+    void postTweet(int userId, int tweetId)
+    {
+        tweetMap[userId].emplace_back(tweetId, time);
+        if (tweetMap[userId].size() > 10)
+        {
+            tweetMap[userId].erase(tweetMap[userId].begin());
+        }
+        ++time;
+    }
+
+    // Time: O(F × T × log(F × T)) F: number of followees, T: tweets per followee || Space: O(n)
     std::vector<int> getNewsFeed(int userId)
     {
-        std::vector<std::pair<int, int>> tweets;
+        std::priority_queue<std::pair<int, int>, std::vector<std::pair<int, int>>,
+                            Comparator>
+            maxHeap;
+        std::vector<int> res;
 
-        for (auto &entity : priorityUserTweetMap)
+        // 1. personal tweets
+        for (auto &tweet : tweetMap[userId])
         {
-            auto [postUserId, postTweetId] = entity.second;
+            maxHeap.push(tweet);
+        }
 
-            if (userId == postUserId || areFollowing(userId, postUserId))
+        // 2. friends tweets
+        for (int followeeId : followingMap[userId]) // O(F) - only followed users
+        {
+            for (auto &tweet : tweetMap[followeeId]) // O(T)
             {
-                tweets.emplace_back(postTweetId, entity.first);
+                maxHeap.push(tweet); // O(log heap_size)
             }
         }
 
-        std::priority_queue<std::pair<int, int>,
-                            std::vector<std::pair<int, int>>, Comparator>
-            minHeap(tweets.begin(), tweets.end());
-        std::vector<int> resTweets;
-
-        while (minHeap.size() > 0 && resTweets.size() != 10)
+        // 3. collect mru tweets
+        while (!maxHeap.empty() && res.size() < 10) // O(10 × log heap_size)
         {
-            resTweets.emplace_back(minHeap.top().first);
-            minHeap.pop();
+            res.push_back(maxHeap.top().first);
+            maxHeap.pop();
         }
 
-        return resTweets;
+        return res;
     }
 
     void follow(int followerId, int followeeId) // Time: O(1) Space: O(1)
@@ -93,7 +106,7 @@ public:
 
     void unfollow(int followerId, int followeeId) // Time: O(1) Space: O(1)
     {
-        if (areFollowing(followerId, followeeId))
+        if (followingMap[followerId].count(followeeId) > 0)
         {
             followingMap[followerId].erase(followeeId);
         }
@@ -105,14 +118,128 @@ public:
     }
 };
 
-/**
- * Your Twitter object will be instantiated and called as such:
- * Twitter* obj = new Twitter();
- * obj->postTweet(userId,tweetId);
- * vector<int> param_2 = obj->getNewsFeed(userId);
- * obj->follow(followerId,followeeId);
- * obj->unfollow(followerId,followeeId);
- */
+// ******************************* Solution OOP Design *******************************
+
+// Time: O(F × logF) Space: O(F) F: number of followees
+class Twitter
+{
+private:
+    long long time = 0;
+
+    struct Tweet
+    {
+        int id;
+        int timestamp;
+        Tweet *next;
+
+        Tweet(int id, int timestamp)
+            : id(id), timestamp(timestamp), next(nullptr) {}
+    };
+
+    struct User
+    {
+        int id;
+        std::unordered_set<int> followed;
+        Tweet *tweetHead;
+
+        User(int id) : id(id), tweetHead(nullptr)
+        {
+            follow(id); // follow self
+        }
+
+        void follow(int followeeId) { followed.insert(followeeId); }
+
+        void unfollow(int followeeId)
+        {
+            if (followeeId != id)
+                followed.erase(followeeId);
+        }
+
+        void post(int tweetId, int time)
+        {
+            Tweet *newTweet = new Tweet(tweetId, time);
+            newTweet->next = tweetHead;
+            tweetHead = newTweet;
+        }
+    };
+
+    struct Comparator
+    {
+        bool operator()(Tweet *a, Tweet *b)
+        {
+            return a->timestamp < b->timestamp;
+        }
+    };
+
+    std::unordered_map<int, User *> userMap;
+
+public:
+    Twitter() {}
+
+    void postTweet(int userId, int tweetId) // Time: O(1) Space: O(1)
+    {
+        if (!isUser(userId))
+            createUser(userId);
+
+        userMap[userId]->post(tweetId, time++);
+    }
+
+    std::vector<int> getNewsFeed(int userId) // Time: O(F × logF) Space: O(F) F: number of followees
+    {
+        std::vector<int> res;
+        if (!isUser(userId))
+            return res;
+
+        std::priority_queue<Tweet *, std::vector<Tweet *>, Comparator> maxHeap;
+
+        auto &users = userMap[userId]->followed;
+        for (int uid : users)
+        {
+            if (userMap.count(uid) && userMap[uid]->tweetHead != nullptr)
+                maxHeap.push(userMap[uid]->tweetHead);
+        }
+
+        int n = 0;
+        while (!maxHeap.empty() && n < 10) // O(10 × logF)
+        {
+            Tweet *top = maxHeap.top();
+            maxHeap.pop();
+
+            res.push_back(top->id);
+            n++;
+
+            if (top->next != nullptr)
+                maxHeap.push(top->next);
+        }
+
+        return res;
+    }
+
+    void follow(int followerId, int followeeId) // Time: O(1) Space: O(1)
+    {
+        checkUser(followerId);
+        checkUser(followeeId);
+        userMap[followerId]->follow(followeeId);
+    }
+
+    void unfollow(int followerId, int followeeId) // Time: O(1) Space: O(1)
+    {
+        if (!isUser(followerId) || !isUser(followeeId))
+            return;
+        userMap[followerId]->unfollow(followeeId);
+    }
+
+private:
+    bool isUser(int userId) { return userMap.count(userId) > 0; } // Time: O(1) Space: O(1)
+
+    void createUser(int userId) { userMap[userId] = new User(userId); } // Time: O(1) Space: O(1)
+
+    void checkUser(int userId) // Time: O(1) Space: O(1)
+    {
+        if (!isUser(userId))
+            createUser(userId);
+    }
+};
 
 int main()
 {
