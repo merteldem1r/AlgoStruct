@@ -406,7 +406,7 @@ Hashing refers to the process of **generating a small sized output** (that can b
 In C+, Bitwise Operators are the operators that are used to perform bit-level operations on the integers. While performing these operations, integers are considered as sequences of binary digits. These operators are useful for low-level programming, system programming, and optimizing performance.
 
 - AND, OR, XOR, NOT, Left Shift, Right Shift
-- _hammingWeight_ - _swapVariables_ - _convertBinaryInLinkedListToInt_ - _countingBits_ - _sumOfTwoIntegers_
+- _hammingWeight_ - _swapVariables_ - _convertBinaryInLinkedListToInt_ - _countingBits_ - _sumOfTwoIntegers_ - _powerOfFour_
 
   Folder: [Bitwise-Operations](Algorithms/Bitwise-Operations)
   </br>
