@@ -476,7 +476,7 @@ Also known as **Priority Queues**
 
 ### Dynamic Programming
 
-- _coinChange_ - _maximumSubarray_ - _longestPalindromicSubstring_
+- _coinChange_ - _maximumSubarray_ - _longestPalindromicSubstring_ - _dailyTemperatures_
 
   Folder: [Dynamic-Programming](Algorithms/Dynamic-Programming/)
 
