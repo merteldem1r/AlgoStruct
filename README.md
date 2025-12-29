@@ -43,6 +43,7 @@ Each topic contain **code examples** with explained **comment lines** and **Read
 - [Linked List](#linked-list-algorithms) • [Stack](#stack-algorithms) • [Queue](#queue-algorithms)
 - [Binary Search](#binary-search-algorithms) • [Binary Tree](#binary-tree-algorithms) • [Binary Search Tree](#binary-search-tree-algorithms) • [Heap](#heap-algorithms)
 - [Backtracking](#backtracking) • [Math & Geometry](#math--geometry-algorihms) • [Intervals](#intervals)
+- [Dynamic Programming](#dynamic-programming) • [Sliding Windows](#sliding-window)
 
 Each section of this repository was created with **genuine passion**, **thorough research**, and **dedicated implementation**. I hope it proves helpful to others.
 
@@ -492,7 +493,7 @@ Sliding Window Technique is a method used to solve problems that involve subarra
 
 - _maxSumOfSubarrayWithKElements_
 
-  Folder: [Sliding-Window](Algorithms/Dynamic-Programming/)
+  Folder: [Sliding-Window](Algorithms/Sliding-Window//)
 
 ### Intervals
 
