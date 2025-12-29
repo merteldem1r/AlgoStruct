@@ -476,9 +476,23 @@ Also known as **Priority Queues**
 
 ### Dynamic Programming
 
+**Dynamic Programming (DP)** is a method used to solve complex problems by **breaking them** into smaller **overlapping subproblems** and **storing their results** to avoid recomputation. It is an optimization technique that transforms recursive solutions with exponential time into efficient ones with polynomial time.
+
 - _coinChange_ - _maximumSubarray_ - _longestPalindromicSubstring_ - _dailyTemperatures_
 
   Folder: [Dynamic-Programming](Algorithms/Dynamic-Programming/)
+
+### Sliding Window
+
+Sliding Window Technique is a method used to solve problems that involve subarray or substring or window.
+
+- Instead of repeatedly iterating over the same elements, the sliding window maintains a range (or “window”) that moves step-by-step through the data, updating results incrementally.
+- The main idea is to use the results of previous window to do computations for the next window.
+- Commonly used for problems like finding subarrays with a specific sum, finding the longest substring with unique characters, or solving problems that require a fixed-size window to process elements efficiently.
+
+- _maxSumOfSubarrayWithKElements_
+
+  Folder: [Sliding-Window](Algorithms/Dynamic-Programming/)
 
 ### Intervals
 
