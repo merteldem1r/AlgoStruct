@@ -439,7 +439,7 @@ In C+, Bitwise Operators are the operators that are used to perform bit-level op
 
 ### Binary Search Algorithms
 
-- _kokoEatingBananas_
+- _binarySearch_ - _kokoEatingBananas_ - _findMinimumInRotatedSortedArray_ - _search2DMatrix_
 
   Folde: [Binary-Seach-Algorithms](Algorithms/Binary-Search/)
 
