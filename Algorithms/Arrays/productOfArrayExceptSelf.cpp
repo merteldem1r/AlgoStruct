@@ -77,6 +77,43 @@ public:
     }
 };
 
+// Solution without division using prefix and postfix products
+class SolutionPrefixPostfix // Time: O(n) | Space: O(n)
+{
+public:
+    std::vector<int> productExceptSelf(std::vector<int> &nums)
+    {
+        int n = nums.size();
+
+        std::vector<int> prefix(n);
+        std::vector<int> postfix(n);
+        std::vector<int> res(n);
+
+        prefix[0] = 1;
+        postfix[n - 1] = 1;
+
+        // fill prefix
+        for (int i = 1; i < n; ++i)
+        {
+            prefix[i] = nums[i - 1] * prefix[i - 1];
+        }
+
+        // fill postfix
+        for (int i = n - 2; i >= 0; --i)
+        {
+            postfix[i] = nums[i + 1] * postfix[i + 1];
+        }
+
+        // fill result
+        for (int i = 0; i < n; ++i)
+        {
+            res[i] = prefix[i] * postfix[i];
+        }
+
+        return res;
+    }
+};
+
 int main()
 {
     return 0;
