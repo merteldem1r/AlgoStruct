@@ -433,7 +433,7 @@ In C+, Bitwise Operators are the operators that are used to perform bit-level op
 
 ### Queue Algorithms
 
-- _implementQueueUsingStack_
+- _implementQueueUsingStack_ - _numberOfRecentCalls_
 
   Folder: [Queue-Algorithms](Algorithms/Queue/)
 
