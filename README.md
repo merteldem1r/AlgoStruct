@@ -20,30 +20,42 @@ Each topic contain **code examples** with explained **comment lines** and **Read
 ## Table of Contents
 
 ### Essential Concepts
+> Core C & C++ fundamentals you need before diving into DSA — memory management, OOP principles, and language features.
 
-- [Array Basics](#array-basics) • [Structures](#structures) • [Pointers](#pointers) • [Reference](#reference)
-- [Functions](#functions) • [Converting C to C++](#converting-c-code-to-c)
-- [Scope Resolution](#scope-resolution) • [OOP](#object-oriented-programming)
-- [Generics](#generics) • [Templates](#templates) • [Operator Overloading](#operator-overloading)
+| Fundamentals                                   | Advanced                                      |
+| :--------------------------------------------- | :-------------------------------------------- |
+| [Array Basics](#array-basics)                  | [Scope Resolution](#scope-resolution)         |
+| [Structures](#structures)                      | [OOP](#object-oriented-programming)           |
+| [Pointers](#pointers)                          | [Generics](#generics)                         |
+| [Reference](#reference)                        | [Templates](#templates)                       |
+| [Functions](#functions)                        | [Operator Overloading](#operator-overloading) |
+| [Converting C to C++](#converting-c-code-to-c) |                                               |
 
----
 
 ### Data Structures
+> Ways to organize, store, and manage data efficiently — from simple arrays to self-balancing trees.
 
-- [Array Representations](#array-representations) • [Array ADT](#array-adt) • [Strings](#strings)
-- [Linked Lists](#linked-list) • [Stack](#stack) • [Queue](#queue)
-- [Trees](#trees) • [Binary Search Tree](#binary-search-tree) • [AVL Tree](#avl-tree) • [2-3 Tree](#2-3-tree) • [Red Black Tree](#red-black-tree) • [Heap](#heap)
+| Linear                                          | Trees                                     | Advanced Trees                    |
+| :---------------------------------------------- | :---------------------------------------- | :-------------------------------- |
+| [Array Representations](#array-representations) | [Trees](#trees)                           | [AVL Tree](#avl-tree)             |
+| [Array ADT](#array-adt)                         | [Binary Search Tree](#binary-search-tree) | [2-3 Tree](#2-3-tree)             |
+| [Strings](#strings)                             | [Heap](#heap)                             | [Red Black Tree](#red-black-tree) |
+| [Linked Lists](#linked-list)                    |                                           |                                   |
+| [Stack](#stack)                                 |                                           |                                   |
+| [Queue](#queue)                                 |                                           |                                   |
 
----
 
 ### Algorithms
+> Step-by-step problem-solving techniques — searching, sorting, optimization, and LeetCode solutions.
 
-- [Recursion](#recursion) • [Sorting](#sorting-algorithms) • [Hashing](#hashing-algorithms) • [Array & Hashing](#array--hash-map-algorithms)
-- [Bitwise](#bitwise-operations) • [Strings](#string-algorithms)
-- [Linked List](#linked-list-algorithms) • [Stack](#stack-algorithms) • [Queue](#queue-algorithms)
-- [Binary Search](#binary-search-algorithms) • [Binary Tree](#binary-tree-algorithms) • [Binary Search Tree](#binary-search-tree-algorithms) • [Heap](#heap-algorithms)
-- [Backtracking](#backtracking) • [Math & Geometry](#math--geometry-algorihms) • [Intervals](#intervals)
-- [Dynamic Programming](#dynamic-programming) • [Sliding Windows](#sliding-window)
+| Category             | Topics                                                                                                                                                 |
+| :------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Arrays & Hashing** | [Array & Hash Map](#array--hash-map-algorithms) • [Strings](#string-algorithms) • [Bitwise](#bitwise-operations)                                       |
+| **Core Techniques**  | [Recursion](#recursion) • [Sorting](#sorting-algorithms) • [Hashing](#hashing-algorithms)                                                              |
+| **Linear DS**        | [Linked List](#linked-list-algorithms) • [Stack](#stack-algorithms) • [Queue](#queue-algorithms)                                                       |
+| **Trees & Search**   | [Binary Search](#binary-search-algorithms) • [Binary Tree](#binary-tree-algorithms) • [BST](#binary-search-tree-algorithms) • [Heap](#heap-algorithms) |
+| **Advanced**         | [Dynamic Programming](#dynamic-programming) • [Sliding Window](#sliding-window) • [Backtracking](#backtracking)                                        |
+| **Math & More**      | [Math & Geometry](#math--geometry-algorihms) • [Intervals](#intervals)                                                                                 |
 
 Each section of this repository was created with **genuine passion**, **thorough research**, and **dedicated implementation**. I hope it proves helpful to others.
 
