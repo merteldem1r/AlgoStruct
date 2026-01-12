@@ -20,6 +20,7 @@ Each topic contain **code examples** with explained **comment lines** and **Read
 ## Table of Contents
 
 ### Essential Concepts
+
 > Core C & C++ fundamentals you need before diving into DSA — memory management, OOP principles, and language features.
 
 | Fundamentals                                   | Advanced                                      |
@@ -31,8 +32,8 @@ Each topic contain **code examples** with explained **comment lines** and **Read
 | [Functions](#functions)                        | [Operator Overloading](#operator-overloading) |
 | [Converting C to C++](#converting-c-code-to-c) |                                               |
 
-
 ### Data Structures
+
 > Ways to organize, store, and manage data efficiently — from simple arrays to self-balancing trees.
 
 | Linear                                          | Trees                                     | Advanced Trees                    |
@@ -44,8 +45,8 @@ Each topic contain **code examples** with explained **comment lines** and **Read
 | [Stack](#stack)                                 |                                           |                                   |
 | [Queue](#queue)                                 |                                           |                                   |
 
-
 ### Algorithms
+
 > Step-by-step problem-solving techniques — searching, sorting, optimization, and LeetCode solutions.
 
 | Category             | Topics                                                                                                                                                 |
@@ -410,7 +411,7 @@ Hashing refers to the process of **generating a small sized output** (that can b
 
 ### Array & Hash Map Algorithms
 
-- _findDuplicates_ - _findMaxMinSingleScan_ - _findMultipleMissingElements_ - _findSingleMissingElement_ - _mergeSortedArrays_ - _rotateArray_ - _pairSum_ - _removeDuplicatesFromSortedArray_ - _topKFrequentElements_ - _validSudoku_ - _groupAnagrams_ - _rangeSumQueryImmutable_ - _productOfArrayExceptSelf_
+- _findDuplicates_ - _findMaxMinSingleScan_ - _findMultipleMissingElements_ - _findSingleMissingElement_ - _removeElement_ - _mergeSortedArrays_ - _rotateArray_ - _pairSum_ - _removeDuplicatesFromSortedArray_ - _topKFrequentElements_ - _validSudoku_ - _groupAnagrams_ - _rangeSumQueryImmutable_ - _productOfArrayExceptSelf_
 
   Folder: [Array-Algorithms](Algorithms/Arrays)
 
