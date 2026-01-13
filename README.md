@@ -56,7 +56,7 @@ Each topic contain **code examples** with explained **comment lines** and **Read
 | **Linear DS**        | [Linked List](#linked-list-algorithms) • [Stack](#stack-algorithms) • [Queue](#queue-algorithms)                                                       |
 | **Trees & Search**   | [Binary Search](#binary-search-algorithms) • [Binary Tree](#binary-tree-algorithms) • [BST](#binary-search-tree-algorithms) • [Heap](#heap-algorithms) |
 | **Advanced**         | [Dynamic Programming](#dynamic-programming) • [Sliding Window](#sliding-window) • [Backtracking](#backtracking)                                        |
-| **Math & More**      | [Math & Geometry](#math--geometry-algorihms) • [Intervals](#intervals)                                                                                 |
+| **Math & More**      | [Math & Geometry](#math--geometry-algorihms) • [Intervals](#intervals) • [Design](#design)                                                             |
 
 Each section of this repository was created with **genuine passion**, **thorough research**, and **dedicated implementation**. I hope it proves helpful to others.
 
@@ -488,6 +488,14 @@ Also known as **Priority Queues**
 
   Folder: [Math-Geometry](Algorithms/Math-Geometry/)
 
+### Design
+
+Here we gonna **design** solutions for **specific** custom **data structures**, **systems** and **algorithms**.
+
+- _designHashSet_ - _imlementQueueUsingStack_ - _lruCache_ - _minStack_
+
+  Folder: [Design](Algorithms/Design/)
+
 ### Dynamic Programming
 
 **Dynamic Programming (DP)** is a method used to solve complex problems by **breaking them** into smaller **overlapping subproblems** and **storing their results** to avoid recomputation. It is an optimization technique that transforms recursive solutions with exponential time into efficient ones with polynomial time.
@@ -512,4 +520,4 @@ Sliding Window Technique is a method used to solve problems that involve subarra
 
 - _insertInterval_ - _mergeIntervals_
 
-Folder: [Math-Geometry](Algorithms/Math-Geometry/)
+Folder: [Intervals](Algorithms/Intervals/)
