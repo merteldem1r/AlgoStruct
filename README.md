@@ -55,7 +55,7 @@ Each topic contain **code examples** with explained **comment lines** and **Read
 | **Core Techniques**  | [Recursion](#recursion) • [Sorting](#sorting-algorithms) • [Hashing](#hashing-algorithms)                                                              |
 | **Linear DS**        | [Linked List](#linked-list-algorithms) • [Stack](#stack-algorithms) • [Queue](#queue-algorithms)                                                       |
 | **Trees & Search**   | [Binary Search](#binary-search-algorithms) • [Binary Tree](#binary-tree-algorithms) • [BST](#binary-search-tree-algorithms) • [Heap](#heap-algorithms) |
-| **Advanced**         | [Dynamic Programming](#dynamic-programming) • [Sliding Window](#sliding-window) • [Backtracking](#backtracking)                                        |
+| **Advanced**         | [Dynamic Programming](#dynamic-programming) • [Greedy](Algorithms/Greedy) • [Sliding Window](#sliding-window) • [Backtracking](#backtracking)          |
 | **Math & More**      | [Math & Geometry](#math--geometry-algorihms) • [Intervals](#intervals) • [Design](#design)                                                             |
 
 Each section of this repository was created with **genuine passion**, **thorough research**, and **dedicated implementation**. I hope it proves helpful to others.
@@ -502,7 +502,15 @@ Here we gonna **design** solutions for **specific** custom **data structures**, 
 
 - _coinChange_ - _maximumSubarray_ - _longestPalindromicSubstring_ - _dailyTemperatures_
 
-  Folder: [Dynamic-Programming](Algorithms/Dynamic-Programming/)
+  Folder: [Dynamic Programming](Algorithms/Dynamic-Programming/)
+
+### Greedy
+
+**Greedy Algorithms** are a class of algorithms that make the locally optimal choice at each step with the hope of finding a global optimum. They are often used for optimization problems where choosing the best option at each stage leads to an overall optimal solution.
+
+- _lemonadeChange_
+
+  Folder: [Greedy](Algorithms/Greedy/)
 
 ### Sliding Window
 
