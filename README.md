@@ -503,6 +503,8 @@ Here we gonna **design** solutions for **specific** custom **data structures**, 
 - _coinChange_ - _maximumSubarray_ - _longestPalindromicSubstring_ - _dailyTemperatures_
 
   Folder: [Dynamic Programming](Algorithms/Dynamic-Programming/)
+  </br>
+  Readme: [DP.md](Algorithms/Dynamic-Programming/DP.md)
 
 ### Greedy
 
@@ -511,6 +513,8 @@ Here we gonna **design** solutions for **specific** custom **data structures**, 
 - _lemonadeChange_ - _canJump_
 
   Folder: [Greedy](Algorithms/Greedy/)
+  </br>
+  Readme: [Greedy.md](Algorithms/Greedy/Greedy.md)
 
 ### Sliding Window
 
@@ -523,6 +527,8 @@ Sliding Window Technique is a method used to solve problems that involve subarra
 - _maxSumOfSubarrayWithKElements_
 
   Folder: [Sliding-Window](Algorithms/Sliding-Window//)
+  </br>
+  Readme: [SlidingWindow.md](Algorithms/Sliding-Window/SlidingWindow.md)
 
 ### Intervals
 
