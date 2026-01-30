@@ -55,7 +55,7 @@ Each topic contain **code examples** with explained **comment lines** and **Read
 | **Core Techniques**  | [Recursion](#recursion) • [Sorting](#sorting-algorithms) • [Hashing](#hashing-algorithms)                                                              |
 | **Linear DS**        | [Linked List](#linked-list-algorithms) • [Stack](#stack-algorithms) • [Queue](#queue-algorithms)                                                       |
 | **Trees & Search**   | [Binary Search](#binary-search-algorithms) • [Binary Tree](#binary-tree-algorithms) • [BST](#binary-search-tree-algorithms) • [Heap](#heap-algorithms) |
-| **Advanced**         | [Dynamic Programming](#dynamic-programming) • [Greedy](Algorithms/Greedy) • [Sliding Window](#sliding-window) • [Backtracking](#backtracking)          |
+| **Advanced**         | [Dynamic Programming](#dynamic-programming) • [Greedy](#greedy) • [Sliding Window](#sliding-window) • [Backtracking](#backtracking)          |
 | **Math & More**      | [Math & Geometry](#math--geometry-algorihms) • [Intervals](#intervals) • [Design](#design)                                                             |
 
 Each section of this repository was created with **genuine passion**, **thorough research**, and **dedicated implementation**. I hope it proves helpful to others.
