@@ -39,7 +39,7 @@ void merge(int A[], int l, int mid, int h)
         A[i] = tempArr[i];
     }
 
-    delete tempArr;
+    delete[] tempArr;
 }
 
 void iterativeMergeSort(int A[], int arrSize)
