@@ -10,9 +10,8 @@ Mastering DSA in C & C++ • A complete guide up to 300+ algorithms (Recursion, 
 [CPlusPlus](https://cplusplus.com/doc/tutorial/) |
 [GeeksforGeeks](https://www.geeksforgeeks.org/) |
 [NeetCode](https://neetcode.io/roadmap) |
-[NeetCode YouTube](https://www.youtube.com/@NeetCodeIO) |
+[NeetCode-YouTube](https://www.youtube.com/@NeetCodeIO) |
 [LeetCode](https://leetcode.com/) |
-[Wikipedia](https://en.wikipedia.org/)
 
 Project divided into **3 topics**. Here the table of **headings** and **subheadings**.
 Each topic contain **code examples** with explained **comment lines** and **Readme files**.
@@ -358,9 +357,9 @@ Heaps are usually used to implement **priority queues**, where the smallest (or 
 
 A **Graph** is a non-linear data structure made of **vertices (nodes)** and **edges** that connect pairs of vertices. Graphs are used to model relationships such as road networks, social networks, dependencies, and routing systems.
 
-- Graph basics and terminology
-- Common representations such as adjacency matrix and adjacency list
-- Traversal and path-related concepts
+- Graph basics and terminology (Vertices & Edges)
+- Representations such as **adjacency matrix** and **adjacency list**
+- Traversal and path-related concepts (BFS & DFS)
 
   Folder: [Graphs](Data-Structures/Graphs/)
   </br>
