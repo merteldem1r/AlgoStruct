@@ -35,7 +35,7 @@ Each topic contain **code examples** with explained **comment lines** and **Read
 
 > Ways to organize, store, and manage data efficiently — from simple arrays to self-balancing trees.
 
-| Linear                                          | Trees                                     | Advanced Trees                    |
+| Linear                                          | Trees & Graphs                            | Advanced Trees                    |
 | :---------------------------------------------- | :---------------------------------------- | :-------------------------------- |
 | [Array Representations](#array-representations) | [Trees](#trees)                           | [AVL Tree](#avl-tree)             |
 | [Array ADT](#array-adt)                         | [Binary Search Tree](#binary-search-tree) | [2-3 Tree](#2-3-tree)             |

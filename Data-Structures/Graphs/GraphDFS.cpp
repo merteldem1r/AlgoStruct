@@ -1,5 +1,5 @@
 #include <iostream>
-#include <queue>
+#include <stack>
 
 class Graph
 {
@@ -53,8 +53,42 @@ Use cases:
     - Articulation points and bridges
 */
 
-void DFS(int start, std::vector<std::vector<int>> &adj)
+void dfsIterative(int start, std::vector<std::vector<int>> &adj)
 {
+    std::vector<bool> visited(adj.size(), false);
+    std::stack<int> st;
+
+    st.push(start);
+    while (!st.empty())
+    {
+        const int vertice = st.top();
+        st.pop();
+
+        if (!visited[vertice])
+        {
+            visited[vertice] = true;
+            std::cout << vertice << " ";
+            for (int neighbor : adj[vertice])
+            {
+                if (!visited[neighbor])
+                    st.push(neighbor);
+            }
+        }
+    }
+}
+
+void dfsRecursive(int vertice, std::vector<std::vector<int>> &adj, std::vector<bool> &visited)
+{
+    visited[vertice] = true;
+
+    std::cout << vertice << " ";
+    for (int neighbor : adj[vertice])
+    {
+        if (!visited[neighbor])
+        {
+            dfsRecursive(neighbor, adj, visited);
+        }
+    }
 }
 
 int main()
@@ -68,8 +102,13 @@ int main()
 
     graph.printList();
 
-    // BFS
-    DFS(0, graph.getAdj());
+    // DFS Iterative
+    dfsIterative(0, graph.getAdj());
+    std::cout << std::endl;
+
+    // DFS Recursive
+    std::vector<bool> visited(graph.getAdj().size(), false);
+    dfsRecursive(0, graph.getAdj(), visited);
 
     return 0;
 }
