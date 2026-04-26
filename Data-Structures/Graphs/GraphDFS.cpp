@@ -53,7 +53,7 @@ Use cases:
     - Articulation points and bridges
 */
 
-void dfsIterative(int start, std::vector<std::vector<int>> &adj)
+void dfsIterative(int start, std::vector<std::vector<int>> &adj) // Time: O(V + E) | Space: O(V)
 {
     std::vector<bool> visited(adj.size(), false);
     std::stack<int> st;
@@ -77,7 +77,7 @@ void dfsIterative(int start, std::vector<std::vector<int>> &adj)
     }
 }
 
-void dfsRecursive(int vertice, std::vector<std::vector<int>> &adj, std::vector<bool> &visited)
+void dfsRecursive(int vertice, std::vector<std::vector<int>> &adj, std::vector<bool> &visited) // Time: O(V + E) | Space: O(V)
 {
     visited[vertice] = true;
 

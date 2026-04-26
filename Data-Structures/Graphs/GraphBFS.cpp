@@ -53,7 +53,7 @@ Use cases:
     - Level order exploration in networks
 */
 
-void BFS(int start, std::vector<std::vector<int>> &adj)
+void BFS(int start, std::vector<std::vector<int>> &adj) // Time: O(V + E) | Space: O(V)
 {
     std::vector<bool> visited(adj.size(), false);
     std::queue<int> q;
