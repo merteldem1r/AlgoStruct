@@ -5,6 +5,10 @@
 // A graph is a non-linear data structure made up of vertices (nodes) and edges (connections) that represent relationships between objects. Unlike arrays or linked lists, graphs do not follow a sequential order.
 
 /*
+    Given a graph G = (V, E):
+        - V is the set of vertices
+        - E is the set of edges
+
     Example Graph (Undirected, unweighted, cycled graph)
 
           2 --- 0
