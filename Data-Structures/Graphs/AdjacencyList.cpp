@@ -15,7 +15,8 @@ Adjacency List:
         - Iterating neighbors is efficient: O(deg(u))
 */
 
-class AdjacencyListGraph
+// using std::unordered_map
+class AdjacencyListGraphMap
 {
     std::unordered_map<int, std::vector<int>> adjList;
 
@@ -40,9 +41,45 @@ public:
     }
 };
 
+// using std::vector
+class AdjacencyListGraphVector
+{
+    int n; // number of vertices
+    std::vector<std::vector<int>> adj;
+
+public:
+    AdjacencyListGraphVector(int vertices) : n(vertices), adj(vertices) {}
+
+    // Add edge (undirected)
+    void addEdge(int u, int v)
+    {
+        adj[u].push_back(v);
+        adj[v].push_back(u);
+    }
+
+    void print()
+    {
+        for (int i = 0; i < n; i++)
+        {
+            std::cout << i << " -> ";
+            for (int neighbor : adj[i])
+            {
+                std::cout << neighbor << " ";
+            }
+            std::cout << "\n";
+        }
+    }
+
+    // Getter for BFS
+    std::vector<std::vector<int>> &getAdj()
+    {
+        return adj;
+    }
+};
+
 int main()
 {
-    AdjacencyListGraph Graph;
+    AdjacencyListGraphMap Graph;
 
     Graph.addEdge(0, 1);
     Graph.addEdge(0, 2);
