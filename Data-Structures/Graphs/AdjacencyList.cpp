@@ -69,12 +69,6 @@ public:
             std::cout << "\n";
         }
     }
-
-    // Getter for BFS
-    std::vector<std::vector<int>> &getAdj()
-    {
-        return adj;
-    }
 };
 
 int main()
