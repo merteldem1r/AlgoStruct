@@ -359,6 +359,7 @@ A **Graph** is a non-linear data structure made of **vertices (nodes)** and **ed
 
 - Graph basics and terminology (Vertices & Edges)
 - Representations such as **adjacency matrix** and **adjacency list**
+- **Disjoint Set** (Union-Find Data Structure)
 - Traversal and path-related concepts (BFS & DFS)
 
   Folder: [Graphs](Data-Structures/Graphs/)
