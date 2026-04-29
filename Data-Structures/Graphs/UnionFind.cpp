@@ -1,7 +1,9 @@
 #include <iostream>
 
 // Disjoint Set (UnionFind) - Data Structure
-// Related article: https://www.geeksforgeeks.org/dsa/introduction-to-disjoint-set-data-structure-or-union-find-algorithm/
+// Related Article: https://www.geeksforgeeks.org/dsa/introduction-to-disjoint-set-data-structure-or-union-find-algorithm/
+// More optimized version: Data-Structures/Graphs/DisjointUnionSets.cpp
+// Author: Mert Eldemir
 
 /*
 Two sets are called disjoint sets if they don't have any element in common. The disjoint set data structure is used to store such sets. It supports following operations:
@@ -40,10 +42,11 @@ private:
     std::vector<int> parent;
 
 public:
-    // initialize the parent arr as each element its own representative
     UnionFind(int n)
     {
         parent.resize(n);
+
+        // initialize the parent arr as each element its own representative
         for (int i = 0; i < n; ++i)
         {
             parent[i] = i;
@@ -59,7 +62,7 @@ public:
         }
 
         // Else recursively find the representative
-        find(parent[i]);
+        return find(parent[i]);
     }
 
     // Unite (merge) the set that includes element
@@ -80,20 +83,23 @@ public:
 
 int main()
 {
-    int size = 5;
+    int size = 6;
     UnionFind uf(size);
     uf.unite(1, 2);
     uf.unite(3, 4);
 
     /*
-        2 different sets:
-            --------      --------
-           | 1 -- 2 |    | 3 -- 4 |
-            --------      --------
+        4 different sets:
+            --------      --------     ---      ---
+           | 1 -- 2 |    | 3 -- 4 |   | 5 |    | 6 |
+            --------      --------     ---      ---
     */
 
     const bool inSameSet = (uf.find(1) == uf.find(2));
     std::cout << "Are 1 and 2 in the same set? " << (inSameSet ? "Yes" : "No") << std::endl; // Yes
+
+    const bool inSameSet2 = (uf.find(4) == uf.find(6));
+    std::cout << "Are 4 and 6 in the same set? " << (inSameSet2 ? "Yes" : "No") << std::endl; // No
 
     return 0;
 }
