@@ -40,7 +40,7 @@ Each topic contain **code examples** with explained **comment lines** and **Read
 | [Array Representations](#array-representations) | [Trees](#trees)                           | [AVL Tree](#avl-tree)             |
 | [Array ADT](#array-adt)                         | [Binary Search Tree](#binary-search-tree) | [2-3 Tree](#2-3-tree)             |
 | [Strings](#strings)                             | [Heap](#heap)                             | [Red Black Tree](#red-black-tree) |
-| [Linked Lists](#linked-list)                    | [Graphs](#graphs)                         |                                   |
+| [Linked Lists](#linked-list)                    | [Graphs](#graph)                          |                                   |
 | [Stack](#stack)                                 |                                           |                                   |
 | [Queue](#queue)                                 |                                           |                                   |
 
@@ -353,7 +353,7 @@ Heaps are usually used to implement **priority queues**, where the smallest (or 
   </br>
   [Priority Queue using Binary Heap](https://www.geeksforgeeks.org/priority-queue-using-binary-heap/)
 
-### GRAPHS
+### GRAPH
 
 A **Graph** is a non-linear data structure made of **vertices (nodes)** and **edges** that connect pairs of vertices. Graphs are used to model relationships such as road networks, social networks, dependencies, and routing systems.
 
