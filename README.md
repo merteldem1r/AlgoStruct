@@ -532,7 +532,7 @@ Here we gonna **design** solutions for **specific** custom **data structures**, 
 
 Graph algorithms are **computational procedures** used to analyze and manipulate **graphs—structures** composed of **nodes** (entities) and **edges** (relationships).
 
-- _numberOfIslands_
+- _Dijkstra's Algorithm_ - _numberOfIslands_
 
   Folder: [Graph-Algorithms](Algorithms/Graph/)
 
