@@ -122,8 +122,3 @@ public:
         return res;
     }
 };
-
-int main()
-{
-    return 0;
-}
