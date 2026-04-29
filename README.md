@@ -359,7 +359,7 @@ A **Graph** is a non-linear data structure made of **vertices (nodes)** and **ed
 
 - Graph basics and terminology (Vertices & Edges)
 - Representations such as **adjacency matrix** and **adjacency list**
-- **Disjoint Set** (Union-Find Data Structure)
+- **Union Find** and **Disjoint Union Sets** data structures
 - Traversal and path-related concepts (BFS & DFS)
 
   Folder: [Graphs](Data-Structures/Graphs/)
@@ -530,9 +530,11 @@ Here we gonna **design** solutions for **specific** custom **data structures**, 
 
 ### Graph Algorithms
 
--
+Graph algorithms are **computational procedures** used to analyze and manipulate **graphs—structures** composed of **nodes** (entities) and **edges** (relationships).
 
-Folder: [Graph-Algorithms](Algorithms/Graph/)
+- _numberOfIslands_
+
+  Folder: [Graph-Algorithms](Algorithms/Graph/)
 
 ### Sliding Window
 
