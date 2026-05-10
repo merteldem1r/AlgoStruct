@@ -1,8 +1,8 @@
 #include <iostream>
 
 // Tower Of Hanoi Problem
-
 // info: https://en.wikipedia.org/wiki/Tower_of_Hanoi
+// informative explanation: https://www.geeksforgeeks.org/dsa/c-program-for-tower-of-hanoi/
 
 /*
 

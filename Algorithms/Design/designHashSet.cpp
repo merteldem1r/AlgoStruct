@@ -1,6 +1,6 @@
 #include <iostream>
 
-// 705. Design HashSet
+// LeetCode: 705. Design HashSet
 // https://leetcode.com/problems/design-hashset/description/
 
 /*

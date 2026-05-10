@@ -1,9 +1,9 @@
 #include <iostream>
 
-// This question is from LeetCode: https://leetcode.com/problems/implement-queue-using-stacks/description/
+// LeetCode: 232. Implement Queue using Stacks
+// https://leetcode.com/problems/implement-queue-using-stacks/description/
 
 /*
-
 Implement a first in first out (FIFO) queue using only two stacks. The implemented queue should support all the functions of a normal queue (push, peek, pop, and empty).
 
 Implement the MyQueue class:
