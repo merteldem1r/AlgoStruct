@@ -4,7 +4,7 @@
 // Given a weighted undirected graph and a source vertex src. We need to find the shortest path distances from the source vertex to all other vertices in the graph.
 // Author: Mert Eldemir
 
-std::vector<int> dijkstra(std::vector<std::vector<std::pair<int, int>>> &adj, const int src)
+std::vector<int> dijkstra(std::vector<std::vector<std::pair<int, int>>> &adj, const int src) // Time: O((V+E) * logV) Space: O(V + E)
 {
     // Min-heap (priority queue) storing distance and node
     std::priority_queue<std::pair<int, int>, std::vector<std::pair<int, int>>, std::greater<std::pair<int, int>>> pq;
