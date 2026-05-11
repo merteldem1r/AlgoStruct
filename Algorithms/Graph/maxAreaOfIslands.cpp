@@ -77,7 +77,47 @@ public:
     }
 };
 
-int main()
+class SolutionDFS // Time: O(m * n) Space: O(m * n)
 {
-    return 0;
-}
+private:
+    int directions[4][2] = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
+
+public:
+    void dfs(std::vector<std::vector<int>> &grid, int r, int c,
+             int &temp)
+    {
+        if (r < 0 || c < 0 || r >= grid.size() || c >= grid[0].size() || grid[r][c] == 0)
+        {
+            return;
+        }
+
+        ++temp;
+        grid[r][c] = 0;
+        for (int i = 0; i < 4; ++i)
+        {
+            dfs(grid, r + directions[i][0], c + directions[i][1], temp);
+        }
+    }
+
+    int maxAreaOfIsland(std::vector<std::vector<int>> &grid)
+    {
+        int maxArea = 0, tempMax = 0;
+        const int rowCount = grid.size(), colCount = grid[0].size();
+
+        for (int i = 0; i < rowCount; ++i)
+        {
+            for (int j = 0; j < colCount; ++j)
+            {
+                if (grid[i][j] == 1)
+                {
+                    tempMax = 0;
+                    dfs(grid, i, j, tempMax);
+                    maxArea = std::max(maxArea, tempMax);
+                }
+                tempMax = 0;
+            }
+        }
+
+        return maxArea;
+    }
+};
