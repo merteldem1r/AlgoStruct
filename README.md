@@ -522,7 +522,7 @@ Here we gonna **design** solutions for **specific** custom **data structures**, 
 
 **Greedy Algorithms** are a class of algorithms that make the locally optimal choice at each step with the hope of finding a global optimum. They are often used for optimization problems where choosing the best option at each stage leads to an overall optimal solution.
 
-- _lemonadeChange_ - _canJump_
+- _lemonadeChange_ - _jumpGame_
 
   Folder: [Greedy](Algorithms/Greedy/)
   </br>
