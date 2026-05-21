@@ -4,7 +4,7 @@
 // For reading: https://www.geeksforgeeks.org/dsa/0-1-knapsack-problem-dp-10/
 
 /*
-The 0/1 Knapsack Problem is a optimization problem.
+The 0/1 Knapsack Problem is an optimization problem.
 
 We have:
 
@@ -24,6 +24,7 @@ So each item has only two choices:
     1 → take the item
 */
 
+// Naive Approach - Recursive Solution
 int knapsackRecursive(const std::vector<int> &values, const std::vector<int> &wt, int idx, int remainCap) // Time: O(2^n) Space: O(n)
 {
     if (remainCap == 0 || idx >= wt.size())
