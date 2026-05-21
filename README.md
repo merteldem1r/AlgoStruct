@@ -512,7 +512,7 @@ Here we gonna **design** solutions for **specific** custom **data structures**, 
 
 **Dynamic Programming (DP)** is a method used to solve complex problems by **breaking them** into smaller **overlapping subproblems** and **storing their results** to avoid recomputation. It is an optimization technique that transforms recursive solutions with exponential time into efficient ones with polynomial time.
 
-- _coinChange_ - _maximumSubarray_ - _longestPalindromicSubstring_ - _dailyTemperatures_
+- _0/1-Knapsack_ - _coinChange_ - _maximumSubarray_ - _longestPalindromicSubstring_ - _dailyTemperatures_
 
   Folder: [Dynamic Programming](Algorithms/Dynamic-Programming/)
   </br>
