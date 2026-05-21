@@ -59,7 +59,7 @@ public:
     }
 };
 
-class SolutionDynamicProgramming // Time: O(n * t) Space: O(t) => t: amount
+class SolutionDP // Time: O(n * t) Space: O(t) => t: amount
 {
 public:
     std::unordered_map<int, int> memo;

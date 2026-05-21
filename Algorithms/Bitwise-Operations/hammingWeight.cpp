@@ -2,14 +2,13 @@
 
 // Hamming Weight
 // Count the Number of 1's in the Binary Representation of a Number
+// For reading: https://en.wikipedia.org/wiki/Hamming_weight
 
-// Time: O(k), where k is the number of 1 bits in n. In the worst case, k can be at most 32 (since n is at most 10^9, which fits in a 32-bit integer).
-// Space: O(1)
-int hammingWeight(int num)
+int hammingWeight(int num) // Time: O(k) where k is the number of 1 bits in n. In the worst case, k can be at most 32 (since n is at most 10^9, which fits in a 32-bit integer). Space: O(1)
 {
     int bitCount = 0;
 
-    for (; num ;)
+    for (; num;)
     {
         bitCount += num & 1;
         num >>= 1;

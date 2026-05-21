@@ -55,7 +55,7 @@ public:
     }
 };
 
-class SolutionDynamicProgramming // Time: O(n) Space: O(1)
+class SolutionDP // Time: O(n) Space: O(1)
 {
 public:
     std::vector<int> dailyTemperatures(std::vector<int> &temperatures)

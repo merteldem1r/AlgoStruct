@@ -23,7 +23,7 @@ Example 3:
 */
 
 // Kadane's Algorithm
-class Solution // Time: O(n) Space: O(1)
+class SolutionKadanes // Time: O(n) Space: O(1)
 {
 public:
     int maxSubArray(std::vector<int> &nums)
@@ -42,7 +42,7 @@ public:
 };
 
 // Divide and Conquer Approach
-class Solution // Time: O(nlogN) Space: O(logN)
+class SolutionDivConq // Time: O(nlogN) Space: O(logN)
 {
 public:
     int helper(std::vector<int> &nums, int l, int h)

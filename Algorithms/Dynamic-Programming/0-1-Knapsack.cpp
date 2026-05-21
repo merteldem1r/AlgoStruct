@@ -40,6 +40,7 @@ int knapsackRecursive(const std::vector<int> &values, const std::vector<int> &wt
 
     if (wt[idx] <= remainCap)
     {
+        // go to next value, reduce remain capacity
         take = values[idx] + knapsackRecursive(values, wt, idx + 1, remainCap - wt[idx]);
     }
 
