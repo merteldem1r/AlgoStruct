@@ -6,22 +6,22 @@
 /*
 The 0/1 Knapsack Problem is an optimization problem.
 
-We have:
+    We have:
 
-* A bag/knapsack with a maximum weight capacity
-* Several items
-* Each item has:
-    a weight
-    a value/profit
+    * A bag/knapsack with a maximum weight capacity
+    * Several items
+    * Each item has:
+        a weight
+        a value/profit
 
-Goal is:
+    Goal is:
 
-Choose items to put into the knapsack so that the total value is maximized, but the total weight does not exceed the capacity.
+    Choose items to put into the knapsack so that the total value is maximized, but the total weight does not exceed the capacity.
 
-For each item, you either take it completely or you do not take it at all.
-So each item has only two choices:
-    0 → do not take the item
-    1 → take the item
+    For each item, you either take it completely or you do not take it at all.
+    So each item has only two choices:
+        0 → do not take the item
+        1 → take the item
 */
 
 // Naive Approach - Recursive Solution
@@ -32,17 +32,16 @@ int knapsackRecursive(const std::vector<int> &values, const std::vector<int> &wt
         return 0;
     }
 
-    // skip index when exceed remain capacity
-    if (wt[idx] > remainCap)
-    {
-        return knapsackRecursive(values, wt, idx + 1, remainCap);
-    }
-
     // case 1: skip item
     int skip = knapsackRecursive(values, wt, idx + 1, remainCap);
 
-    // case 2: take item
-    int take = values[idx] + knapsackRecursive(values, wt, idx + 1, remainCap - wt[idx]);
+    // case 2: take item (if not exceed)
+    int take = 0;
+
+    if (wt[idx] <= remainCap)
+    {
+        take = values[idx] + knapsackRecursive(values, wt, idx + 1, remainCap - wt[idx]);
+    }
 
     return std::max(skip, take);
 }
