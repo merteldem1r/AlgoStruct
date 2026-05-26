@@ -23,24 +23,28 @@ Node *createLinkedList(std::vector<int> arr)
     return head;
 }
 
-// Display Linked List
+//  --- Display Linked List ---
 
 // using while loop
-void display(Node * head) { // Time: O(n) Space: O(1)
+void display(Node *head)
+{ // Time: O(n) Space: O(1)
     auto temp = head;
 
-    while (temp != nullptr) {
+    while (temp != nullptr)
+    {
         std::cout << temp->val << " ";
         temp = temp->next;
     }
 }
 
 // using recursion
-void displayRecursion(Node* head) { // Time: O(n) Space: O(n)
-    if (head == nullptr) return;
+void displayRecursion(Node *head)
+{ // Time: O(n) Space: O(n)
+    if (head == nullptr)
+        return;
 
     std::cout << head->val << " ";
-    displayRecursion(head->next);    
+    displayRecursion(head->next);
 }
 
 int main()

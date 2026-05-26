@@ -40,7 +40,7 @@ void display(Node *head)
 // Remove duplicates from the SORTED list
 void removeDuplicatesSorted(Node *head) // Time: O(n) Spcae: O(1)
 {
-    if (head == nullptr) 
+    if (head == nullptr)
         return;
 
     auto temp = head;

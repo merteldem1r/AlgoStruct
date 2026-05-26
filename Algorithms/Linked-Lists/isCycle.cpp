@@ -53,14 +53,15 @@ bool isCycle(Node *head) // Time: O(n) Space: O(n)
     return false;
 }
 
-
 // using two pointer approach (better approach)
-bool isCycleTwoPointer(Node* head) { // Time: O(n) Space: O(1)
+bool isCycleTwoPointer(Node *head)
+{ // Time: O(n) Space: O(1)
     auto slow = head;
     auto fast = head->next;
 
-    while (slow != nullptr && fast != nullptr) {
-        if (slow == fast) 
+    while (slow != nullptr && fast != nullptr)
+    {
+        if (slow == fast)
             return true;
 
         slow = slow->next;

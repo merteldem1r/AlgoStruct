@@ -21,7 +21,8 @@ Example 2:
     Explanation: Because the new interval [4,8] overlaps with [3,5],[6,7],[8,10].
 */
 
-class Solution {
+class Solution
+{
 public:
     std::vector<std::vector<int>> insert(std::vector<std::vector<int>> &intervals, std::vector<int> &newInterval) // Time: O(n) Space: O(n)
     {
@@ -50,5 +51,5 @@ public:
         }
 
         return res;
-    } 
+    }
 };

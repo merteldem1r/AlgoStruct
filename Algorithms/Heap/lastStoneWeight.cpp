@@ -29,8 +29,6 @@ Example 2:
 
     Input: stones = [1]
     Output: 1
-
-
 */
 
 class Solution
