@@ -379,10 +379,11 @@ A **Graph** is a non-linear data structure made of **vertices (nodes)** and **ed
 On the previous [Data Structures](#data-structures) and [Essential Concepts](#essential-concepts) sections I was including the time and the space complexities of the algorithm functions, now it's the time to dive deep into that topic.
 
 - Analyzing algorithm efficiency with **Big-O**, **Big-Theta**, **Big-Omega**, **little-o**, **little-omega**
-- **Recurrence relations**, Master Theorem, amortized analysis
 - **Data-structure** examples with time and space complexities
+- **Recurrence relations**, Master Theorem, amortized analysis
 
   Folder: [Asymptotic Notations](Algorithms/Asymptotic-Notations/)
+  [reccursenceRelations.cpp](Algorithms/Asymptotic-Notations/recurrenceRelations.cpp)
 
 ### Recursion
 
