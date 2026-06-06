@@ -10,12 +10,13 @@ A recurrence relation is a mathematical expression that defines a sequence in te
 General form of Reccurence Relation:
 
         T(n) = aT(n - b) + f(n)
-            a: number of recursive calls (how may tames it call itself in algorithm)
-            b: decreased value
+            a:    number of recursive calls (how may tames it call itself in algorithm)
+            b:    decreased value
+            f(n): what we actually do in algorithm
 
 */
 
-// Decreasing Function | T(n) = T(n - 1) + 1
+// Simle Decreasing Recursion | T(n) = T(n - 1) + 1
 void func1(int n) // TOTAL: T(n) - this is linear time
 {
     if (n <= 0)
@@ -28,21 +29,50 @@ void func1(int n) // TOTAL: T(n) - this is linear time
 }
 
 /*
-T(n) = T(n - 1) + 1
-1. T(n - 1) = (T((n - 1) - 1) + 1) + 1 = T(n - 2) + 2
-2. T(n - 2) = T(n - 3) + 3
-    ...
+SOLUTION:
+    1. T(n) = T(n - 1) + 1
+    2. T(n - 1) = (T((n - 1) - 1) + 1) + 1 = T(n - 2) + 2
+    3. T(n - 2) = T(n - 3) + 3
+        ...
 
-Pattern: T(n - k) + k
-Base case = {n = 0; 1} then,
-if k = n -> T(n - n) + n equal to:
-T(0) + n = 1 + n    =>    n
-so T(n - 1) + 1 = n
+    Pattern: T(n - k) + k
+    Base case = {1; n = 0} then,
+    if k = n -> T(n - n) + n
+    T(0) + n = 1 + n = n
+    so T(n - 1) + 1 = n
 */
 
 // ************************************************************************
 
-//  RR | T(n) = T(n - 1) + n
+//  Recurrence Relation | T(n) = T(n - 1) + n
+void func2(int n) // TOTAL: T(n^2)
+{
+    if (n > 0)
+    {
+        return;
+    }
+
+    for (int i = 0; i < n; ++i)
+    {
+        std::cout << i << std::endl;
+    }
+
+    return func2(n - 1);
+}
+
+/*
+SOLUTION:
+    1. T(n) = T(n - 1) + n
+    2. T(n - 1) = (T((n - 1) - 1) + n) + n = T(n - 2) + 2n
+    3. T(n - 2) = T(n - 3) + 3n
+        ...
+
+    Pattern: T(n - k) + kn
+    Base case: {1; n = 0}
+    if k = n -> T(n - n) + n * n
+    T(0) + n^2 = 1 + n^2 = n^2
+    so T(n - 1) + n = n^2
+*/
 
 // ************************************************************************
 
