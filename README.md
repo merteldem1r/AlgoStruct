@@ -372,6 +372,16 @@ A **Graph** is a non-linear data structure made of **vertices (nodes)** and **ed
 
 **Algorithm** is a step-by-step procedure for **solving a problem** or accomplishing a task. In the context of **data structures** and **algorithms**, it is a set of well-defined instructions for performing a specific computational task. **Algorithms** are fundamental to **Computer Science** and play a very important role in designing **efficient solutions** for various problems.
 
+### Asymptotic Notations
+
+**Asymptotic notations** are **mathematical languages** used in **computer science** to describe the **performance** and **efficiency of algorithms** as the input size grows toward infinity. They allow developers to compare the fundamental growth rate of different algorithms independently of the specific hardware or programming language used.
+
+Before dive deep into the **Algorithm** section, let's understand what is Asymptotic Notations and how to define and understand complexities of the algorithms depending on implementation.
+
+- ...
+
+  Folder: [Asymptotic Notations](Algorithms/Asymptotic-Notations/)
+
 ### Recursion
 
 **Generalising Recursion**
