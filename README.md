@@ -376,9 +376,11 @@ A **Graph** is a non-linear data structure made of **vertices (nodes)** and **ed
 
 **Asymptotic notations** are **mathematical languages** used in **computer science** to describe the **performance** and **efficiency of algorithms** as the input size grows toward infinity. They allow developers to compare the fundamental growth rate of different algorithms independently of the specific hardware or programming language used.
 
-Before dive deep into the **Algorithm** section, let's understand what is Asymptotic Notations and how to define and understand complexities of the algorithms depending on implementation.
+On the previous [Data Structures](#data-structures) and [Essential Concepts](#essential-concepts) sections I was including the time and the space complexities of the algorithm functions, now it's the time to dive deep into that topic.
 
-- ...
+- Analyzing algorithm efficiency with **Big-O**, **Big-Theta**, **Big-Omega**, **little-o**, **little-omega**
+- **Recurrence relations**, Master Theorem, amortized analysis
+- **Data-structure** examples with time and space complexities
 
   Folder: [Asymptotic Notations](Algorithms/Asymptotic-Notations/)
 
