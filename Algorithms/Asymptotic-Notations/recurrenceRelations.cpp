@@ -16,23 +16,23 @@ General form of Reccurence Relation:
 
 */
 
-// Simle Decreasing Recursion | T(n) = T(n - 1) + 1
-void func1(int n) // TOTAL: T(n) - this is linear time
+// Simple Decreasing Recursion | T(n) = T(n - 1) + 1
+void func1(int n) // TOTAL: T(n) = T(n) — linear time
 {
     if (n <= 0)
     {
         return; // base case
     }
 
-    std::cout << n << std::endl; // time: 1
+    std::cout << n << std::endl; // time: O(1)
     return func1(n - 1);         // time: T(n - 1)
 }
 
 /*
 SOLUTION:
     1. T(n) = T(n - 1) + 1
-    2. T(n - 1) = (T((n - 1) - 1) + 1) + 1 = T(n - 2) + 2
-    3. T(n - 2) = T(n - 3) + 3
+    2. T(n) = (T((n - 1) - 1) + 1) + 1 = T(n - 2) + 2
+    3. T(n) = T(n - 3) + 3
         ...
 
     Pattern: T(n - k) + k
@@ -44,12 +44,12 @@ SOLUTION:
 
 // ************************************************************************
 
-//  Recurrence Relation | T(n) = T(n - 1) + n
-void func2(int n) // TOTAL: T(n^2)
+// Recurrence Relation | T(n) = T(n - 1) + n
+void func2(int n) // TOTAL: T(n) = T(n^2)
 {
-    if (n > 0)
+    if (n <= 0)
     {
-        return;
+        return; // base case
     }
 
     for (int i = 0; i < n; ++i)
@@ -62,16 +62,27 @@ void func2(int n) // TOTAL: T(n^2)
 
 /*
 SOLUTION:
-    1. T(n) = T(n - 1) + n
-    2. T(n - 1) = (T((n - 1) - 1) + n) + n = T(n - 2) + 2n
-    3. T(n - 2) = T(n - 3) + 3n
-        ...
+    T(n) = T(n - 1) + n
+    Expand:
+      T(n) = T(n - 1) + n
+           = (T(n - 2) + (n - 1)) + n
+           = T(n - 2) + (n - 1) + n
+           = T(n) = T(n - 3) + (n - 2) + (n - 1) + n
+           = ...
+           = T(n) = T(n - k) + (n - k + 1) + (n - k + 2) + ... + (n - 2) + (n - 1) + n
 
-    Pattern: T(n - k) + kn
-    Base case: {1; n = 0}
-    if k = n -> T(n - n) + n * n
-    T(0) + n^2 = 1 + n^2 = n^2
-    so T(n - 1) + n = n^2
+           Base case = {1; n = 0} then, let's pick k = n
+           T(n) = T(0) + (n - n + 1) + (n - n + 2) + ... + (n - 2) + (n - 1) + n
+                = 1 + [1 + 2 + 3 + ... + (n - 2) + (n - 1) + n]
+                so here we have first n natural numbers is [] brackets
+                = 1 + n(n + 1) / 2
+
+            finally we have:
+
+            T(n) = 1 + n(n + 1) / 2 = 1 + (n^2 + n) / 2
+                 = O(n^2) Quadratic
+
+    so T(n - 1) + n is T(n^2)
 */
 
 // ************************************************************************
