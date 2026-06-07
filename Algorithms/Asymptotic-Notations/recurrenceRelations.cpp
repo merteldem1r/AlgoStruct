@@ -237,7 +237,7 @@ SOLUTION (Successive Substitution):
 // ************************************************************************
 
 // RR | T(n) = 2T(n / 2) + 1
-void func6(int n)
+void func6(int n) // TOTAL: T(n) = T(n) Linear
 {
     if (n <= 1)
         return;
@@ -267,6 +267,90 @@ SOLUTION (Successive Substitution):
          T(n) = n T(1) + (n - 1) = T(n)
 
      So the recurrence solves to linear time = O(n)
+*/
+
+// ************************************************************************
+
+// RR | T(n) = 2T(n / 2) + n
+void func7(int n) // TOATAL: T(n) = T(nlogN)
+{
+    if (n <= 1)
+        return;
+
+    for (int i = 0; i < n; ++i)
+    {
+        std::cout << n << std::endl; // O(1)
+    }
+    func7(n / 2); // T(n / 2)
+    func7(n / 2); // T(n / 2)
+}
+
+/*
+SOLUTION (Successive Substitution):
+     Recurrence: T(n) = 2T(n/2) + n
+
+     1. T(n) = 2T(n/2) + n
+     2. T(n/2) = 2T(n/4) + n/2  -> substitute into (1):
+         T(n) = 2(2T(n/4) + n/2) + n = 4T(n/4) + n + n = 4T(n/4) + 2n
+     3. T(n/4) = 2T(n/8) + n/4  ->
+         T(n) = 8T(n/8) + 3n
+     ...
+
+     After k substitutions:
+         T(n) = 2^k T(n / 2^k) + k * n
+
+     Stop when n / 2^k = 1  =>  2^k = n  =>  k = log_2 n
+
+     Then:
+         T(n) = n T(1) + n * log_2 n = T(n log n)
+
+     So the recurrence solves to T(n) = T(nlogN)
+*/
+
+// ************************************************************************
+
+// RR | T(n) = 2T(n / 2) + n^2
+void func8(int n)
+{
+    if (n <= 1)
+        return;
+
+    for (int i = 0; i < n; ++i) // T(n)
+    {
+        for (int j = 0; j < n; ++j) // T(n)
+        {
+            std::cout << j << std::endl; // O(1)
+        }
+    }
+
+    func8(n / 2);
+    func8(n / 2);
+}
+
+/*
+SOLUTION (Successive Substitution):
+     Recurrence: T(n) = 2T(n/2) + n^2
+
+     1. T(n) = 2T(n/2) + n^2
+     2. T(n/2) = 2T(n/4) + (n/2)^2  -> substitute into (1):
+         T(n) = 2(2T(n/4) + n^2/4) + n^2 = 4T(n/4) + n^2/2 + n^2
+                = 4T(n/4) + 3n^2/2
+     3. T(n/4) = 2T(n/8) + (n/4)^2  ->
+         T(n) = 8T(n/8) + n^2 + n^2/2 + n^2/4
+     ...
+
+     After k substitutions:
+         T(n) = 2^k T(n / 2^k) + n^2(1 + 1/2 + 1/4 + ... + 1/2^{k-1})
+
+     Stop when n / 2^k = 1  =>  2^k = n  =>  k = log_2 n
+
+     The geometric series is bounded by 2, so:
+         T(n) = n * T(1) + T(n^2)
+
+     Since n^2 dominates n, the final answer is:
+         T(n) = T(n^2)
+
+     So the recurrence solves to quadratic time = O(n^2)
 */
 
 int main()
