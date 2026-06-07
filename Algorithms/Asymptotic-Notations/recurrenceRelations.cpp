@@ -118,6 +118,34 @@ SOLUTION:
 
 // ************************************************************************
 
+// MASTER THEOREM for Decreasing Functions
+// informative link: https://www.geeksforgeeks.org/dsa/master-theorem-subtract-conquer-recurrences/
+
+/*
+    General Form of Recurrence Relation:
+        T(n) = aT(n - b) + f(n)
+            a:    number of recursive calls (how many tames it call itself in algorithm)
+            b:    decreased value
+            f(n): what we actually do in algorithm
+
+    From the previous solutions:
+        * T(n)= T(n-1) + 1 => O(n)
+        * T(n)= T(n-1) + n => O(n^2)
+
+        then we can assume or some kind guess that:
+
+        * T(n) = T(n - 2) + 1 => O(n)
+        * T(n) = T(n-1) + n^2 => O(n^2)
+        * T(n) = T(n - 1) + logn => O(nlogN)
+
+        by successive substitution as we made it on previous examples we can get those results as well
+
+        Bu we also can find the answer for a recurrence relation directly
+        without following successive substitution.
+
+
+*/
+
 int main()
 {
     return 0;

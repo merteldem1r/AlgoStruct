@@ -48,14 +48,15 @@ Each topic contain **code examples** with explained **comment lines** and **Read
 
 > Step-by-step problem-solving techniques — searching, sorting, optimization, and LeetCode solutions.
 
-| Category             | Topics                                                                                                                                                           |
-| :------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Arrays & Hashing** | [Array & Hash Map](#array--hash-map-algorithms) • [Strings](#string-algorithms) • [Bitwise](#bitwise-operations)                                                 |
-| **Core Techniques**  | [Recursion](#recursion) • [Sorting](#sorting-algorithms) • [Hashing](#hashing-algorithms)                                                                        |
-| **Linear DS**        | [Linked List](#linked-list-algorithms) • [Stack](#stack-algorithms) • [Queue](#queue-algorithms)                                                                 |
-| **Trees & Search**   | [Binary Search](#binary-search-algorithms) • [Binary Tree](#binary-tree-algorithms) • [BST](#binary-search-tree-algorithms) • [Heap](#heap-algorithms)           |
-| **Advanced**         | [Dynamic Programming](#dynamic-programming) • [Greedy](#greedy) • [Graph](#graph-algorithms) • [Sliding Window](#sliding-window) • [Backtracking](#backtracking) |
-| **Math & More**      | [Math & Geometry](#math--geometry-algorihms) • [Intervals](#intervals) • [Design](#design)                                                                       |
+| Category                                        | Topics                                                                                                                                                           |
+| :---------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Asymptotic Notations & Recurrence Relations** | [Asymptotic Notations & RR](#asymptotic-notations)                                                                                                               |
+| **Arrays & Hashing**                            | [Array & Hash Map](#array--hash-map-algorithms) • [Strings](#string-algorithms) • [Bitwise](#bitwise-operations)                                                 |
+| **Core Techniques**                             | [Recursion](#recursion) • [Sorting](#sorting-algorithms) • [Hashing](#hashing-algorithms)                                                                        |
+| **Linear DS**                                   | [Linked List](#linked-list-algorithms) • [Stack](#stack-algorithms) • [Queue](#queue-algorithms)                                                                 |
+| **Trees & Search**                              | [Binary Search](#binary-search-algorithms) • [Binary Tree](#binary-tree-algorithms) • [BST](#binary-search-tree-algorithms) • [Heap](#heap-algorithms)           |
+| **Advanced**                                    | [Dynamic Programming](#dynamic-programming) • [Greedy](#greedy) • [Graph](#graph-algorithms) • [Sliding Window](#sliding-window) • [Backtracking](#backtracking) |
+| **Math & More**                                 | [Math & Geometry](#math--geometry-algorihms) • [Intervals](#intervals) • [Design](#design)                                                                       |
 
 Each section of this repository was created with **genuine passion**, **thorough research**, and **dedicated implementation**. I hope it proves helpful to others.
 
@@ -372,17 +373,20 @@ A **Graph** is a non-linear data structure made of **vertices (nodes)** and **ed
 
 **Algorithm** is a step-by-step procedure for **solving a problem** or accomplishing a task. In the context of **data structures** and **algorithms**, it is a set of well-defined instructions for performing a specific computational task. **Algorithms** are fundamental to **Computer Science** and play a very important role in designing **efficient solutions** for various problems.
 
-### Asymptotic Notations
-
-**Asymptotic notations** are **mathematical languages** used in **computer science** to describe the **performance** and **efficiency of algorithms** as the input size grows toward infinity. They allow developers to compare the fundamental growth rate of different algorithms independently of the specific hardware or programming language used.
+### Asymptotic Notations & RR
 
 On the previous [Data Structures](#data-structures) and [Essential Concepts](#essential-concepts) sections I was including the time and the space complexities of the algorithm functions, now it's the time to dive deep into that topic.
 
+**Asymptotic notations** are **mathematical languages** used in **computer science** to describe the **performance** and **efficiency of algorithms** as the input size grows toward infinity. They allow developers to compare the fundamental growth rate of different algorithms independently of the specific hardware or programming language used.
+
+A recurrence relation is a mathematical expression that defines a sequence in terms of its previous terms. In the context of algorithmic analysis, it is often used to model the time complexity of recursive algorithms.
+
 - Analyzing algorithm efficiency with **Big-O**, **Big-Theta**, **Big-Omega**, **little-o**, **little-omega**
 - **Data-structure** examples with time and space complexities
-- **Recurrence relations**, Master Theorem, amortized analysis
+- **Recurrence relations** & **Master Theorem**, amortized analysis
 
   Folder: [Asymptotic Notations](Algorithms/Asymptotic-Notations/)
+  </br>
   [reccursenceRelations.cpp](Algorithms/Asymptotic-Notations/recurrenceRelations.cpp)
 
 ### Recursion
