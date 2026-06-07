@@ -383,7 +383,7 @@ A recurrence relation is a mathematical expression that defines a sequence in te
 
 - Analyzing algorithm efficiency with **Big-O**, **Big-Theta**, **Big-Omega**, **little-o**, **little-omega**
 - **Data-structure** examples with time and space complexities
-- **Recurrence relations** & **Master Theorem**, amortized analysis
+- **Recurrence relations** for **decreasing** and **dividing** functions & **Master Theorem**, amortized analysis
 
   Folder: [Asymptotic Notations](Algorithms/Asymptotic-Notations/)
   </br>

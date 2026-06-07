@@ -8,15 +8,9 @@
 
 /*
 A recurrence relation is a mathematical expression that defines a sequence in terms of its previous terms. In the context of algorithmic analysis, it is often used to model the time complexity of recursive algorithms.
-
-IMPORTANT: General form of Reccurence Relation:
-
-        T(n) = aT(n - b) + f(n)
-            a:    number of recursive calls (how many tames it call itself in algorithm)
-            b:    decreased value
-            f(n): what we actually do in algorithm
-
 */
+
+//  ************** Recurrence Relations for DECREASING Functions  **************
 
 // Simple Decreasing Recursion | T(n) = T(n - 1) + 1
 void func1(int n) // TOTAL: T(n) = T(n) — linear time
@@ -147,7 +141,7 @@ SOLUTION:
 
         Master theorem is used to determine the Big - O upper bound on functions which possess recurrence, i.e which can be broken into sub problems.
 
-        General Form of Recurrence Relation:
+        General Form of Recurrence Relation for DECREASING functions:
         T(n) = aT(n - b) + f(n)
             a:    number of recursive calls (how many tames it call itself in algorithm)
             b:    decreased value
@@ -165,7 +159,15 @@ SOLUTION:
                 EX: T(n) = 2T(n - 3) + n
                     = O(n2^(n/3))
 
+        3. CASE a < 1:
+            Actually this is not possible, becuase recursive function should call itself at least 1 time, but mathematically the answer will be:
+
+            T(n) = O(f(n))
 */
+
+// ************************************************************************
+
+//  ************** Recurrence Relations for DIVIDING Functions  **************
 
 int main()
 {
