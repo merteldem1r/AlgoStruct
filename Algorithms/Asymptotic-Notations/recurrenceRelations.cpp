@@ -169,6 +169,42 @@ SOLUTION:
 
 //  ************** Recurrence Relations for DIVIDING Functions  **************
 
+// Dividing Functions - T(n) = T(n / 2) + 1
+void func4(int n) // TOTAL: T(n) = T(logN) Logarithmic
+{
+    if (n <= 0)
+    {
+        return;
+    }
+
+    std::cout << n << std::endl; // O(1)
+    func4(n / 2);                // T(n / 2)
+}
+
+/*
+SOLUTION (Successive Substitution):
+     Recurrence: T(n) = T(n/2) + 1
+
+     1. T(n) = T(n/2) + 1
+     2. T(n/2) = T(n/4) + 1  -> substitute into (1):
+         T(n) = (T(n/4) + 1) + 1 = T(n/4) + 2
+     3. T(n/4) = T(n/8) + 1  ->
+         T(n) = T(n/8) + 3
+     ...
+
+     After k substitutions:
+         T(n) = T(n / 2^k) + k
+
+     One the base case; n / 2^k = 1  =>  2^k = n  =>  k = log_2 n
+
+     then:
+         T(n) = T(1) + log_2 n = Theta(log n)
+
+     So the function runs in logarithmic time.
+*/
+
+// ************************************************************************
+
 int main()
 {
     return 0;

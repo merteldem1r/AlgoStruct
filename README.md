@@ -387,7 +387,7 @@ A recurrence relation is a mathematical expression that defines a sequence in te
 
   Folder: [Asymptotic Notations](Algorithms/Asymptotic-Notations/)
   </br>
-  [reccursenceRelations.cpp](Algorithms/Asymptotic-Notations/recurrenceRelations.cpp)
+  Recurrence Relations: [RecurrenceRelations.cpp](Algorithms/Asymptotic-Notations/RecurrenceRelations.cpp)
 
 ### Recursion
 
