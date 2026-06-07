@@ -18,8 +18,8 @@ void func1(int n) // TOTAL: T(n) = T(n) — linear time
     if (n <= 0)
         return; // base case
 
-    std::cout << n << std::endl; // time: O(1)
-    func1(n - 1);                // time: T(n - 1)
+    std::cout << n << std::endl; // O(1)
+    func1(n - 1);                // T(n - 1)
 }
 
 /*
@@ -47,9 +47,9 @@ void func2(int n) // TOTAL: T(n) = T(n^2)
     for (int i = 0; i < n; ++i)
     {
         std::cout << i << std::endl;
-    }
+    } // O(n)
 
-    func2(n - 1);
+    func2(n - 1); // T(n - 1)
 }
 
 /*
@@ -108,8 +108,7 @@ SOLUTION:
 
 // ************************************************************************
 
-// MASTER THEOREM for Decreasing Functions
-// informative link: https://www.geeksforgeeks.org/dsa/master-theorem-subtract-conquer-recurrences/
+// MASTER THEOREM for DECREASING Functions
 
 /*
     From the previous solutions, what we found:
@@ -203,10 +202,10 @@ void func5(int n) // TOTAL: T(n) = T(n) Linear
     if (n <= 1)
         return;
 
-    for (int i = 0; i < n; ++i) // f(n)
+    for (int i = 0; i < n; ++i)
     {
         std::cout << i << std::endl; // O(1)
-    }
+    } // O(n)
 
     func5(n / 2); // T(n / 2)
 }
@@ -280,7 +279,8 @@ void func7(int n) // TOATAL: T(n) = T(nlogN)
     for (int i = 0; i < n; ++i)
     {
         std::cout << n << std::endl; // O(1)
-    }
+    } // O(n)
+
     func7(n / 2); // T(n / 2)
     func7(n / 2); // T(n / 2)
 }
@@ -315,16 +315,16 @@ void func8(int n)
     if (n <= 1)
         return;
 
-    for (int i = 0; i < n; ++i) // T(n)
+    for (int i = 0; i < n; ++i)
     {
-        for (int j = 0; j < n; ++j) // T(n)
+        for (int j = 0; j < n; ++j)
         {
-            std::cout << j << std::endl; // O(1)
+            std::cout << i + j << std::endl; // O(1)
         }
-    }
+    } // O(n^2)
 
-    func8(n / 2);
-    func8(n / 2);
+    func8(n / 2); // T(n / 2)
+    func8(n / 2); // T(n / 2)
 }
 
 /*
@@ -351,6 +351,35 @@ SOLUTION (Successive Substitution):
          T(n) = T(n^2)
 
      So the recurrence solves to quadratic time = O(n^2)
+*/
+
+// ************************************************************************
+
+// MASTER THEOREM for DIVIDING Functions
+
+/*
+    MASTER THEOREM:
+
+        General Form of Recurrence Relation for DIVIDING functions:
+        T(n) = aT(n / b) + f(n)
+            a:    number of recursive calls (how many tames it call itself in algorithm)
+            b:    decreased value
+            f(n): what we actually do in algorithm
+
+        1. CASE ...:
+            T(n) = O(n * f(n))
+
+                EX: T(n) = T(n - 2) + n
+                    = O(n^2)
+
+        2. CASE ...:
+            T(n) = O(a^(n/b) * f(n))
+
+                EX: T(n) = 2T(n - 3) + n
+                    = O(n2^(n/3))
+
+        3. CASE ...:
+
 */
 
 int main()
