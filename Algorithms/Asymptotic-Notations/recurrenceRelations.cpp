@@ -192,7 +192,7 @@ SOLUTION (Successive Substitution):
      then:
          T(n) = T(1) + log_2 n = T(log n)
 
-     So the function runs in logarithmic time = O(logN).
+     So the function runs in logarithmic time = O(logN)
 */
 
 // ************************************************************************
@@ -231,7 +231,7 @@ SOLUTION (Successive Substitution):
      Therefore:
          T(n) = T(1) + T(n) = T(n)
 
-     So the recurrence solves to linear time.
+     So the recurrence solves to linear time = O(n)
 */
 
 // ************************************************************************
@@ -246,6 +246,28 @@ void func6(int n)
     func6(n / 2);                // T(n / 2)
     func6(n / 2);                // T(n / 2)
 }
+
+/*
+SOLUTION (Successive Substitution):
+     Recurrence: T(n) = 2T(n/2) + 1
+
+     1. T(n) = 2T(n/2) + 1
+     2. T(n/2) = 2T(n/4) + 1  -> substitute into (1):
+         T(n) = 2(2T(n/4) + 1) + 1 = 4T(n/4) + 2 + 1
+     3. T(n/4) = 2T(n/8) + 1  ->
+         T(n) = 8T(n/8) + 4 + 2 + 1
+     ...
+
+     After k substitutions:
+         T(n) = 2^k T(n / 2^k) + (2^k - 1)
+
+     Stop when n / 2^k = 1  =>  2^k = n  =>  k = log_2 n
+
+     Then:
+         T(n) = n T(1) + (n - 1) = T(n)
+
+     So the recurrence solves to linear time = O(n)
+*/
 
 int main()
 {

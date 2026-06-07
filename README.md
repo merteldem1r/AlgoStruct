@@ -385,7 +385,7 @@ A recurrence relation is a mathematical expression that defines a sequence in te
 - **Data-structure** examples with time and space complexities
 - **Recurrence relations** for **decreasing** and **dividing** functions & **Master Theorem**, amortized analysis
 
-  Folder: [Asymptotic Notations](Algorithms/Asymptotic-Notations/)
+  Aymptotic Notations Explanation: [Asymptotic-Notations.md](Algorithms/Asymptotic-Notations/Asymptotic-Notations.md)
   </br>
   Recurrence Relations: [RecurrenceRelations.cpp](Algorithms/Asymptotic-Notations/RecurrenceRelations.cpp)
 
