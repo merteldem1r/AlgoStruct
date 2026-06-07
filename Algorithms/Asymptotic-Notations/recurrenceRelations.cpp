@@ -7,10 +7,10 @@
 /*
 A recurrence relation is a mathematical expression that defines a sequence in terms of its previous terms. In the context of algorithmic analysis, it is often used to model the time complexity of recursive algorithms.
 
-General form of Reccurence Relation:
+IMPORTANT: General form of Reccurence Relation:
 
         T(n) = aT(n - b) + f(n)
-            a:    number of recursive calls (how may tames it call itself in algorithm)
+            a:    number of recursive calls (how many tames it call itself in algorithm)
             b:    decreased value
             f(n): what we actually do in algorithm
 
@@ -25,7 +25,7 @@ void func1(int n) // TOTAL: T(n) = T(n) — linear time
     }
 
     std::cout << n << std::endl; // time: O(1)
-    return func1(n - 1);         // time: T(n - 1)
+    func1(n - 1);                // time: T(n - 1)
 }
 
 /*
@@ -57,7 +57,7 @@ void func2(int n) // TOTAL: T(n) = T(n^2)
         std::cout << i << std::endl;
     }
 
-    return func2(n - 1);
+    func2(n - 1);
 }
 
 /*
@@ -83,6 +83,37 @@ SOLUTION:
                  = O(n^2) Quadratic
 
     so T(n - 1) + n is T(n^2)
+*/
+
+// ************************************************************************
+
+// Recurrence Relation | T(n) = 2T(n - 1) + 1
+void func3(int n)
+{
+    if (n <= 0)
+    {
+        return; // base case
+    }
+
+    std::cout << n << std::endl; // O(1)
+    func3(n - 1);                // T(n - 1)
+    func3(n - 1);                // T(n - 1)
+}
+
+/*
+SOLUTION:
+    T(n) = 2T(n - 1) + 1
+    Expand:
+      T(n) = 2T(n - 1) + 1
+           = 2(2T(n - 2) + 1) + 1 = 4T(n - 2) + 2 + 1
+           = 4(2T(n - 3) + 1) + 3 = 8T(n - 3) + 4 + 2 + 1
+           = ...
+           = 2^k T(n - k) + (2^k - 1)
+
+    Base case k = n ->
+      T(n) = 2^n T(0) + (2^n - 1) = T(2^n)
+
+    Therefore the recurrence solves to exponential time: T(n) = T(2^n) Exponential
 */
 
 // ************************************************************************
