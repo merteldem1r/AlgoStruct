@@ -385,9 +385,9 @@ On the previous [Data Structures](#data-structures) and [Essential Concepts](#es
 - **Data-structure** examples with time and space complexities
 - **Recurrence relations** for **decreasing** and **dividing** functions & **Master Theorem**, amortized analysis
 
-  Aymptotic Notations Explanation: [Asymptotic-Notations.md](Algorithms/Asymptotic-Notations/Asymptotic-Notations.md)
+  Aymptotic Notations Explanation: [Asymptotic-Notations.md](Algorithms/Algorithm-Complexity-Analysis/Asymptotic-Notations.md)
   </br>
-  Recurrence Relations: [RecurrenceRelations.cpp](Algorithms/Asymptotic-Notations/RecurrenceRelations.cpp)
+  Recurrence Relations Folder: [Recurrence Relations](Algorithms/Algorithm-Complexity-Analysis/Recurrence-Relations/)
 
 ### Recursion
 
