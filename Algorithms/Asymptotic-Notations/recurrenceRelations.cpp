@@ -1,8 +1,10 @@
 #include <iostream>
 
-// Re
+// Recurrence Relations & Master Theorem
+// Author: Mert Eldemir
+
 // informative link: https://www.geeksforgeeks.org/dsa/recurrence-relations-a-complete-guide/
-// course: https://www.udemy.com/course/datastructurescncpp/ by Abdul Bari
+// course: https://www.udemy.com/course/datastructurescncpp/ by Abdul Bari - best instructor
 
 /*
 A recurrence relation is a mathematical expression that defines a sequence in terms of its previous terms. In the context of algorithmic analysis, it is often used to model the time complexity of recursive algorithms.
@@ -88,7 +90,7 @@ SOLUTION:
 // ************************************************************************
 
 // Recurrence Relation | T(n) = 2T(n - 1) + 1
-void func3(int n)
+void func3(int n) // TOTAL: T(n) = T(2^n)
 {
     if (n <= 0)
     {
@@ -122,27 +124,46 @@ SOLUTION:
 // informative link: https://www.geeksforgeeks.org/dsa/master-theorem-subtract-conquer-recurrences/
 
 /*
-    General Form of Recurrence Relation:
+    From the previous solutions, what we found:
+        * T(n )= T(n - 1) + 1     => O(n)    Linear
+        * T(n) = T(n - 1) + n     => O(n^2)  Quadratic
+        * T(n) = 2T(n - 2) + 1    => O(2^n)  Exponential
+
+        then we can assume or some kind guess that:
+
+        * T(n) = T(n - 2) + 1     => O(n)
+        * T(n) = T(n - 1) + n^2   => O(n^2)
+        * T(n) = T(n - 1) + logn  => O(nlogN)
+        * T(n) = 3T(n - 1) + 1    => O(3^n)
+        * T(n) = 2T(n - 1) + n    => O(n2^n)
+
+        by successive substitution as we made it on previous examples we can get those results as well
+
+        Bu we also can find the answer for a recurrence relation directly
+        without following successive substitution with the general form and Master Theorem.
+
+
+    MASTER THEOREM:
+
+        Master theorem is used to determine the Big - O upper bound on functions which possess recurrence, i.e which can be broken into sub problems.
+
+        General Form of Recurrence Relation:
         T(n) = aT(n - b) + f(n)
             a:    number of recursive calls (how many tames it call itself in algorithm)
             b:    decreased value
             f(n): what we actually do in algorithm
 
-    From the previous solutions:
-        * T(n)= T(n-1) + 1 => O(n)
-        * T(n)= T(n-1) + n => O(n^2)
+        1. CASE a = 1:
+            T(n) = O(n * f(n))
 
-        then we can assume or some kind guess that:
+                EX: T(n) = T(n - 2) + n
+                    = O(n^2)
 
-        * T(n) = T(n - 2) + 1 => O(n)
-        * T(n) = T(n-1) + n^2 => O(n^2)
-        * T(n) = T(n - 1) + logn => O(nlogN)
+        2. CASE a > 1:
+            T(n) = O(a^(n/b) * f(n))
 
-        by successive substitution as we made it on previous examples we can get those results as well
-
-        Bu we also can find the answer for a recurrence relation directly
-        without following successive substitution.
-
+                EX: T(n) = 2T(n - 3) + n
+                    = O(n2^(n/3))
 
 */
 
