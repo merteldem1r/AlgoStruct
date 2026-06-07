@@ -16,9 +16,7 @@ A recurrence relation is a mathematical expression that defines a sequence in te
 void func1(int n) // TOTAL: T(n) = T(n) — linear time
 {
     if (n <= 0)
-    {
         return; // base case
-    }
 
     std::cout << n << std::endl; // time: O(1)
     func1(n - 1);                // time: T(n - 1)
@@ -44,9 +42,7 @@ SOLUTION:
 void func2(int n) // TOTAL: T(n) = T(n^2)
 {
     if (n <= 0)
-    {
-        return; // base case
-    }
+        return;
 
     for (int i = 0; i < n; ++i)
     {
@@ -87,9 +83,7 @@ SOLUTION:
 void func3(int n) // TOTAL: T(n) = T(2^n)
 {
     if (n <= 0)
-    {
         return; // base case
-    }
 
     std::cout << n << std::endl; // O(1)
     func3(n - 1);                // T(n - 1)
@@ -169,13 +163,11 @@ SOLUTION:
 
 //  ************** Recurrence Relations for DIVIDING Functions  **************
 
-// Dividing Functions - T(n) = T(n / 2) + 1
+// Dividing Functions | T(n) = T(n / 2) + 1
 void func4(int n) // TOTAL: T(n) = T(logN) Logarithmic
 {
-    if (n <= 0)
-    {
+    if (n <= 1)
         return;
-    }
 
     std::cout << n << std::endl; // O(1)
     func4(n / 2);                // T(n / 2)
@@ -198,12 +190,62 @@ SOLUTION (Successive Substitution):
      One the base case; n / 2^k = 1  =>  2^k = n  =>  k = log_2 n
 
      then:
-         T(n) = T(1) + log_2 n = Theta(log n)
+         T(n) = T(1) + log_2 n = T(log n)
 
-     So the function runs in logarithmic time.
+     So the function runs in logarithmic time = O(logN).
 */
 
 // ************************************************************************
+
+// RR | T(n) = T(n / 2) + n
+void func5(int n) // TOTAL: T(n) = T(n) Linear
+{
+    if (n <= 1)
+        return;
+
+    for (int i = 0; i < n; ++i) // f(n)
+    {
+        std::cout << i << std::endl; // O(1)
+    }
+
+    func5(n / 2); // T(n / 2)
+}
+
+/*
+SOLUTION (Successive Substitution):
+     Recurrence: T(n) = T(n/2) + n
+
+     1. T(n) = T(n/2) + n
+     2. T(n/2) = T(n/4) + n/2  -> substitute into (1):
+         T(n) = (T(n/4) + n/2) + n = T(n/4) + n + n/2
+     3. T(n/4) = T(n/8) + n/4  ->
+         T(n) = T(n/8) + n + n/2 + n/4
+     ...
+
+     After k substitutions:
+         T(n) = T(n / 2^k) + n*(1 + 1/2 + 1/4 + ... + 1/2^{k-1})
+
+     Stop when n / 2^k = 1  =>  2^k = n  =>  k = log_2 n
+
+     The geometric series sums to < 2, so the sum term = T(n).
+     Therefore:
+         T(n) = T(1) + T(n) = T(n)
+
+     So the recurrence solves to linear time.
+*/
+
+// ************************************************************************
+
+// RR | T(n) = 2T(n / 2) + 1
+void func6(int n)
+{
+    if (n <= 1)
+        return;
+
+    std::cout << n << std::endl; // O(1)
+    func6(n / 2);                // T(n / 2)
+    func6(n / 2);                // T(n / 2)
+}
 
 int main()
 {
