@@ -50,7 +50,7 @@ Each topic contain **code examples** with explained **comment lines** and **Read
 
 | Category                          | Topics                                                                                                                                                           |
 | :-------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Algorithm Complexity Analysis** | [Asymptotic Notations & RR](#algorithm-complexity-analysis)                                                                                                      |
+| **Algorithm Complexity Analysis** | [Asymptotic Notations](#algorithm-complexity-analysis) • [Recurrence Relations](#algorithm-complexity-analysis)                                                  |
 | **Arrays & Hashing**              | [Array & Hash Map](#array--hash-map-algorithms) • [Strings](#string-algorithms) • [Bitwise](#bitwise-operations)                                                 |
 | **Core Techniques**               | [Recursion](#recursion) • [Sorting](#sorting-algorithms) • [Hashing](#hashing-algorithms)                                                                        |
 | **Linear DS**                     | [Linked List](#linked-list-algorithms) • [Stack](#stack-algorithms) • [Queue](#queue-algorithms)                                                                 |

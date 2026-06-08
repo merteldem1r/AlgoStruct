@@ -235,7 +235,7 @@ SOLUTION (Successive Substitution):
                 log_b(a) == k
 
             Then:
-                T(n) = O(n^k * log^(p + 1)(n))
+                T(n) = O(f(n) * log n)
 
         3. CASE: Outside work dominates
             If:
