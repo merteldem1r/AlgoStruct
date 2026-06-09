@@ -47,9 +47,45 @@ int knapsackRecursive(const std::vector<int> &values, const std::vector<int> &wt
     return std::max(skip, take);
 }
 
-int knapsackMemoization(const std::vector<int> &values, const std::vector<int> &wt, int idx, int remainCap, std::vector<int> &memo)
+// DP - Memoization
+class KnapsackMemoizatoin // Time: O(n x W) Space: O(n x W)
 {
-}
+public:
+    int knapsackRec(int W, const std::vector<int> &values, const std::vector<int> &wt, int n,
+                    std::vector<std::vector<int>> &memo)
+    {
+
+        // Base Case
+        if (n == 0 || W == 0)
+            return 0;
+
+        // Check if we have previously calculated the same subproblem
+        if (memo[n][W] != -1)
+            return memo[n][W];
+
+        int pick = 0;
+
+        // Pick nth item if it does not exceed the capacity of knapsack
+        if (wt[n - 1] <= W)
+            pick = values[n - 1] + knapsackRec(W - wt[n - 1], values, wt, n - 1, memo);
+
+        // Don't pick the nth item
+        int notPick = knapsackRec(W, values, wt, n - 1, memo);
+
+        // Store the result in memo[n][W] and return it
+        return memo[n][W] = std::max(pick, notPick);
+    }
+
+    int knapsack(int W, std::vector<int> &values, std::vector<int> &wt)
+    {
+        int n = values.size();
+
+        // Memoization table to store the results
+        std::vector<std::vector<int>> memo(n + 1, std::vector<int>(W + 1, -1));
+
+        return knapsackRec(W, values, wt, n, memo);
+    }
+};
 
 int main()
 {
