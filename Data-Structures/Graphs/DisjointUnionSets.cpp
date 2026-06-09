@@ -2,7 +2,7 @@
 
 // DisjointUnionSets - Data Structure (Union By Rank and Path Compression in Union-Find Algorithm)
 // Related Article: https://www.geeksforgeeks.org/dsa/union-by-rank-and-path-compression-in-union-find-algorithm/
-// Author: Mert Eldemir
+// AUTHOR: Mert Eldemir
 
 /*
     This implementatoin is the optimization that applied to the UnionFind Data Structure (Data-Structures/Graphs/UnionFind.cpp)

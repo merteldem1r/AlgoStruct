@@ -47,6 +47,10 @@ int knapsackRecursive(const std::vector<int> &values, const std::vector<int> &wt
     return std::max(skip, take);
 }
 
+int knapsackMemoization(const std::vector<int> &values, const std::vector<int> &wt, int idx, int remainCap, std::vector<int> &memo)
+{
+}
+
 int main()
 {
     std::vector<int> values = {1, 4, 5, 7};

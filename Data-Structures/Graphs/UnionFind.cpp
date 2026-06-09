@@ -3,7 +3,7 @@
 // Disjoint Set (UnionFind) - Data Structure
 // Related Article: https://www.geeksforgeeks.org/dsa/introduction-to-disjoint-set-data-structure-or-union-find-algorithm/
 // More optimized version: Data-Structures/Graphs/DisjointUnionSets.cpp
-// Author: Mert Eldemir
+// AUTHOR: Mert Eldemir
 
 /*
 Two sets are called disjoint sets if they don't have any element in common. The disjoint set data structure is used to store such sets. It supports following operations:
