@@ -1,6 +1,6 @@
 # AlgoStruct - Mastering DSA with C & C++
 
-![Data Structures Algorithms](https://github.com/user-attachments/assets/9d7eda38-a40f-4673-bef2-960c03522266)
+<img width="1920" height="1080" alt="Data Structures Algorithms" src="https://github.com/user-attachments/assets/7e2ce659-f1f5-41c4-bfbe-0b5d4ccd2ac7" />
 
 Mastering DSA in C & C++ • A complete guide up to 300+ algorithms (Recursion, Sorting, Hashing etc.) with common and advanced data structures (Array, Linked List, Stack, Queue, Trees, AVL, Heap, Graph etc.) implemented completely from scratch. Covers core programming concepts like Pointers, OOP, Structures, Memory Management etc. Besides that solving algorithm problems from LeetCode platform, with different space and time complexity solutions using DSA knowledge.
 
